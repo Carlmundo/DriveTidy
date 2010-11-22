@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="txtErrorReports.Text" xml:space="preserve">
+    <value>echo Windows Error Reports...
+del /f /s /q "%localappdata%\Microsoft\Windows\WER\ReportArchive\*.*"
+del /f /s /q "%localappdata%\Microsoft\Windows\WER\ReportQueue\*.*"
+del /f /s /q "%allusersappdata%\Microsoft\Windows\WER\ReportArchive\*.*"
+del /f /s /q "%allusersappdata%\Microsoft\Windows\WER\ReportQueue\*.*"
+rd /s /q "%localappdata%\Microsoft\Windows\WER\ReportArchive\"
+rd /s /q "%localappdata%\Microsoft\Windows\WER\ReportQueue\"
+rd /s /q "%allusersappdata%\Microsoft\Windows\WER\ReportArchive\"
+rd /s /q "%allusersappdata%\Microsoft\Windows\WER\ReportQueue\"</value>
+  </data>
+  <data name="txtAdobeReader.Text" xml:space="preserve">
+    <value>echo Adobe Reader cache...
+:Adobe Cache
+IF NOT EXIST "%localappdata%\Adobe\Acrobat" GOTO AdobeSetup
+pushd "%localappdata%\Adobe\Acrobat" ||goto :eof
+for /d %%a in (*) do (
+del /f /s /q "%%a\Cache\*.*"
+rd /s /q "%%a\Cache\"
+)
+popd
+
+:AdobeSetup
+IF NOT EXIST "%programfiles%\Adobe" GOTO AdobeSetup32on64
+pushd "%programfiles%\Adobe" ||goto :eof
+for /d %%a in (Reader*) do (
+del /f /s /q "%%a\Setup Files\*.*"
+rd /s /q "%%a\Setup Files\"
+)
+for /d %%a in (Acrobat*) do (
+del /f /s /q "%%a\Setup Files\*.*"
+rd /s /q "%%a\Setup Files\"
+)
+popd
+
+:AdobeSetup32on64
+IF NOT EXIST "%programfiles(x86)%\Adobe" GOTO AdobeSetup2
+pushd "%programfiles(x86)%\Adobe" ||goto :eof
+for /d %%a in (Reader*) do (
+del /f /s /q "%%a\Setup Files\*.*"
+rd /s /q "%%a\Setup Files\"
+)
+for /d %%a in (Acrobat*) do (
+del /f /s /q "%%a\Setup Files\*.*"
+rd /s /q "%%a\Setup Files\"
+)
+popd
+
+:AdobeSetup2
+IF NOT EXIST "%localappdata%\Adobe" GOTO End_AdobeReader
+pushd "%localappdata%\Adobe" ||goto :eof
+for /d %%a in (Reader*) do (
+del /f /s /q "%%a\Setup Files\*.*"
+rd /s /q "%%a\Setup Files\"
+)
+for /d %%a in (Acrobat*) do (
+del /f /s /q "%%a\Setup Files\*.*"
+rd /s /q "%%a\Setup Files\"
+)
+popd
+:End_AdobeReader</value>
+  </data>
+  <data name="txtAppleInstaller.Text" xml:space="preserve">
+    <value>echo Apple Installer cache...
+del /f /s /q "%allusersappdata%\Apple\Installer Cache\*.*"
+rd /s /q "%allusersappdata%\Apple\Installer Cache\"
+del /f /s /q "%allusersappdata%\Apple Computer\Installer Cache\*.*"
+rd /s /q "%allusersappdata%\Apple Computer\Installer Cache\"</value>
+  </data>
+  <data name="txtAVG.Text" xml:space="preserve">
+    <value>echo AVG logs and temp files...
+pushd "%allusersappdata%" ||goto :eof
+for /d %%a in (avg*) do (
+del /f /s /q "%%a\Log\*.*"
+del /f /s /q "%%a\Emc\Log\*.*"
+del /f /s /q "%%a\scanlogs\*.*"
+del /f /s /q "%%a\temp\*.*"
+del /f /s /q "%%a\update\backup\*.*"
+)
+popd</value>
+  </data>
+  <data name="txtGoogleEarth.Text" xml:space="preserve">
+    <value>echo Google Earth Cache...
+del /f /q "%appdata%\Google\GoogleEarth\dbCache.dat"
+del /f /q "%appdata%\Google\GoogleEarth\dbCache.dat.index"
+del /f /q "%localappdata%\Google\GoogleEarth\dbCache.dat"
+del /f /q "%localappdata%\Google\GoogleEarth\dbCache.dat.index"
+del /f /q "%locallowappdata%\Google\GoogleEarth\dbCache.dat"
+del /f /q "%locallowappdata%\Google\GoogleEarth\dbCache.dat.index"</value>
+  </data>
+  <data name="txtKaspersky.Text" xml:space="preserve">
+    <value>echo Kaspersky Reports and Temp files...
+del /f /s /q "%allusersappdata%\Kaspersky Lab\*.dmp"
+del /f /s /q "%allusersappdata%\Kaspersky Lab\*.tmp"
+del /f /s /q "%allusersappdata%\Kaspersky Lab\*.log"
+del /f /s /q "%allusersappdata%\Kaspersky Lab Setup Files\*.*"
+rd /s /q "%allusersappdata%\Kaspersky Lab Setup Files\"
+IF NOT EXIST "%allusersappdata%\Kaspersky Lab" GOTO End_Kaspersky
+pushd "%allusersappdata%\Kaspersky Lab" ||goto :eof
+for /d %%a in (AVP*) do (
+del /f /s /q "%%a\*.tmp"
+del /f /s /q "%%a\*.dmp"
+del /f /s /q "%%a\Report\*.*"
+del /f /s /q "%%a\PdmHist\*.*"
+del /f /s /q "%%a\Data\Updater\Temporary Files\*.*"
+)
+popd
+:End_Kaspersky</value>
+  </data>
+  <data name="txtQuicktime.Text" xml:space="preserve">
+    <value>echo Quicktime Downloads...
+del /f /s /q "%localappdata%\Apple Computer\QuickTime\downloads\*.*"
+rd /s /q "%localappdata%\Apple Computer\QuickTime\downloads\"
+del /f /s /q "%locallowappdata%\Apple Computer\Quicktime\downloads\*.*"
+rd /s /q "%locallowappdata%\Apple Computer\Quicktime\downloads\"
+del /f /q "%userprofile%\QTPlayerSession.xml"
+del /f /q "%appdata%\Apple Computer\QuickTime\QTPlayerSession.xml"
+del /f /q  "%localappdata%\Apple Computer\QuickTime\QTPlayerSession.xml"
+del /f /q  "%locallowappdata%\Apple Computer\QuickTime\QTPlayerSession.xml"</value>
+  </data>
+  <data name="txtSilverlight.Text" xml:space="preserve">
+    <value>echo Silverlight Cookies...
+del /f /s /q "%localappdata%\Microsoft\Silverlight\*.*"
+rd /s /q "%localappdata%\Microsoft\Silverlight\"
+del /f /s /q "%locallowappdata%\Microsoft\Silverlight\*.*"
+rd /s /q "%locallowappdata%\Microsoft\Silverlight\"</value>
+  </data>
+  <data name="txtUnity.Text" xml:space="preserve">
+    <value>echo Unity Web Player cache...
+del /f /s /q "%localappdata%\Unity\Web Player\Cache\*.*"
+rd /s /q "%localappdata%\Unity\Web Player\Cache\"
+del /f /s /q "%locallowappdata%\Unity\Web Player\Cache\*.*"
+rd /s /q "%locallowappdata%\Unity\Web Player\Cache\"</value>
+  </data>
+</root>

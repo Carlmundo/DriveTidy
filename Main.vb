@@ -1,0 +1,396 @@
+﻿Public Class Main
+
+    Private Declare Function ShellExecute Lib "shell32.dll" Alias "ShellExecuteA" (ByVal hwnd As Integer, ByVal lpOperation As String, ByVal lpFile As String, ByVal lpParameters As String, ByVal lpDirectory As String, ByVal nShowCmd As Integer) As Integer
+    Dim item As Object
+    Dim cbCount As Integer
+    Dim cbCheckedCount As Integer
+
+    Dim d1 As New System.Collections.Generic.Dictionary(Of CheckBox, TextBox)
+    Dim d2 As New System.Collections.Generic.Dictionary(Of CheckBox, TextBox)
+    Dim d3 As New System.Collections.Generic.Dictionary(Of CheckBox, TextBox)
+
+    Dim Ready As Integer
+
+    Dim MsgConfirmKill As Object
+    Dim MsgApp, MsgProcess, MsgString
+
+    Private Sub cmdQuick_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdQuick.Click
+        QuickSelect()
+        Uncheck_Invisible()
+    End Sub
+
+    Public Sub QuickSelect()
+        'Unchecks all checkboxes
+        For Each Me.item In FlowLayout.Controls
+            If TypeOf item Is CheckBox Then
+                item.Checked = False
+            End If
+        Next
+        'Check specific Checkboxes
+        cbRecycle.Checked = True
+        cbTemp.Checked = True
+        cbRecent.Checked = True
+        cbTIF.Checked = True
+        cbAltBrowser.Checked = True
+        cbWindowsUpdate.Checked = True
+        cbJava.Checked = True
+        cbFlash.Checked = True
+        cbMessenger.Checked = True
+        cbErrorReports.Checked = True
+        cbAdobeCameraRAW.Checked = True
+        cbAdobeReader.Checked = True
+        cbAppleInstaller.Checked = True
+        cbAVG.Checked = True
+        cbGIMP.Checked = True
+        cbGoogleEarth.Checked = True
+        cbGoogleUpdater.Checked = True
+        cbHPDigitalImaging.Checked = True
+        cbiTunes.Checked = True
+        cbKaspersky.Checked = True
+        cbNokiaOvi.Checked = True
+        cbQuicktime.Checked = True
+        cbSilverlight.Checked = True
+        cbSpotify.Checked = True
+        cbUnity.Checked = True
+    End Sub
+
+    Private Sub cmdAdvanced_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdAdvanced.Click
+        QuickSelect()
+        cbTMP.Checked = True
+        cbLOG.Checked = True
+        cbCHK.Checked = True
+        cbDMP.Checked = True
+        Uncheck_Invisible()
+    End Sub
+
+    Private Sub cmdSelectAll_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles cmdSelectAll.LinkClicked
+        Checkbox_Count()
+        If cbCheckedCount < cbCount Then
+            For Each Me.item In FlowLayout.Controls
+                If TypeOf item Is CheckBox Then
+                    item.Checked = True
+                    Checkbox_Count()
+                End If
+            Next
+        ElseIf cbCheckedCount = cbCount Then
+            For Each Me.item In FlowLayout.Controls
+                If TypeOf item Is CheckBox Then
+                    item.Checked = False
+                    Checkbox_Count()
+                End If
+            Next
+        End If
+        Uncheck_Invisible()
+    End Sub
+
+    Private Sub cmdClean_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClean.Click
+        'If the program fails to write a file then an error will generate and restart the program
+        'On Error GoTo ErrorHandler
+        'Checking to see if at least one option is checked
+
+        Checkbox_Count()
+        If cbCheckedCount = 0 Then
+            Ready = 0
+        Else
+            'Process Detection - checks to see if programs are running and need to be closed
+            Ready = 1 'Value starts at 1 and will be changed to 2 if the No option is selected for any running processes
+            MsgString = " is running and needs to be closed." & vbCrLf & "To save what you are doing close the program manually." & vbCrLf & "Are you sure you want to continue?"
+            If cbAltBrowser.Checked = True Then
+
+                If Ready = 1 Then
+                    MsgApp = "Mozilla Firefox"
+                    MsgProcess = "firefox"
+                    KillMsg()
+                    If Ready = 1 Then
+                        MsgApp = "Opera"
+                        MsgProcess = "opera"
+                        KillMsg()
+                        If Ready = 1 Then
+                            MsgApp = "Google Chrome"
+                            MsgProcess = "chrome"
+                            KillMsg()
+                            If Ready = 1 Then
+                                MsgApp = "Safari"
+                                MsgProcess = "safari"
+                                KillMsg()
+                            End If
+                        End If
+                    End If
+                End If
+            End If
+
+                If Not Ready = 2 Then 'If a new value other than 2 has not been assigned then it will be changed to 1 to proceed
+                    Ready = 1
+                End If
+
+            End If
+            If Ready = 0 Then
+                MsgBox("Select at least one option.")
+            ElseIf Ready = 1 Then
+                'Disabling commands for unchecked items
+                For Each kvp As System.Collections.Generic.KeyValuePair(Of CheckBox, TextBox) In d1
+                    If Not kvp.Key.Checked Then
+                        kvp.Value.Text = ""
+                    End If
+                Next
+                For Each kvp As System.Collections.Generic.KeyValuePair(Of CheckBox, TextBox) In d2
+                    If Not kvp.Key.Checked Then
+                        kvp.Value.Text = ""
+                    End If
+                Next
+                For Each kvp As System.Collections.Generic.KeyValuePair(Of CheckBox, TextBox) In d3
+                    If Not kvp.Key.Checked Then
+                        kvp.Value.Text = ""
+                    End If
+                Next
+
+                'Disable Attribute changers from Command List
+                If cbRecycle.Checked = False Then
+                    CommandList.txtAttribRecycle.Text = ""
+                End If
+
+                If cbMessenger.Checked = False Then
+                    CommandList.txtAttribSQM.Text = ""
+                End If
+
+                'Write check file
+                My.Computer.FileSystem.CreateDirectory(Environ("appdata") & "\DriveTidy")
+                FileOpen(1, Environ("appdata") & "\DriveTidy\cleanchk.txt", OpenMode.Output)
+                PrintLine(1, "0")
+                FileClose(1)
+                'Create Batch Commands
+                FileOpen(2, Environ("appdata") & "\DriveTidy\cleaner.bat", OpenMode.Output)
+                PrintLine(2, CommandList.txtHeader.Text)
+                'Add Common Options
+                For Each keyvaluepair In d1
+                PrintLine(2, keyvaluepair.Value.Text)
+                Next
+                'Marks beginning of "Other remaining caches" message
+                PrintLine(2, OtherCaches.txtQ12.Text)
+                'Add Other Caches
+                For Each keyvaluepair In d2
+                    PrintLine(2, keyvaluepair.Value.Text)
+                Next
+                'End of remaning caches
+                PrintLine(2, OtherCaches.txtQ13.Text)
+                'Add File Extensions
+                For Each keyvaluepair In d3
+                    PrintLine(2, keyvaluepair.Value.Text)
+                Next
+                'Send Finish Instruction
+                PrintLine(2, CommandList.txtFinish.Text)
+                FileClose(2)
+
+                FileOpen(3, Environ("appdata") & "\DriveTidy\start.bat", OpenMode.Output)
+                PrintLine(3, CommandList.txtStart1.Text)
+                PrintLine(3, CommandList.txtAttribRecycle.Text)
+                PrintLine(3, CommandList.txtAttribSQM.Text)
+                PrintLine(3, CommandList.txtStart2.Text)
+                FileClose(3)
+                ShellExecute(0, vbNullString, Environ("appdata") & "\DriveTidy\start.bat", vbNullString, vbNullString, AppWinStyle.NormalFocus)
+                'Show Cleaner Window
+                CleanerWindow.Show()
+                Me.Close()
+                CommandList.Close()
+                OtherCaches.Close()
+                Exit Sub
+ErrorHandler:
+                CleanerErrors()
+
+                'F numbers start the bar again.
+                'If a file extension is selected then it does the
+                'Advanced method with F numbers, no file extension = Q numbers
+            End If
+    End Sub
+
+    Private Sub cmdAbout_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdAbout.Click
+        About.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub CleanerErrors()
+        CleanerWindow.cmdCancel.Visible = False
+        'Error 75 can happen if the Start Cleanup button is clicked too soon
+        If Err.Number = 75 Then
+            Me.Show()
+            CleanerWindow.Close()
+        Else
+            MsgBox(Err.Description, MsgBoxStyle.Critical, "Error " & Err.Number)
+            Me.Show()
+            CleanerWindow.Close()
+        End If
+    End Sub
+
+    Private Sub Main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'Set the form to the center screen
+        If Detect.Center.Text = "1" Then
+            Me.Left = (Screen.PrimaryScreen.WorkingArea.Width - Me.Width) / 2
+            Me.Top = (Screen.PrimaryScreen.WorkingArea.Height - Me.Height) / 2
+            Detect.Center.Text = "0"
+        End If
+        'OS Detection
+        Dim OS_WindowsXP As Boolean
+        Dim OS_WindowsVista As Boolean
+        Dim OS_Windows7 As Boolean
+
+        If Environment.OSVersion.Platform = PlatformID.Win32NT And _
+        Environment.OSVersion.Version.Major = 5 And _
+        Environment.OSVersion.Version.Minor = 1 Then
+            OS_WindowsXP = True
+            Environment.SetEnvironmentVariable("osd", "Windows XP")
+        ElseIf Environment.OSVersion.Platform = PlatformID.Win32NT And _
+            Environment.OSVersion.Version.Major = 6 And _
+            Environment.OSVersion.Version.Minor = 0 Then
+            OS_WindowsVista = True
+            Environment.SetEnvironmentVariable("osd", "Windows Vista")
+        ElseIf Environment.OSVersion.Platform = PlatformID.Win32NT And _
+        Environment.OSVersion.Version.Major = 6 And _
+        Environment.OSVersion.Version.Minor = 1 Then
+            OS_Windows7 = True
+            Environment.SetEnvironmentVariable("osd", "Windows 7")
+        Else
+            Environment.SetEnvironmentVariable("osd", "Unsupported OS.")
+            MsgBox("Warning! Your version of Windows may be unsupported.")
+
+        End If
+
+        'Environment Variables for Windows Vista / 7
+        'Paths include "/" to ensure wanted files aren't deleted. 
+        'Command List is also adjusted accordingly. 
+        'E.g. %userprofile%temp.tmp and not %userprofile%\temp.tmp
+        If OS_WindowsVista Or OS_Windows7 = True Then
+            Environment.SetEnvironmentVariable("localappdata", Environ("userprofile") + "\AppData\Local\")
+            Environment.SetEnvironmentVariable("locallowappdata", Environ("userprofile") + "\AppData\LocalLow\")
+            Environment.SetEnvironmentVariable("recycle", Environ("systemdrive") + "\$Recycle.Bin")
+            Environment.SetEnvironmentVariable("recent", Environ("appdata") + "\Microsoft\Windows\Recent\")
+            Environment.SetEnvironmentVariable("cookies", Environ("appdata") + "\Microsoft\Windows\Cookies\")
+            Environment.SetEnvironmentVariable("history", Environ("localappdata") + "\Microsoft\Windows\History\")
+            Environment.SetEnvironmentVariable("tif", Environ("localappdata") + "\Microsoft\Windows\Temporary Internet Files\")
+            Environment.SetEnvironmentVariable("allusersappdata", Environ("allusersprofile"))
+        Else 'Use the Environment Variables for Windows XP, An unsupported OS will use these settings
+            Environment.SetEnvironmentVariable("localappdata", Environ("userprofile") + "\Local Settings\Application Data\")
+            Environment.SetEnvironmentVariable("locallowappdata", "")
+            Environment.SetEnvironmentVariable("recycle", Environ("systemdrive") + "\recycler\")
+            Environment.SetEnvironmentVariable("recent", Environ("userprofile") + "\Recent\")
+            Environment.SetEnvironmentVariable("cookies", Environ("userprofile") + "\Cookies\")
+            Environment.SetEnvironmentVariable("history", Environ("userprofile") + "\Local Settings\History\")
+            Environment.SetEnvironmentVariable("tif", Environ("userprofile") + "\Local Settings\Temporary Internet Files\")
+            Environment.SetEnvironmentVariable("allusersappdata", Environ("allusersprofile") + "\Application Data\")
+        End If
+        'Version
+        Environment.SetEnvironmentVariable("version", My.Application.Info.Version.Major & "." & My.Application.Info.Version.Minor & "." & My.Application.Info.Version.Build & "." & My.Application.Info.Version.Revision)
+        'Version as a value (1 decimal place)
+        Environment.SetEnvironmentVariable("version_value", My.Application.Info.Version.Major & "." & My.Application.Info.Version.Minor & My.Application.Info.Version.Build & My.Application.Info.Version.Revision)
+
+        'KVP Lists
+        'List of Current Options here get added to the Dictionary so they can be referenced
+        'Common Options
+        d1.Add(cbRecycle, CommandList.txtRecycle)
+        d1.Add(cbTemp, CommandList.txtTemp)
+        d1.Add(cbRecent, CommandList.txtRecent)
+        d1.Add(cbTIF, CommandList.txtTIF)
+        d1.Add(cbAltBrowser, CommandList.txtAltBrowser)
+        d1.Add(cbWindowsUpdate, CommandList.txtWindowsUpdate)
+        d1.Add(cbJava, CommandList.txtJava)
+        d1.Add(cbFlash, CommandList.txtFlash)
+        d1.Add(cbMessenger, CommandList.txtMessenger)
+
+        'OtherCaches
+        d2.Add(cbVistaSP1, OtherCaches.txtVistaSP1)
+        d2.Add(cbVistaSP2, OtherCaches.txtVistaSP2)
+        d2.Add(cbHibernate, OtherCaches.txtHibernate)
+        d2.Add(cbErrorReports, OtherCaches.txtErrorReports)
+        d2.Add(cbSampleVideos, OtherCaches.txtSampleVideos)
+        d2.Add(cbAdobeCameraRAW, OtherCaches.txtAdobeCameraRAW)
+        d2.Add(cbAdobeReader, OtherCaches.txtAdobeReader)
+        d2.Add(cbAppleInstaller, OtherCaches.txtAppleInstaller)
+        d2.Add(cbAVG, OtherCaches.txtAVG)
+        d2.Add(cbGIMP, OtherCaches.txtGIMP)
+        d2.Add(cbGoogleEarth, OtherCaches.txtGoogleEarth)
+        d2.Add(cbGoogleUpdater, OtherCaches.txtGoogleUpdater)
+        d2.Add(cbHPDigitalImaging, OtherCaches.txtHPDigitalImaging)
+        d2.Add(cbiTunes, OtherCaches.txtiTunes)
+        d2.Add(cbKaspersky, OtherCaches.txtKaspersky)
+        d2.Add(cbNokiaOvi, OtherCaches.txtNokiaOvi)
+        d2.Add(cbQuicktime, OtherCaches.txtQuicktime)
+        d2.Add(cbSilverlight, OtherCaches.txtSilverlight)
+        d2.Add(cbSpotify, OtherCaches.txtSpotify)
+        d2.Add(cbSymantec, OtherCaches.txtSymantec)
+        d2.Add(cbUnity, OtherCaches.txtUnity)
+
+        'File Extensions
+        d3.Add(cbTMP, CommandList.txtTMP)
+        d3.Add(cbLOG, CommandList.txtLOG)
+        d3.Add(cbCHK, CommandList.txtCHK)
+        d3.Add(cbDMP, CommandList.txtDMP)
+        d3.Add(cb_MP, CommandList.txt_MP)
+        d3.Add(cbERR, CommandList.txtERR)
+
+        'If certain files dont exist then delete their button
+        Detect.Definitions()
+        Checkbox_Count()
+    End Sub
+
+    Private Sub Main_FormClosing(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+        'Ensure all forms are closed
+        CommandList.Close()
+        OtherCaches.Close()
+        'CleanerWindow is not closed as Main closes and CleanerWindow opens when "Start Cleanup" is clicked
+        Detect.Close()
+        About.Close()
+    End Sub
+
+    Public Sub Checkbox_Count()
+        'Reset values
+        cbCount = 0
+        cbCheckedCount = 0
+        'Make cbCount = Number of visible checkboxes
+        For Each Me.item In FlowLayout.Controls
+            If TypeOf item Is CheckBox Then
+                If item.Visible = True Then
+                    cbCount = cbCount + 1
+                End If
+                'Make cbCheckedCount = Number of checked boxes
+                If item.Checked = True Then
+                    cbCheckedCount = cbCheckedCount + 1
+                End If
+            End If
+        Next
+    End Sub
+
+    Public Sub Uncheck_Invisible()
+        'Makes sure there that all invisible checkboxes are unchecked to help cbCheckedCount
+        For Each Me.item In FlowLayout.Controls
+            If TypeOf item Is CheckBox Then
+                If item.Visible = False Then
+                    item.Checked = False
+                End If
+            End If
+        Next
+    End Sub
+
+    Public Sub KillMsg()
+        Dim Proc() As Process = Process.GetProcesses
+        For i As Integer = 0 To Proc.GetUpperBound(0)
+            If Proc(i).ProcessName = MsgProcess Then
+                MsgConfirmKill = MsgBox(MsgApp & MsgString, MsgBoxStyle.YesNo)
+                If MsgConfirmKill = MsgBoxResult.Yes Then
+                    KillProcess(MsgProcess)
+                    Ready = 1
+                ElseIf MsgConfirmKill = MsgBoxResult.No Then
+                    Ready = 2
+                End If
+                MsgProcess = "" 'Added to stop the message repeating
+            End If
+        Next
+    End Sub
+
+    Public Sub KillProcess(ByRef strProcessToKill As String)
+        Dim Proc() As Process = Process.GetProcesses
+        For i As Integer = 0 To Proc.GetUpperBound(0)
+            If Proc(i).ProcessName = strProcessToKill Then
+                Proc(i).Kill()
+            End If
+        Next
+    End Sub
+End Class

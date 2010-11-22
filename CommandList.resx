@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="txtTemp.Text" xml:space="preserve">
+    <value>echo Q2 &gt;"%appdata%\DriveTidy\cleanchk.txt"
+echo Clearing temporary files...
+del /f /s /q "%temp%"
+rd /s /q "%temp%"
+del /f /s /q "%locallowappdata%\Temp\*.*"
+rd /s /q "%locallowappdata%\Temp\"
+echo Q3 &gt;"%appdata%\DriveTidy\cleanchk.txt"
+del /f /s /q "%windir%\Temp\*.*"
+rd /s /q "%windir%\Temp\"
+md "%windir%\Temp\"
+del /f /s /q "%userprofile%\temp\*.*"
+rd /s /q "%userprofile%\temp\"
+del /f /s /q "%allusersappdata%\Temp\*.*"
+rd /s /q "%allusersappdata%\Temp\"
+del /f /s /q "%systemdrive%\temp\*.*"
+rd /s /q "%systemdrive%\temp\"
+del /f /s /q "%systemdrive%\Users\Temp\AppData\Local\Temp\*.*"
+rd /s /q "%systemdrive%\Users\Temp\AppData\Local\Temp\"
+del /f /s /q "%allusersappdata%\Microsoft\Search\Data\Temp\*.*"
+rd /s /q "%allusersappdata%\Microsoft\Search\Data\Temp\"</value>
+  </data>
+  <data name="txtTIF.Text" xml:space="preserve">
+    <value>echo Q5 &gt;"%appdata%\DriveTidy\cleanchk.txt"
+echo Clearing temporary internet files and caches...
+del /f /s /q "%cookies%"
+rd /s /q "%cookies%"
+echo Q6 &gt;"%appdata%\DriveTidy\cleanchk.txt"
+del /f /s /q "%history%"
+rd /s /q "%history%"
+del /f /s /q "%tif%"
+rd /s /q "%tif%"
+start /wait RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 1
+start /wait RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 2
+start /wait RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8</value>
+  </data>
+  <data name="txtAltBrowser.Text" xml:space="preserve">
+    <value>echo Q7 &gt;"%appdata%\DriveTidy\cleanchk.txt"
+echo Clearing browser caches...
+
+:Firefox
+del /f /s /q "%localappdata%\Mozilla\Firefox\Profiles\*.*"
+rd /s /q "%localappdata%\Mozilla\Firefox\Profiles\"
+del /f /s /q "%appdata%\Mozilla\Firefox\Crash Reports\*.*"
+rd /s /q "%appdata%\Mozilla\Firefox\Crash Reports\"
+
+:Opera1
+IF NOT EXIST "%localappdata%\Opera" GOTO Opera2
+pushd "%localappdata%\Opera" ||goto :eof
+for /d %%a in (Opera*) do (
+del /f /s /q "%%a\cache4\*.*"
+rd /s /q "%%a\cache4\"
+del /f /s /q "%%a\cache\*.*"
+rd /s /q "%%a\cache\"
+del /f /s /q "%%a\vps\*.*"
+rd /s /q "%%a\vps\"
+
+del /f /s /q "%%a\profile\cache4\*.*"
+rd /s /q "%%a\profile\cache4\"
+del /f /s /q "%%a\profile\cache\*.*"
+rd /s /q "%%a\profile\cache\"
+del /f /s /q "%%a\profile\vps\*.*"
+rd /s /q "%%a\profile\vps\"
+)
+popd
+
+:Opera2
+IF NOT EXIST "%appdata%\Opera" GOTO GoogleChrome
+pushd "%appdata%\Opera" ||goto :eof
+for /d %%a in (Opera*) do (
+del /f /q "%%a\global.dat"
+del /f /q "%%a\global_history.dat"
+del /f /q "%%a\download.dat"
+del /f /q "%%a\vlink4.dat"
+del /f /q "%%a\typed_history.xml"
+del /f /q "%%a\sessions\autosave.win"
+
+del /f /q "%%a\profile\global.dat"
+del /f /q "%%a\profile\global_history.dat"
+del /f /q "%%a\profile\download.dat"
+del /f /q "%%a\profile\vlink4.dat"
+del /f /q "%%a\profile\typed_history.xml"
+del /f /q "%%a\profile\sessions\autosave.win"
+)
+popd
+
+:GoogleChrome
+del /f /s /q "%localappdata%\Google\Chrome\User Data\Default\Cache\*.*"
+rd /s /q "%localappdata%\Google\Chrome\User Data\Default\Cache\"
+del /f /s /q "%localappdata%\Google\Chrome\User Data\Default\Media Cache\*.*"
+rd /s /q "%localappdata%\Google\Chrome\User Data\Default\Media Cache\"
+del /f /q "%localappdata%\Google\Chrome\User Data\Default\Archived History"
+del /f /q "%localappdata%\Google\Chrome\User Data\Default\Cookies"
+del /f /q "%localappdata%\Google\Chrome\User Data\Default\Current Session"
+del /f /q "%localappdata%\Google\Chrome\User Data\Default\Current Tabs"
+del /f /q "%localappdata%\Google\Chrome\User Data\Default\Extension Cookies"
+del /f /q "%localappdata%\Google\Chrome\User Data\Default\History*"
+del /f /q "%localappdata%\Google\Chrome\User Data\Default\Last Session"
+del /f /q "%localappdata%\Google\Chrome\User Data\Default\Last Tabs"
+del /f /q "%localappdata%\Google\Chrome\User Data\Default\Thumbnails"
+
+:Safari
+del /f /q "%appdata%\Apple Computer\Safari\Cookies\Cookies.plist"
+del /f /q "%appdata%\Apple Computer\Safari\Downloads.plist"
+del /f /q "%appdata%\Apple Computer\Safari\History.plist"
+del /f /q "%appdata%\Apple Computer\Safari\LastSession.plist"
+del /f /q "%localappdata%\Apple Computer\Safari\Cache.db"
+del /f /s /q "%localappdata%\Apple Computer\Safari\History\*.*"
+rd /s /q "%localappdata%\Apple Computer\Safari\History\"
+del /f /s /q "%localappdata%\Apple Computer\Safari\LocalStorage\*.*"
+rd /s /q "%localappdata%\Apple Computer\Safari\LocalStorage\"
+del /f /s /q "%localappdata%\Apple Computer\Safari\Webpage Previews\*.*"
+rd /s /q "%localappdata%\Apple Computer\Safari\Webpage Previews\"
+
+:Flock
+del /f /s /q "%localappdata%\Flock\Browser\Profiles\*.*"
+rd /s /q "%localappdata%\Flock\Browser\Profiles\"</value>
+  </data>
+  <data name="txtWindowsUpdate.Text" xml:space="preserve">
+    <value>echo Q8 &gt;"%appdata%\DriveTidy\cleanchk.txt"
+echo Clearing Windows Update cache...
+del /f /s /q "%windir%\SoftwareDistribution\Download\*.*"
+rd /s /q "%windir%\SoftwareDistribution\Download\"
+del /f /s /q "%windir%\Installer\$PatchCache$\*.*"
+rd /s /q "%windir%\Installer\$PatchCache$\"</value>
+  </data>
+  <data name="txtJava.Text" xml:space="preserve">
+    <value>echo Q9 &gt;"%appdata%\DriveTidy\cleanchk.txt"
+echo Clearing java cache...
+del /f /s /q "%appdata%\Sun\Java\Deployment\cache\*.*"
+rd /s /q "%appdata%\Sun\Java\Deployment\cache\"
+del /f /s /q "%appdata%\Sun\Java\Deployment\javaws\cache\*.*"
+rd /s /q "%appdata%\Sun\Java\Deployment\javaws\cache\"
+del /f /s /q "%appdata%\Sun\Java\Deployment\log\*.*"
+rd /s /q "%appdata%\Sun\Java\Deployment\log\"
+del /f /s /q "%appdata%\Sun\Java\Deployment\tmp\*.*"
+rd /s /q "%appdata%\Sun\Java\Deployment\tmp\"
+del /f /s /q "%localappdata%\Sun\Java\Deployment\cache\*.*"
+rd /s /q "%localappdata%\Sun\Java\Deployment\cache\"
+del /f /s /q "%localappdata%\Sun\Java\Deployment\log\*.*"
+rd /s /q "%localappdata%\Sun\Java\Deployment\log\"
+del /f /s /q "%localappdata%\Sun\Java\Deployment\tmp\*.*"
+rd /s /q "%localappdata%\Sun\Java\Deployment\tmp\"
+del /f /s /q "%locallowappdata%\Sun\Java\Deployment\cache\*.*"
+rd /s /q "%locallowappdata%\Sun\Java\Deployment\cache\"
+del /f /s /q "%locallowappdata%\Sun\Java\Deployment\log\*.*"
+rd /s /q "%locallowappdata%\Sun\Java\Deployment\log\"
+del /f /s /q "%locallowappdata%\Sun\Java\Deployment\tmp\*.*"
+rd /s /q "%locallowappdata%\Sun\Java\Deployment\tmp\"</value>
+  </data>
+  <data name="txtFlash.Text" xml:space="preserve">
+    <value>echo Q10 &gt;"%appdata%\DriveTidy\cleanchk.txt"
+echo Clearing flash player cache...
+del /f /s /q "%appdata%\Adobe\Flash Player\AssetCache\*.*"
+rd /s /q "%appdata%\Adobe\Flash Player\AssetCache\"
+del /f /s /q "%appdata%\Macromedia\Flash Player\*.*"
+rd /s /q "%appdata%\Macromedia\Flash Player\"</value>
+  </data>
+  <data name="txtMessenger.Text" xml:space="preserve">
+    <value>echo Q11 &gt;"%appdata%\DriveTidy\cleanchk.txt"
+echo Clearing messenger caches...
+del /f /s /q "%appdata%\Microsoft\MSN Messenger\*.*"
+rd /s /q "%appdata%\Microsoft\MSN Messenger\"
+del /f /q "%localappdata%\Microsoft\Messenger\ContactsLog.txt"
+del /f /s /q "%localappdata%\Microsoft\Windows Live Contacts\*.*"
+rd /s /q "%localappdata%\Microsoft\Windows Live Contacts\"
+del /f /s /q "%commonprogramfiles%\Windows Live\.cache\*.*"
+rd /s /q "%commonprogramfiles%\Windows Live\.cache\"
+del /f /s /q "%commonprogramfiles(x86)%\Windows Live\.cache\*.*"
+rd /s /q "%commonprogramfiles(x86)%\Windows Live\.cache\"
+del /f /s /q "%userprofile%\Contacts\*.*"
+rd /s /q "%userprofile%\Contacts\"
+del /f /q "%systemdrive%\*.sqm"
+del /f /s /q "%commonprogramfiles%\WindowsLiveInstaller\Temp\*.*"
+rd /s /q "%commonprogramfiles%\WindowsLiveInstaller\Temp\"
+del /f /s /q "%commonprogramfiles(x86)%\WindowsLiveInstaller\Temp\*.*"
+rd /s /q "%commonprogramfiles(x86)%\WindowsLiveInstaller\Temp\"
+del /f /s /q "%commonprogramfiles%\WindowsLiveInstaller\Logs\*.*"
+rd /s /q "%commonprogramfiles%\WindowsLiveInstaller\Logs\"
+del /f /s /q "%commonprogramfiles(x86)%\WindowsLiveInstaller\Logs\*.*"
+rd /s /q "%commonprogramfiles(x86)%\WindowsLiveInstaller\Logs\"
+del /f /s /q "%appdata%\acccore\caches\bart\*.*"
+rd /s /q "%appdata%\acccore\caches\bart\"
+del /f /s /q "%localappdata%\AIM\Settings\aolbartcache\*.*"
+rd /s /q "%localappdata%\AIM\Settings\aolbartcache\"
+del /f /s /q "%ProgramFiles%\Yahoo!\Messenger\Cache\*.*"
+rd /s /q "%ProgramFiles%\Yahoo!\Messenger\Cache\"
+del /f /s /q "%ProgramFiles%\Yahoo!\Messenger\IMVCache\*.*"
+rd /s /q "%ProgramFiles%\Yahoo!\Messenger\IMVCache\"</value>
+  </data>
+</root>
