@@ -63,7 +63,7 @@ Partial Class OtherCaches
         '
         'txtAdobeCameraRAW
         '
-        Me.txtAdobeCameraRAW.Location = New System.Drawing.Point(3, 396)
+        Me.txtAdobeCameraRAW.Location = New System.Drawing.Point(3, 414)
         Me.txtAdobeCameraRAW.Multiline = True
         Me.txtAdobeCameraRAW.Name = "txtAdobeCameraRAW"
         Me.txtAdobeCameraRAW.Size = New System.Drawing.Size(390, 52)
@@ -118,38 +118,40 @@ Partial Class OtherCaches
         Me.txtVistaSP1.Location = New System.Drawing.Point(3, 31)
         Me.txtVistaSP1.Multiline = True
         Me.txtVistaSP1.Name = "txtVistaSP1"
-        Me.txtVistaSP1.Size = New System.Drawing.Size(174, 52)
+        Me.txtVistaSP1.Size = New System.Drawing.Size(252, 61)
         Me.txtVistaSP1.TabIndex = 64
         Me.txtVistaSP1.Text = "echo Vista SP1 Cleanup..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo VSP1 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "start /" & _
-            "wait %windir%\System32\vsp1cln.exe /quiet"
+            "wait %windir%\System32\vsp1cln.exe /quiet" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo Q12 >""%appdata%\DriveTidy\cleanc" & _
+            "hk.txt"""
         Me.txtVistaSP1.WordWrap = False
         '
         'txtVistaSP2
         '
-        Me.txtVistaSP2.Location = New System.Drawing.Point(3, 89)
+        Me.txtVistaSP2.Location = New System.Drawing.Point(3, 98)
         Me.txtVistaSP2.Multiline = True
         Me.txtVistaSP2.Name = "txtVistaSP2"
-        Me.txtVistaSP2.Size = New System.Drawing.Size(174, 52)
+        Me.txtVistaSP2.Size = New System.Drawing.Size(252, 61)
         Me.txtVistaSP2.TabIndex = 63
         Me.txtVistaSP2.Text = "echo Vista SP2 Cleanup..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo VSP2 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "start /" & _
-            "wait %windir%\System32\compcln.exe /quiet"
+            "wait %windir%\System32\compcln.exe /quiet" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo Q12 >""%appdata%\DriveTidy\cleanc" & _
+            "hk.txt"""
         Me.txtVistaSP2.WordWrap = False
         '
         'txtHibernate
         '
-        Me.txtHibernate.Location = New System.Drawing.Point(3, 147)
+        Me.txtHibernate.Location = New System.Drawing.Point(3, 165)
         Me.txtHibernate.Multiline = True
         Me.txtHibernate.Name = "txtHibernate"
-        Me.txtHibernate.Size = New System.Drawing.Size(174, 50)
+        Me.txtHibernate.Size = New System.Drawing.Size(340, 50)
         Me.txtHibernate.TabIndex = 66
         Me.txtHibernate.Text = "echo Disabling Hibernate..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "powercfg /hibernate off" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo You chose to disable h" & _
-            "ibernate. To re-enable it see http://support.microsoft.com/kb/920730 for more in" & _
-            "fo."
+            "ibernate. To re-enable it see: http://support.microsoft.com/kb/920730 for more i" & _
+            "nfo."
         Me.txtHibernate.WordWrap = False
         '
         'txtErrorReports
         '
-        Me.txtErrorReports.Location = New System.Drawing.Point(3, 203)
+        Me.txtErrorReports.Location = New System.Drawing.Point(3, 221)
         Me.txtErrorReports.Multiline = True
         Me.txtErrorReports.Name = "txtErrorReports"
         Me.txtErrorReports.Size = New System.Drawing.Size(390, 129)
@@ -158,7 +160,7 @@ Partial Class OtherCaches
         '
         'txtSampleVideos
         '
-        Me.txtSampleVideos.Location = New System.Drawing.Point(3, 338)
+        Me.txtSampleVideos.Location = New System.Drawing.Point(3, 356)
         Me.txtSampleVideos.Multiline = True
         Me.txtSampleVideos.Name = "txtSampleVideos"
         Me.txtSampleVideos.Size = New System.Drawing.Size(390, 52)
@@ -169,7 +171,7 @@ Partial Class OtherCaches
         '
         'txtAdobeReader
         '
-        Me.txtAdobeReader.Location = New System.Drawing.Point(3, 454)
+        Me.txtAdobeReader.Location = New System.Drawing.Point(3, 472)
         Me.txtAdobeReader.Multiline = True
         Me.txtAdobeReader.Name = "txtAdobeReader"
         Me.txtAdobeReader.Size = New System.Drawing.Size(390, 105)
@@ -178,7 +180,7 @@ Partial Class OtherCaches
         '
         'txtAppleInstaller
         '
-        Me.txtAppleInstaller.Location = New System.Drawing.Point(3, 565)
+        Me.txtAppleInstaller.Location = New System.Drawing.Point(3, 583)
         Me.txtAppleInstaller.Multiline = True
         Me.txtAppleInstaller.Name = "txtAppleInstaller"
         Me.txtAppleInstaller.Size = New System.Drawing.Size(390, 75)
@@ -187,7 +189,7 @@ Partial Class OtherCaches
         '
         'txtAVG
         '
-        Me.txtAVG.Location = New System.Drawing.Point(3, 646)
+        Me.txtAVG.Location = New System.Drawing.Point(3, 664)
         Me.txtAVG.Multiline = True
         Me.txtAVG.Name = "txtAVG"
         Me.txtAVG.Size = New System.Drawing.Size(390, 112)
@@ -196,7 +198,7 @@ Partial Class OtherCaches
         '
         'txtGIMP
         '
-        Me.txtGIMP.Location = New System.Drawing.Point(3, 764)
+        Me.txtGIMP.Location = New System.Drawing.Point(3, 782)
         Me.txtGIMP.Multiline = True
         Me.txtGIMP.Name = "txtGIMP"
         Me.txtGIMP.Size = New System.Drawing.Size(390, 47)
@@ -206,7 +208,7 @@ Partial Class OtherCaches
         '
         'txtGoogleEarth
         '
-        Me.txtGoogleEarth.Location = New System.Drawing.Point(3, 817)
+        Me.txtGoogleEarth.Location = New System.Drawing.Point(3, 835)
         Me.txtGoogleEarth.Multiline = True
         Me.txtGoogleEarth.Name = "txtGoogleEarth"
         Me.txtGoogleEarth.Size = New System.Drawing.Size(390, 75)
@@ -215,7 +217,7 @@ Partial Class OtherCaches
         '
         'txtGoogleUpdater
         '
-        Me.txtGoogleUpdater.Location = New System.Drawing.Point(3, 898)
+        Me.txtGoogleUpdater.Location = New System.Drawing.Point(3, 916)
         Me.txtGoogleUpdater.Multiline = True
         Me.txtGoogleUpdater.Name = "txtGoogleUpdater"
         Me.txtGoogleUpdater.Size = New System.Drawing.Size(390, 50)
@@ -225,7 +227,7 @@ Partial Class OtherCaches
         '
         'txtHPDigitalImaging
         '
-        Me.txtHPDigitalImaging.Location = New System.Drawing.Point(3, 954)
+        Me.txtHPDigitalImaging.Location = New System.Drawing.Point(3, 972)
         Me.txtHPDigitalImaging.Multiline = True
         Me.txtHPDigitalImaging.Name = "txtHPDigitalImaging"
         Me.txtHPDigitalImaging.Size = New System.Drawing.Size(390, 50)
@@ -235,7 +237,7 @@ Partial Class OtherCaches
         '
         'txtiTunes
         '
-        Me.txtiTunes.Location = New System.Drawing.Point(3, 1010)
+        Me.txtiTunes.Location = New System.Drawing.Point(3, 1028)
         Me.txtiTunes.Multiline = True
         Me.txtiTunes.Name = "txtiTunes"
         Me.txtiTunes.Size = New System.Drawing.Size(390, 50)
@@ -245,7 +247,7 @@ Partial Class OtherCaches
         '
         'txtKaspersky
         '
-        Me.txtKaspersky.Location = New System.Drawing.Point(3, 1066)
+        Me.txtKaspersky.Location = New System.Drawing.Point(3, 1084)
         Me.txtKaspersky.Multiline = True
         Me.txtKaspersky.Name = "txtKaspersky"
         Me.txtKaspersky.Size = New System.Drawing.Size(390, 171)
@@ -254,7 +256,7 @@ Partial Class OtherCaches
         '
         'txtNokiaOvi
         '
-        Me.txtNokiaOvi.Location = New System.Drawing.Point(3, 1243)
+        Me.txtNokiaOvi.Location = New System.Drawing.Point(3, 1261)
         Me.txtNokiaOvi.Multiline = True
         Me.txtNokiaOvi.Name = "txtNokiaOvi"
         Me.txtNokiaOvi.Size = New System.Drawing.Size(390, 51)
@@ -264,7 +266,7 @@ Partial Class OtherCaches
         '
         'txtQuicktime
         '
-        Me.txtQuicktime.Location = New System.Drawing.Point(3, 1300)
+        Me.txtQuicktime.Location = New System.Drawing.Point(3, 1318)
         Me.txtQuicktime.Multiline = True
         Me.txtQuicktime.Name = "txtQuicktime"
         Me.txtQuicktime.Size = New System.Drawing.Size(390, 72)
@@ -273,7 +275,7 @@ Partial Class OtherCaches
         '
         'txtSilverlight
         '
-        Me.txtSilverlight.Location = New System.Drawing.Point(3, 1378)
+        Me.txtSilverlight.Location = New System.Drawing.Point(3, 1396)
         Me.txtSilverlight.Multiline = True
         Me.txtSilverlight.Name = "txtSilverlight"
         Me.txtSilverlight.Size = New System.Drawing.Size(390, 72)
@@ -282,7 +284,7 @@ Partial Class OtherCaches
         '
         'txtSpotify
         '
-        Me.txtSpotify.Location = New System.Drawing.Point(3, 1456)
+        Me.txtSpotify.Location = New System.Drawing.Point(3, 1474)
         Me.txtSpotify.Multiline = True
         Me.txtSpotify.Name = "txtSpotify"
         Me.txtSpotify.Size = New System.Drawing.Size(390, 46)
@@ -292,7 +294,7 @@ Partial Class OtherCaches
         '
         'txtSymantec
         '
-        Me.txtSymantec.Location = New System.Drawing.Point(3, 1508)
+        Me.txtSymantec.Location = New System.Drawing.Point(3, 1526)
         Me.txtSymantec.Multiline = True
         Me.txtSymantec.Name = "txtSymantec"
         Me.txtSymantec.Size = New System.Drawing.Size(390, 46)
@@ -302,7 +304,7 @@ Partial Class OtherCaches
         '
         'txtUnity
         '
-        Me.txtUnity.Location = New System.Drawing.Point(3, 1560)
+        Me.txtUnity.Location = New System.Drawing.Point(3, 1578)
         Me.txtUnity.Multiline = True
         Me.txtUnity.Name = "txtUnity"
         Me.txtUnity.Size = New System.Drawing.Size(390, 71)
@@ -311,7 +313,7 @@ Partial Class OtherCaches
         '
         'txtQ13
         '
-        Me.txtQ13.Location = New System.Drawing.Point(3, 1637)
+        Me.txtQ13.Location = New System.Drawing.Point(3, 1655)
         Me.txtQ13.Multiline = True
         Me.txtQ13.Name = "txtQ13"
         Me.txtQ13.Size = New System.Drawing.Size(390, 21)
