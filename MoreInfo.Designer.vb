@@ -23,29 +23,29 @@ Partial Class MoreInfo
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MoreInfo))
-        Me.txtFAQ = New System.Windows.Forms.TextBox
+        Me.txtReadme = New System.Windows.Forms.TextBox
         Me.SuspendLayout()
         '
-        'txtFAQ
+        'txtReadme
         '
-        Me.txtFAQ.Location = New System.Drawing.Point(0, 0)
-        Me.txtFAQ.Multiline = True
-        Me.txtFAQ.Name = "txtFAQ"
-        Me.txtFAQ.Size = New System.Drawing.Size(251, 192)
-        Me.txtFAQ.TabIndex = 0
-        Me.txtFAQ.Text = resources.GetString("txtFAQ.Text")
+        Me.txtReadme.Location = New System.Drawing.Point(0, 0)
+        Me.txtReadme.Multiline = True
+        Me.txtReadme.Name = "txtReadme"
+        Me.txtReadme.Size = New System.Drawing.Size(251, 192)
+        Me.txtReadme.TabIndex = 0
+        Me.txtReadme.Text = resources.GetString("txtReadme.Text")
         '
         'MoreInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(249, 190)
-        Me.Controls.Add(Me.txtFAQ)
+        Me.Controls.Add(Me.txtReadme)
         Me.Name = "MoreInfo"
         Me.Text = "More Info..."
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents txtFAQ As System.Windows.Forms.TextBox
+    Friend WithEvents txtReadme As System.Windows.Forms.TextBox
 End Class

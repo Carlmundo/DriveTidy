@@ -1,8 +1,7 @@
 ﻿Public Class About
 
     Private Declare Function ShellExecute Lib "shell32.dll" Alias "ShellExecuteA" (ByVal hwnd As Integer, ByVal lpOperation As String, ByVal lpFile As String, ByVal lpParameters As String, ByVal lpDirectory As String, ByVal nShowCmd As Integer) As Integer
-
-        'Allows Downloading of file
+    'Allows Downloading of file
     Private Declare Function URLDownloadToFile Lib "urlmon" Alias "URLDownloadToFileA" (ByVal pCaller As Integer, ByVal szURL As String, ByVal szFileName As String, ByVal dwReserved As Integer, ByVal lpfnCB As Integer) As Integer
 
     Protected Overrides Sub OnPaint(ByVal e As PaintEventArgs)
@@ -24,7 +23,7 @@
     Private Sub About_FormClosing(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         On Error Resume Next
         My.Computer.FileSystem.DeleteFile(Environ("temp") & "\build.txt")
-        My.Computer.FileSystem.DeleteFile(Environ("temp") & "\DriveTidy FAQ.txt")
+        My.Computer.FileSystem.DeleteFile(Environ("temp") & "\DriveTidy_Readme.txt")
         Main.Top = Me.Top
         Main.Left = Me.Left
         Main.Show()
@@ -77,9 +76,9 @@ UpdateCheckFailed:
     End Sub
 
     Private Sub cmdMoreInfo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdMoreInfo.Click
-        FileOpen(6, Environ("temp") & "\DriveTidy FAQ.txt", OpenMode.Output)
-        PrintLine(6, MoreInfo.txtFAQ.Text)
+        FileOpen(6, Environ("temp") & "\DriveTidy_Readme.txt", OpenMode.Output)
+        PrintLine(6, MoreInfo.txtReadme.Text)
         FileClose(6)
-        ShellExecute(0, vbNullString, "notepad", Environ("temp") & "\DriveTidy FAQ.txt", vbNullString, AppWinStyle.NormalFocus)
+        ShellExecute(0, vbNullString, "notepad", Environ("temp") & "\DriveTidy_Readme.txt", vbNullString, AppWinStyle.NormalFocus)
     End Sub
 End Class
