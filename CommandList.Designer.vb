@@ -96,7 +96,7 @@ Partial Class CommandList
         Me.txtRecycle.Size = New System.Drawing.Size(302, 55)
         Me.txtRecycle.TabIndex = 25
         Me.txtRecycle.Text = "echo Q1 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo Emptying Recycle Bin..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f" & _
-            " /s /q ""%recycle%""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "rd /s /q ""%recycle%"""
+            " /s /q ""%recycle%"""
         '
         'Label6
         '
