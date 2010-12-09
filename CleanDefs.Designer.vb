@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class CommandList
+Partial Class CleanDefs
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,28 +22,28 @@ Partial Class CommandList
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CommandList))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CleanDefs))
         Me.txtHeader = New System.Windows.Forms.TextBox
-        Me.Label4 = New System.Windows.Forms.Label
-        Me.Label5 = New System.Windows.Forms.Label
+        Me.lblHeader = New System.Windows.Forms.Label
+        Me.lblRecycle = New System.Windows.Forms.Label
         Me.txtRecycle = New System.Windows.Forms.TextBox
-        Me.Label6 = New System.Windows.Forms.Label
+        Me.lblTemp = New System.Windows.Forms.Label
         Me.txtTemp = New System.Windows.Forms.TextBox
-        Me.Label1 = New System.Windows.Forms.Label
+        Me.lblRecent = New System.Windows.Forms.Label
         Me.txtRecent = New System.Windows.Forms.TextBox
-        Me.Label7 = New System.Windows.Forms.Label
+        Me.lblTIF = New System.Windows.Forms.Label
         Me.txtTIF = New System.Windows.Forms.TextBox
-        Me.Label8 = New System.Windows.Forms.Label
-        Me.txtAltBrowser = New System.Windows.Forms.TextBox
-        Me.Label9 = New System.Windows.Forms.Label
+        Me.lblFirefox = New System.Windows.Forms.Label
+        Me.txtFirefox = New System.Windows.Forms.TextBox
+        Me.lblWindowsUpdate = New System.Windows.Forms.Label
         Me.txtWindowsUpdate = New System.Windows.Forms.TextBox
-        Me.Label10 = New System.Windows.Forms.Label
+        Me.lblJava = New System.Windows.Forms.Label
         Me.txtJava = New System.Windows.Forms.TextBox
-        Me.Label11 = New System.Windows.Forms.Label
+        Me.lblFlash = New System.Windows.Forms.Label
         Me.txtFlash = New System.Windows.Forms.TextBox
-        Me.Label12 = New System.Windows.Forms.Label
+        Me.lblMessenger = New System.Windows.Forms.Label
         Me.txtMessenger = New System.Windows.Forms.TextBox
-        Me.Label2 = New System.Windows.Forms.Label
+        Me.lblStart = New System.Windows.Forms.Label
         Me.txtStart1 = New System.Windows.Forms.TextBox
         Me.txtTMP = New System.Windows.Forms.TextBox
         Me.txtLOG = New System.Windows.Forms.TextBox
@@ -51,228 +51,238 @@ Partial Class CommandList
         Me.txtDMP = New System.Windows.Forms.TextBox
         Me.txt_MP = New System.Windows.Forms.TextBox
         Me.txtERR = New System.Windows.Forms.TextBox
-        Me.Label3 = New System.Windows.Forms.Label
+        Me.lblFinish = New System.Windows.Forms.Label
         Me.txtFinish = New System.Windows.Forms.TextBox
         Me.txtAttribRecycle = New System.Windows.Forms.TextBox
         Me.txtAttribSQM = New System.Windows.Forms.TextBox
         Me.txtStart2 = New System.Windows.Forms.TextBox
+        Me.txtOpera = New System.Windows.Forms.TextBox
+        Me.txtChrome = New System.Windows.Forms.TextBox
+        Me.lblOpera = New System.Windows.Forms.Label
+        Me.txtSafari = New System.Windows.Forms.TextBox
+        Me.lblChrome = New System.Windows.Forms.Label
+        Me.lblSafari = New System.Windows.Forms.Label
+        Me.txtErrorReports = New System.Windows.Forms.TextBox
+        Me.lblErrorReports = New System.Windows.Forms.Label
+        Me.lblFileExt = New System.Windows.Forms.Label
+        Me.lblAttrib = New System.Windows.Forms.Label
         Me.SuspendLayout()
         '
         'txtHeader
         '
-        Me.txtHeader.Location = New System.Drawing.Point(378, 34)
+        Me.txtHeader.Location = New System.Drawing.Point(198, 34)
         Me.txtHeader.Multiline = True
         Me.txtHeader.Name = "txtHeader"
         Me.txtHeader.Size = New System.Drawing.Size(107, 84)
         Me.txtHeader.TabIndex = 23
         Me.txtHeader.Text = "@echo off" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "cd %temp%" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo DriveTidy %version%" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo %osd%" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo ..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
-        'Label4
+        'lblHeader
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(374, 9)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(76, 22)
-        Me.Label4.TabIndex = 24
-        Me.Label4.Text = "Header"
+        Me.lblHeader.AutoSize = True
+        Me.lblHeader.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHeader.Location = New System.Drawing.Point(194, 9)
+        Me.lblHeader.Name = "lblHeader"
+        Me.lblHeader.Size = New System.Drawing.Size(76, 22)
+        Me.lblHeader.TabIndex = 24
+        Me.lblHeader.Text = "Header"
         '
-        'Label5
+        'lblRecycle
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(8, 126)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(119, 22)
-        Me.Label5.TabIndex = 26
-        Me.Label5.Text = "Recycle Bin"
+        Me.lblRecycle.AutoSize = True
+        Me.lblRecycle.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRecycle.Location = New System.Drawing.Point(8, 130)
+        Me.lblRecycle.Name = "lblRecycle"
+        Me.lblRecycle.Size = New System.Drawing.Size(119, 22)
+        Me.lblRecycle.TabIndex = 26
+        Me.lblRecycle.Text = "Recycle Bin"
         '
         'txtRecycle
         '
-        Me.txtRecycle.Location = New System.Drawing.Point(12, 151)
+        Me.txtRecycle.Location = New System.Drawing.Point(12, 155)
         Me.txtRecycle.Multiline = True
         Me.txtRecycle.Name = "txtRecycle"
         Me.txtRecycle.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtRecycle.Size = New System.Drawing.Size(302, 55)
+        Me.txtRecycle.Size = New System.Drawing.Size(228, 55)
         Me.txtRecycle.TabIndex = 25
         Me.txtRecycle.Text = "echo Q1 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo Emptying Recycle Bin..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f" & _
             " /s /q ""%recycle%"""
         '
-        'Label6
+        'lblTemp
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(8, 209)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(156, 22)
-        Me.Label6.TabIndex = 28
-        Me.Label6.Text = "Temporary files"
+        Me.lblTemp.AutoSize = True
+        Me.lblTemp.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTemp.Location = New System.Drawing.Point(242, 130)
+        Me.lblTemp.Name = "lblTemp"
+        Me.lblTemp.Size = New System.Drawing.Size(162, 22)
+        Me.lblTemp.TabIndex = 28
+        Me.lblTemp.Text = "Temporary Files"
         '
         'txtTemp
         '
-        Me.txtTemp.Location = New System.Drawing.Point(12, 234)
+        Me.txtTemp.Location = New System.Drawing.Point(247, 155)
         Me.txtTemp.Multiline = True
         Me.txtTemp.Name = "txtTemp"
         Me.txtTemp.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtTemp.Size = New System.Drawing.Size(302, 72)
+        Me.txtTemp.Size = New System.Drawing.Size(216, 55)
         Me.txtTemp.TabIndex = 27
         Me.txtTemp.Text = resources.GetString("txtTemp.Text")
         '
-        'Label1
+        'lblRecent
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(8, 309)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(245, 22)
-        Me.Label1.TabIndex = 30
-        Me.Label1.Text = "Recent accessed file data"
+        Me.lblRecent.AutoSize = True
+        Me.lblRecent.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRecent.Location = New System.Drawing.Point(466, 130)
+        Me.lblRecent.Name = "lblRecent"
+        Me.lblRecent.Size = New System.Drawing.Size(255, 22)
+        Me.lblRecent.TabIndex = 30
+        Me.lblRecent.Text = "Recent Accessed File Data"
         '
         'txtRecent
         '
-        Me.txtRecent.Location = New System.Drawing.Point(12, 334)
+        Me.txtRecent.Location = New System.Drawing.Point(470, 155)
         Me.txtRecent.Multiline = True
         Me.txtRecent.Name = "txtRecent"
         Me.txtRecent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtRecent.Size = New System.Drawing.Size(302, 59)
+        Me.txtRecent.Size = New System.Drawing.Size(225, 55)
         Me.txtRecent.TabIndex = 29
-        Me.txtRecent.Text = "echo Q4 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo Clearing recent accessed file d" & _
+        Me.txtRecent.Text = "echo Q3 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo Clearing recent accessed file d" & _
             "ata..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%recent%""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%appdata%\Microsoft\Office\Recent" & _
             "\*.*"""
         '
-        'Label7
+        'lblTIF
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(8, 396)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(232, 22)
-        Me.Label7.TabIndex = 32
-        Me.Label7.Text = "Temporary internet files"
+        Me.lblTIF.AutoSize = True
+        Me.lblTIF.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTIF.Location = New System.Drawing.Point(469, 217)
+        Me.lblTIF.Name = "lblTIF"
+        Me.lblTIF.Size = New System.Drawing.Size(238, 22)
+        Me.lblTIF.TabIndex = 32
+        Me.lblTIF.Text = "Temporary Internet Files"
         '
         'txtTIF
         '
-        Me.txtTIF.Location = New System.Drawing.Point(12, 421)
+        Me.txtTIF.Location = New System.Drawing.Point(473, 242)
         Me.txtTIF.Multiline = True
         Me.txtTIF.Name = "txtTIF"
         Me.txtTIF.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtTIF.Size = New System.Drawing.Size(302, 63)
+        Me.txtTIF.Size = New System.Drawing.Size(248, 59)
         Me.txtTIF.TabIndex = 31
         Me.txtTIF.Text = resources.GetString("txtTIF.Text")
         '
-        'Label8
+        'lblFirefox
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(8, 487)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(198, 22)
-        Me.Label8.TabIndex = 34
-        Me.Label8.Text = "Alt. Browser Caches"
+        Me.lblFirefox.AutoSize = True
+        Me.lblFirefox.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFirefox.Location = New System.Drawing.Point(12, 315)
+        Me.lblFirefox.Name = "lblFirefox"
+        Me.lblFirefox.Size = New System.Drawing.Size(75, 22)
+        Me.lblFirefox.TabIndex = 34
+        Me.lblFirefox.Text = "Firefox"
         '
-        'txtAltBrowser
+        'txtFirefox
         '
-        Me.txtAltBrowser.Location = New System.Drawing.Point(12, 512)
-        Me.txtAltBrowser.Multiline = True
-        Me.txtAltBrowser.Name = "txtAltBrowser"
-        Me.txtAltBrowser.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtAltBrowser.Size = New System.Drawing.Size(325, 95)
-        Me.txtAltBrowser.TabIndex = 33
-        Me.txtAltBrowser.Text = resources.GetString("txtAltBrowser.Text")
+        Me.txtFirefox.Location = New System.Drawing.Point(12, 340)
+        Me.txtFirefox.Multiline = True
+        Me.txtFirefox.Name = "txtFirefox"
+        Me.txtFirefox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtFirefox.Size = New System.Drawing.Size(172, 60)
+        Me.txtFirefox.TabIndex = 33
+        Me.txtFirefox.Text = resources.GetString("txtFirefox.Text")
         '
-        'Label9
+        'lblWindowsUpdate
         '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(339, 126)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(225, 22)
-        Me.Label9.TabIndex = 36
-        Me.Label9.Text = "Windows Update cache"
+        Me.lblWindowsUpdate.AutoSize = True
+        Me.lblWindowsUpdate.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWindowsUpdate.Location = New System.Drawing.Point(8, 217)
+        Me.lblWindowsUpdate.Name = "lblWindowsUpdate"
+        Me.lblWindowsUpdate.Size = New System.Drawing.Size(164, 22)
+        Me.lblWindowsUpdate.TabIndex = 36
+        Me.lblWindowsUpdate.Text = "Windows Update"
         '
         'txtWindowsUpdate
         '
-        Me.txtWindowsUpdate.Location = New System.Drawing.Point(343, 151)
+        Me.txtWindowsUpdate.Location = New System.Drawing.Point(12, 242)
         Me.txtWindowsUpdate.Multiline = True
         Me.txtWindowsUpdate.Name = "txtWindowsUpdate"
         Me.txtWindowsUpdate.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtWindowsUpdate.Size = New System.Drawing.Size(379, 61)
+        Me.txtWindowsUpdate.Size = New System.Drawing.Size(228, 61)
         Me.txtWindowsUpdate.TabIndex = 35
         Me.txtWindowsUpdate.Text = resources.GetString("txtWindowsUpdate.Text")
         '
-        'Label10
+        'lblJava
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(339, 215)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(115, 22)
-        Me.Label10.TabIndex = 38
-        Me.Label10.Text = "Java cache"
+        Me.lblJava.AutoSize = True
+        Me.lblJava.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblJava.Location = New System.Drawing.Point(251, 412)
+        Me.lblJava.Name = "lblJava"
+        Me.lblJava.Size = New System.Drawing.Size(54, 22)
+        Me.lblJava.TabIndex = 38
+        Me.lblJava.Text = "Java"
         '
         'txtJava
         '
-        Me.txtJava.Location = New System.Drawing.Point(343, 240)
+        Me.txtJava.Location = New System.Drawing.Point(255, 437)
         Me.txtJava.Multiline = True
         Me.txtJava.Name = "txtJava"
         Me.txtJava.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtJava.Size = New System.Drawing.Size(379, 63)
+        Me.txtJava.Size = New System.Drawing.Size(210, 63)
         Me.txtJava.TabIndex = 37
         Me.txtJava.Text = resources.GetString("txtJava.Text")
         '
-        'Label11
+        'lblFlash
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(339, 306)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(186, 22)
-        Me.Label11.TabIndex = 40
-        Me.Label11.Text = "Flash Player cache"
+        Me.lblFlash.AutoSize = True
+        Me.lblFlash.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFlash.Location = New System.Drawing.Point(23, 412)
+        Me.lblFlash.Name = "lblFlash"
+        Me.lblFlash.Size = New System.Drawing.Size(125, 22)
+        Me.lblFlash.TabIndex = 40
+        Me.lblFlash.Text = "Flash Player"
         '
         'txtFlash
         '
-        Me.txtFlash.Location = New System.Drawing.Point(343, 331)
+        Me.txtFlash.Location = New System.Drawing.Point(27, 437)
         Me.txtFlash.Multiline = True
         Me.txtFlash.Name = "txtFlash"
         Me.txtFlash.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtFlash.Size = New System.Drawing.Size(379, 62)
+        Me.txtFlash.Size = New System.Drawing.Size(221, 62)
         Me.txtFlash.TabIndex = 39
         Me.txtFlash.Text = resources.GetString("txtFlash.Text")
         '
-        'Label12
+        'lblMessenger
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(342, 396)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(175, 22)
-        Me.Label12.TabIndex = 42
-        Me.Label12.Text = "Messenger cache"
+        Me.lblMessenger.AutoSize = True
+        Me.lblMessenger.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMessenger.Location = New System.Drawing.Point(470, 412)
+        Me.lblMessenger.Name = "lblMessenger"
+        Me.lblMessenger.Size = New System.Drawing.Size(114, 22)
+        Me.lblMessenger.TabIndex = 42
+        Me.lblMessenger.Text = "Messenger"
         '
         'txtMessenger
         '
-        Me.txtMessenger.Location = New System.Drawing.Point(346, 421)
+        Me.txtMessenger.Location = New System.Drawing.Point(474, 437)
         Me.txtMessenger.Multiline = True
         Me.txtMessenger.Name = "txtMessenger"
         Me.txtMessenger.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtMessenger.Size = New System.Drawing.Size(376, 128)
+        Me.txtMessenger.Size = New System.Drawing.Size(212, 63)
         Me.txtMessenger.TabIndex = 41
         Me.txtMessenger.Text = resources.GetString("txtMessenger.Text")
         '
-        'Label2
+        'lblStart
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(8, 9)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(126, 22)
-        Me.Label2.TabIndex = 45
-        Me.Label2.Text = "CleanerStart"
+        Me.lblStart.AutoSize = True
+        Me.lblStart.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblStart.Location = New System.Drawing.Point(30, 9)
+        Me.lblStart.Name = "lblStart"
+        Me.lblStart.Size = New System.Drawing.Size(54, 22)
+        Me.lblStart.TabIndex = 45
+        Me.lblStart.Text = "Start"
         '
         'txtStart1
         '
-        Me.txtStart1.Location = New System.Drawing.Point(13, 34)
+        Me.txtStart1.Location = New System.Drawing.Point(31, 34)
         Me.txtStart1.Multiline = True
         Me.txtStart1.Name = "txtStart1"
         Me.txtStart1.Size = New System.Drawing.Size(164, 40)
@@ -281,7 +291,7 @@ Partial Class CommandList
         '
         'txtTMP
         '
-        Me.txtTMP.Location = New System.Drawing.Point(12, 622)
+        Me.txtTMP.Location = New System.Drawing.Point(12, 537)
         Me.txtTMP.Multiline = True
         Me.txtTMP.Name = "txtTMP"
         Me.txtTMP.Size = New System.Drawing.Size(182, 52)
@@ -292,7 +302,7 @@ Partial Class CommandList
         '
         'txtLOG
         '
-        Me.txtLOG.Location = New System.Drawing.Point(200, 622)
+        Me.txtLOG.Location = New System.Drawing.Point(200, 537)
         Me.txtLOG.Multiline = True
         Me.txtLOG.Name = "txtLOG"
         Me.txtLOG.Size = New System.Drawing.Size(172, 52)
@@ -303,7 +313,7 @@ Partial Class CommandList
         '
         'txtCHK
         '
-        Me.txtCHK.Location = New System.Drawing.Point(378, 622)
+        Me.txtCHK.Location = New System.Drawing.Point(378, 537)
         Me.txtCHK.Multiline = True
         Me.txtCHK.Name = "txtCHK"
         Me.txtCHK.Size = New System.Drawing.Size(174, 52)
@@ -314,7 +324,7 @@ Partial Class CommandList
         '
         'txtDMP
         '
-        Me.txtDMP.Location = New System.Drawing.Point(558, 622)
+        Me.txtDMP.Location = New System.Drawing.Point(558, 537)
         Me.txtDMP.Multiline = True
         Me.txtDMP.Name = "txtDMP"
         Me.txtDMP.Size = New System.Drawing.Size(164, 52)
@@ -325,7 +335,7 @@ Partial Class CommandList
         '
         'txt_MP
         '
-        Me.txt_MP.Location = New System.Drawing.Point(13, 680)
+        Me.txt_MP.Location = New System.Drawing.Point(13, 595)
         Me.txt_MP.Multiline = True
         Me.txt_MP.Name = "txt_MP"
         Me.txt_MP.Size = New System.Drawing.Size(181, 52)
@@ -336,7 +346,7 @@ Partial Class CommandList
         '
         'txtERR
         '
-        Me.txtERR.Location = New System.Drawing.Point(200, 680)
+        Me.txtERR.Location = New System.Drawing.Point(200, 595)
         Me.txtERR.Multiline = True
         Me.txtERR.Name = "txtERR"
         Me.txtERR.Size = New System.Drawing.Size(172, 52)
@@ -345,28 +355,28 @@ Partial Class CommandList
             "/s /q %systemdrive%\*.err"
         Me.txtERR.WordWrap = False
         '
-        'Label3
+        'lblFinish
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(485, 9)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(67, 22)
-        Me.Label3.TabIndex = 60
-        Me.Label3.Text = "Finish"
+        Me.lblFinish.AutoSize = True
+        Me.lblFinish.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFinish.Location = New System.Drawing.Point(503, 9)
+        Me.lblFinish.Name = "lblFinish"
+        Me.lblFinish.Size = New System.Drawing.Size(67, 22)
+        Me.lblFinish.TabIndex = 60
+        Me.lblFinish.Text = "Finish"
         '
         'txtFinish
         '
-        Me.txtFinish.Location = New System.Drawing.Point(489, 34)
+        Me.txtFinish.Location = New System.Drawing.Point(507, 34)
         Me.txtFinish.Multiline = True
         Me.txtFinish.Name = "txtFinish"
-        Me.txtFinish.Size = New System.Drawing.Size(238, 84)
+        Me.txtFinish.Size = New System.Drawing.Size(130, 84)
         Me.txtFinish.TabIndex = 59
         Me.txtFinish.Text = "echo ..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo Cleanup Complete." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo FIN >""%appdata%\DriveTidy\cleanchk.txt"""
         '
         'txtAttribRecycle
         '
-        Me.txtAttribRecycle.Location = New System.Drawing.Point(183, 34)
+        Me.txtAttribRecycle.Location = New System.Drawing.Point(309, 34)
         Me.txtAttribRecycle.Multiline = True
         Me.txtAttribRecycle.Name = "txtAttribRecycle"
         Me.txtAttribRecycle.Size = New System.Drawing.Size(98, 84)
@@ -376,7 +386,7 @@ Partial Class CommandList
         '
         'txtAttribSQM
         '
-        Me.txtAttribSQM.Location = New System.Drawing.Point(287, 34)
+        Me.txtAttribSQM.Location = New System.Drawing.Point(413, 34)
         Me.txtAttribSQM.Multiline = True
         Me.txtAttribSQM.Name = "txtAttribSQM"
         Me.txtAttribSQM.Size = New System.Drawing.Size(85, 84)
@@ -386,22 +396,131 @@ Partial Class CommandList
         '
         'txtStart2
         '
-        Me.txtStart2.Location = New System.Drawing.Point(13, 78)
+        Me.txtStart2.Location = New System.Drawing.Point(31, 78)
         Me.txtStart2.Multiline = True
         Me.txtStart2.Name = "txtStart2"
         Me.txtStart2.Size = New System.Drawing.Size(164, 40)
         Me.txtStart2.TabIndex = 63
         Me.txtStart2.Text = "cleaner.bat >""%appdata%\DriveTidy\log.txt"""
         '
-        'CommandList
+        'txtOpera
+        '
+        Me.txtOpera.Location = New System.Drawing.Point(361, 340)
+        Me.txtOpera.Multiline = True
+        Me.txtOpera.Name = "txtOpera"
+        Me.txtOpera.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtOpera.Size = New System.Drawing.Size(163, 60)
+        Me.txtOpera.TabIndex = 64
+        Me.txtOpera.Text = resources.GetString("txtOpera.Text")
+        '
+        'txtChrome
+        '
+        Me.txtChrome.Location = New System.Drawing.Point(190, 340)
+        Me.txtChrome.Multiline = True
+        Me.txtChrome.Name = "txtChrome"
+        Me.txtChrome.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtChrome.Size = New System.Drawing.Size(162, 60)
+        Me.txtChrome.TabIndex = 65
+        Me.txtChrome.Text = resources.GetString("txtChrome.Text")
+        '
+        'lblOpera
+        '
+        Me.lblOpera.AutoSize = True
+        Me.lblOpera.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblOpera.Location = New System.Drawing.Point(357, 315)
+        Me.lblOpera.Name = "lblOpera"
+        Me.lblOpera.Size = New System.Drawing.Size(67, 22)
+        Me.lblOpera.TabIndex = 66
+        Me.lblOpera.Text = "Opera"
+        '
+        'txtSafari
+        '
+        Me.txtSafari.Location = New System.Drawing.Point(533, 340)
+        Me.txtSafari.Multiline = True
+        Me.txtSafari.Name = "txtSafari"
+        Me.txtSafari.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtSafari.Size = New System.Drawing.Size(175, 60)
+        Me.txtSafari.TabIndex = 67
+        Me.txtSafari.Text = resources.GetString("txtSafari.Text")
+        '
+        'lblChrome
+        '
+        Me.lblChrome.AutoSize = True
+        Me.lblChrome.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblChrome.Location = New System.Drawing.Point(186, 315)
+        Me.lblChrome.Name = "lblChrome"
+        Me.lblChrome.Size = New System.Drawing.Size(84, 22)
+        Me.lblChrome.TabIndex = 68
+        Me.lblChrome.Text = "Chrome"
+        '
+        'lblSafari
+        '
+        Me.lblSafari.AutoSize = True
+        Me.lblSafari.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSafari.Location = New System.Drawing.Point(533, 315)
+        Me.lblSafari.Name = "lblSafari"
+        Me.lblSafari.Size = New System.Drawing.Size(64, 22)
+        Me.lblSafari.TabIndex = 69
+        Me.lblSafari.Text = "Safari"
+        '
+        'txtErrorReports
+        '
+        Me.txtErrorReports.Location = New System.Drawing.Point(246, 242)
+        Me.txtErrorReports.Multiline = True
+        Me.txtErrorReports.Name = "txtErrorReports"
+        Me.txtErrorReports.Size = New System.Drawing.Size(217, 61)
+        Me.txtErrorReports.TabIndex = 70
+        Me.txtErrorReports.Text = resources.GetString("txtErrorReports.Text")
+        '
+        'lblErrorReports
+        '
+        Me.lblErrorReports.AutoSize = True
+        Me.lblErrorReports.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblErrorReports.Location = New System.Drawing.Point(242, 217)
+        Me.lblErrorReports.Name = "lblErrorReports"
+        Me.lblErrorReports.Size = New System.Drawing.Size(137, 22)
+        Me.lblErrorReports.TabIndex = 71
+        Me.lblErrorReports.Text = "Error Reports"
+        '
+        'lblFileExt
+        '
+        Me.lblFileExt.AutoSize = True
+        Me.lblFileExt.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFileExt.Location = New System.Drawing.Point(12, 512)
+        Me.lblFileExt.Name = "lblFileExt"
+        Me.lblFileExt.Size = New System.Drawing.Size(152, 22)
+        Me.lblFileExt.TabIndex = 72
+        Me.lblFileExt.Text = "File Extensions"
+        '
+        'lblAttrib
+        '
+        Me.lblAttrib.AutoSize = True
+        Me.lblAttrib.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAttrib.Location = New System.Drawing.Point(375, 9)
+        Me.lblAttrib.Name = "lblAttrib"
+        Me.lblAttrib.Size = New System.Drawing.Size(60, 22)
+        Me.lblAttrib.TabIndex = 73
+        Me.lblAttrib.Text = "Attrib"
+        '
+        'CleanDefs
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(735, 748)
+        Me.ClientSize = New System.Drawing.Size(735, 655)
+        Me.Controls.Add(Me.lblAttrib)
+        Me.Controls.Add(Me.lblFileExt)
+        Me.Controls.Add(Me.lblErrorReports)
+        Me.Controls.Add(Me.txtErrorReports)
+        Me.Controls.Add(Me.lblSafari)
+        Me.Controls.Add(Me.lblChrome)
+        Me.Controls.Add(Me.txtSafari)
+        Me.Controls.Add(Me.lblOpera)
+        Me.Controls.Add(Me.txtChrome)
+        Me.Controls.Add(Me.txtOpera)
         Me.Controls.Add(Me.txtStart2)
         Me.Controls.Add(Me.txtAttribSQM)
         Me.Controls.Add(Me.txtAttribRecycle)
-        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.lblFinish)
         Me.Controls.Add(Me.txtFinish)
         Me.Controls.Add(Me.txtERR)
         Me.Controls.Add(Me.txt_MP)
@@ -410,54 +529,54 @@ Partial Class CommandList
         Me.Controls.Add(Me.txtLOG)
         Me.Controls.Add(Me.txtTMP)
         Me.Controls.Add(Me.txtStart1)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.lblStart)
+        Me.Controls.Add(Me.lblMessenger)
         Me.Controls.Add(Me.txtMessenger)
-        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.lblFlash)
         Me.Controls.Add(Me.txtFlash)
-        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.lblJava)
         Me.Controls.Add(Me.txtJava)
-        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.lblWindowsUpdate)
         Me.Controls.Add(Me.txtWindowsUpdate)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.txtAltBrowser)
-        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.lblFirefox)
+        Me.Controls.Add(Me.txtFirefox)
+        Me.Controls.Add(Me.lblTIF)
         Me.Controls.Add(Me.txtTIF)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblRecent)
         Me.Controls.Add(Me.txtRecent)
-        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.lblTemp)
         Me.Controls.Add(Me.txtTemp)
-        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.lblRecycle)
         Me.Controls.Add(Me.txtRecycle)
-        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.lblHeader)
         Me.Controls.Add(Me.txtHeader)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Name = "CommandList"
+        Me.Name = "CleanDefs"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents txtHeader As System.Windows.Forms.TextBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents lblHeader As System.Windows.Forms.Label
+    Friend WithEvents lblRecycle As System.Windows.Forms.Label
     Friend WithEvents txtRecycle As System.Windows.Forms.TextBox
-    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents lblTemp As System.Windows.Forms.Label
     Friend WithEvents txtTemp As System.Windows.Forms.TextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents lblRecent As System.Windows.Forms.Label
     Friend WithEvents txtRecent As System.Windows.Forms.TextBox
-    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents lblTIF As System.Windows.Forms.Label
     Friend WithEvents txtTIF As System.Windows.Forms.TextBox
-    Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents txtAltBrowser As System.Windows.Forms.TextBox
-    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents lblFirefox As System.Windows.Forms.Label
+    Friend WithEvents txtFirefox As System.Windows.Forms.TextBox
+    Friend WithEvents lblWindowsUpdate As System.Windows.Forms.Label
     Friend WithEvents txtWindowsUpdate As System.Windows.Forms.TextBox
-    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents lblJava As System.Windows.Forms.Label
     Friend WithEvents txtJava As System.Windows.Forms.TextBox
-    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents lblFlash As System.Windows.Forms.Label
     Friend WithEvents txtFlash As System.Windows.Forms.TextBox
-    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents lblMessenger As System.Windows.Forms.Label
     Friend WithEvents txtMessenger As System.Windows.Forms.TextBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents lblStart As System.Windows.Forms.Label
     Friend WithEvents txtStart1 As System.Windows.Forms.TextBox
     Friend WithEvents txtTMP As System.Windows.Forms.TextBox
     Friend WithEvents txtLOG As System.Windows.Forms.TextBox
@@ -465,9 +584,19 @@ Partial Class CommandList
     Friend WithEvents txtDMP As System.Windows.Forms.TextBox
     Friend WithEvents txt_MP As System.Windows.Forms.TextBox
     Friend WithEvents txtERR As System.Windows.Forms.TextBox
-    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents lblFinish As System.Windows.Forms.Label
     Friend WithEvents txtFinish As System.Windows.Forms.TextBox
     Friend WithEvents txtAttribRecycle As System.Windows.Forms.TextBox
     Friend WithEvents txtAttribSQM As System.Windows.Forms.TextBox
     Friend WithEvents txtStart2 As System.Windows.Forms.TextBox
+    Friend WithEvents txtOpera As System.Windows.Forms.TextBox
+    Friend WithEvents txtChrome As System.Windows.Forms.TextBox
+    Friend WithEvents lblOpera As System.Windows.Forms.Label
+    Friend WithEvents txtSafari As System.Windows.Forms.TextBox
+    Friend WithEvents lblChrome As System.Windows.Forms.Label
+    Friend WithEvents lblSafari As System.Windows.Forms.Label
+    Friend WithEvents txtErrorReports As System.Windows.Forms.TextBox
+    Friend WithEvents lblErrorReports As System.Windows.Forms.Label
+    Friend WithEvents lblFileExt As System.Windows.Forms.Label
+    Friend WithEvents lblAttrib As System.Windows.Forms.Label
 End Class

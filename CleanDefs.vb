@@ -1,3 +1,3 @@
-﻿Public Class CommandList
+﻿Public Class CleanDefs
 
 End Class

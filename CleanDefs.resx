@@ -140,7 +140,7 @@ del /f /s /q "%allusersappdata%\Microsoft\Search\Data\Temp\*.*"
 rd /s /q "%allusersappdata%\Microsoft\Search\Data\Temp\"</value>
   </data>
   <data name="txtTIF.Text" xml:space="preserve">
-    <value>echo Q5 &gt;"%appdata%\DriveTidy\cleanchk.txt"
+    <value>echo Q6 &gt;"%appdata%\DriveTidy\cleanchk.txt"
 echo Clearing temporary internet files and caches...
 del /f /s /q "%cookies%"
 rd /s /q "%cookies%"
@@ -153,90 +153,18 @@ start /wait RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 1
 start /wait RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 2
 start /wait RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8</value>
   </data>
-  <data name="txtAltBrowser.Text" xml:space="preserve">
+  <data name="txtFirefox.Text" xml:space="preserve">
     <value>echo Q7 &gt;"%appdata%\DriveTidy\cleanchk.txt"
-echo Clearing browser caches...
+echo Clearing Firefox caches...
 
 :Firefox
 del /f /s /q "%localappdata%\Mozilla\Firefox\Profiles\*.*"
 rd /s /q "%localappdata%\Mozilla\Firefox\Profiles\"
 del /f /s /q "%appdata%\Mozilla\Firefox\Crash Reports\*.*"
-rd /s /q "%appdata%\Mozilla\Firefox\Crash Reports\"
-
-:Opera1
-IF NOT EXIST "%localappdata%\Opera" GOTO Opera2
-pushd "%localappdata%\Opera" ||goto :eof
-for /d %%a in (Opera*) do (
-del /f /s /q "%%a\cache4\*.*"
-rd /s /q "%%a\cache4\"
-del /f /s /q "%%a\cache\*.*"
-rd /s /q "%%a\cache\"
-del /f /s /q "%%a\vps\*.*"
-rd /s /q "%%a\vps\"
-
-del /f /s /q "%%a\profile\cache4\*.*"
-rd /s /q "%%a\profile\cache4\"
-del /f /s /q "%%a\profile\cache\*.*"
-rd /s /q "%%a\profile\cache\"
-del /f /s /q "%%a\profile\vps\*.*"
-rd /s /q "%%a\profile\vps\"
-)
-popd
-
-:Opera2
-IF NOT EXIST "%appdata%\Opera" GOTO GoogleChrome
-pushd "%appdata%\Opera" ||goto :eof
-for /d %%a in (Opera*) do (
-del /f /q "%%a\global.dat"
-del /f /q "%%a\global_history.dat"
-del /f /q "%%a\download.dat"
-del /f /q "%%a\vlink4.dat"
-del /f /q "%%a\typed_history.xml"
-del /f /q "%%a\sessions\autosave.win"
-
-del /f /q "%%a\profile\global.dat"
-del /f /q "%%a\profile\global_history.dat"
-del /f /q "%%a\profile\download.dat"
-del /f /q "%%a\profile\vlink4.dat"
-del /f /q "%%a\profile\typed_history.xml"
-del /f /q "%%a\profile\sessions\autosave.win"
-)
-popd
-
-:GoogleChrome
-del /f /s /q "%localappdata%\Google\Chrome\User Data\Default\Cache\*.*"
-rd /s /q "%localappdata%\Google\Chrome\User Data\Default\Cache\"
-del /f /s /q "%localappdata%\Google\Chrome\User Data\Default\Media Cache\*.*"
-rd /s /q "%localappdata%\Google\Chrome\User Data\Default\Media Cache\"
-del /f /q "%localappdata%\Google\Chrome\User Data\Default\Archived History"
-del /f /q "%localappdata%\Google\Chrome\User Data\Default\Cookies"
-del /f /q "%localappdata%\Google\Chrome\User Data\Default\Current Session"
-del /f /q "%localappdata%\Google\Chrome\User Data\Default\Current Tabs"
-del /f /q "%localappdata%\Google\Chrome\User Data\Default\Extension Cookies"
-del /f /q "%localappdata%\Google\Chrome\User Data\Default\History*"
-del /f /q "%localappdata%\Google\Chrome\User Data\Default\Last Session"
-del /f /q "%localappdata%\Google\Chrome\User Data\Default\Last Tabs"
-del /f /q "%localappdata%\Google\Chrome\User Data\Default\Thumbnails"
-
-:Safari
-del /f /q "%appdata%\Apple Computer\Safari\Cookies\Cookies.plist"
-del /f /q "%appdata%\Apple Computer\Safari\Downloads.plist"
-del /f /q "%appdata%\Apple Computer\Safari\History.plist"
-del /f /q "%appdata%\Apple Computer\Safari\LastSession.plist"
-del /f /q "%localappdata%\Apple Computer\Safari\Cache.db"
-del /f /s /q "%localappdata%\Apple Computer\Safari\History\*.*"
-rd /s /q "%localappdata%\Apple Computer\Safari\History\"
-del /f /s /q "%localappdata%\Apple Computer\Safari\LocalStorage\*.*"
-rd /s /q "%localappdata%\Apple Computer\Safari\LocalStorage\"
-del /f /s /q "%localappdata%\Apple Computer\Safari\Webpage Previews\*.*"
-rd /s /q "%localappdata%\Apple Computer\Safari\Webpage Previews\"
-
-:Flock
-del /f /s /q "%localappdata%\Flock\Browser\Profiles\*.*"
-rd /s /q "%localappdata%\Flock\Browser\Profiles\"</value>
+rd /s /q "%appdata%\Mozilla\Firefox\Crash Reports\"</value>
   </data>
   <data name="txtWindowsUpdate.Text" xml:space="preserve">
-    <value>echo Q8 &gt;"%appdata%\DriveTidy\cleanchk.txt"
+    <value>echo Q4 &gt;"%appdata%\DriveTidy\cleanchk.txt"
 echo Clearing Windows Update cache...
 del /f /s /q "%windir%\SoftwareDistribution\Download\*.*"
 rd /s /q "%windir%\SoftwareDistribution\Download\"
@@ -244,7 +172,7 @@ del /f /s /q "%windir%\Installer\$PatchCache$\*.*"
 rd /s /q "%windir%\Installer\$PatchCache$\"</value>
   </data>
   <data name="txtJava.Text" xml:space="preserve">
-    <value>echo Q9 &gt;"%appdata%\DriveTidy\cleanchk.txt"
+    <value>echo Q10 &gt;"%appdata%\DriveTidy\cleanchk.txt"
 echo Clearing java cache...
 del /f /s /q "%appdata%\Sun\Java\Deployment\cache\*.*"
 rd /s /q "%appdata%\Sun\Java\Deployment\cache\"
@@ -268,7 +196,7 @@ del /f /s /q "%locallowappdata%\Sun\Java\Deployment\tmp\*.*"
 rd /s /q "%locallowappdata%\Sun\Java\Deployment\tmp\"</value>
   </data>
   <data name="txtFlash.Text" xml:space="preserve">
-    <value>echo Q10 &gt;"%appdata%\DriveTidy\cleanchk.txt"
+    <value>echo Q9 &gt;"%appdata%\DriveTidy\cleanchk.txt"
 echo Clearing flash player cache...
 del /f /s /q "%appdata%\Adobe\Flash Player\AssetCache\*.*"
 rd /s /q "%appdata%\Adobe\Flash Player\AssetCache\"
@@ -306,5 +234,98 @@ del /f /s /q "%ProgramFiles%\Yahoo!\Messenger\Cache\*.*"
 rd /s /q "%ProgramFiles%\Yahoo!\Messenger\Cache\"
 del /f /s /q "%ProgramFiles%\Yahoo!\Messenger\IMVCache\*.*"
 rd /s /q "%ProgramFiles%\Yahoo!\Messenger\IMVCache\"</value>
+  </data>
+  <data name="txtOpera.Text" xml:space="preserve">
+    <value>echo Q7 &gt;"%appdata%\DriveTidy\cleanchk.txt"
+echo Clearing Opera caches...
+
+:Opera1
+IF NOT EXIST "%localappdata%\Opera" GOTO Opera2
+pushd "%localappdata%\Opera" ||goto :eof
+for /d %%a in (Opera*) do (
+del /f /s /q "%%a\cache4\*.*"
+rd /s /q "%%a\cache4\"
+del /f /s /q "%%a\cache\*.*"
+rd /s /q "%%a\cache\"
+del /f /s /q "%%a\vps\*.*"
+rd /s /q "%%a\vps\"
+
+del /f /s /q "%%a\profile\cache4\*.*"
+rd /s /q "%%a\profile\cache4\"
+del /f /s /q "%%a\profile\cache\*.*"
+rd /s /q "%%a\profile\cache\"
+del /f /s /q "%%a\profile\vps\*.*"
+rd /s /q "%%a\profile\vps\"
+)
+popd
+
+:Opera2
+IF NOT EXIST "%appdata%\Opera" GOTO EndOpera
+pushd "%appdata%\Opera" ||goto :eof
+for /d %%a in (Opera*) do (
+del /f /q "%%a\global.dat"
+del /f /q "%%a\global_history.dat"
+del /f /q "%%a\download.dat"
+del /f /q "%%a\vlink4.dat"
+del /f /q "%%a\typed_history.xml"
+del /f /q "%%a\sessions\autosave.win"
+
+del /f /q "%%a\profile\global.dat"
+del /f /q "%%a\profile\global_history.dat"
+del /f /q "%%a\profile\download.dat"
+del /f /q "%%a\profile\vlink4.dat"
+del /f /q "%%a\profile\typed_history.xml"
+del /f /q "%%a\profile\sessions\autosave.win"
+)
+popd
+:EndOpera</value>
+  </data>
+  <data name="txtChrome.Text" xml:space="preserve">
+    <value>echo Q7 &gt;"%appdata%\DriveTidy\cleanchk.txt"
+echo Clearing Google Chrome caches...
+
+:GoogleChrome
+del /f /s /q "%localappdata%\Google\Chrome\User Data\Default\Cache\*.*"
+rd /s /q "%localappdata%\Google\Chrome\User Data\Default\Cache\"
+del /f /s /q "%localappdata%\Google\Chrome\User Data\Default\Media Cache\*.*"
+rd /s /q "%localappdata%\Google\Chrome\User Data\Default\Media Cache\"
+del /f /q "%localappdata%\Google\Chrome\User Data\Default\Archived History"
+del /f /q "%localappdata%\Google\Chrome\User Data\Default\Cookies"
+del /f /q "%localappdata%\Google\Chrome\User Data\Default\Current Session"
+del /f /q "%localappdata%\Google\Chrome\User Data\Default\Current Tabs"
+del /f /q "%localappdata%\Google\Chrome\User Data\Default\Extension Cookies"
+del /f /q "%localappdata%\Google\Chrome\User Data\Default\History*"
+del /f /q "%localappdata%\Google\Chrome\User Data\Default\Last Session"
+del /f /q "%localappdata%\Google\Chrome\User Data\Default\Last Tabs"
+del /f /q "%localappdata%\Google\Chrome\User Data\Default\Thumbnails"</value>
+  </data>
+  <data name="txtSafari.Text" xml:space="preserve">
+    <value>echo Q7 &gt;"%appdata%\DriveTidy\cleanchk.txt"
+echo Clearing Safari caches...
+
+:Safari
+del /f /q "%appdata%\Apple Computer\Safari\Cookies\Cookies.plist"
+del /f /q "%appdata%\Apple Computer\Safari\Downloads.plist"
+del /f /q "%appdata%\Apple Computer\Safari\History.plist"
+del /f /q "%appdata%\Apple Computer\Safari\LastSession.plist"
+del /f /q "%localappdata%\Apple Computer\Safari\Cache.db"
+del /f /s /q "%localappdata%\Apple Computer\Safari\History\*.*"
+rd /s /q "%localappdata%\Apple Computer\Safari\History\"
+del /f /s /q "%localappdata%\Apple Computer\Safari\LocalStorage\*.*"
+rd /s /q "%localappdata%\Apple Computer\Safari\LocalStorage\"
+del /f /s /q "%localappdata%\Apple Computer\Safari\Webpage Previews\*.*"
+rd /s /q "%localappdata%\Apple Computer\Safari\Webpage Previews\"</value>
+  </data>
+  <data name="txtErrorReports.Text" xml:space="preserve">
+    <value>echo Q5 &gt;"%appdata%\DriveTidy\cleanchk.txt"
+echo Windows Error Reports...
+del /f /s /q "%localappdata%\Microsoft\Windows\WER\ReportArchive\*.*"
+del /f /s /q "%localappdata%\Microsoft\Windows\WER\ReportQueue\*.*"
+del /f /s /q "%allusersappdata%\Microsoft\Windows\WER\ReportArchive\*.*"
+del /f /s /q "%allusersappdata%\Microsoft\Windows\WER\ReportQueue\*.*"
+rd /s /q "%localappdata%\Microsoft\Windows\WER\ReportArchive\"
+rd /s /q "%localappdata%\Microsoft\Windows\WER\ReportQueue\"
+rd /s /q "%allusersappdata%\Microsoft\Windows\WER\ReportArchive\"
+rd /s /q "%allusersappdata%\Microsoft\Windows\WER\ReportQueue\"</value>
   </data>
 </root>
