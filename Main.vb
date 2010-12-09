@@ -30,13 +30,18 @@
         cbRecycle.Checked = True
         cbTemp.Checked = True
         cbRecent.Checked = True
-        cbTIF.Checked = True
-        cbAltBrowser.Checked = True
         cbWindowsUpdate.Checked = True
-        cbJava.Checked = True
-        cbFlash.Checked = True
-        cbMessenger.Checked = True
         cbErrorReports.Checked = True
+
+        cbTIF.Checked = True
+        cbFirefox.Checked = True
+        cbChrome.Checked = True
+        cbOpera.Checked = True
+        cbSafari.Checked = True
+        cbFlash.Checked = True
+        cbJava.Checked = True
+        cbMessenger.Checked = True
+
         cbAdobeCameraRAW.Checked = True
         cbAdobeReader.Checked = True
         cbAppleInstaller.Checked = True
@@ -51,6 +56,7 @@
         cbQuicktime.Checked = True
         cbSilverlight.Checked = True
         cbSpotify.Checked = True
+        cbSymantec.Checked = True
         cbUnity.Checked = True
     End Sub
 
@@ -61,6 +67,8 @@
         cbCHK.Checked = True
         cbDMP.Checked = True
         Uncheck_Invisible()
+        FlowLayout.VerticalScroll.Value = FlowLayout.VerticalScroll.Maximum
+        FlowLayout.ScrollControlIntoView(FlowLayout)
     End Sub
 
     Private Sub cmdSelectAll_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles cmdSelectAll.LinkClicked
@@ -95,35 +103,47 @@
             'Process Detection - checks to see if programs are running and need to be closed
             Ready = 1 'Value starts at 1 and will be changed to 2 if the No option is selected for any running processes
             MsgString = " is running and needs to be closed." & vbCrLf & "To save what you are doing close the program manually." & vbCrLf & "Are you sure you want to continue?"
-            If cbAltBrowser.Checked = True Then
-
+            If cbTIF.Checked = True Then
+                If Ready = 1 Then
+                    MsgApp = "Internet Explorer"
+                    MsgProcess = "iexplore"
+                    KillMsg()
+                End If
+            End If
+            If cbFirefox.Checked = True Then
                 If Ready = 1 Then
                     MsgApp = "Mozilla Firefox"
                     MsgProcess = "firefox"
                     KillMsg()
-                    If Ready = 1 Then
-                        MsgApp = "Opera"
-                        MsgProcess = "opera"
-                        KillMsg()
-                        If Ready = 1 Then
-                            MsgApp = "Google Chrome"
-                            MsgProcess = "chrome"
-                            KillMsg()
-                            If Ready = 1 Then
-                                MsgApp = "Safari"
-                                MsgProcess = "safari"
-                                KillMsg()
-                            End If
-                        End If
-                    End If
+                End If
+            End If
+            If cbChrome.Checked = True Then
+                If Ready = 1 Then
+                    MsgApp = "Google Chrome"
+                    MsgProcess = "chrome"
+                    KillMsg()
+                End If
+            End If
+            If cbOpera.Checked = True Then
+                If Ready = 1 Then
+                    MsgApp = "Opera"
+                    MsgProcess = "opera"
+                    KillMsg()
+                End If
+            End If
+            If cbSafari.Checked = True Then
+                If Ready = 1 Then
+                    MsgApp = "Safari"
+                    MsgProcess = "safari"
+                    KillMsg()
                 End If
             End If
 
-                If Not Ready = 2 Then 'If a new value other than 2 has not been assigned then it will be changed to 1 to proceed
-                    Ready = 1
-                End If
-
+            If Not Ready = 2 Then 'If a new value other than 2 has not been assigned then it will be changed to 1 to proceed
+                Ready = 1
             End If
+            End If
+
             If Ready = 0 Then
                 MsgBox("Select at least one option.")
             ElseIf Ready = 1 Then
@@ -146,11 +166,11 @@
 
                 'Disable Attribute changers from Command List
                 If cbRecycle.Checked = False Then
-                    CommandList.txtAttribRecycle.Text = ""
+                    CleanDefs.txtAttribRecycle.Text = ""
                 End If
 
                 If cbMessenger.Checked = False Then
-                    CommandList.txtAttribSQM.Text = ""
+                    CleanDefs.txtAttribSQM.Text = ""
                 End If
 
                 'Write check file
@@ -160,39 +180,39 @@
                 FileClose(1)
                 'Create Batch Commands
                 FileOpen(2, Environ("appdata") & "\DriveTidy\cleaner.bat", OpenMode.Output)
-                PrintLine(2, CommandList.txtHeader.Text)
+                PrintLine(2, CleanDefs.txtHeader.Text)
                 'Add Common Options
                 For Each keyvaluepair In d1
-                PrintLine(2, keyvaluepair.Value.Text)
+                    PrintLine(2, keyvaluepair.Value.Text)
                 Next
                 'Marks beginning of "Other remaining caches" message
-                PrintLine(2, OtherCaches.txtQ12.Text)
+                PrintLine(2, CleanDefs2.txtQ12.Text)
                 'Add Other Caches
                 For Each keyvaluepair In d2
                     PrintLine(2, keyvaluepair.Value.Text)
                 Next
                 'End of remaning caches
-                PrintLine(2, OtherCaches.txtQ13.Text)
+                PrintLine(2, CleanDefs2.txtQ13.Text)
                 'Add File Extensions
                 For Each keyvaluepair In d3
                     PrintLine(2, keyvaluepair.Value.Text)
                 Next
                 'Send Finish Instruction
-                PrintLine(2, CommandList.txtFinish.Text)
+                PrintLine(2, CleanDefs.txtFinish.Text)
                 FileClose(2)
 
                 FileOpen(3, Environ("appdata") & "\DriveTidy\start.bat", OpenMode.Output)
-                PrintLine(3, CommandList.txtStart1.Text)
-                PrintLine(3, CommandList.txtAttribRecycle.Text)
-                PrintLine(3, CommandList.txtAttribSQM.Text)
-                PrintLine(3, CommandList.txtStart2.Text)
+                PrintLine(3, CleanDefs.txtStart1.Text)
+                PrintLine(3, CleanDefs.txtAttribRecycle.Text)
+                PrintLine(3, CleanDefs.txtAttribSQM.Text)
+                PrintLine(3, CleanDefs.txtStart2.Text)
                 FileClose(3)
                 ShellExecute(0, vbNullString, Environ("appdata") & "\DriveTidy\start.bat", vbNullString, vbNullString, AppWinStyle.NormalFocus)
                 'Show Cleaner Window
                 CleanerWindow.Show()
                 Me.Close()
-                CommandList.Close()
-                OtherCaches.Close()
+                CleanDefs.Close()
+                CleanDefs2.Close()
                 Exit Sub
 ErrorHandler:
                 CleanerErrors()
@@ -223,10 +243,10 @@ ErrorHandler:
 
     Private Sub Main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Set the form to the center screen
-        If Detect.Center.Text = "1" Then
+        If Detect.lblCenter.Text = "1" Then
             Me.Left = (Screen.PrimaryScreen.WorkingArea.Width - Me.Width) / 2
             Me.Top = (Screen.PrimaryScreen.WorkingArea.Height - Me.Height) / 2
-            Detect.Center.Text = "0"
+            Detect.lblCenter.Text = "0"
         End If
         'OS Detection
         Dim OS_WindowsXP As Boolean
@@ -284,47 +304,50 @@ ErrorHandler:
 
         'KVP Lists
         'List of Current Options here get added to the Dictionary so they can be referenced
-        'Common Options
-        d1.Add(cbRecycle, CommandList.txtRecycle)
-        d1.Add(cbTemp, CommandList.txtTemp)
-        d1.Add(cbRecent, CommandList.txtRecent)
-        d1.Add(cbTIF, CommandList.txtTIF)
-        d1.Add(cbAltBrowser, CommandList.txtAltBrowser)
-        d1.Add(cbWindowsUpdate, CommandList.txtWindowsUpdate)
-        d1.Add(cbJava, CommandList.txtJava)
-        d1.Add(cbFlash, CommandList.txtFlash)
-        d1.Add(cbMessenger, CommandList.txtMessenger)
+        'CleanDefs (without File Extensions)
+        d1.Add(cbRecycle, CleanDefs.txtRecycle)
+        d1.Add(cbTemp, CleanDefs.txtTemp)
+        d1.Add(cbRecent, CleanDefs.txtRecent)
+        d1.Add(cbWindowsUpdate, CleanDefs.txtWindowsUpdate)
+        d1.Add(cbErrorReports, CleanDefs.txtErrorReports)
+        d1.Add(cbTIF, CleanDefs.txtTIF)
+        d1.Add(cbFirefox, CleanDefs.txtFirefox)
+        d1.Add(cbChrome, CleanDefs.txtChrome)
+        d1.Add(cbOpera, CleanDefs.txtOpera)
+        d1.Add(cbSafari, CleanDefs.txtSafari)
+        d1.Add(cbFlash, CleanDefs.txtFlash)
+        d1.Add(cbJava, CleanDefs.txtJava)
+        d1.Add(cbMessenger, CleanDefs.txtMessenger)
 
-        'OtherCaches
-        d2.Add(cbVistaSP1, OtherCaches.txtVistaSP1)
-        d2.Add(cbVistaSP2, OtherCaches.txtVistaSP2)
-        d2.Add(cbHibernate, OtherCaches.txtHibernate)
-        d2.Add(cbErrorReports, OtherCaches.txtErrorReports)
-        d2.Add(cbSampleVideos, OtherCaches.txtSampleVideos)
-        d2.Add(cbAdobeCameraRAW, OtherCaches.txtAdobeCameraRAW)
-        d2.Add(cbAdobeReader, OtherCaches.txtAdobeReader)
-        d2.Add(cbAppleInstaller, OtherCaches.txtAppleInstaller)
-        d2.Add(cbAVG, OtherCaches.txtAVG)
-        d2.Add(cbGIMP, OtherCaches.txtGIMP)
-        d2.Add(cbGoogleEarth, OtherCaches.txtGoogleEarth)
-        d2.Add(cbGoogleUpdater, OtherCaches.txtGoogleUpdater)
-        d2.Add(cbHPDigitalImaging, OtherCaches.txtHPDigitalImaging)
-        d2.Add(cbiTunes, OtherCaches.txtiTunes)
-        d2.Add(cbKaspersky, OtherCaches.txtKaspersky)
-        d2.Add(cbNokiaOvi, OtherCaches.txtNokiaOvi)
-        d2.Add(cbQuicktime, OtherCaches.txtQuicktime)
-        d2.Add(cbSilverlight, OtherCaches.txtSilverlight)
-        d2.Add(cbSpotify, OtherCaches.txtSpotify)
-        d2.Add(cbSymantec, OtherCaches.txtSymantec)
-        d2.Add(cbUnity, OtherCaches.txtUnity)
+        'CleanDefs2
+        d2.Add(cbVistaSP1, CleanDefs2.txtVistaSP1)
+        d2.Add(cbVistaSP2, CleanDefs2.txtVistaSP2)
+        d2.Add(cbHibernate, CleanDefs2.txtHibernate)
+        d2.Add(cbSampleVideos, CleanDefs2.txtSampleVideos)
+        d2.Add(cbAdobeCameraRAW, CleanDefs2.txtAdobeCameraRAW)
+        d2.Add(cbAdobeReader, CleanDefs2.txtAdobeReader)
+        d2.Add(cbAppleInstaller, CleanDefs2.txtAppleInstaller)
+        d2.Add(cbAVG, CleanDefs2.txtAVG)
+        d2.Add(cbGIMP, CleanDefs2.txtGIMP)
+        d2.Add(cbGoogleEarth, CleanDefs2.txtGoogleEarth)
+        d2.Add(cbGoogleUpdater, CleanDefs2.txtGoogleUpdater)
+        d2.Add(cbHPDigitalImaging, CleanDefs2.txtHPDigitalImaging)
+        d2.Add(cbiTunes, CleanDefs2.txtiTunes)
+        d2.Add(cbKaspersky, CleanDefs2.txtKaspersky)
+        d2.Add(cbNokiaOvi, CleanDefs2.txtNokiaOvi)
+        d2.Add(cbQuicktime, CleanDefs2.txtQuicktime)
+        d2.Add(cbSilverlight, CleanDefs2.txtSilverlight)
+        d2.Add(cbSpotify, CleanDefs2.txtSpotify)
+        d2.Add(cbSymantec, CleanDefs2.txtSymantec)
+        d2.Add(cbUnity, CleanDefs2.txtUnity)
 
         'File Extensions
-        d3.Add(cbTMP, CommandList.txtTMP)
-        d3.Add(cbLOG, CommandList.txtLOG)
-        d3.Add(cbCHK, CommandList.txtCHK)
-        d3.Add(cbDMP, CommandList.txtDMP)
-        d3.Add(cb_MP, CommandList.txt_MP)
-        d3.Add(cbERR, CommandList.txtERR)
+        d3.Add(cbTMP, CleanDefs.txtTMP)
+        d3.Add(cbLOG, CleanDefs.txtLOG)
+        d3.Add(cbCHK, CleanDefs.txtCHK)
+        d3.Add(cbDMP, CleanDefs.txtDMP)
+        d3.Add(cb_MP, CleanDefs.txt_MP)
+        d3.Add(cbERR, CleanDefs.txtERR)
 
         lblNote.Text = "BETA " & My.Application.Info.Version.Revision
 
@@ -335,8 +358,8 @@ ErrorHandler:
 
     Private Sub Main_FormClosing(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         'Ensure all forms are closed
-        CommandList.Close()
-        OtherCaches.Close()
+        CleanDefs.Close()
+        CleanDefs2.Close()
         'CleanerWindow is not closed as Main closes and CleanerWindow opens when "Start Cleanup" is clicked
         Detect.Close()
         About.Close()
@@ -403,5 +426,9 @@ ErrorHandler:
         ElseIf cbCheckedCount = cbCount Then
             cmdSelectAll.Text = "Select None"
         End If
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        Detect.Show()
     End Sub
 End Class
