@@ -117,17 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="txtErrorReports.Text" xml:space="preserve">
-    <value>echo Windows Error Reports...
-del /f /s /q "%localappdata%\Microsoft\Windows\WER\ReportArchive\*.*"
-del /f /s /q "%localappdata%\Microsoft\Windows\WER\ReportQueue\*.*"
-del /f /s /q "%allusersappdata%\Microsoft\Windows\WER\ReportArchive\*.*"
-del /f /s /q "%allusersappdata%\Microsoft\Windows\WER\ReportQueue\*.*"
-rd /s /q "%localappdata%\Microsoft\Windows\WER\ReportArchive\"
-rd /s /q "%localappdata%\Microsoft\Windows\WER\ReportQueue\"
-rd /s /q "%allusersappdata%\Microsoft\Windows\WER\ReportArchive\"
-rd /s /q "%allusersappdata%\Microsoft\Windows\WER\ReportQueue\"</value>
-  </data>
   <data name="txtAdobeReader.Text" xml:space="preserve">
     <value>echo Adobe Reader cache...
 :Adobe Cache

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class OtherCaches
+Partial Class CleanDefs2
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,15 +22,13 @@ Partial Class OtherCaches
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(OtherCaches))
-        Me.Label13 = New System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CleanDefs2))
         Me.txtAdobeCameraRAW = New System.Windows.Forms.TextBox
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel
         Me.txtQ12 = New System.Windows.Forms.TextBox
         Me.txtVistaSP1 = New System.Windows.Forms.TextBox
         Me.txtVistaSP2 = New System.Windows.Forms.TextBox
         Me.txtHibernate = New System.Windows.Forms.TextBox
-        Me.txtErrorReports = New System.Windows.Forms.TextBox
         Me.txtSampleVideos = New System.Windows.Forms.TextBox
         Me.txtAdobeReader = New System.Windows.Forms.TextBox
         Me.txtAppleInstaller = New System.Windows.Forms.TextBox
@@ -51,19 +49,9 @@ Partial Class OtherCaches
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(12, 9)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(137, 22)
-        Me.Label13.TabIndex = 46
-        Me.Label13.Text = "Other Caches"
-        '
         'txtAdobeCameraRAW
         '
-        Me.txtAdobeCameraRAW.Location = New System.Drawing.Point(3, 414)
+        Me.txtAdobeCameraRAW.Location = New System.Drawing.Point(3, 279)
         Me.txtAdobeCameraRAW.Multiline = True
         Me.txtAdobeCameraRAW.Name = "txtAdobeCameraRAW"
         Me.txtAdobeCameraRAW.Size = New System.Drawing.Size(390, 52)
@@ -78,7 +66,6 @@ Partial Class OtherCaches
         Me.FlowLayoutPanel1.Controls.Add(Me.txtVistaSP1)
         Me.FlowLayoutPanel1.Controls.Add(Me.txtVistaSP2)
         Me.FlowLayoutPanel1.Controls.Add(Me.txtHibernate)
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtErrorReports)
         Me.FlowLayoutPanel1.Controls.Add(Me.txtSampleVideos)
         Me.FlowLayoutPanel1.Controls.Add(Me.txtAdobeCameraRAW)
         Me.FlowLayoutPanel1.Controls.Add(Me.txtAdobeReader)
@@ -98,7 +85,7 @@ Partial Class OtherCaches
         Me.FlowLayoutPanel1.Controls.Add(Me.txtUnity)
         Me.FlowLayoutPanel1.Controls.Add(Me.txtQ13)
         Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(11, 33)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(10, 12)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
         Me.FlowLayoutPanel1.Size = New System.Drawing.Size(413, 377)
         Me.FlowLayoutPanel1.TabIndex = 47
@@ -149,18 +136,9 @@ Partial Class OtherCaches
             "nfo."
         Me.txtHibernate.WordWrap = False
         '
-        'txtErrorReports
-        '
-        Me.txtErrorReports.Location = New System.Drawing.Point(3, 221)
-        Me.txtErrorReports.Multiline = True
-        Me.txtErrorReports.Name = "txtErrorReports"
-        Me.txtErrorReports.Size = New System.Drawing.Size(390, 129)
-        Me.txtErrorReports.TabIndex = 65
-        Me.txtErrorReports.Text = resources.GetString("txtErrorReports.Text")
-        '
         'txtSampleVideos
         '
-        Me.txtSampleVideos.Location = New System.Drawing.Point(3, 356)
+        Me.txtSampleVideos.Location = New System.Drawing.Point(3, 221)
         Me.txtSampleVideos.Multiline = True
         Me.txtSampleVideos.Name = "txtSampleVideos"
         Me.txtSampleVideos.Size = New System.Drawing.Size(390, 52)
@@ -171,7 +149,7 @@ Partial Class OtherCaches
         '
         'txtAdobeReader
         '
-        Me.txtAdobeReader.Location = New System.Drawing.Point(3, 472)
+        Me.txtAdobeReader.Location = New System.Drawing.Point(3, 337)
         Me.txtAdobeReader.Multiline = True
         Me.txtAdobeReader.Name = "txtAdobeReader"
         Me.txtAdobeReader.Size = New System.Drawing.Size(390, 105)
@@ -180,7 +158,7 @@ Partial Class OtherCaches
         '
         'txtAppleInstaller
         '
-        Me.txtAppleInstaller.Location = New System.Drawing.Point(3, 583)
+        Me.txtAppleInstaller.Location = New System.Drawing.Point(3, 448)
         Me.txtAppleInstaller.Multiline = True
         Me.txtAppleInstaller.Name = "txtAppleInstaller"
         Me.txtAppleInstaller.Size = New System.Drawing.Size(390, 75)
@@ -189,7 +167,7 @@ Partial Class OtherCaches
         '
         'txtAVG
         '
-        Me.txtAVG.Location = New System.Drawing.Point(3, 664)
+        Me.txtAVG.Location = New System.Drawing.Point(3, 529)
         Me.txtAVG.Multiline = True
         Me.txtAVG.Name = "txtAVG"
         Me.txtAVG.Size = New System.Drawing.Size(390, 112)
@@ -198,7 +176,7 @@ Partial Class OtherCaches
         '
         'txtGIMP
         '
-        Me.txtGIMP.Location = New System.Drawing.Point(3, 782)
+        Me.txtGIMP.Location = New System.Drawing.Point(3, 647)
         Me.txtGIMP.Multiline = True
         Me.txtGIMP.Name = "txtGIMP"
         Me.txtGIMP.Size = New System.Drawing.Size(390, 47)
@@ -208,7 +186,7 @@ Partial Class OtherCaches
         '
         'txtGoogleEarth
         '
-        Me.txtGoogleEarth.Location = New System.Drawing.Point(3, 835)
+        Me.txtGoogleEarth.Location = New System.Drawing.Point(3, 700)
         Me.txtGoogleEarth.Multiline = True
         Me.txtGoogleEarth.Name = "txtGoogleEarth"
         Me.txtGoogleEarth.Size = New System.Drawing.Size(390, 75)
@@ -217,7 +195,7 @@ Partial Class OtherCaches
         '
         'txtGoogleUpdater
         '
-        Me.txtGoogleUpdater.Location = New System.Drawing.Point(3, 916)
+        Me.txtGoogleUpdater.Location = New System.Drawing.Point(3, 781)
         Me.txtGoogleUpdater.Multiline = True
         Me.txtGoogleUpdater.Name = "txtGoogleUpdater"
         Me.txtGoogleUpdater.Size = New System.Drawing.Size(390, 50)
@@ -227,7 +205,7 @@ Partial Class OtherCaches
         '
         'txtHPDigitalImaging
         '
-        Me.txtHPDigitalImaging.Location = New System.Drawing.Point(3, 972)
+        Me.txtHPDigitalImaging.Location = New System.Drawing.Point(3, 837)
         Me.txtHPDigitalImaging.Multiline = True
         Me.txtHPDigitalImaging.Name = "txtHPDigitalImaging"
         Me.txtHPDigitalImaging.Size = New System.Drawing.Size(390, 50)
@@ -237,7 +215,7 @@ Partial Class OtherCaches
         '
         'txtiTunes
         '
-        Me.txtiTunes.Location = New System.Drawing.Point(3, 1028)
+        Me.txtiTunes.Location = New System.Drawing.Point(3, 893)
         Me.txtiTunes.Multiline = True
         Me.txtiTunes.Name = "txtiTunes"
         Me.txtiTunes.Size = New System.Drawing.Size(390, 50)
@@ -247,7 +225,7 @@ Partial Class OtherCaches
         '
         'txtKaspersky
         '
-        Me.txtKaspersky.Location = New System.Drawing.Point(3, 1084)
+        Me.txtKaspersky.Location = New System.Drawing.Point(3, 949)
         Me.txtKaspersky.Multiline = True
         Me.txtKaspersky.Name = "txtKaspersky"
         Me.txtKaspersky.Size = New System.Drawing.Size(390, 171)
@@ -256,7 +234,7 @@ Partial Class OtherCaches
         '
         'txtNokiaOvi
         '
-        Me.txtNokiaOvi.Location = New System.Drawing.Point(3, 1261)
+        Me.txtNokiaOvi.Location = New System.Drawing.Point(3, 1126)
         Me.txtNokiaOvi.Multiline = True
         Me.txtNokiaOvi.Name = "txtNokiaOvi"
         Me.txtNokiaOvi.Size = New System.Drawing.Size(390, 51)
@@ -266,7 +244,7 @@ Partial Class OtherCaches
         '
         'txtQuicktime
         '
-        Me.txtQuicktime.Location = New System.Drawing.Point(3, 1318)
+        Me.txtQuicktime.Location = New System.Drawing.Point(3, 1183)
         Me.txtQuicktime.Multiline = True
         Me.txtQuicktime.Name = "txtQuicktime"
         Me.txtQuicktime.Size = New System.Drawing.Size(390, 72)
@@ -275,7 +253,7 @@ Partial Class OtherCaches
         '
         'txtSilverlight
         '
-        Me.txtSilverlight.Location = New System.Drawing.Point(3, 1396)
+        Me.txtSilverlight.Location = New System.Drawing.Point(3, 1261)
         Me.txtSilverlight.Multiline = True
         Me.txtSilverlight.Name = "txtSilverlight"
         Me.txtSilverlight.Size = New System.Drawing.Size(390, 72)
@@ -284,7 +262,7 @@ Partial Class OtherCaches
         '
         'txtSpotify
         '
-        Me.txtSpotify.Location = New System.Drawing.Point(3, 1474)
+        Me.txtSpotify.Location = New System.Drawing.Point(3, 1339)
         Me.txtSpotify.Multiline = True
         Me.txtSpotify.Name = "txtSpotify"
         Me.txtSpotify.Size = New System.Drawing.Size(390, 46)
@@ -294,7 +272,7 @@ Partial Class OtherCaches
         '
         'txtSymantec
         '
-        Me.txtSymantec.Location = New System.Drawing.Point(3, 1526)
+        Me.txtSymantec.Location = New System.Drawing.Point(3, 1391)
         Me.txtSymantec.Multiline = True
         Me.txtSymantec.Name = "txtSymantec"
         Me.txtSymantec.Size = New System.Drawing.Size(390, 46)
@@ -304,7 +282,7 @@ Partial Class OtherCaches
         '
         'txtUnity
         '
-        Me.txtUnity.Location = New System.Drawing.Point(3, 1578)
+        Me.txtUnity.Location = New System.Drawing.Point(3, 1443)
         Me.txtUnity.Multiline = True
         Me.txtUnity.Name = "txtUnity"
         Me.txtUnity.Size = New System.Drawing.Size(390, 71)
@@ -313,29 +291,25 @@ Partial Class OtherCaches
         '
         'txtQ13
         '
-        Me.txtQ13.Location = New System.Drawing.Point(3, 1655)
+        Me.txtQ13.Location = New System.Drawing.Point(3, 1520)
         Me.txtQ13.Multiline = True
         Me.txtQ13.Name = "txtQ13"
         Me.txtQ13.Size = New System.Drawing.Size(390, 21)
         Me.txtQ13.TabIndex = 46
         Me.txtQ13.Text = "echo Q13 >""%appdata%\DriveTidy\cleanchk.txt"""
         '
-        'OtherCaches
+        'CommandList2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(435, 427)
+        Me.ClientSize = New System.Drawing.Size(435, 397)
         Me.Controls.Add(Me.FlowLayoutPanel1)
-        Me.Controls.Add(Me.Label13)
-        Me.Name = "OtherCaches"
-        Me.Text = "OtherCaches"
+        Me.Name = "CommandList2"
         Me.FlowLayoutPanel1.ResumeLayout(False)
         Me.FlowLayoutPanel1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents txtAdobeCameraRAW As System.Windows.Forms.TextBox
     Friend WithEvents FlowLayoutPanel1 As System.Windows.Forms.FlowLayoutPanel
     Friend WithEvents txtQ13 As System.Windows.Forms.TextBox
@@ -357,7 +331,6 @@ Partial Class OtherCaches
     Friend WithEvents txtSampleVideos As System.Windows.Forms.TextBox
     Friend WithEvents txtVistaSP1 As System.Windows.Forms.TextBox
     Friend WithEvents txtVistaSP2 As System.Windows.Forms.TextBox
-    Friend WithEvents txtErrorReports As System.Windows.Forms.TextBox
     Friend WithEvents txtHibernate As System.Windows.Forms.TextBox
     Friend WithEvents txtSymantec As System.Windows.Forms.TextBox
 End Class
