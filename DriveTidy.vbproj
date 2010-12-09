@@ -86,10 +86,10 @@
     <Compile Include="CleanerWindow.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CommandList.Designer.vb">
-      <DependentUpon>CommandList.vb</DependentUpon>
+    <Compile Include="CleanDefs.Designer.vb">
+      <DependentUpon>CleanDefs.vb</DependentUpon>
     </Compile>
-    <Compile Include="CommandList.vb">
+    <Compile Include="CleanDefs.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Detect.Designer.vb">
@@ -125,10 +125,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="OtherCaches.Designer.vb">
-      <DependentUpon>OtherCaches.vb</DependentUpon>
+    <Compile Include="CleanDefs2.Designer.vb">
+      <DependentUpon>CleanDefs2.vb</DependentUpon>
     </Compile>
-    <Compile Include="OtherCaches.vb">
+    <Compile Include="CleanDefs2.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -139,8 +139,8 @@
     <EmbeddedResource Include="CleanerWindow.resx">
       <DependentUpon>CleanerWindow.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CommandList.resx">
-      <DependentUpon>CommandList.vb</DependentUpon>
+    <EmbeddedResource Include="CleanDefs.resx">
+      <DependentUpon>CleanDefs.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Detect.resx">
       <DependentUpon>Detect.vb</DependentUpon>
@@ -157,8 +157,8 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="OtherCaches.resx">
-      <DependentUpon>OtherCaches.vb</DependentUpon>
+    <EmbeddedResource Include="CleanDefs2.resx">
+      <DependentUpon>CleanDefs2.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
