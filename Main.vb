@@ -326,6 +326,8 @@ ErrorHandler:
         d3.Add(cb_MP, CommandList.txt_MP)
         d3.Add(cbERR, CommandList.txtERR)
 
+        lblNote.Text = "BETA " & My.Application.Info.Version.Revision
+
         'If certain files dont exist then delete their button
         Detect.Definitions()
         Checkbox_Count()
@@ -392,5 +394,14 @@ ErrorHandler:
                 Proc(i).Kill()
             End If
         Next
+    End Sub
+
+    Private Sub tmSelectAll_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmSelectAll.Tick
+        Checkbox_Count()
+        If cbCheckedCount < cbCount Then
+            cmdSelectAll.Text = "Select All"
+        ElseIf cbCheckedCount = cbCount Then
+            cmdSelectAll.Text = "Select None"
+        End If
     End Sub
 End Class

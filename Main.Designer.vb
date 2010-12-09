@@ -22,6 +22,7 @@ Partial Class Main
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.cbMessenger = New System.Windows.Forms.CheckBox
         Me.cbFlash = New System.Windows.Forms.CheckBox
@@ -70,6 +71,7 @@ Partial Class Main
         Me.cbSymantec = New System.Windows.Forms.CheckBox
         Me.cbUnity = New System.Windows.Forms.CheckBox
         Me.Label2 = New System.Windows.Forms.Label
+        Me.tmSelectAll = New System.Windows.Forms.Timer(Me.components)
         Me.FlowLayout.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -161,10 +163,10 @@ Partial Class Main
         Me.cmdSelectAll.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
         Me.cmdSelectAll.Location = New System.Drawing.Point(7, 82)
         Me.cmdSelectAll.Name = "cmdSelectAll"
-        Me.cmdSelectAll.Size = New System.Drawing.Size(86, 14)
+        Me.cmdSelectAll.Size = New System.Drawing.Size(52, 14)
         Me.cmdSelectAll.TabIndex = 4
         Me.cmdSelectAll.TabStop = True
-        Me.cmdSelectAll.Text = "Select All / None"
+        Me.cmdSelectAll.Text = "Select All"
         '
         'cbTIF
         '
@@ -662,6 +664,10 @@ Partial Class Main
         Me.Label2.Text = "File Extensions"
         Me.Label2.UseCompatibleTextRendering = True
         '
+        'tmSelectAll
+        '
+        Me.tmSelectAll.Enabled = True
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -733,4 +739,5 @@ Partial Class Main
     Friend WithEvents cbSymantec As System.Windows.Forms.CheckBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents tmSelectAll As System.Windows.Forms.Timer
 End Class
