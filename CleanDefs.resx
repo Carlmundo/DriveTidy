@@ -149,9 +149,9 @@ del /f /s /q "%history%"
 rd /s /q "%history%"
 del /f /s /q "%tif%"
 rd /s /q "%tif%"
-start /wait RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 1
-start /wait RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 2
-start /wait RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8</value>
+start /wait %windir%\System32\RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 1
+start /wait %windir%\System32\RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 2
+start /wait %windir%\System32\RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8</value>
   </data>
   <data name="txtFirefox.Text" xml:space="preserve">
     <value>echo Q7 &gt;"%appdata%\DriveTidy\cleanchk.txt"
@@ -327,5 +327,17 @@ rd /s /q "%localappdata%\Microsoft\Windows\WER\ReportArchive\"
 rd /s /q "%localappdata%\Microsoft\Windows\WER\ReportQueue\"
 rd /s /q "%allusersappdata%\Microsoft\Windows\WER\ReportArchive\"
 rd /s /q "%allusersappdata%\Microsoft\Windows\WER\ReportQueue\"</value>
+  </data>
+  <data name="txtTIF_IE6.Text" xml:space="preserve">
+    <value>echo Q6 &gt;"%appdata%\DriveTidy\cleanchk.txt"
+echo Clearing temporary internet files and caches...
+echo Your version of Internet Explorer is very outdated...
+del /f /s /q "%cookies%"
+rd /s /q "%cookies%"
+echo Q6 &gt;"%appdata%\DriveTidy\cleanchk.txt"
+del /f /s /q "%history%"
+rd /s /q "%history%"
+del /f /s /q "%tif%"
+rd /s /q "%tif%"</value>
   </data>
 </root>

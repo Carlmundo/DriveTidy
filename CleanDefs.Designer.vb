@@ -66,6 +66,8 @@ Partial Class CleanDefs
         Me.lblErrorReports = New System.Windows.Forms.Label
         Me.lblFileExt = New System.Windows.Forms.Label
         Me.lblAttrib = New System.Windows.Forms.Label
+        Me.txtTIF_IE6 = New System.Windows.Forms.TextBox
+        Me.Label1 = New System.Windows.Forms.Label
         Me.SuspendLayout()
         '
         'txtHeader
@@ -105,8 +107,8 @@ Partial Class CleanDefs
         Me.txtRecycle.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtRecycle.Size = New System.Drawing.Size(228, 55)
         Me.txtRecycle.TabIndex = 25
-        Me.txtRecycle.Text = "echo Q1 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo Emptying Recycle Bin..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f" & _
-            " /s /q ""%recycle%"""
+        Me.txtRecycle.Text = "echo Q1 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo Emptying Recycle Bin for %syste" & _
+            "mdrive%\ ..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%recycle%"""
         '
         'lblTemp
         '
@@ -154,7 +156,7 @@ Partial Class CleanDefs
         '
         Me.lblTIF.AutoSize = True
         Me.lblTIF.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTIF.Location = New System.Drawing.Point(469, 217)
+        Me.lblTIF.Location = New System.Drawing.Point(317, 217)
         Me.lblTIF.Name = "lblTIF"
         Me.lblTIF.Size = New System.Drawing.Size(238, 22)
         Me.lblTIF.TabIndex = 32
@@ -162,11 +164,11 @@ Partial Class CleanDefs
         '
         'txtTIF
         '
-        Me.txtTIF.Location = New System.Drawing.Point(473, 242)
+        Me.txtTIF.Location = New System.Drawing.Point(321, 242)
         Me.txtTIF.Multiline = True
         Me.txtTIF.Name = "txtTIF"
         Me.txtTIF.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtTIF.Size = New System.Drawing.Size(248, 59)
+        Me.txtTIF.Size = New System.Drawing.Size(234, 59)
         Me.txtTIF.TabIndex = 31
         Me.txtTIF.Text = resources.GetString("txtTIF.Text")
         '
@@ -206,7 +208,7 @@ Partial Class CleanDefs
         Me.txtWindowsUpdate.Multiline = True
         Me.txtWindowsUpdate.Name = "txtWindowsUpdate"
         Me.txtWindowsUpdate.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtWindowsUpdate.Size = New System.Drawing.Size(228, 61)
+        Me.txtWindowsUpdate.Size = New System.Drawing.Size(160, 61)
         Me.txtWindowsUpdate.TabIndex = 35
         Me.txtWindowsUpdate.Text = resources.GetString("txtWindowsUpdate.Text")
         '
@@ -465,10 +467,10 @@ Partial Class CleanDefs
         '
         'txtErrorReports
         '
-        Me.txtErrorReports.Location = New System.Drawing.Point(246, 242)
+        Me.txtErrorReports.Location = New System.Drawing.Point(178, 242)
         Me.txtErrorReports.Multiline = True
         Me.txtErrorReports.Name = "txtErrorReports"
-        Me.txtErrorReports.Size = New System.Drawing.Size(217, 61)
+        Me.txtErrorReports.Size = New System.Drawing.Size(137, 61)
         Me.txtErrorReports.TabIndex = 70
         Me.txtErrorReports.Text = resources.GetString("txtErrorReports.Text")
         '
@@ -476,7 +478,7 @@ Partial Class CleanDefs
         '
         Me.lblErrorReports.AutoSize = True
         Me.lblErrorReports.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblErrorReports.Location = New System.Drawing.Point(242, 217)
+        Me.lblErrorReports.Location = New System.Drawing.Point(178, 217)
         Me.lblErrorReports.Name = "lblErrorReports"
         Me.lblErrorReports.Size = New System.Drawing.Size(137, 22)
         Me.lblErrorReports.TabIndex = 71
@@ -502,11 +504,33 @@ Partial Class CleanDefs
         Me.lblAttrib.TabIndex = 73
         Me.lblAttrib.Text = "Attrib"
         '
+        'txtTIF_IE6
+        '
+        Me.txtTIF_IE6.Location = New System.Drawing.Point(561, 242)
+        Me.txtTIF_IE6.Multiline = True
+        Me.txtTIF_IE6.Name = "txtTIF_IE6"
+        Me.txtTIF_IE6.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtTIF_IE6.Size = New System.Drawing.Size(162, 59)
+        Me.txtTIF_IE6.TabIndex = 74
+        Me.txtTIF_IE6.Text = resources.GetString("txtTIF_IE6.Text")
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(561, 217)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(80, 22)
+        Me.Label1.TabIndex = 76
+        Me.Label1.Text = "TIF_IE6"
+        '
         'CleanDefs
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(735, 655)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.txtTIF_IE6)
         Me.Controls.Add(Me.lblAttrib)
         Me.Controls.Add(Me.lblFileExt)
         Me.Controls.Add(Me.lblErrorReports)
@@ -599,4 +623,6 @@ Partial Class CleanDefs
     Friend WithEvents lblErrorReports As System.Windows.Forms.Label
     Friend WithEvents lblFileExt As System.Windows.Forms.Label
     Friend WithEvents lblAttrib As System.Windows.Forms.Label
+    Friend WithEvents txtTIF_IE6 As System.Windows.Forms.TextBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class

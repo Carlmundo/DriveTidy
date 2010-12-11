@@ -92,6 +92,7 @@
     End Sub
 
     Private Sub cmdClean_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClean.Click
+        Dim ieVersion As New Version(My.Computer.Registry.LocalMachine.OpenSubKey("SOFTWARE\Microsoft\Internet Explorer").GetValue("Version"))
         'If the program fails to write a file then an error will generate and restart the program
         'On Error GoTo ErrorHandler
         'Checking to see if at least one option is checked
@@ -167,59 +168,66 @@
                 'Disable Attribute changers from Command List
                 If cbRecycle.Checked = False Then
                     CleanDefs.txtAttribRecycle.Text = ""
+            End If
+
+            If cbMessenger.Checked = False Then
+                CleanDefs.txtAttribSQM.Text = ""
+            End If
+
+            'Checks IE Version to see whether to use old defs, stops Inetcpl.cpl errors
+            If cbTIF.Checked = True Then
+                If ieVersion.Major <= 6 Then
+                    CleanDefs.txtTIF.Text = CleanDefs.txtTIF_IE6.Text
                 End If
+            End If
 
-                If cbMessenger.Checked = False Then
-                    CleanDefs.txtAttribSQM.Text = ""
-                End If
+            'Write check file
+            My.Computer.FileSystem.CreateDirectory(Environ("appdata") & "\DriveTidy")
+            FileOpen(1, Environ("appdata") & "\DriveTidy\cleanchk.txt", OpenMode.Output)
+            PrintLine(1, "0")
+            FileClose(1)
+            'Create Batch Commands
+            FileOpen(2, Environ("appdata") & "\DriveTidy\cleaner.bat", OpenMode.Output)
+            PrintLine(2, CleanDefs.txtHeader.Text)
+            'Add Common Options
+            For Each keyvaluepair In d1
+                PrintLine(2, keyvaluepair.Value.Text)
+            Next
+            'Marks beginning of "Other remaining caches" message
+            PrintLine(2, CleanDefs2.txtQ12.Text)
+            'Add Other Caches
+            For Each keyvaluepair In d2
+                PrintLine(2, keyvaluepair.Value.Text)
+            Next
+            'End of remaning caches
+            PrintLine(2, CleanDefs2.txtQ13.Text)
+            'Add File Extensions
+            For Each keyvaluepair In d3
+                PrintLine(2, keyvaluepair.Value.Text)
+            Next
+            'Send Finish Instruction
+            PrintLine(2, CleanDefs.txtFinish.Text)
+            FileClose(2)
 
-                'Write check file
-                My.Computer.FileSystem.CreateDirectory(Environ("appdata") & "\DriveTidy")
-                FileOpen(1, Environ("appdata") & "\DriveTidy\cleanchk.txt", OpenMode.Output)
-                PrintLine(1, "0")
-                FileClose(1)
-                'Create Batch Commands
-                FileOpen(2, Environ("appdata") & "\DriveTidy\cleaner.bat", OpenMode.Output)
-                PrintLine(2, CleanDefs.txtHeader.Text)
-                'Add Common Options
-                For Each keyvaluepair In d1
-                    PrintLine(2, keyvaluepair.Value.Text)
-                Next
-                'Marks beginning of "Other remaining caches" message
-                PrintLine(2, CleanDefs2.txtQ12.Text)
-                'Add Other Caches
-                For Each keyvaluepair In d2
-                    PrintLine(2, keyvaluepair.Value.Text)
-                Next
-                'End of remaning caches
-                PrintLine(2, CleanDefs2.txtQ13.Text)
-                'Add File Extensions
-                For Each keyvaluepair In d3
-                    PrintLine(2, keyvaluepair.Value.Text)
-                Next
-                'Send Finish Instruction
-                PrintLine(2, CleanDefs.txtFinish.Text)
-                FileClose(2)
-
-                FileOpen(3, Environ("appdata") & "\DriveTidy\start.bat", OpenMode.Output)
-                PrintLine(3, CleanDefs.txtStart1.Text)
-                PrintLine(3, CleanDefs.txtAttribRecycle.Text)
-                PrintLine(3, CleanDefs.txtAttribSQM.Text)
-                PrintLine(3, CleanDefs.txtStart2.Text)
-                FileClose(3)
-                ShellExecute(0, vbNullString, Environ("appdata") & "\DriveTidy\start.bat", vbNullString, vbNullString, AppWinStyle.NormalFocus)
-                'Show Cleaner Window
-                CleanerWindow.Show()
-                Me.Close()
-                CleanDefs.Close()
-                CleanDefs2.Close()
-                Exit Sub
+            FileOpen(3, Environ("appdata") & "\DriveTidy\start.bat", OpenMode.Output)
+            PrintLine(3, CleanDefs.txtStart1.Text)
+            PrintLine(3, CleanDefs.txtAttribRecycle.Text)
+            PrintLine(3, CleanDefs.txtAttribSQM.Text)
+            PrintLine(3, CleanDefs.txtStart2.Text)
+            FileClose(3)
+            ShellExecute(0, vbNullString, Environ("appdata") & "\DriveTidy\start.bat", vbNullString, vbNullString, AppWinStyle.NormalFocus)
+            'Show Cleaner Window
+            CleanerWindow.Show()
+            Me.Close()
+            CleanDefs.Close()
+            CleanDefs2.Close()
+            Exit Sub
 ErrorHandler:
-                CleanerErrors()
+            CleanerErrors()
 
-                'F numbers start the bar again.
-                'If a file extension is selected then it does the
-                'Advanced method with F numbers, no file extension = Q numbers
+            'F numbers start the bar again.
+            'If a file extension is selected then it does the
+            'Advanced method with F numbers, no file extension = Q numbers
             End If
     End Sub
 
@@ -428,7 +436,4 @@ ErrorHandler:
         End If
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        Detect.Show()
-    End Sub
 End Class
