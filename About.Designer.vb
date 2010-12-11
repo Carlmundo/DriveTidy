@@ -126,7 +126,7 @@ Partial Class About
         Me.lblEmail.Size = New System.Drawing.Size(126, 20)
         Me.lblEmail.TabIndex = 4
         Me.lblEmail.TabStop = True
-        Me.lblEmail.Text = "carl@aspromos.com"
+        Me.lblEmail.Text = "DriveTidy@gmail.com"
         Me.lblEmail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'cmdMoreInfo

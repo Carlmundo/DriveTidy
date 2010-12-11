@@ -17,7 +17,8 @@
     End Sub
 
     Private Sub lblEmail_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles lblEmail.LinkClicked
-        System.Diagnostics.Process.Start("mailto:carl@aspromos.com?Subject=DriveTidy")
+        On Error Resume Next 'An error may be returned if no mail program is installed
+        System.Diagnostics.Process.Start("mailto:DriveTidy@gmail.com?Subject=DriveTidy")
     End Sub
 
     Private Sub About_FormClosing(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
