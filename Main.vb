@@ -234,6 +234,7 @@ ErrorHandler:
     Private Sub cmdAbout_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdAbout.Click
         About.Show()
         Me.Hide()
+        tmSelectAll.Enabled = False
     End Sub
 
     Private Sub CleanerErrors()
@@ -362,6 +363,7 @@ ErrorHandler:
         'If certain files dont exist then delete their button
         Detect.Definitions()
         Checkbox_Count()
+        tmSelectAll.Enabled = True
     End Sub
 
     Private Sub Main_FormClosing(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing

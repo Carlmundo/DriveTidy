@@ -734,7 +734,6 @@ Partial Class Main
         '
         'tmSelectAll
         '
-        Me.tmSelectAll.Enabled = True
         '
         'Main
         '

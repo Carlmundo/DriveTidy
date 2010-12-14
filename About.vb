@@ -28,6 +28,7 @@
         Main.Top = Me.Top
         Main.Left = Me.Left
         Main.Show()
+        Main.tmSelectAll.Enabled = True
     End Sub
 
     Private Sub cmdClose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClose.Click
