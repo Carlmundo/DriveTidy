@@ -4,15 +4,17 @@
     'Allows Downloading of file
     Private Declare Function URLDownloadToFile Lib "urlmon" Alias "URLDownloadToFileA" (ByVal pCaller As Integer, ByVal szURL As String, ByVal szFileName As String, ByVal dwReserved As Integer, ByVal lpfnCB As Integer) As Integer
 
-    Protected Overrides Sub OnPaint(ByVal e As PaintEventArgs)
-        MyBase.OnPaint(e)
-        e.Graphics.DrawLine(Pens.Gray, 0, 125, Me.Width, 125)
+    Private Sub About_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
+        If e.KeyCode = Keys.Escape Then
+            Me.Close()
+        End If
     End Sub
+
     Private Sub About_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.Icon = Main.Icon
         lblVersion.Text = "v" & My.Application.Info.Version.Major & "." & My.Application.Info.Version.Minor & "." & My.Application.Info.Version.Build & "." & My.Application.Info.Version.Revision
         Me.Top = Main.Top
-        Me.Left = Main.Left
+        Me.Left = Main.Left - ((Me.Width - Main.Width) / 2)
         lblEmail.TabStop = False 'TabStop is not available in UI
     End Sub
 
@@ -26,15 +28,10 @@
         My.Computer.FileSystem.DeleteFile(Environ("temp") & "\build.txt")
         My.Computer.FileSystem.DeleteFile(Environ("temp") & "\DriveTidy_Readme.txt")
         Main.Top = Me.Top
-        Main.Left = Me.Left
+        Main.Left = Me.Left + (Me.Width - Main.Width)
         Main.Show()
         Main.tmSelectAll.Enabled = True
     End Sub
-
-    Private Sub cmdClose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClose.Click
-        Me.Close()
-    End Sub
-
     Private Sub cmdUpdate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdUpdate.Click
         Dim BuildCheck As Integer 'The process that downloads the file to the computer
         Dim url As String 'The URL of the build.txt file that contains the most recent build number
@@ -75,12 +72,14 @@ UpdateCheckFailed:
         Else
             MsgBox(Err.Description, MsgBoxStyle.Critical, "Error " & Err.Number)
         End If
+        FileClose(5)
     End Sub
 
-    Private Sub cmdMoreInfo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdMoreInfo.Click
+    Private Sub cmdReadme_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdReadMe.Click
         FileOpen(6, Environ("temp") & "\DriveTidy_Readme.txt", OpenMode.Output)
-        PrintLine(6, MoreInfo.txtReadme.Text)
+        PrintLine(6, Readme.txtReadme.Text)
         FileClose(6)
         ShellExecute(0, vbNullString, "notepad", Environ("temp") & "\DriveTidy_Readme.txt", vbNullString, AppWinStyle.NormalFocus)
     End Sub
+
 End Class

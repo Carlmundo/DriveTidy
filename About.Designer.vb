@@ -23,166 +23,129 @@ Partial Class About
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(About))
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox
-        Me.lblVersion = New System.Windows.Forms.Label
-        Me.Label1 = New System.Windows.Forms.Label
-        Me.Label2 = New System.Windows.Forms.Label
-        Me.cmdUpdate = New System.Windows.Forms.Button
-        Me.cmdClose = New System.Windows.Forms.Button
-        Me.Label4 = New System.Windows.Forms.Label
-        Me.Label3 = New System.Windows.Forms.Label
+        Me.cmdReadMe = New System.Windows.Forms.Button
         Me.lblEmail = New System.Windows.Forms.LinkLabel
-        Me.cmdMoreInfo = New System.Windows.Forms.Button
+        Me.cmdUpdate = New System.Windows.Forms.Button
+        Me.lblVersion = New System.Windows.Forms.Label
         Me.lblName = New System.Windows.Forms.Label
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox
+        Me.Label2 = New System.Windows.Forms.Label
+        Me.Label1 = New System.Windows.Forms.Label
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'PictureBox1
+        'cmdReadMe
         '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(32, 32)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
-        'lblVersion
-        '
-        Me.lblVersion.AutoSize = True
-        Me.lblVersion.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVersion.Location = New System.Drawing.Point(50, 30)
-        Me.lblVersion.Name = "lblVersion"
-        Me.lblVersion.Size = New System.Drawing.Size(45, 14)
-        Me.lblVersion.TabIndex = 2
-        Me.lblVersion.Text = "Version"
-        '
-        'Label1
-        '
-        Me.Label1.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(7, 50)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(235, 57)
-        Me.Label1.TabIndex = 5
-        Me.Label1.Text = "A disk cleanup tool that throroughly scans your computer for unnecessary and inva" & _
-            "lid files no longer being used by the operating system."
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label2
-        '
-        Me.Label2.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(2, 105)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(244, 14)
-        Me.Label2.TabIndex = 7
-        Me.Label2.Text = "Please close all other programs before cleanup."
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'cmdUpdate
-        '
-        Me.cmdUpdate.Location = New System.Drawing.Point(157, 132)
-        Me.cmdUpdate.Name = "cmdUpdate"
-        Me.cmdUpdate.Size = New System.Drawing.Size(86, 24)
-        Me.cmdUpdate.TabIndex = 3
-        Me.cmdUpdate.Text = "Update"
-        Me.cmdUpdate.UseVisualStyleBackColor = True
-        '
-        'cmdClose
-        '
-        Me.cmdClose.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.cmdClose.Location = New System.Drawing.Point(157, 160)
-        Me.cmdClose.Name = "cmdClose"
-        Me.cmdClose.Size = New System.Drawing.Size(86, 24)
-        Me.cmdClose.TabIndex = 1
-        Me.cmdClose.Text = "Close"
-        Me.cmdClose.UseVisualStyleBackColor = True
-        '
-        'Label4
-        '
-        Me.Label4.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(2, 168)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(155, 16)
-        Me.Label4.TabIndex = 14
-        Me.Label4.Text = "(with the subject ""DriveTidy"")"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label3
-        '
-        Me.Label3.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(2, 132)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(155, 16)
-        Me.Label3.TabIndex = 13
-        Me.Label3.Text = "Email your comments to:"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.cmdReadMe.Location = New System.Drawing.Point(81, 153)
+        Me.cmdReadMe.Name = "cmdReadMe"
+        Me.cmdReadMe.Size = New System.Drawing.Size(86, 24)
+        Me.cmdReadMe.TabIndex = 1
+        Me.cmdReadMe.Text = "Read Me"
+        Me.cmdReadMe.UseVisualStyleBackColor = True
         '
         'lblEmail
         '
-        Me.lblEmail.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEmail.AutoSize = True
+        Me.lblEmail.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblEmail.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
-        Me.lblEmail.Location = New System.Drawing.Point(16, 148)
+        Me.lblEmail.Location = New System.Drawing.Point(85, 182)
         Me.lblEmail.Name = "lblEmail"
-        Me.lblEmail.Size = New System.Drawing.Size(126, 20)
-        Me.lblEmail.TabIndex = 4
+        Me.lblEmail.Size = New System.Drawing.Size(127, 15)
+        Me.lblEmail.TabIndex = 21
         Me.lblEmail.TabStop = True
         Me.lblEmail.Text = "DriveTidy@gmail.com"
         Me.lblEmail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'cmdMoreInfo
+        'cmdUpdate
         '
-        Me.cmdMoreInfo.Location = New System.Drawing.Point(157, 20)
-        Me.cmdMoreInfo.Name = "cmdMoreInfo"
-        Me.cmdMoreInfo.Size = New System.Drawing.Size(86, 24)
-        Me.cmdMoreInfo.TabIndex = 2
-        Me.cmdMoreInfo.Text = "More Info..."
-        Me.cmdMoreInfo.UseVisualStyleBackColor = True
+        Me.cmdUpdate.Location = New System.Drawing.Point(56, 56)
+        Me.cmdUpdate.Name = "cmdUpdate"
+        Me.cmdUpdate.Size = New System.Drawing.Size(136, 24)
+        Me.cmdUpdate.TabIndex = 0
+        Me.cmdUpdate.Text = "Check For Updates"
+        Me.cmdUpdate.UseVisualStyleBackColor = True
+        '
+        'lblVersion
+        '
+        Me.lblVersion.AutoSize = True
+        Me.lblVersion.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVersion.Location = New System.Drawing.Point(94, 36)
+        Me.lblVersion.Name = "lblVersion"
+        Me.lblVersion.Size = New System.Drawing.Size(49, 15)
+        Me.lblVersion.TabIndex = 18
+        Me.lblVersion.Text = "Version"
         '
         'lblName
         '
         Me.lblName.AutoSize = True
-        Me.lblName.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblName.Location = New System.Drawing.Point(50, 12)
+        Me.lblName.Font = New System.Drawing.Font("Arial", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblName.Location = New System.Drawing.Point(88, 12)
         Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(68, 16)
-        Me.lblName.TabIndex = 1
+        Me.lblName.Size = New System.Drawing.Size(107, 24)
+        Me.lblName.TabIndex = 17
         Me.lblName.Text = "DriveTidy"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(53, 15)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(32, 32)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.TabIndex = 15
+        Me.PictureBox1.TabStop = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(37, 182)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(52, 15)
+        Me.Label2.TabIndex = 23
+        Me.Label2.Text = "Contact:"
+        '
+        'Label1
+        '
+        Me.Label1.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(7, 86)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(235, 64)
+        Me.Label1.TabIndex = 22
+        Me.Label1.Text = "A disk cleanup tool that throroughly scans your computer for unnecessary and inva" & _
+            "lid files no longer being used by the operating system."
         '
         'About
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.CancelButton = Me.cmdClose
-        Me.ClientSize = New System.Drawing.Size(249, 190)
-        Me.Controls.Add(Me.cmdMoreInfo)
-        Me.Controls.Add(Me.lblEmail)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.cmdClose)
-        Me.Controls.Add(Me.cmdUpdate)
+        Me.ClientSize = New System.Drawing.Size(249, 206)
         Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.cmdReadMe)
+        Me.Controls.Add(Me.lblEmail)
+        Me.Controls.Add(Me.cmdUpdate)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lblVersion)
         Me.Controls.Add(Me.lblName)
         Me.Controls.Add(Me.PictureBox1)
+        Me.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.Name = "About"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "About DriveTidy"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents lblVersion As System.Windows.Forms.Label
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents cmdUpdate As System.Windows.Forms.Button
-    Friend WithEvents cmdClose As System.Windows.Forms.Button
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents cmdReadMe As System.Windows.Forms.Button
     Friend WithEvents lblEmail As System.Windows.Forms.LinkLabel
-    Friend WithEvents cmdMoreInfo As System.Windows.Forms.Button
+    Friend WithEvents cmdUpdate As System.Windows.Forms.Button
+    Friend WithEvents lblVersion As System.Windows.Forms.Label
     Friend WithEvents lblName As System.Windows.Forms.Label
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class
