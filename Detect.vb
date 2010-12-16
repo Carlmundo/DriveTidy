@@ -1,5 +1,11 @@
 ﻿Public Class Detect
     Public Sub Definitions()
+<<<<<<< HEAD
+=======
+        Dim CountMore
+        CountMore = 0
+        'If certain files dont exist then delete their button
+>>>>>>> 22ab45e... Detection rules for popular browsers and will make "More..." and "Other Applications" labels invisible if no items are listed
         If Not My.Computer.FileSystem.DirectoryExists(Environ("allusersappdata") & "\Microsoft\Windows\WER\ReportArchive") Then
             If Not My.Computer.FileSystem.DirectoryExists(Environ("allusersappdata") & "\Microsoft\Windows\WER\ReportQueue") Then
                 If Not My.Computer.FileSystem.DirectoryExists(Environ("localappdata") & "\Microsoft\Windows\WER\ReportArchive") Then
@@ -7,6 +13,7 @@
                         Main.cbErrorReports.Visible = False
                     End If
                 End If
+<<<<<<< HEAD
             End If
         End If
 
@@ -47,6 +54,44 @@
             If Not My.Computer.FileSystem.DirectoryExists(Environ("systemdrive") & "\Documents and Settings\All Users\Documents\My Pictures\Sample Pictures") Then
                 Main.cbSamplePictures.Visible = False
             End If
+=======
+            End If
+        End If
+
+        If Not My.Computer.FileSystem.DirectoryExists(Environ("localappdata") & "\Mozilla\Firefox") Then
+            Main.cbFirefox.Visible = False
+        End If
+        If Not My.Computer.FileSystem.DirectoryExists(Environ("localappdata") & "\Google\Chrome") Then
+            Main.cbChrome.Visible = False
+        End If
+        If Not My.Computer.FileSystem.DirectoryExists(Environ("localappdata") & "\Opera") Then
+            If Not My.Computer.FileSystem.DirectoryExists(Environ("appdata") & "\Opera") Then
+                Main.cbOpera.Visible = False
+            End If
+        End If
+        If Not My.Computer.FileSystem.DirectoryExists(Environ("localappdata") & "\Apple Computer\Safari") Then
+            If Not My.Computer.FileSystem.DirectoryExists(Environ("appdata") & "\Apple Computer\Safari") Then
+                Main.cbSafari.Visible = False
+            End If
+        End If
+
+
+        If Not My.Computer.FileSystem.FileExists(Environ("windir") & "\system32\vsp1cln.exe") Then
+            Main.cbVistaSP1.Visible = False
+            CountMore = CountMore + 1
+        End If
+        If Not My.Computer.FileSystem.FileExists(Environ("windir") & "\system32\compcln.exe") Then
+            Main.cbVistaSP2.Visible = False
+            CountMore = CountMore + 1
+        End If
+        If Not My.Computer.FileSystem.FileExists(Environ("systemdrive") & "\hiberfil.sys") Then
+            Main.cbHibernate.Visible = False
+            CountMore = CountMore + 1
+        End If
+        If Not My.Computer.FileSystem.DirectoryExists(Environ("systemdrive") & "\Users\Public\Recorded TV\Sample Media") Then
+            Main.cbSampleVideos.Visible = False
+            CountMore = CountMore + 1
+>>>>>>> 22ab45e... Detection rules for popular browsers and will make "More..." and "Other Applications" labels invisible if no items are listed
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("systemdrive") & "\Users\Public\Videos\Sample Videos") Then
             If Not My.Computer.FileSystem.DirectoryExists(Environ("systemdrive") & "\Users\Public\Recorded TV\Sample Media") Then
@@ -138,6 +183,7 @@
                 Main.cbUnity.Visible = False
             End If
         End If
+<<<<<<< HEAD
 
         'Determines if should show "More..." label
         If Main.lblOtherApps.Location.Y = Main.lblMore.Location.Y + 20 Then
@@ -147,5 +193,20 @@
         If Main.lblFileExt.Location.Y = Main.lblOtherApps.Location.Y + 20 Then
             Main.lblOtherApps.Visible = False
         End If
+=======
+
+        'Determines if should show "More..." label
+        If Main.lblOtherApps.Location.Y = Main.lblMore.Location.Y + 18 Then
+            Main.lblMore.Visible = False
+        End If
+        'Determines if should show "Other Applications" label
+        If Main.lblFileExt.Location.Y = Main.lblOtherApps.Location.Y + 18 Then
+            Main.lblOtherApps.Visible = False
+        End If
+    End Sub
+
+    Private Sub Detect_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+>>>>>>> 22ab45e... Detection rules for popular browsers and will make "More..." and "Other Applications" labels invisible if no items are listed
     End Sub
 End Class
