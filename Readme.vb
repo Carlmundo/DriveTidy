@@ -1,3 +1,3 @@
-﻿Public Class MoreInfo
+﻿Public Class Readme
 
 End Class

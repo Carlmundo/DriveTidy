@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class MoreInfo
+Partial Class Readme
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class MoreInfo
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MoreInfo))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Readme))
         Me.txtReadme = New System.Windows.Forms.TextBox
         Me.SuspendLayout()
         '
@@ -35,13 +35,13 @@ Partial Class MoreInfo
         Me.txtReadme.TabIndex = 0
         Me.txtReadme.Text = resources.GetString("txtReadme.Text")
         '
-        'MoreInfo
+        'Readme
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(249, 190)
         Me.Controls.Add(Me.txtReadme)
-        Me.Name = "MoreInfo"
+        Me.Name = "Readme"
         Me.Text = "More Info..."
         Me.ResumeLayout(False)
         Me.PerformLayout()
