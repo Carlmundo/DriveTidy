@@ -125,7 +125,6 @@
 
 Windows XP SP2, Vista or 7
 Internet Explorer 7 or newer
-.NET Framework 2.0 (Comes
 1 MB of Free Space
 Internet Connection (to check for updates)
 
@@ -139,23 +138,23 @@ On the first screen you see you are able to check what items you want to remove.
 
 (5) What items should I check in the list?
 
-(3) What files did the scan remove?
+(6) What files did the scan remove?
 
 When a scan is finished and displays "Cleanup Complete" you can click the "View Log" button to bring up a text file that  contains a list of all the files it tried to delete. You will notice that on some items it says "Deleted file" and for some  it doesn't. If a file wasn't deleted then that is most likely because it is in use by another program which isn't really a  problem.
 
-(4) Where does the program save the log files?
+(7) Where does the program save the log files?
 
 Log files are not kept on the system. You have to save them yourself.
 Once you have the log open. If you wish to keep it. Click File -&gt; Save As and save it somewhere. 
 Otherwise, after closing the cleaner window, the log is deleted.
 
-(5) I can see files in the log related to Kaspersky but they weren't deleted. How can I get rid of them?
+(8) I can see files in the log related to Kaspersky but they weren't deleted. How can I get rid of them?
 
 Right click on the Kaspersky icon in the system tray (usually at the bottom right of your computer), and click Settings.
 Look for the 'Enable Self-Defense' option, untick it and click OK. 
 Then start the cleanup again and once it is done make sure you enable the option again.
 
-6) There are other files that could not be removed. What shall I do?
+(9) There are other files that could not be removed. What shall I do?
 
 In most cases it is fine to leave the files alone. If they cannot be removed then this is usually nothing to worry about (as  mentioned in Q3). Do make sure that you have closed all programs before running the cleanup to allow the cleanup to be more  efficient.
 
