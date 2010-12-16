@@ -41,6 +41,7 @@
         Dim FileContent As Object
         Dim intmessage As Object
         Dim objShell As Object 'Used to open the link to download an updated version
+        Me.Cursor = Cursors.WaitCursor
         objShell = CreateObject("WScript.Shell")
         url = "http://www.aspromos.com/build.txt"
         localFileName = Environ("temp") & "\build.txt"
@@ -51,6 +52,7 @@
         On Error GoTo UpdateCheckFailed
         FileOpen(5, BuildFile, OpenMode.Input)
         Input(5, FileContent)
+        Me.Cursor = Cursors.Default
         If FileContent > BuildValue Then
             intmessage = MsgBox("A newer version of DriveTidy is available. Do you want to download it?", MsgBoxStyle.YesNo, "Update")
             If intmessage = MsgBoxResult.Yes Then
@@ -67,6 +69,7 @@
         FileClose(5)
         Exit Sub
 UpdateCheckFailed:
+        Me.Cursor = Cursors.Default
         If Err.Number = 53 Then
             MsgBox("Could not find server. Make sure you are connected to the internet.", MsgBoxStyle.Exclamation, "Update Failed")
         Else
