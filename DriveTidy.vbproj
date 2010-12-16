@@ -104,12 +104,6 @@
     <Compile Include="Main.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MoreInfo.Designer.vb">
-      <DependentUpon>MoreInfo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="MoreInfo.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -131,6 +125,12 @@
     <Compile Include="CleanDefs2.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Readme.designer.vb">
+      <DependentUpon>Readme.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Readme.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="About.resx">
@@ -148,9 +148,6 @@
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MoreInfo.resx">
-      <DependentUpon>MoreInfo.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -159,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CleanDefs2.resx">
       <DependentUpon>CleanDefs2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Readme.resx">
+      <DependentUpon>Readme.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
