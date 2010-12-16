@@ -137,7 +137,11 @@ rd /s /q "%systemdrive%\temp\"
 del /f /s /q "%systemdrive%\Users\Temp\AppData\Local\Temp\*.*"
 rd /s /q "%systemdrive%\Users\Temp\AppData\Local\Temp\"
 del /f /s /q "%allusersappdata%\Microsoft\Search\Data\Temp\*.*"
-rd /s /q "%allusersappdata%\Microsoft\Search\Data\Temp\"</value>
+rd /s /q "%allusersappdata%\Microsoft\Search\Data\Temp\"
+del /f /s /q "%windir%\system32\config\systemprofile\Local Settings\Temp\*.*"
+rd /s /q "%windir%\system32\config\systemprofile\Local Settings\Temp\"
+del /f /s /q "%windir%\system32\config\systemprofile\AppData\Local\Temp\*.*"
+rd /s /q "%windir%\system32\config\systemprofile\AppData\Local\Temp\"</value>
   </data>
   <data name="txtTIF.Text" xml:space="preserve">
     <value>echo Q6 &gt;"%appdata%\DriveTidy\cleanchk.txt"
@@ -149,6 +153,14 @@ del /f /s /q "%history%"
 rd /s /q "%history%"
 del /f /s /q "%tif%"
 rd /s /q "%tif%"
+del /f /s /q "%windir%\system32\config\systemprofile\Local Settings\History\*.*"
+rd /s /q "%windir%\system32\config\systemprofile\Local Settings\History\"
+del /f /s /q "%windir%\system32\config\systemprofile\Local Settings\Temporary Internet Files\*.*"
+rd /s /q "%windir%\system32\config\systemprofile\Local Settings\Temporary Internet Files\"
+del /f /s /q "%windir%\system32\config\systemprofile\AppData\Local\\History\*.*"
+rd /s /q "%windir%\system32\config\systemprofile\AppData\Local\History\"
+del /f /s /q "%windir%\system32\config\systemprofile\AppData\Local\Temporary Internet Files\*.*"
+rd /s /q "%windir%\system32\config\systemprofile\AppData\Local\Temporary Internet Files\"
 start /wait %windir%\System32\RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 1
 start /wait %windir%\System32\RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 2
 start /wait %windir%\System32\RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8</value>
