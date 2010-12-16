@@ -31,7 +31,7 @@ Partial Class Readme
         Me.txtReadme.Location = New System.Drawing.Point(0, 0)
         Me.txtReadme.Multiline = True
         Me.txtReadme.Name = "txtReadme"
-        Me.txtReadme.Size = New System.Drawing.Size(251, 192)
+        Me.txtReadme.Size = New System.Drawing.Size(250, 192)
         Me.txtReadme.TabIndex = 0
         Me.txtReadme.Text = resources.GetString("txtReadme.Text")
         '
@@ -39,10 +39,10 @@ Partial Class Readme
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(249, 190)
+        Me.ClientSize = New System.Drawing.Size(247, 190)
         Me.Controls.Add(Me.txtReadme)
         Me.Name = "Readme"
-        Me.Text = "More Info..."
+        Me.Text = "Readme"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
