@@ -26,7 +26,6 @@
     <ManifestCertificateThumbprint>AACC33BCDCE877E46BF0ACBA671C69D37B2B3B32</ManifestCertificateThumbprint>
     <ManifestKeyFile>DriveTidy_TemporaryKey.pfx</ManifestKeyFile>
     <SignManifests>false</SignManifests>
-    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -42,6 +41,7 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -172,7 +172,6 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="My Project\VisualBasic" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="32x32_HQ.ico" />
