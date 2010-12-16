@@ -117,6 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="txtSampleMusic.Text" xml:space="preserve">
+    <value>echo Windows Sample Music...
+del /f /s /q "%systemdrive%\Users\Public\Music\Sample Music\*.*"
+rd /s /q "%systemdrive%\Users\Public\Music\Sample Music\"
+del /f /s /q "%systemdrive%\Documents and Settings\All Users\Documents\My Music\Sample Music\*.*"
+rd /s /q "%systemdrive%\Documents and Settings\All Users\Documents\My Music\Sample Music\"</value>
+  </data>
+  <data name="txtSamplePictures.Text" xml:space="preserve">
+    <value>echo Windows Sample Pictures...
+del /f /s /q "%systemdrive%\Users\Public\Pictures\Sample Pictures\*.*"
+rd /s /q "%systemdrive%\Users\Public\Pictures\Sample Pictures\"
+del /f /s /q "%systemdrive%\Documents and Settings\All Users\Documents\My Pictures\Sample Pictures\*.*"
+rd /s /q "%systemdrive%\Documents and Settings\All Users\Documents\My Pictures\Sample Pictures\"</value>
+  </data>
+  <data name="txtSampleVideos.Text" xml:space="preserve">
+    <value>echo Windows Sample Videos...
+del /f /s /q "%systemdrive%\Users\Public\Videos\Sample Videos\*.*"
+rd /s /q "%systemdrive%\Users\Public\Videos\Sample Videos\"
+del /f /s /q "%systemdrive%\Users\Public\Recorded TV\Sample Media\*.*"
+rd /s /q "%systemdrive%\Users\Public\Recorded TV\Sample Media\"</value>
+  </data>
   <data name="txtAdobeReader.Text" xml:space="preserve">
     <value>echo Adobe Reader cache...
 :Adobe Cache
@@ -188,7 +209,7 @@ del /f /s /q "%%a\update\backup\*.*"
 popd</value>
   </data>
   <data name="txtGoogleEarth.Text" xml:space="preserve">
-    <value>echo Google Earth Cache...
+    <value>echo Google Earth cache...
 del /f /q "%appdata%\Google\GoogleEarth\dbCache.dat"
 del /f /q "%appdata%\Google\GoogleEarth\dbCache.dat.index"
 del /f /q "%localappdata%\Google\GoogleEarth\dbCache.dat"
@@ -196,8 +217,18 @@ del /f /q "%localappdata%\Google\GoogleEarth\dbCache.dat.index"
 del /f /q "%locallowappdata%\Google\GoogleEarth\dbCache.dat"
 del /f /q "%locallowappdata%\Google\GoogleEarth\dbCache.dat.index"</value>
   </data>
+  <data name="txtIMVU.Text" xml:space="preserve">
+    <value>echo IMVU cache...
+del /f /s /q "%appdata%\IMVU\cache\*.*"
+rd /s /q "%appdata%\IMVU\cache\"
+del /f /s /q "%appdata%\IMVU\AssetCache\*.*"
+rd /s /q "%appdata%\IMVU\AssetCache\"
+del /f /s /q "%appdata%\IMVU\PixmapCache\*.*"
+rd /s /q "%appdata%\IMVU\PixmapCache\"
+del /f /s /q "%appdata%\IMVU\*.log"</value>
+  </data>
   <data name="txtKaspersky.Text" xml:space="preserve">
-    <value>echo Kaspersky Reports and Temp files...
+    <value>echo Kaspersky reports and temp files...
 del /f /s /q "%allusersappdata%\Kaspersky Lab\*.dmp"
 del /f /s /q "%allusersappdata%\Kaspersky Lab\*.tmp"
 del /f /s /q "%allusersappdata%\Kaspersky Lab\*.log"
@@ -216,7 +247,7 @@ popd
 :End_Kaspersky</value>
   </data>
   <data name="txtQuicktime.Text" xml:space="preserve">
-    <value>echo Quicktime Downloads...
+    <value>echo Quicktime downloads...
 del /f /s /q "%localappdata%\Apple Computer\QuickTime\downloads\*.*"
 rd /s /q "%localappdata%\Apple Computer\QuickTime\downloads\"
 del /f /s /q "%locallowappdata%\Apple Computer\Quicktime\downloads\*.*"
@@ -226,12 +257,37 @@ del /f /q "%appdata%\Apple Computer\QuickTime\QTPlayerSession.xml"
 del /f /q  "%localappdata%\Apple Computer\QuickTime\QTPlayerSession.xml"
 del /f /q  "%locallowappdata%\Apple Computer\QuickTime\QTPlayerSession.xml"</value>
   </data>
+  <data name="txtRealPlayer.Text" xml:space="preserve">
+    <value>echo RealPlayer history and cookies...
+del /f /q "%appdata%\Real\RealPlayer\cookies.txt"
+del /f /q "%appdata%\Real\RealPlayer\ctd.dat"
+del /f /q "%appdata%\Real\RealPlayer\realplayer.ste"
+del /f /s /q "%appdata%\Real\RealPlayer\History\*.*"
+del /f /q "%appdata%\Real\RealOne Player\cookies.txt"
+del /f /q "%appdata%\Real\RealOne Player\ctd.dat"
+del /f /q "%appdata%\Real\RealOne Player\realplayer.ste"
+del /f /s /q "%appdata%\Real\RealOne Player\History\*.*"</value>
+  </data>
   <data name="txtSilverlight.Text" xml:space="preserve">
-    <value>echo Silverlight Cookies...
+    <value>echo Silverlight cookies...
 del /f /s /q "%localappdata%\Microsoft\Silverlight\*.*"
 rd /s /q "%localappdata%\Microsoft\Silverlight\"
 del /f /s /q "%locallowappdata%\Microsoft\Silverlight\*.*"
 rd /s /q "%locallowappdata%\Microsoft\Silverlight\"</value>
+  </data>
+  <data name="txtSymantec.Text" xml:space="preserve">
+    <value>echo Symantec caches...
+del /f /s /q "%allusersappdata%\Symantec Temporary Files\*.*"
+rd /s /q "%allusersappdata%\Symantec Temporary Files\"
+del /f /s /q "%allusersappdata%\Symantec\LiveUpdate\Downloads\*.*"
+rd /s /q "%allusersappdata%\Symantec\LiveUpdate\Downloads\"</value>
+  </data>
+  <data name="txtTrackmania.Text" xml:space="preserve">
+    <value>echo TrackMania cache...
+del /f /s /q "%allusersappdata%\TrackMania\Cache\*.*"
+rd /s /q "%allusersappdata%\TrackMania\Cache\"
+del /f /s /q "%localappdata%\VirtualStore\ProgramData\TrackMania\Cache\*.*"
+rd /s /q "%localappdata%\VirtualStore\ProgramData\TrackMania\Cache\"</value>
   </data>
   <data name="txtUnity.Text" xml:space="preserve">
     <value>echo Unity Web Player cache...
