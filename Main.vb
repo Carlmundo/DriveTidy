@@ -14,11 +14,6 @@
     Dim MsgConfirmKill As Object
     Dim MsgApp, MsgProcess, MsgString
 
-    Private Sub cmdQuick_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdQuick.Click
-        QuickSelect()
-        Uncheck_Invisible()
-    End Sub
-
     Public Sub QuickSelect()
         'Unchecks all checkboxes
         For Each Me.item In FlowLayout.Controls
@@ -50,191 +45,18 @@
         cbGoogleEarth.Checked = True
         cbGoogleUpdater.Checked = True
         cbHPDigitalImaging.Checked = True
+        cbIMVU.Checked = True
         cbiTunes.Checked = True
         cbKaspersky.Checked = True
         cbNokiaOvi.Checked = True
         cbQuicktime.Checked = True
+        cbRealPlayer.Checked = True
+        cbRDP.Checked = True
         cbSilverlight.Checked = True
         cbSpotify.Checked = True
         cbSymantec.Checked = True
+        cbTrackmania.Checked = True
         cbUnity.Checked = True
-    End Sub
-
-    Private Sub cmdAdvanced_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdAdvanced.Click
-        QuickSelect()
-        cbTMP.Checked = True
-        cbLOG.Checked = True
-        cbCHK.Checked = True
-        cbDMP.Checked = True
-        Uncheck_Invisible()
-        FlowLayout.VerticalScroll.Value = FlowLayout.VerticalScroll.Maximum
-        FlowLayout.ScrollControlIntoView(FlowLayout)
-    End Sub
-
-    Private Sub cmdSelectAll_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles cmdSelectAll.LinkClicked
-        Checkbox_Count()
-        If cbCheckedCount < cbCount Then
-            For Each Me.item In FlowLayout.Controls
-                If TypeOf item Is CheckBox Then
-                    item.Checked = True
-                    Checkbox_Count()
-                End If
-            Next
-        ElseIf cbCheckedCount = cbCount Then
-            For Each Me.item In FlowLayout.Controls
-                If TypeOf item Is CheckBox Then
-                    item.Checked = False
-                    Checkbox_Count()
-                End If
-            Next
-        End If
-        Uncheck_Invisible()
-    End Sub
-
-    Private Sub cmdClean_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClean.Click
-        Dim ieVersion As New Version(My.Computer.Registry.LocalMachine.OpenSubKey("SOFTWARE\Microsoft\Internet Explorer").GetValue("Version"))
-        'If the program fails to write a file then an error will generate and restart the program
-        'On Error GoTo ErrorHandler
-        'Checking to see if at least one option is checked
-
-        Checkbox_Count()
-        If cbCheckedCount = 0 Then
-            Ready = 0
-        Else
-            'Process Detection - checks to see if programs are running and need to be closed
-            Ready = 1 'Value starts at 1 and will be changed to 2 if the No option is selected for any running processes
-            MsgString = " is running and needs to be closed." & vbCrLf & "To save what you are doing close the program manually." & vbCrLf & "Are you sure you want to continue?"
-            If cbTIF.Checked = True Then
-                If Ready = 1 Then
-                    MsgApp = "Internet Explorer"
-                    MsgProcess = "iexplore"
-                    KillMsg()
-                End If
-            End If
-            If cbFirefox.Checked = True Then
-                If Ready = 1 Then
-                    MsgApp = "Mozilla Firefox"
-                    MsgProcess = "firefox"
-                    KillMsg()
-                End If
-            End If
-            If cbChrome.Checked = True Then
-                If Ready = 1 Then
-                    MsgApp = "Google Chrome"
-                    MsgProcess = "chrome"
-                    KillMsg()
-                End If
-            End If
-            If cbOpera.Checked = True Then
-                If Ready = 1 Then
-                    MsgApp = "Opera"
-                    MsgProcess = "opera"
-                    KillMsg()
-                End If
-            End If
-            If cbSafari.Checked = True Then
-                If Ready = 1 Then
-                    MsgApp = "Safari"
-                    MsgProcess = "safari"
-                    KillMsg()
-                End If
-            End If
-
-            If Not Ready = 2 Then 'If a new value other than 2 has not been assigned then it will be changed to 1 to proceed
-                Ready = 1
-            End If
-            End If
-
-            If Ready = 0 Then
-                MsgBox("Select at least one option.")
-            ElseIf Ready = 1 Then
-                'Disabling commands for unchecked items
-                For Each kvp As System.Collections.Generic.KeyValuePair(Of CheckBox, TextBox) In d1
-                    If Not kvp.Key.Checked Then
-                        kvp.Value.Text = ""
-                    End If
-                Next
-                For Each kvp As System.Collections.Generic.KeyValuePair(Of CheckBox, TextBox) In d2
-                    If Not kvp.Key.Checked Then
-                        kvp.Value.Text = ""
-                    End If
-                Next
-                For Each kvp As System.Collections.Generic.KeyValuePair(Of CheckBox, TextBox) In d3
-                    If Not kvp.Key.Checked Then
-                        kvp.Value.Text = ""
-                    End If
-                Next
-
-                'Disable Attribute changers from Command List
-                If cbRecycle.Checked = False Then
-                    CleanDefs.txtAttribRecycle.Text = ""
-            End If
-
-            If cbMessenger.Checked = False Then
-                CleanDefs.txtAttribSQM.Text = ""
-            End If
-
-            'Checks IE Version to see whether to use old defs, stops Inetcpl.cpl errors
-            If cbTIF.Checked = True Then
-                If ieVersion.Major <= 6 Then
-                    CleanDefs.txtTIF.Text = CleanDefs.txtTIF_IE6.Text
-                End If
-            End If
-
-            'Write check file
-            My.Computer.FileSystem.CreateDirectory(Environ("appdata") & "\DriveTidy")
-            FileOpen(1, Environ("appdata") & "\DriveTidy\cleanchk.txt", OpenMode.Output)
-            PrintLine(1, "0")
-            FileClose(1)
-            'Create Batch Commands
-            FileOpen(2, Environ("appdata") & "\DriveTidy\cleaner.bat", OpenMode.Output)
-            PrintLine(2, CleanDefs.txtHeader.Text)
-            'Add Common Options
-            For Each keyvaluepair In d1
-                PrintLine(2, keyvaluepair.Value.Text)
-            Next
-            'Marks beginning of "Other remaining caches" message
-            PrintLine(2, CleanDefs2.txtQ12.Text)
-            'Add Other Caches
-            For Each keyvaluepair In d2
-                PrintLine(2, keyvaluepair.Value.Text)
-            Next
-            'End of remaning caches
-            PrintLine(2, CleanDefs2.txtQ13.Text)
-            'Add File Extensions
-            For Each keyvaluepair In d3
-                PrintLine(2, keyvaluepair.Value.Text)
-            Next
-            'Send Finish Instruction
-            PrintLine(2, CleanDefs.txtFinish.Text)
-            FileClose(2)
-
-            FileOpen(3, Environ("appdata") & "\DriveTidy\start.bat", OpenMode.Output)
-            PrintLine(3, CleanDefs.txtStart1.Text)
-            PrintLine(3, CleanDefs.txtAttribRecycle.Text)
-            PrintLine(3, CleanDefs.txtAttribSQM.Text)
-            PrintLine(3, CleanDefs.txtStart2.Text)
-            FileClose(3)
-            ShellExecute(0, vbNullString, Environ("appdata") & "\DriveTidy\start.bat", vbNullString, vbNullString, AppWinStyle.NormalFocus)
-            'Show Cleaner Window
-            CleanerWindow.Show()
-            Me.Close()
-            CleanDefs.Close()
-            CleanDefs2.Close()
-            Exit Sub
-ErrorHandler:
-            CleanerErrors()
-
-            'F numbers start the bar again.
-            'If a file extension is selected then it does the
-            'Advanced method with F numbers, no file extension = Q numbers
-            End If
-    End Sub
-
-    Private Sub cmdAbout_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdAbout.Click
-        About.Show()
-        Me.Hide()
-        tmSelectAll.Enabled = False
     End Sub
 
     Private Sub CleanerErrors()
@@ -332,6 +154,8 @@ ErrorHandler:
         d2.Add(cbVistaSP1, CleanDefs2.txtVistaSP1)
         d2.Add(cbVistaSP2, CleanDefs2.txtVistaSP2)
         d2.Add(cbHibernate, CleanDefs2.txtHibernate)
+        d2.Add(cbSampleMusic, CleanDefs2.txtSampleMusic)
+        d2.Add(cbSamplePictures, CleanDefs2.txtSamplePictures)
         d2.Add(cbSampleVideos, CleanDefs2.txtSampleVideos)
         d2.Add(cbAdobeCameraRAW, CleanDefs2.txtAdobeCameraRAW)
         d2.Add(cbAdobeReader, CleanDefs2.txtAdobeReader)
@@ -341,13 +165,17 @@ ErrorHandler:
         d2.Add(cbGoogleEarth, CleanDefs2.txtGoogleEarth)
         d2.Add(cbGoogleUpdater, CleanDefs2.txtGoogleUpdater)
         d2.Add(cbHPDigitalImaging, CleanDefs2.txtHPDigitalImaging)
+        d2.Add(cbIMVU, CleanDefs2.txtIMVU)
         d2.Add(cbiTunes, CleanDefs2.txtiTunes)
         d2.Add(cbKaspersky, CleanDefs2.txtKaspersky)
         d2.Add(cbNokiaOvi, CleanDefs2.txtNokiaOvi)
         d2.Add(cbQuicktime, CleanDefs2.txtQuicktime)
+        d2.Add(cbRealPlayer, CleanDefs2.txtRealPlayer)
+        d2.Add(cbRDP, CleanDefs2.txtRDP)
         d2.Add(cbSilverlight, CleanDefs2.txtSilverlight)
         d2.Add(cbSpotify, CleanDefs2.txtSpotify)
         d2.Add(cbSymantec, CleanDefs2.txtSymantec)
+        d2.Add(cbTrackmania, CleanDefs2.txtTrackmania)
         d2.Add(cbUnity, CleanDefs2.txtUnity)
 
         'File Extensions
@@ -438,4 +266,185 @@ ErrorHandler:
         End If
     End Sub
 
+    Private Sub cmdAbout_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdAbout.Click
+        About.Show()
+        Me.Hide()
+        tmSelectAll.Enabled = False
+    End Sub
+
+    Private Sub cmdQuick_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdQuick.Click
+        QuickSelect()
+        Uncheck_Invisible()
+    End Sub
+
+    Private Sub cmdAdvanced_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdAdvanced.Click
+        QuickSelect()
+        cbTMP.Checked = True
+        cbLOG.Checked = True
+        cbCHK.Checked = True
+        cbDMP.Checked = True
+        Uncheck_Invisible()
+        FlowLayout.VerticalScroll.Value = FlowLayout.VerticalScroll.Maximum
+        FlowLayout.ScrollControlIntoView(FlowLayout)
+    End Sub
+
+    Private Sub cmdSelectAll_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles cmdSelectAll.LinkClicked
+        Checkbox_Count()
+        If cbCheckedCount < cbCount Then
+            For Each Me.item In FlowLayout.Controls
+                If TypeOf item Is CheckBox Then
+                    item.Checked = True
+                    Checkbox_Count()
+                End If
+            Next
+        ElseIf cbCheckedCount = cbCount Then
+            For Each Me.item In FlowLayout.Controls
+                If TypeOf item Is CheckBox Then
+                    item.Checked = False
+                    Checkbox_Count()
+                End If
+            Next
+        End If
+        Uncheck_Invisible()
+    End Sub
+
+    Private Sub cmdClean_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClean.Click
+        Dim ieVersion As New Version(My.Computer.Registry.LocalMachine.OpenSubKey("SOFTWARE\Microsoft\Internet Explorer").GetValue("Version"))
+        'If the program fails to write a file then an error will generate and restart the program
+        'On Error GoTo ErrorHandler
+        'Checking to see if at least one option is checked
+
+        Checkbox_Count()
+        If cbCheckedCount = 0 Then
+            Ready = 0
+        Else
+            'Process Detection - checks to see if programs are running and need to be closed
+            Ready = 1 'Value starts at 1 and will be changed to 2 if the No option is selected for any running processes
+            MsgString = " is running and needs to be closed." & vbCrLf & "To save what you are doing close the program manually." & vbCrLf & "Are you sure you want to continue?"
+            If cbTIF.Checked = True Then
+                If Ready = 1 Then
+                    MsgApp = "Internet Explorer"
+                    MsgProcess = "iexplore"
+                    KillMsg()
+                End If
+            End If
+            If cbFirefox.Checked = True Then
+                If Ready = 1 Then
+                    MsgApp = "Mozilla Firefox"
+                    MsgProcess = "firefox"
+                    KillMsg()
+                End If
+            End If
+            If cbChrome.Checked = True Then
+                If Ready = 1 Then
+                    MsgApp = "Google Chrome"
+                    MsgProcess = "chrome"
+                    KillMsg()
+                End If
+            End If
+            If cbOpera.Checked = True Then
+                If Ready = 1 Then
+                    MsgApp = "Opera"
+                    MsgProcess = "opera"
+                    KillMsg()
+                End If
+            End If
+            If cbSafari.Checked = True Then
+                If Ready = 1 Then
+                    MsgApp = "Safari"
+                    MsgProcess = "safari"
+                    KillMsg()
+                End If
+            End If
+
+            If Not Ready = 2 Then 'If a new value other than 2 has not been assigned then it will be changed to 1 to proceed
+                Ready = 1
+            End If
+        End If
+
+        If Ready = 0 Then
+            MsgBox("Select at least one option.")
+        ElseIf Ready = 1 Then
+            'Disabling commands for unchecked items
+            For Each kvp As System.Collections.Generic.KeyValuePair(Of CheckBox, TextBox) In d1
+                If Not kvp.Key.Checked Then
+                    kvp.Value.Text = ""
+                End If
+            Next
+            For Each kvp As System.Collections.Generic.KeyValuePair(Of CheckBox, TextBox) In d2
+                If Not kvp.Key.Checked Then
+                    kvp.Value.Text = ""
+                End If
+            Next
+            For Each kvp As System.Collections.Generic.KeyValuePair(Of CheckBox, TextBox) In d3
+                If Not kvp.Key.Checked Then
+                    kvp.Value.Text = ""
+                End If
+            Next
+
+            'Disable Attribute changers from Command List
+            If cbRecycle.Checked = False Then
+                CleanDefs.txtAttribRecycle.Text = ""
+            End If
+
+            If cbMessenger.Checked = False Then
+                CleanDefs.txtAttribSQM.Text = ""
+            End If
+
+            'Checks IE Version to see whether to use old defs, stops Inetcpl.cpl errors
+            If cbTIF.Checked = True Then
+                If ieVersion.Major <= 6 Then
+                    CleanDefs.txtTIF.Text = CleanDefs.txtTIF_IE6.Text
+                End If
+            End If
+
+            'Write check file
+            My.Computer.FileSystem.CreateDirectory(Environ("appdata") & "\DriveTidy")
+            FileOpen(1, Environ("appdata") & "\DriveTidy\cleanchk.txt", OpenMode.Output)
+            PrintLine(1, "0")
+            FileClose(1)
+            'Create Batch Commands
+            FileOpen(2, Environ("appdata") & "\DriveTidy\cleaner.bat", OpenMode.Output)
+            PrintLine(2, CleanDefs.txtHeader.Text)
+            'Add Common Options
+            For Each keyvaluepair In d1
+                PrintLine(2, keyvaluepair.Value.Text)
+            Next
+            'Marks beginning of "Other remaining caches" message
+            PrintLine(2, CleanDefs2.txtQ12.Text)
+            'Add Other Caches
+            For Each keyvaluepair In d2
+                PrintLine(2, keyvaluepair.Value.Text)
+            Next
+            'End of remaning caches
+            PrintLine(2, CleanDefs2.txtQ13.Text)
+            'Add File Extensions
+            For Each keyvaluepair In d3
+                PrintLine(2, keyvaluepair.Value.Text)
+            Next
+            'Send Finish Instruction
+            PrintLine(2, CleanDefs.txtFinish.Text)
+            FileClose(2)
+
+            FileOpen(3, Environ("appdata") & "\DriveTidy\start.bat", OpenMode.Output)
+            PrintLine(3, CleanDefs.txtStart1.Text)
+            PrintLine(3, CleanDefs.txtAttribRecycle.Text)
+            PrintLine(3, CleanDefs.txtAttribSQM.Text)
+            PrintLine(3, CleanDefs.txtStart2.Text)
+            FileClose(3)
+            ShellExecute(0, vbNullString, Environ("appdata") & "\DriveTidy\start.bat", vbNullString, vbNullString, AppWinStyle.NormalFocus)
+            'Show Cleaner Window
+            CleanerWindow.Show()
+            Me.Close()
+            CleanDefs.Close()
+            CleanDefs2.Close()
+            Exit Sub
+ErrorHandler:
+            CleanerErrors()
+
+            'F numbers start the bar again.
+            'If a file extension is selected then it does the
+            'Advanced method with F numbers, no file extension = Q numbers
+        End If
+    End Sub
 End Class
