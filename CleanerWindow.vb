@@ -128,66 +128,58 @@
             CleanSubStatus.Text = "Emptying Recycle Bin..."
             ProgressBar0.Value = 1
         ElseIf FileContent = "Q2" Then
-            CleanSubStatus.Text = "Clearing temporary files..."
+            CleanSubStatus.Text = "Temporary Files..."
             ProgressBar0.Value = 2
         ElseIf FileContent = "Q3" Then
-            CleanSubStatus.Text = "Clearing recent accessed file data..."
+            CleanSubStatus.Text = "Recent Accessed File Data..."
         ElseIf FileContent = "Q4" Then
-            CleanSubStatus.Text = "Clearing update cache..."
+            CleanSubStatus.Text = "Windows Update Cache..."
             ProgressBar0.Value = 4
         ElseIf FileContent = "Q5" Then
-            CleanSubStatus.Text = "Clearing error reports..."
+            CleanSubStatus.Text = "Error Reports..."
         ElseIf FileContent = "Q6" Then
-            CleanSubStatus.Text = "Clearing temporary internet files and caches..."
+            CleanSubStatus.Text = "Temporary Internet Files..."
             ProgressBar0.Value = 6
         ElseIf FileContent = "Q7" Then
-            CleanSubStatus.Text = "Clearing browser caches..."
+            CleanSubStatus.Text = "Browser Caches..."
             ProgressBar0.Value = 7
         ElseIf FileContent = "Q8" Then
             ProgressBar0.Value = 8
         ElseIf FileContent = "Q9" Then
-            CleanSubStatus.Text = "Clearing flash player cache..."
+            CleanSubStatus.Text = "Flash Player..."
             ProgressBar0.Value = 9
         ElseIf FileContent = "Q10" Then
-            CleanSubStatus.Text = "Clearing java cache..."
+            CleanSubStatus.Text = "Java..."
             ProgressBar0.Value = 10
         ElseIf FileContent = "Q11" Then
-            CleanSubStatus.Text = "Clearing messenger caches..."
+            CleanSubStatus.Text = "Messenger..."
             ProgressBar0.Value = 11
         ElseIf FileContent = "Q12" Then
-            CleanSubStatus.Text = "Clearing remaining caches..."
+            CleanSubStatus.Text = "Remaining Caches..."
             ProgressBar0.Value = 11
         ElseIf FileContent = "Q13" Then
             ProgressBar0.Value = 13
         ElseIf FileContent = "VSP1" Then
-            CleanSubStatus.Text = "Performing Vista SP1 Cleanup..."
-            Shell(Environ("windir") & "\System32\vsp1cln.exe /quiet", AppWinStyle.Hide, True)
-            FileOpen(1, Environ("appdata") & "\DriveTidy\cleanchk.txt", OpenMode.Output)
-            Print(1, "Q12")
-            FileClose(1)
+            CleanSubStatus.Text = "Vista SP1 Cleanup..."
         ElseIf FileContent = "VSP2" Then
-            CleanSubStatus.Text = "Performing Vista SP2 Cleanup..."
-            Shell(Environ("windir") & "\System32\compcln.exe /quiet", AppWinStyle.Hide, True)
-            FileOpen(1, Environ("appdata") & "\DriveTidy\cleanchk.txt", OpenMode.Output)
-            Print(1, "Q12")
-            FileClose(1)
+            CleanSubStatus.Text = "Vista SP2 Cleanup..."
         ElseIf FileContent = "F1" Then
-            CleanSubStatus.Text = "Clearing .tmp files..."
+            CleanSubStatus.Text = ".tmp files..."
             ProgressBar0.Value = 2
         ElseIf FileContent = "F2" Then
-            CleanSubStatus.Text = "Clearing .log files..."
+            CleanSubStatus.Text = ".log files..."
             ProgressBar0.Value = 4
         ElseIf FileContent = "F3" Then
-            CleanSubStatus.Text = "Clearing .chk files..."
+            CleanSubStatus.Text = ".chk files..."
             ProgressBar0.Value = 6
         ElseIf FileContent = "F4" Then
-            CleanSubStatus.Text = "Clearing .dmp files..."
+            CleanSubStatus.Text = ".dmp files..."
             ProgressBar0.Value = 8
         ElseIf FileContent = "F5" Then
-            CleanSubStatus.Text = "Clearing ._mp files..."
+            CleanSubStatus.Text = "._mp files..."
             ProgressBar0.Value = 10
         ElseIf FileContent = "F6" Then
-            CleanSubStatus.Text = "Clearing .err files..."
+            CleanSubStatus.Text = ".err files..."
             ProgressBar0.Value = 11
         ElseIf FileContent = "FIN" Then
             End_Scan()
