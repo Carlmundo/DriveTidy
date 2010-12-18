@@ -113,12 +113,11 @@ Partial Class CleanerWindow
         Me.tblStats.Location = New System.Drawing.Point(5, 90)
         Me.tblStats.Name = "tblStats"
         Me.tblStats.RowCount = 4
-        Me.tblStats.RowStyles.Add(New System.Windows.Forms.RowStyle)
-        Me.tblStats.RowStyles.Add(New System.Windows.Forms.RowStyle)
-        Me.tblStats.RowStyles.Add(New System.Windows.Forms.RowStyle)
-        Me.tblStats.RowStyles.Add(New System.Windows.Forms.RowStyle)
         Me.tblStats.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.tblStats.Size = New System.Drawing.Size(236, 73)
+        Me.tblStats.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.tblStats.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.tblStats.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.tblStats.Size = New System.Drawing.Size(236, 85)
         Me.tblStats.TabIndex = 63
         '
         'Label1
@@ -130,10 +129,10 @@ Partial Class CleanerWindow
         Me.Label1.Location = New System.Drawing.Point(4, 1)
         Me.Label1.Name = "Label1"
         Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label1.Size = New System.Drawing.Size(110, 15)
+        Me.Label1.Size = New System.Drawing.Size(110, 20)
         Me.Label1.TabIndex = 37
         Me.Label1.Text = "Total Space"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label2
         '
@@ -141,13 +140,13 @@ Partial Class CleanerWindow
         Me.Label2.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label2.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label2.Location = New System.Drawing.Point(4, 18)
+        Me.Label2.Location = New System.Drawing.Point(4, 22)
         Me.Label2.Name = "Label2"
         Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label2.Size = New System.Drawing.Size(110, 15)
+        Me.Label2.Size = New System.Drawing.Size(110, 20)
         Me.Label2.TabIndex = 38
         Me.Label2.Text = "Free Space Before"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'TotalSpace
         '
@@ -158,9 +157,9 @@ Partial Class CleanerWindow
         Me.TotalSpace.Location = New System.Drawing.Point(121, 1)
         Me.TotalSpace.Name = "TotalSpace"
         Me.TotalSpace.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.TotalSpace.Size = New System.Drawing.Size(111, 16)
+        Me.TotalSpace.Size = New System.Drawing.Size(111, 20)
         Me.TotalSpace.TabIndex = 34
-        Me.TotalSpace.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.TotalSpace.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FreeSpaceBefore
         '
@@ -168,12 +167,12 @@ Partial Class CleanerWindow
         Me.FreeSpaceBefore.Cursor = System.Windows.Forms.Cursors.Default
         Me.FreeSpaceBefore.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FreeSpaceBefore.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.FreeSpaceBefore.Location = New System.Drawing.Point(121, 18)
+        Me.FreeSpaceBefore.Location = New System.Drawing.Point(121, 22)
         Me.FreeSpaceBefore.Name = "FreeSpaceBefore"
         Me.FreeSpaceBefore.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.FreeSpaceBefore.Size = New System.Drawing.Size(111, 17)
+        Me.FreeSpaceBefore.Size = New System.Drawing.Size(111, 20)
         Me.FreeSpaceBefore.TabIndex = 35
-        Me.FreeSpaceBefore.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.FreeSpaceBefore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label3
         '
@@ -181,13 +180,13 @@ Partial Class CleanerWindow
         Me.Label3.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label3.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label3.Location = New System.Drawing.Point(4, 36)
+        Me.Label3.Location = New System.Drawing.Point(4, 43)
         Me.Label3.Name = "Label3"
         Me.Label3.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label3.Size = New System.Drawing.Size(110, 15)
+        Me.Label3.Size = New System.Drawing.Size(110, 20)
         Me.Label3.TabIndex = 39
         Me.Label3.Text = "Free Space After"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'SpaceFreedUp
         '
@@ -195,12 +194,12 @@ Partial Class CleanerWindow
         Me.SpaceFreedUp.Cursor = System.Windows.Forms.Cursors.Default
         Me.SpaceFreedUp.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SpaceFreedUp.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.SpaceFreedUp.Location = New System.Drawing.Point(121, 54)
+        Me.SpaceFreedUp.Location = New System.Drawing.Point(121, 64)
         Me.SpaceFreedUp.Name = "SpaceFreedUp"
         Me.SpaceFreedUp.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.SpaceFreedUp.Size = New System.Drawing.Size(111, 15)
+        Me.SpaceFreedUp.Size = New System.Drawing.Size(111, 20)
         Me.SpaceFreedUp.TabIndex = 41
-        Me.SpaceFreedUp.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.SpaceFreedUp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FreeSpaceAfter
         '
@@ -208,12 +207,12 @@ Partial Class CleanerWindow
         Me.FreeSpaceAfter.Cursor = System.Windows.Forms.Cursors.Default
         Me.FreeSpaceAfter.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FreeSpaceAfter.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.FreeSpaceAfter.Location = New System.Drawing.Point(121, 36)
+        Me.FreeSpaceAfter.Location = New System.Drawing.Point(121, 43)
         Me.FreeSpaceAfter.Name = "FreeSpaceAfter"
         Me.FreeSpaceAfter.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.FreeSpaceAfter.Size = New System.Drawing.Size(111, 17)
+        Me.FreeSpaceAfter.Size = New System.Drawing.Size(111, 20)
         Me.FreeSpaceAfter.TabIndex = 36
-        Me.FreeSpaceAfter.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.FreeSpaceAfter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label4
         '
@@ -221,13 +220,13 @@ Partial Class CleanerWindow
         Me.Label4.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label4.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label4.Location = New System.Drawing.Point(4, 54)
+        Me.Label4.Location = New System.Drawing.Point(4, 64)
         Me.Label4.Name = "Label4"
         Me.Label4.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Label4.Size = New System.Drawing.Size(110, 15)
+        Me.Label4.Size = New System.Drawing.Size(110, 20)
         Me.Label4.TabIndex = 40
         Me.Label4.Text = "Space Freed Up"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'ProgressBar0
         '
@@ -247,7 +246,7 @@ Partial Class CleanerWindow
         Me.cmdCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.cmdCancel.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdCancel.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdCancel.Location = New System.Drawing.Point(78, 169)
+        Me.cmdCancel.Location = New System.Drawing.Point(78, 181)
         Me.cmdCancel.Name = "cmdCancel"
         Me.cmdCancel.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.cmdCancel.Size = New System.Drawing.Size(89, 25)
@@ -262,7 +261,7 @@ Partial Class CleanerWindow
         Me.cmdLog.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdLog.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdLog.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdLog.Location = New System.Drawing.Point(34, 169)
+        Me.cmdLog.Location = New System.Drawing.Point(34, 181)
         Me.cmdLog.Name = "cmdLog"
         Me.cmdLog.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.cmdLog.Size = New System.Drawing.Size(89, 25)
@@ -277,7 +276,7 @@ Partial Class CleanerWindow
         Me.cmdClose.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdClose.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdClose.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdClose.Location = New System.Drawing.Point(130, 169)
+        Me.cmdClose.Location = New System.Drawing.Point(130, 181)
         Me.cmdClose.Name = "cmdClose"
         Me.cmdClose.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.cmdClose.Size = New System.Drawing.Size(89, 25)
@@ -297,7 +296,6 @@ Partial Class CleanerWindow
         Me.CleanSubStatus.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.CleanSubStatus.Size = New System.Drawing.Size(250, 17)
         Me.CleanSubStatus.TabIndex = 61
-        Me.CleanSubStatus.Text = "See log for details.."
         Me.CleanSubStatus.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'CleanStatus
@@ -314,7 +312,7 @@ Partial Class CleanerWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(249, 202)
+        Me.ClientSize = New System.Drawing.Size(249, 216)
         Me.Controls.Add(Me.tblStats)
         Me.Controls.Add(Me.ProgressBar0)
         Me.Controls.Add(Me.cmdCancel)
