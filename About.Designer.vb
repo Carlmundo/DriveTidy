@@ -28,10 +28,10 @@ Partial Class About
         Me.cmdUpdate = New System.Windows.Forms.Button
         Me.lblVersion = New System.Windows.Forms.Label
         Me.lblName = New System.Windows.Forms.Label
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox
+        Me.pbLogo = New System.Windows.Forms.PictureBox
         Me.Label2 = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cmdReadMe
@@ -85,15 +85,15 @@ Partial Class About
         Me.lblName.TabIndex = 17
         Me.lblName.Text = "DriveTidy"
         '
-        'PictureBox1
+        'pbLogo
         '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(53, 15)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(32, 32)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox1.TabIndex = 15
-        Me.PictureBox1.TabStop = False
+        Me.pbLogo.Image = CType(resources.GetObject("pbLogo.Image"), System.Drawing.Image)
+        Me.pbLogo.Location = New System.Drawing.Point(53, 15)
+        Me.pbLogo.Name = "pbLogo"
+        Me.pbLogo.Size = New System.Drawing.Size(32, 32)
+        Me.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.pbLogo.TabIndex = 15
+        Me.pbLogo.TabStop = False
         '
         'Label2
         '
@@ -127,7 +127,7 @@ Partial Class About
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lblVersion)
         Me.Controls.Add(Me.lblName)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.pbLogo)
         Me.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.KeyPreview = True
@@ -135,7 +135,7 @@ Partial Class About
         Me.Name = "About"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "About DriveTidy"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -145,7 +145,7 @@ Partial Class About
     Friend WithEvents cmdUpdate As System.Windows.Forms.Button
     Friend WithEvents lblVersion As System.Windows.Forms.Label
     Friend WithEvents lblName As System.Windows.Forms.Label
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents pbLogo As System.Windows.Forms.PictureBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class
