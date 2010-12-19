@@ -120,8 +120,8 @@ Partial Class CleanDefs2
         Me.txtVistaSP1.Size = New System.Drawing.Size(250, 60)
         Me.txtVistaSP1.TabIndex = 64
         Me.txtVistaSP1.Text = "echo Vista SP1 Cleanup..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo VSP1 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "start /" & _
-            "wait %windir%\System32\vsp1cln.exe /quiet" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo Q12 >""%appdata%\DriveTidy\cleanc" & _
-            "hk.txt"""
+            "min /wait %windir%\System32\vsp1cln.exe /quiet" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo Q12 >""%appdata%\DriveTidy\c" & _
+            "leanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.txtVistaSP1.WordWrap = False
         '
         'txtVistaSP2
@@ -132,8 +132,8 @@ Partial Class CleanDefs2
         Me.txtVistaSP2.Size = New System.Drawing.Size(250, 60)
         Me.txtVistaSP2.TabIndex = 63
         Me.txtVistaSP2.Text = "echo Vista SP2 Cleanup..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo VSP2 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "start /" & _
-            "wait %windir%\System32\compcln.exe /quiet" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo Q12 >""%appdata%\DriveTidy\cleanc" & _
-            "hk.txt"""
+            "min /wait %windir%\System32\compcln.exe /quiet" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo Q12 >""%appdata%\DriveTidy\c" & _
+            "leanchk.txt"""
         Me.txtVistaSP2.WordWrap = False
         '
         'txtHibernate
