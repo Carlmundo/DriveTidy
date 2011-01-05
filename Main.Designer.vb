@@ -91,8 +91,8 @@ Partial Class Main
         '
         'lblNote
         '
-        Me.lblNote.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNote.Location = New System.Drawing.Point(0, 43)
+        Me.lblNote.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNote.Location = New System.Drawing.Point(0, 37)
         Me.lblNote.Name = "lblNote"
         Me.lblNote.Size = New System.Drawing.Size(250, 16)
         Me.lblNote.TabIndex = 1
@@ -102,9 +102,9 @@ Partial Class Main
         'cmdAbout
         '
         Me.cmdAbout.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdAbout.Location = New System.Drawing.Point(209, 12)
+        Me.cmdAbout.Location = New System.Drawing.Point(209, 9)
         Me.cmdAbout.Name = "cmdAbout"
-        Me.cmdAbout.Size = New System.Drawing.Size(30, 30)
+        Me.cmdAbout.Size = New System.Drawing.Size(28, 28)
         Me.cmdAbout.TabIndex = 0
         Me.cmdAbout.Text = "?"
         Me.cmdAbout.UseVisualStyleBackColor = True
@@ -112,10 +112,10 @@ Partial Class Main
         'lblProductName
         '
         Me.lblProductName.AutoSize = True
-        Me.lblProductName.Font = New System.Drawing.Font("Arial", 20.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblProductName.Location = New System.Drawing.Point(56, 11)
+        Me.lblProductName.Font = New System.Drawing.Font("Arial", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblProductName.Location = New System.Drawing.Point(64, 9)
         Me.lblProductName.Name = "lblProductName"
-        Me.lblProductName.Size = New System.Drawing.Size(136, 32)
+        Me.lblProductName.Size = New System.Drawing.Size(121, 28)
         Me.lblProductName.TabIndex = 0
         Me.lblProductName.Text = "DriveTidy"
         '
@@ -173,7 +173,7 @@ Partial Class Main
         Me.FlowLayout.Controls.Add(Me.cb_MP)
         Me.FlowLayout.Controls.Add(Me.cbERR)
         Me.FlowLayout.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.FlowLayout.Location = New System.Drawing.Point(10, 113)
+        Me.FlowLayout.Location = New System.Drawing.Point(10, 102)
         Me.FlowLayout.Name = "FlowLayout"
         Me.FlowLayout.Size = New System.Drawing.Size(229, 208)
         Me.FlowLayout.TabIndex = 4
@@ -779,9 +779,9 @@ Partial Class Main
         Me.cmdClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.cmdClean.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdClean.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdClean.Location = New System.Drawing.Point(64, 324)
+        Me.cmdClean.Location = New System.Drawing.Point(67, 318)
         Me.cmdClean.Name = "cmdClean"
-        Me.cmdClean.Size = New System.Drawing.Size(119, 42)
+        Me.cmdClean.Size = New System.Drawing.Size(115, 38)
         Me.cmdClean.TabIndex = 5
         Me.cmdClean.Text = "Start Cleanup"
         Me.cmdClean.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -792,7 +792,7 @@ Partial Class Main
         Me.cmdSelectAll.AutoSize = True
         Me.cmdSelectAll.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdSelectAll.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
-        Me.cmdSelectAll.Location = New System.Drawing.Point(7, 97)
+        Me.cmdSelectAll.Location = New System.Drawing.Point(7, 86)
         Me.cmdSelectAll.Name = "cmdSelectAll"
         Me.cmdSelectAll.Size = New System.Drawing.Size(52, 14)
         Me.cmdSelectAll.TabIndex = 3
@@ -802,9 +802,9 @@ Partial Class Main
         'cmdAdvanced
         '
         Me.cmdAdvanced.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdAdvanced.Location = New System.Drawing.Point(128, 65)
+        Me.cmdAdvanced.Location = New System.Drawing.Point(127, 57)
         Me.cmdAdvanced.Name = "cmdAdvanced"
-        Me.cmdAdvanced.Size = New System.Drawing.Size(99, 25)
+        Me.cmdAdvanced.Size = New System.Drawing.Size(85, 23)
         Me.cmdAdvanced.TabIndex = 2
         Me.cmdAdvanced.Text = "Advanced"
         Me.cmdAdvanced.UseVisualStyleBackColor = True
@@ -812,9 +812,9 @@ Partial Class Main
         'cmdQuick
         '
         Me.cmdQuick.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdQuick.Location = New System.Drawing.Point(22, 65)
+        Me.cmdQuick.Location = New System.Drawing.Point(36, 57)
         Me.cmdQuick.Name = "cmdQuick"
-        Me.cmdQuick.Size = New System.Drawing.Size(99, 25)
+        Me.cmdQuick.Size = New System.Drawing.Size(85, 23)
         Me.cmdQuick.TabIndex = 1
         Me.cmdQuick.Text = "Quick"
         Me.cmdQuick.UseVisualStyleBackColor = True
@@ -823,7 +823,7 @@ Partial Class Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(249, 375)
+        Me.ClientSize = New System.Drawing.Size(249, 366)
         Me.Controls.Add(Me.cmdAdvanced)
         Me.Controls.Add(Me.cmdQuick)
         Me.Controls.Add(Me.FlowLayout)
