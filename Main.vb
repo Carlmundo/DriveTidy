@@ -308,6 +308,14 @@
         Uncheck_Invisible()
     End Sub
 
+    Private Sub FlowLayout_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles FlowLayout.Click
+        FlowLayout.Focus()
+    End Sub
+
+    Private Sub FlowLayout_MouseEnter(ByVal sender As Object, ByVal e As System.EventArgs) Handles FlowLayout.MouseEnter
+        FlowLayout.Focus()
+    End Sub
+
     Private Sub cmdClean_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClean.Click
         Dim ieVersion As New Version(My.Computer.Registry.LocalMachine.OpenSubKey("SOFTWARE\Microsoft\Internet Explorer").GetValue("Version"))
         'If the program fails to write a file then an error will generate and restart the program
@@ -447,4 +455,5 @@ ErrorHandler:
             'Advanced method with F numbers, no file extension = Q numbers
         End If
     End Sub
+
 End Class
