@@ -309,11 +309,11 @@
     End Sub
 
     Private Sub FlowLayout_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles FlowLayout.Click
-        FlowLayout.Focus()
+        FlowLayout.Focus() 'Allows the mouse wheel to work after the panel is clicked
     End Sub
 
     Private Sub FlowLayout_MouseEnter(ByVal sender As Object, ByVal e As System.EventArgs) Handles FlowLayout.MouseEnter
-        FlowLayout.Focus()
+        FlowLayout.Focus() 'Allows the mouse wheel to work after the panel has had the mouse move over it
     End Sub
 
     Private Sub cmdClean_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClean.Click
