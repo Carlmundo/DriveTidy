@@ -36,11 +36,12 @@ Partial Class About
         '
         'cmdReadMe
         '
-        Me.cmdReadMe.Location = New System.Drawing.Point(81, 153)
+        Me.cmdReadMe.Location = New System.Drawing.Point(81, 150)
         Me.cmdReadMe.Name = "cmdReadMe"
         Me.cmdReadMe.Size = New System.Drawing.Size(86, 24)
-        Me.cmdReadMe.TabIndex = 1
-        Me.cmdReadMe.Text = "Read Me"
+        Me.cmdReadMe.TabIndex = 2
+        Me.cmdReadMe.Text = "Readme"
+        Me.cmdReadMe.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.cmdReadMe.UseVisualStyleBackColor = True
         '
         'lblEmail
@@ -48,7 +49,7 @@ Partial Class About
         Me.lblEmail.AutoSize = True
         Me.lblEmail.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblEmail.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
-        Me.lblEmail.Location = New System.Drawing.Point(85, 182)
+        Me.lblEmail.Location = New System.Drawing.Point(85, 179)
         Me.lblEmail.Name = "lblEmail"
         Me.lblEmail.Size = New System.Drawing.Size(127, 15)
         Me.lblEmail.TabIndex = 21
@@ -61,8 +62,9 @@ Partial Class About
         Me.cmdUpdate.Location = New System.Drawing.Point(56, 56)
         Me.cmdUpdate.Name = "cmdUpdate"
         Me.cmdUpdate.Size = New System.Drawing.Size(136, 24)
-        Me.cmdUpdate.TabIndex = 0
+        Me.cmdUpdate.TabIndex = 1
         Me.cmdUpdate.Text = "Check For Updates"
+        Me.cmdUpdate.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.cmdUpdate.UseVisualStyleBackColor = True
         '
         'lblVersion
@@ -82,7 +84,7 @@ Partial Class About
         Me.lblName.Location = New System.Drawing.Point(88, 12)
         Me.lblName.Name = "lblName"
         Me.lblName.Size = New System.Drawing.Size(107, 24)
-        Me.lblName.TabIndex = 17
+        Me.lblName.TabIndex = 0
         Me.lblName.Text = "DriveTidy"
         '
         'pbLogo
@@ -99,7 +101,7 @@ Partial Class About
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(37, 182)
+        Me.Label2.Location = New System.Drawing.Point(37, 179)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(52, 15)
         Me.Label2.TabIndex = 23
@@ -108,18 +110,18 @@ Partial Class About
         'Label1
         '
         Me.Label1.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(7, 86)
+        Me.Label1.Location = New System.Drawing.Point(7, 85)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(235, 64)
         Me.Label1.TabIndex = 22
         Me.Label1.Text = "A disk cleanup tool that throroughly scans your computer for unnecessary and inva" & _
-            "lid files no longer being used by the operating system."
+            "lid files no longer being used by the system."
         '
         'About
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(249, 206)
+        Me.ClientSize = New System.Drawing.Size(249, 200)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.cmdReadMe)
         Me.Controls.Add(Me.lblEmail)
