@@ -73,12 +73,6 @@
     End Sub
 
     Private Sub Main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'Set the form to the center screen
-        If Detect.lblCenter.Text = "1" Then
-            Me.Left = (Screen.PrimaryScreen.WorkingArea.Width - Me.Width) / 2
-            Me.Top = (Screen.PrimaryScreen.WorkingArea.Height - Me.Height) / 2
-            Detect.lblCenter.Text = "0"
-        End If
         'OS Detection
         Dim OS_WindowsXP As Boolean
         Dim OS_WindowsVista As Boolean

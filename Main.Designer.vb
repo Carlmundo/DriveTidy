@@ -837,6 +837,7 @@ Partial Class Main
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "Main"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "DriveTidy"
         Me.FlowLayout.ResumeLayout(False)
         Me.FlowLayout.PerformLayout()

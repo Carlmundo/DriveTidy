@@ -148,4 +148,5 @@
             Main.lblOtherApps.Visible = False
         End If
     End Sub
+
 End Class
