@@ -168,12 +168,18 @@ start /wait %windir%\System32\RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8<
   <data name="txtFirefox.Text" xml:space="preserve">
     <value>echo Q7 &gt;"%appdata%\DriveTidy\cleanchk.txt"
 echo Clearing Firefox caches...
-
-:Firefox
 del /f /s /q "%localappdata%\Mozilla\Firefox\Profiles\*.*"
 rd /s /q "%localappdata%\Mozilla\Firefox\Profiles\"
 del /f /s /q "%appdata%\Mozilla\Firefox\Crash Reports\*.*"
-rd /s /q "%appdata%\Mozilla\Firefox\Crash Reports\"</value>
+rd /s /q "%appdata%\Mozilla\Firefox\Crash Reports\"
+
+IF NOT EXIST "%appdata%\Mozilla\Firefox\Profiles" GOTO EndFirefox
+pushd "%appdata%\Mozilla\Firefox\Profiles" ||goto :eof
+for /d %%a in (*) do (
+del /f /s /q "%%a\*sqlite"
+)
+popd
+:EndFirefox</value>
   </data>
   <data name="txtWindowsUpdate.Text" xml:space="preserve">
     <value>echo Q4 &gt;"%appdata%\DriveTidy\cleanchk.txt"
@@ -255,17 +261,21 @@ echo Clearing Opera caches...
 IF NOT EXIST "%localappdata%\Opera" GOTO Opera2
 pushd "%localappdata%\Opera" ||goto :eof
 for /d %%a in (Opera*) do (
-del /f /s /q "%%a\cache4\*.*"
-rd /s /q "%%a\cache4\"
+del /f /s /q "%%a\application_cache\*.*"
+rd /s /q "%%a\application_cache\"
 del /f /s /q "%%a\cache\*.*"
 rd /s /q "%%a\cache\"
+del /f /s /q "%%a\cache4\*.*"
+rd /s /q "%%a\cache4\"
+del /f /s /q "%%a\temporary_downloads\*.*"
+rd /s /q "%%a\temporary_downloads\"
 del /f /s /q "%%a\vps\*.*"
 rd /s /q "%%a\vps\"
 
-del /f /s /q "%%a\profile\cache4\*.*"
-rd /s /q "%%a\profile\cache4\"
 del /f /s /q "%%a\profile\cache\*.*"
 rd /s /q "%%a\profile\cache\"
+del /f /s /q "%%a\profile\cache4\*.*"
+rd /s /q "%%a\profile\cache4\"
 del /f /s /q "%%a\profile\vps\*.*"
 rd /s /q "%%a\profile\vps\"
 )
@@ -295,10 +305,12 @@ popd
   <data name="txtChrome.Text" xml:space="preserve">
     <value>echo Q7 &gt;"%appdata%\DriveTidy\cleanchk.txt"
 echo Clearing Google Chrome caches...
-
-:GoogleChrome
 del /f /s /q "%localappdata%\Google\Chrome\User Data\Default\Cache\*.*"
 rd /s /q "%localappdata%\Google\Chrome\User Data\Default\Cache\"
+del /f /s /q "%localappdata%\Google\Chrome\User Data\Default\Cached Theme Images\*.*"
+rd /s /q "%localappdata%\Google\Chrome\User Data\Default\Cached Theme Images\"
+del /f /s /q "%localappdata%\Google\Chrome\User Data\Default\Local Storage\*.*"
+rd /s /q "%localappdata%\Google\Chrome\User Data\Default\Local Storage\"
 del /f /s /q "%localappdata%\Google\Chrome\User Data\Default\Media Cache\*.*"
 rd /s /q "%localappdata%\Google\Chrome\User Data\Default\Media Cache\"
 del /f /q "%localappdata%\Google\Chrome\User Data\Default\Archived History"
