@@ -19,7 +19,7 @@
         Next
     End Sub
 
-    Private Sub cmdLog_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdLog.Click 'Opens the log file
+    Private Sub cmdLog_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdLog.Click  'Opens the log file
         ShellExecute(0, vbNullString, "notepad", Environ("appdata") & "\DriveTidy\log.txt", vbNullString, AppWinStyle.NormalFocus)
     End Sub
 
