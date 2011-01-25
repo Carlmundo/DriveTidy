@@ -12,9 +12,13 @@
 
     Private Sub About_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.Icon = Main.Icon
+        Me.Width = Main.Width
         lblVersion.Text = "v" & My.Application.Info.Version.Major & "." & My.Application.Info.Version.Minor & "." & My.Application.Info.Version.Build & "." & My.Application.Info.Version.Revision
+        lblCopyright.Text = My.Application.Info.Copyright
+        tbDescription.Text = My.Application.Info.Description
+        'Make form the same position as Main
         Me.Top = Main.Top
-        Me.Left = Main.Left - ((Me.Width - Main.Width) / 2)
+        Me.Left = Main.Left - (Me.Width - Main.Width)
         lblEmail.TabStop = False 'TabStop is not available in UI
     End Sub
 
@@ -85,4 +89,8 @@ UpdateCheckFailed:
         ShellExecute(0, vbNullString, "notepad", Environ("temp") & "\DriveTidy_Readme.txt", vbNullString, AppWinStyle.NormalFocus)
     End Sub
 
+    Private Sub cmdClose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClose.Click
+        Me.Close()
+        Main.Show()
+    End Sub
 End Class
