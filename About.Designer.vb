@@ -32,15 +32,15 @@ Partial Class About
         Me.lblCopyright = New System.Windows.Forms.Label
         Me.lblVersion = New System.Windows.Forms.Label
         Me.Label4 = New System.Windows.Forms.Label
-        Me.pbLogo = New System.Windows.Forms.PictureBox
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel
         Me.tbDescription = New System.Windows.Forms.TextBox
         Me.flwButtons = New System.Windows.Forms.FlowLayoutPanel
         Me.cmdClose = New System.Windows.Forms.Button
+        Me.pbLogo = New System.Windows.Forms.PictureBox
         Me.tblDesign.SuspendLayout()
         Me.flwContact.SuspendLayout()
-        CType(Me.pbLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.flwButtons.SuspendLayout()
+        CType(Me.pbLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cmdReadMe
@@ -118,7 +118,7 @@ Partial Class About
         Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle)
         Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle)
         Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0.0!))
-        Me.tblDesign.Size = New System.Drawing.Size(194, 275)
+        Me.tblDesign.Size = New System.Drawing.Size(249, 254)
         Me.tblDesign.TabIndex = 24
         '
         'flwContact
@@ -127,7 +127,7 @@ Partial Class About
         Me.flwContact.AutoSize = True
         Me.flwContact.Controls.Add(Me.lblContact)
         Me.flwContact.Controls.Add(Me.lblEmail)
-        Me.flwContact.Location = New System.Drawing.Point(7, 229)
+        Me.flwContact.Location = New System.Drawing.Point(35, 204)
         Me.flwContact.Margin = New System.Windows.Forms.Padding(0)
         Me.flwContact.Name = "flwContact"
         Me.flwContact.Size = New System.Drawing.Size(179, 15)
@@ -140,7 +140,7 @@ Partial Class About
         Me.lblCopyright.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCopyright.Location = New System.Drawing.Point(3, 77)
         Me.lblCopyright.Name = "lblCopyright"
-        Me.lblCopyright.Size = New System.Drawing.Size(188, 15)
+        Me.lblCopyright.Size = New System.Drawing.Size(243, 15)
         Me.lblCopyright.TabIndex = 30
         Me.lblCopyright.Text = "Copyright"
         Me.lblCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -152,7 +152,7 @@ Partial Class About
         Me.lblVersion.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblVersion.Location = New System.Drawing.Point(3, 62)
         Me.lblVersion.Name = "lblVersion"
-        Me.lblVersion.Size = New System.Drawing.Size(188, 15)
+        Me.lblVersion.Size = New System.Drawing.Size(243, 15)
         Me.lblVersion.TabIndex = 29
         Me.lblVersion.Text = "Version"
         Me.lblVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -164,27 +164,16 @@ Partial Class About
         Me.Label4.Font = New System.Drawing.Font("Arial", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(3, 38)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(188, 24)
+        Me.Label4.Size = New System.Drawing.Size(243, 24)
         Me.Label4.TabIndex = 27
         Me.Label4.Text = "DriveTidy"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'pbLogo
-        '
-        Me.pbLogo.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.pbLogo.Image = CType(resources.GetObject("pbLogo.Image"), System.Drawing.Image)
-        Me.pbLogo.Location = New System.Drawing.Point(81, 3)
-        Me.pbLogo.Name = "pbLogo"
-        Me.pbLogo.Size = New System.Drawing.Size(32, 32)
-        Me.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.pbLogo.TabIndex = 28
-        Me.pbLogo.TabStop = False
         '
         'FlowLayoutPanel1
         '
         Me.FlowLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.FlowLayoutPanel1.AutoSize = True
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(97, 279)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(124, 254)
         Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(0)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
         Me.FlowLayoutPanel1.Size = New System.Drawing.Size(0, 0)
@@ -194,14 +183,14 @@ Partial Class About
         '
         Me.tbDescription.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.tbDescription.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tbDescription.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbDescription.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbDescription.Location = New System.Drawing.Point(6, 132)
         Me.tbDescription.Margin = New System.Windows.Forms.Padding(6, 3, 3, 3)
         Me.tbDescription.Multiline = True
         Me.tbDescription.Name = "tbDescription"
         Me.tbDescription.ReadOnly = True
         Me.tbDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.tbDescription.Size = New System.Drawing.Size(185, 94)
+        Me.tbDescription.Size = New System.Drawing.Size(240, 69)
         Me.tbDescription.TabIndex = 31
         Me.tbDescription.TabStop = False
         Me.tbDescription.Text = "A disk cleanup tool that throroughly scans your computer for unnecessary and inva" & _
@@ -213,7 +202,7 @@ Partial Class About
         Me.flwButtons.AutoSize = True
         Me.flwButtons.Controls.Add(Me.cmdUpdate)
         Me.flwButtons.Controls.Add(Me.cmdReadMe)
-        Me.flwButtons.Location = New System.Drawing.Point(6, 95)
+        Me.flwButtons.Location = New System.Drawing.Point(33, 95)
         Me.flwButtons.Name = "flwButtons"
         Me.flwButtons.Size = New System.Drawing.Size(182, 31)
         Me.flwButtons.TabIndex = 26
@@ -223,20 +212,31 @@ Partial Class About
         '
         Me.cmdClose.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.cmdClose.AutoSize = True
-        Me.cmdClose.Location = New System.Drawing.Point(68, 249)
+        Me.cmdClose.Location = New System.Drawing.Point(94, 224)
         Me.cmdClose.Margin = New System.Windows.Forms.Padding(5)
         Me.cmdClose.Name = "cmdClose"
-        Me.cmdClose.Size = New System.Drawing.Size(57, 25)
+        Me.cmdClose.Size = New System.Drawing.Size(61, 25)
         Me.cmdClose.TabIndex = 0
         Me.cmdClose.Text = "Close"
         Me.cmdClose.UseVisualStyleBackColor = True
+        '
+        'pbLogo
+        '
+        Me.pbLogo.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.pbLogo.Image = CType(resources.GetObject("pbLogo.Image"), System.Drawing.Image)
+        Me.pbLogo.Location = New System.Drawing.Point(108, 3)
+        Me.pbLogo.Name = "pbLogo"
+        Me.pbLogo.Size = New System.Drawing.Size(32, 32)
+        Me.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.pbLogo.TabIndex = 28
+        Me.pbLogo.TabStop = False
         '
         'About
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(194, 275)
+        Me.ClientSize = New System.Drawing.Size(249, 254)
         Me.Controls.Add(Me.tblDesign)
         Me.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -249,9 +249,9 @@ Partial Class About
         Me.tblDesign.PerformLayout()
         Me.flwContact.ResumeLayout(False)
         Me.flwContact.PerformLayout()
-        CType(Me.pbLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.flwButtons.ResumeLayout(False)
         Me.flwButtons.PerformLayout()
+        CType(Me.pbLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -266,8 +266,8 @@ Partial Class About
     Friend WithEvents flwButtons As System.Windows.Forms.FlowLayoutPanel
     Friend WithEvents lblCopyright As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents pbLogo As System.Windows.Forms.PictureBox
     Friend WithEvents lblVersion As System.Windows.Forms.Label
     Friend WithEvents tbDescription As System.Windows.Forms.TextBox
     Friend WithEvents cmdClose As System.Windows.Forms.Button
+    Friend WithEvents pbLogo As System.Windows.Forms.PictureBox
 End Class
