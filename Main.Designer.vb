@@ -26,9 +26,8 @@ Partial Class Main
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.tmSelectAll = New System.Windows.Forms.Timer(Me.components)
         Me.lblNote = New System.Windows.Forms.Label
-        Me.cmdAbout = New System.Windows.Forms.Button
         Me.lblProductName = New System.Windows.Forms.Label
-        Me.FlowLayout = New System.Windows.Forms.FlowLayoutPanel
+        Me.flwOptions = New System.Windows.Forms.FlowLayoutPanel
         Me.lblSystem = New System.Windows.Forms.Label
         Me.cbRecycle = New System.Windows.Forms.CheckBox
         Me.cbTemp = New System.Windows.Forms.CheckBox
@@ -83,7 +82,12 @@ Partial Class Main
         Me.cmdSelectAll = New System.Windows.Forms.LinkLabel
         Me.cmdAdvanced = New System.Windows.Forms.Button
         Me.cmdQuick = New System.Windows.Forms.Button
-        Me.FlowLayout.SuspendLayout()
+        Me.tblDesign = New System.Windows.Forms.TableLayoutPanel
+        Me.flwPresets = New System.Windows.Forms.FlowLayoutPanel
+        Me.cmdAbout = New System.Windows.Forms.Button
+        Me.flwOptions.SuspendLayout()
+        Me.tblDesign.SuspendLayout()
+        Me.flwPresets.SuspendLayout()
         Me.SuspendLayout()
         '
         'tmSelectAll
@@ -91,93 +95,89 @@ Partial Class Main
         '
         'lblNote
         '
+        Me.lblNote.AutoSize = True
+        Me.lblNote.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lblNote.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNote.Location = New System.Drawing.Point(0, 37)
+        Me.lblNote.Location = New System.Drawing.Point(6, 31)
         Me.lblNote.Name = "lblNote"
-        Me.lblNote.Size = New System.Drawing.Size(250, 16)
+        Me.lblNote.Size = New System.Drawing.Size(182, 15)
         Me.lblNote.TabIndex = 1
         Me.lblNote.Text = "BETA"
         Me.lblNote.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'cmdAbout
-        '
-        Me.cmdAbout.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdAbout.Location = New System.Drawing.Point(209, 9)
-        Me.cmdAbout.Name = "cmdAbout"
-        Me.cmdAbout.Size = New System.Drawing.Size(28, 28)
-        Me.cmdAbout.TabIndex = 0
-        Me.cmdAbout.Text = "?"
-        Me.cmdAbout.UseVisualStyleBackColor = True
-        '
         'lblProductName
         '
         Me.lblProductName.AutoSize = True
+        Me.lblProductName.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lblProductName.Font = New System.Drawing.Font("Arial", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblProductName.Location = New System.Drawing.Point(64, 9)
+        Me.lblProductName.Location = New System.Drawing.Point(3, 3)
+        Me.lblProductName.Margin = New System.Windows.Forms.Padding(0)
         Me.lblProductName.Name = "lblProductName"
-        Me.lblProductName.Size = New System.Drawing.Size(121, 28)
+        Me.lblProductName.Size = New System.Drawing.Size(188, 28)
         Me.lblProductName.TabIndex = 0
         Me.lblProductName.Text = "DriveTidy"
+        Me.lblProductName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'FlowLayout
+        'flwOptions
         '
-        Me.FlowLayout.AutoScroll = True
-        Me.FlowLayout.Controls.Add(Me.lblSystem)
-        Me.FlowLayout.Controls.Add(Me.cbRecycle)
-        Me.FlowLayout.Controls.Add(Me.cbTemp)
-        Me.FlowLayout.Controls.Add(Me.cbRecent)
-        Me.FlowLayout.Controls.Add(Me.cbWindowsUpdate)
-        Me.FlowLayout.Controls.Add(Me.cbErrorReports)
-        Me.FlowLayout.Controls.Add(Me.lblInternet)
-        Me.FlowLayout.Controls.Add(Me.cbTIF)
-        Me.FlowLayout.Controls.Add(Me.cbFirefox)
-        Me.FlowLayout.Controls.Add(Me.cbChrome)
-        Me.FlowLayout.Controls.Add(Me.cbOpera)
-        Me.FlowLayout.Controls.Add(Me.cbSafari)
-        Me.FlowLayout.Controls.Add(Me.cbFlash)
-        Me.FlowLayout.Controls.Add(Me.cbJava)
-        Me.FlowLayout.Controls.Add(Me.cbMessenger)
-        Me.FlowLayout.Controls.Add(Me.lblMore)
-        Me.FlowLayout.Controls.Add(Me.cbVistaSP1)
-        Me.FlowLayout.Controls.Add(Me.cbVistaSP2)
-        Me.FlowLayout.Controls.Add(Me.cbHibernate)
-        Me.FlowLayout.Controls.Add(Me.cbSampleMusic)
-        Me.FlowLayout.Controls.Add(Me.cbSamplePictures)
-        Me.FlowLayout.Controls.Add(Me.cbSampleVideos)
-        Me.FlowLayout.Controls.Add(Me.lblOtherApps)
-        Me.FlowLayout.Controls.Add(Me.cbAdobeCameraRAW)
-        Me.FlowLayout.Controls.Add(Me.cbAdobeReader)
-        Me.FlowLayout.Controls.Add(Me.cbAppleInstaller)
-        Me.FlowLayout.Controls.Add(Me.cbAVG)
-        Me.FlowLayout.Controls.Add(Me.cbGIMP)
-        Me.FlowLayout.Controls.Add(Me.cbGoogleEarth)
-        Me.FlowLayout.Controls.Add(Me.cbGoogleUpdater)
-        Me.FlowLayout.Controls.Add(Me.cbHPDigitalImaging)
-        Me.FlowLayout.Controls.Add(Me.cbIMVU)
-        Me.FlowLayout.Controls.Add(Me.cbiTunes)
-        Me.FlowLayout.Controls.Add(Me.cbKaspersky)
-        Me.FlowLayout.Controls.Add(Me.cbNokiaOvi)
-        Me.FlowLayout.Controls.Add(Me.cbQuicktime)
-        Me.FlowLayout.Controls.Add(Me.cbRealPlayer)
-        Me.FlowLayout.Controls.Add(Me.cbRDP)
-        Me.FlowLayout.Controls.Add(Me.cbSilverlight)
-        Me.FlowLayout.Controls.Add(Me.cbSpotify)
-        Me.FlowLayout.Controls.Add(Me.cbSymantec)
-        Me.FlowLayout.Controls.Add(Me.cbTrackmania)
-        Me.FlowLayout.Controls.Add(Me.cbUnity)
-        Me.FlowLayout.Controls.Add(Me.lblFileExt)
-        Me.FlowLayout.Controls.Add(Me.cbTMP)
-        Me.FlowLayout.Controls.Add(Me.cbLOG)
-        Me.FlowLayout.Controls.Add(Me.cbCHK)
-        Me.FlowLayout.Controls.Add(Me.cbDMP)
-        Me.FlowLayout.Controls.Add(Me.cb_MP)
-        Me.FlowLayout.Controls.Add(Me.cbERR)
-        Me.FlowLayout.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.FlowLayout.Location = New System.Drawing.Point(10, 102)
-        Me.FlowLayout.Name = "FlowLayout"
-        Me.FlowLayout.Size = New System.Drawing.Size(229, 208)
-        Me.FlowLayout.TabIndex = 4
-        Me.FlowLayout.WrapContents = False
+        Me.flwOptions.AutoScroll = True
+        Me.flwOptions.Controls.Add(Me.lblSystem)
+        Me.flwOptions.Controls.Add(Me.cbRecycle)
+        Me.flwOptions.Controls.Add(Me.cbTemp)
+        Me.flwOptions.Controls.Add(Me.cbRecent)
+        Me.flwOptions.Controls.Add(Me.cbWindowsUpdate)
+        Me.flwOptions.Controls.Add(Me.cbErrorReports)
+        Me.flwOptions.Controls.Add(Me.lblInternet)
+        Me.flwOptions.Controls.Add(Me.cbTIF)
+        Me.flwOptions.Controls.Add(Me.cbFirefox)
+        Me.flwOptions.Controls.Add(Me.cbChrome)
+        Me.flwOptions.Controls.Add(Me.cbOpera)
+        Me.flwOptions.Controls.Add(Me.cbSafari)
+        Me.flwOptions.Controls.Add(Me.cbFlash)
+        Me.flwOptions.Controls.Add(Me.cbJava)
+        Me.flwOptions.Controls.Add(Me.cbMessenger)
+        Me.flwOptions.Controls.Add(Me.lblMore)
+        Me.flwOptions.Controls.Add(Me.cbVistaSP1)
+        Me.flwOptions.Controls.Add(Me.cbVistaSP2)
+        Me.flwOptions.Controls.Add(Me.cbHibernate)
+        Me.flwOptions.Controls.Add(Me.cbSampleMusic)
+        Me.flwOptions.Controls.Add(Me.cbSamplePictures)
+        Me.flwOptions.Controls.Add(Me.cbSampleVideos)
+        Me.flwOptions.Controls.Add(Me.lblOtherApps)
+        Me.flwOptions.Controls.Add(Me.cbAdobeCameraRAW)
+        Me.flwOptions.Controls.Add(Me.cbAdobeReader)
+        Me.flwOptions.Controls.Add(Me.cbAppleInstaller)
+        Me.flwOptions.Controls.Add(Me.cbAVG)
+        Me.flwOptions.Controls.Add(Me.cbGIMP)
+        Me.flwOptions.Controls.Add(Me.cbGoogleEarth)
+        Me.flwOptions.Controls.Add(Me.cbGoogleUpdater)
+        Me.flwOptions.Controls.Add(Me.cbHPDigitalImaging)
+        Me.flwOptions.Controls.Add(Me.cbIMVU)
+        Me.flwOptions.Controls.Add(Me.cbiTunes)
+        Me.flwOptions.Controls.Add(Me.cbKaspersky)
+        Me.flwOptions.Controls.Add(Me.cbNokiaOvi)
+        Me.flwOptions.Controls.Add(Me.cbQuicktime)
+        Me.flwOptions.Controls.Add(Me.cbRealPlayer)
+        Me.flwOptions.Controls.Add(Me.cbRDP)
+        Me.flwOptions.Controls.Add(Me.cbSilverlight)
+        Me.flwOptions.Controls.Add(Me.cbSpotify)
+        Me.flwOptions.Controls.Add(Me.cbSymantec)
+        Me.flwOptions.Controls.Add(Me.cbTrackmania)
+        Me.flwOptions.Controls.Add(Me.cbUnity)
+        Me.flwOptions.Controls.Add(Me.lblFileExt)
+        Me.flwOptions.Controls.Add(Me.cbTMP)
+        Me.flwOptions.Controls.Add(Me.cbLOG)
+        Me.flwOptions.Controls.Add(Me.cbCHK)
+        Me.flwOptions.Controls.Add(Me.cbDMP)
+        Me.flwOptions.Controls.Add(Me.cb_MP)
+        Me.flwOptions.Controls.Add(Me.cbERR)
+        Me.flwOptions.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.flwOptions.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.flwOptions.Location = New System.Drawing.Point(6, 94)
+        Me.flwOptions.Name = "flwOptions"
+        Me.flwOptions.Size = New System.Drawing.Size(182, 190)
+        Me.flwOptions.TabIndex = 4
+        Me.flwOptions.WrapContents = False
         '
         'lblSystem
         '
@@ -188,6 +188,7 @@ Partial Class Main
         Me.lblSystem.Size = New System.Drawing.Size(52, 20)
         Me.lblSystem.TabIndex = 1
         Me.lblSystem.Text = "System"
+        Me.lblSystem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.lblSystem.UseCompatibleTextRendering = True
         '
         'cbRecycle
@@ -221,9 +222,9 @@ Partial Class Main
         Me.cbRecent.Location = New System.Drawing.Point(0, 58)
         Me.cbRecent.Margin = New System.Windows.Forms.Padding(0)
         Me.cbRecent.Name = "cbRecent"
-        Me.cbRecent.Size = New System.Drawing.Size(174, 19)
+        Me.cbRecent.Size = New System.Drawing.Size(117, 19)
         Me.cbRecent.TabIndex = 4
-        Me.cbRecent.Text = "Recent Accessed File Data"
+        Me.cbRecent.Text = "Recent File Data"
         Me.cbRecent.UseVisualStyleBackColor = True
         '
         'cbWindowsUpdate
@@ -259,6 +260,7 @@ Partial Class Main
         Me.lblInternet.Size = New System.Drawing.Size(54, 20)
         Me.lblInternet.TabIndex = 7
         Me.lblInternet.Text = "Internet"
+        Me.lblInternet.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.lblInternet.UseCompatibleTextRendering = True
         '
         'cbTIF
@@ -366,6 +368,7 @@ Partial Class Main
         Me.lblMore.Size = New System.Drawing.Size(48, 20)
         Me.lblMore.TabIndex = 16
         Me.lblMore.Text = "More..."
+        Me.lblMore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.lblMore.UseCompatibleTextRendering = True
         '
         'cbVistaSP1
@@ -449,6 +452,7 @@ Partial Class Main
         Me.lblOtherApps.Size = New System.Drawing.Size(125, 20)
         Me.lblOtherApps.TabIndex = 23
         Me.lblOtherApps.Text = "Other Applications"
+        Me.lblOtherApps.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.lblOtherApps.UseCompatibleTextRendering = True
         '
         'cbAdobeCameraRAW
@@ -700,6 +704,7 @@ Partial Class Main
         Me.lblFileExt.Size = New System.Drawing.Size(103, 20)
         Me.lblFileExt.TabIndex = 44
         Me.lblFileExt.Text = "File Extensions"
+        Me.lblFileExt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.lblFileExt.UseCompatibleTextRendering = True
         '
         'cbTMP
@@ -776,12 +781,14 @@ Partial Class Main
         '
         'cmdClean
         '
+        Me.cmdClean.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.cmdClean.AutoSize = True
         Me.cmdClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.cmdClean.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdClean.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdClean.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdClean.Location = New System.Drawing.Point(67, 318)
+        Me.cmdClean.Location = New System.Drawing.Point(39, 290)
         Me.cmdClean.Name = "cmdClean"
-        Me.cmdClean.Size = New System.Drawing.Size(115, 38)
+        Me.cmdClean.Size = New System.Drawing.Size(115, 30)
         Me.cmdClean.TabIndex = 5
         Me.cmdClean.Text = "Start Cleanup"
         Me.cmdClean.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -792,7 +799,7 @@ Partial Class Main
         Me.cmdSelectAll.AutoSize = True
         Me.cmdSelectAll.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdSelectAll.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
-        Me.cmdSelectAll.Location = New System.Drawing.Point(7, 86)
+        Me.cmdSelectAll.Location = New System.Drawing.Point(6, 77)
         Me.cmdSelectAll.Name = "cmdSelectAll"
         Me.cmdSelectAll.Size = New System.Drawing.Size(52, 14)
         Me.cmdSelectAll.TabIndex = 3
@@ -801,37 +808,87 @@ Partial Class Main
         '
         'cmdAdvanced
         '
+        Me.cmdAdvanced.AutoSize = True
         Me.cmdAdvanced.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdAdvanced.Location = New System.Drawing.Point(127, 57)
+        Me.cmdAdvanced.Location = New System.Drawing.Point(94, 0)
+        Me.cmdAdvanced.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.cmdAdvanced.Name = "cmdAdvanced"
-        Me.cmdAdvanced.Size = New System.Drawing.Size(85, 23)
+        Me.cmdAdvanced.Size = New System.Drawing.Size(85, 25)
         Me.cmdAdvanced.TabIndex = 2
         Me.cmdAdvanced.Text = "Advanced"
         Me.cmdAdvanced.UseVisualStyleBackColor = True
         '
         'cmdQuick
         '
+        Me.cmdQuick.AutoSize = True
         Me.cmdQuick.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdQuick.Location = New System.Drawing.Point(36, 57)
+        Me.cmdQuick.Location = New System.Drawing.Point(3, 0)
+        Me.cmdQuick.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.cmdQuick.Name = "cmdQuick"
-        Me.cmdQuick.Size = New System.Drawing.Size(85, 23)
+        Me.cmdQuick.Size = New System.Drawing.Size(85, 25)
         Me.cmdQuick.TabIndex = 1
         Me.cmdQuick.Text = "Quick"
         Me.cmdQuick.UseVisualStyleBackColor = True
+        '
+        'tblDesign
+        '
+        Me.tblDesign.AutoSize = True
+        Me.tblDesign.ColumnCount = 1
+        Me.tblDesign.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tblDesign.Controls.Add(Me.lblProductName, 0, 0)
+        Me.tblDesign.Controls.Add(Me.cmdClean, 0, 5)
+        Me.tblDesign.Controls.Add(Me.flwOptions, 0, 4)
+        Me.tblDesign.Controls.Add(Me.lblNote, 0, 1)
+        Me.tblDesign.Controls.Add(Me.flwPresets, 0, 2)
+        Me.tblDesign.Controls.Add(Me.cmdSelectAll, 0, 3)
+        Me.tblDesign.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tblDesign.Location = New System.Drawing.Point(0, 0)
+        Me.tblDesign.Name = "tblDesign"
+        Me.tblDesign.Padding = New System.Windows.Forms.Padding(3)
+        Me.tblDesign.RowCount = 7
+        Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle)
+        Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle)
+        Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle)
+        Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle)
+        Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle)
+        Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle)
+        Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle)
+        Me.tblDesign.Size = New System.Drawing.Size(194, 322)
+        Me.tblDesign.TabIndex = 6
+        '
+        'flwPresets
+        '
+        Me.flwPresets.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.flwPresets.AutoSize = True
+        Me.flwPresets.Controls.Add(Me.cmdQuick)
+        Me.flwPresets.Controls.Add(Me.cmdAdvanced)
+        Me.flwPresets.Location = New System.Drawing.Point(6, 49)
+        Me.flwPresets.Name = "flwPresets"
+        Me.flwPresets.Size = New System.Drawing.Size(182, 25)
+        Me.flwPresets.TabIndex = 2
+        Me.flwPresets.WrapContents = False
+        '
+        'cmdAbout
+        '
+        Me.cmdAbout.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmdAbout.AutoSize = True
+        Me.cmdAbout.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdAbout.Location = New System.Drawing.Point(163, 3)
+        Me.cmdAbout.Name = "cmdAbout"
+        Me.cmdAbout.Size = New System.Drawing.Size(25, 28)
+        Me.cmdAbout.TabIndex = 0
+        Me.cmdAbout.Text = "?"
+        Me.cmdAbout.UseVisualStyleBackColor = True
         '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(249, 366)
-        Me.Controls.Add(Me.cmdAdvanced)
-        Me.Controls.Add(Me.cmdQuick)
-        Me.Controls.Add(Me.FlowLayout)
-        Me.Controls.Add(Me.cmdClean)
-        Me.Controls.Add(Me.cmdSelectAll)
+        Me.AutoSize = True
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.ClientSize = New System.Drawing.Size(194, 322)
         Me.Controls.Add(Me.cmdAbout)
-        Me.Controls.Add(Me.lblProductName)
-        Me.Controls.Add(Me.lblNote)
+        Me.Controls.Add(Me.tblDesign)
         Me.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -839,17 +896,20 @@ Partial Class Main
         Me.Name = "Main"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "DriveTidy"
-        Me.FlowLayout.ResumeLayout(False)
-        Me.FlowLayout.PerformLayout()
+        Me.flwOptions.ResumeLayout(False)
+        Me.flwOptions.PerformLayout()
+        Me.tblDesign.ResumeLayout(False)
+        Me.tblDesign.PerformLayout()
+        Me.flwPresets.ResumeLayout(False)
+        Me.flwPresets.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents tmSelectAll As System.Windows.Forms.Timer
     Friend WithEvents lblNote As System.Windows.Forms.Label
-    Friend WithEvents cmdAbout As System.Windows.Forms.Button
     Friend WithEvents lblProductName As System.Windows.Forms.Label
-    Friend WithEvents FlowLayout As System.Windows.Forms.FlowLayoutPanel
+    Friend WithEvents flwOptions As System.Windows.Forms.FlowLayoutPanel
     Friend WithEvents lblSystem As System.Windows.Forms.Label
     Friend WithEvents cbRecycle As System.Windows.Forms.CheckBox
     Friend WithEvents cbTemp As System.Windows.Forms.CheckBox
@@ -904,4 +964,7 @@ Partial Class Main
     Friend WithEvents cmdSelectAll As System.Windows.Forms.LinkLabel
     Friend WithEvents cmdAdvanced As System.Windows.Forms.Button
     Friend WithEvents cmdQuick As System.Windows.Forms.Button
+    Friend WithEvents tblDesign As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents flwPresets As System.Windows.Forms.FlowLayoutPanel
+    Friend WithEvents cmdAbout As System.Windows.Forms.Button
 End Class

@@ -29,7 +29,7 @@
         If intmessage = MsgBoxResult.Yes Then
             KillProcess("cmd")
             KillProcess("rundll32")
-            CleanStatus.Text = "Cleanup Cancelled"
+            CleanStatus.Text = "Cancelled"
             CleanSubStatus.Text = "See log for details."
             End_Scan()
         End If
@@ -54,6 +54,7 @@
 
     Private Sub CleanerWindow_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
         Me.Icon = Main.Icon
+        Me.Width = Main.Width
         'Make form the same position as Main
         Me.Top = Main.Top
         Me.Left = Main.Left - (Me.Width - Main.Width)
@@ -107,6 +108,7 @@
         tmSpace.Enabled = False
         ProgressBar0.Value = 13
         cmdCancel.TabStop = False
+        cmdCancel.Enabled = False
         cmdCancel.Visible = False
         cmdLog.Visible = True
         cmdClose.Visible = True
@@ -125,65 +127,65 @@
         If FileContent = "0" Then
             CleanStatus.Text = "Cleaning..."
         ElseIf FileContent = "Q1" Then
-            CleanSubStatus.Text = "Emptying Recycle Bin..."
+            CleanSubStatus.Text = "Emptying Recycle Bin"
             ProgressBar0.Value = 1
         ElseIf FileContent = "Q2" Then
-            CleanSubStatus.Text = "Temporary Files..."
+            CleanSubStatus.Text = "Temporary Files"
             ProgressBar0.Value = 2
         ElseIf FileContent = "Q3" Then
-            CleanSubStatus.Text = "Recent Accessed File Data..."
+            CleanSubStatus.Text = "Recent Accessed File Data"
         ElseIf FileContent = "Q4" Then
-            CleanSubStatus.Text = "Windows Update Cache..."
+            CleanSubStatus.Text = "Windows Update Cache"
             ProgressBar0.Value = 4
         ElseIf FileContent = "Q5" Then
-            CleanSubStatus.Text = "Error Reports..."
+            CleanSubStatus.Text = "Error Reports"
         ElseIf FileContent = "Q6" Then
-            CleanSubStatus.Text = "Temporary Internet Files..."
+            CleanSubStatus.Text = "Temporary Internet Files"
             ProgressBar0.Value = 6
         ElseIf FileContent = "Q7" Then
-            CleanSubStatus.Text = "Browser Caches..."
+            CleanSubStatus.Text = "Browser Caches"
             ProgressBar0.Value = 7
         ElseIf FileContent = "Q8" Then
             ProgressBar0.Value = 8
         ElseIf FileContent = "Q9" Then
-            CleanSubStatus.Text = "Flash Player..."
+            CleanSubStatus.Text = "Flash Player"
             ProgressBar0.Value = 9
         ElseIf FileContent = "Q10" Then
-            CleanSubStatus.Text = "Java..."
+            CleanSubStatus.Text = "Java"
             ProgressBar0.Value = 10
         ElseIf FileContent = "Q11" Then
-            CleanSubStatus.Text = "Messenger..."
+            CleanSubStatus.Text = "Messenger"
             ProgressBar0.Value = 11
         ElseIf FileContent = "Q12" Then
-            CleanSubStatus.Text = "Remaining Caches..."
+            CleanSubStatus.Text = "Remaining Caches"
             ProgressBar0.Value = 11
         ElseIf FileContent = "Q13" Then
             ProgressBar0.Value = 13
         ElseIf FileContent = "VSP1" Then
-            CleanSubStatus.Text = "Vista SP1 Cleanup..."
+            CleanSubStatus.Text = "Vista SP1 Cleanup"
         ElseIf FileContent = "VSP2" Then
-            CleanSubStatus.Text = "Vista SP2 Cleanup..."
+            CleanSubStatus.Text = "Vista SP2 Cleanup"
         ElseIf FileContent = "F1" Then
-            CleanSubStatus.Text = ".tmp files..."
+            CleanSubStatus.Text = ".tmp files"
             ProgressBar0.Value = 2
         ElseIf FileContent = "F2" Then
-            CleanSubStatus.Text = ".log files..."
+            CleanSubStatus.Text = ".log files"
             ProgressBar0.Value = 4
         ElseIf FileContent = "F3" Then
-            CleanSubStatus.Text = ".chk files..."
+            CleanSubStatus.Text = ".chk files"
             ProgressBar0.Value = 6
         ElseIf FileContent = "F4" Then
-            CleanSubStatus.Text = ".dmp files..."
+            CleanSubStatus.Text = ".dmp files"
             ProgressBar0.Value = 8
         ElseIf FileContent = "F5" Then
-            CleanSubStatus.Text = "._mp files..."
+            CleanSubStatus.Text = "._mp files"
             ProgressBar0.Value = 10
         ElseIf FileContent = "F6" Then
-            CleanSubStatus.Text = ".err files..."
+            CleanSubStatus.Text = ".err files"
             ProgressBar0.Value = 11
         ElseIf FileContent = "FIN" Then
             End_Scan()
-            CleanStatus.Text = "Cleanup Complete"
+            CleanStatus.Text = "Complete"
             CleanSubStatus.Text = "See log for details."
             On Error Resume Next
             My.Computer.FileSystem.DeleteFile(Environ("appdata") & "\DriveTidy\cleaner.bat")

@@ -16,7 +16,7 @@
 
     Public Sub QuickSelect()
         'Unchecks all checkboxes
-        For Each Me.item In FlowLayout.Controls
+        For Each Me.item In flwOptions.Controls
             If TypeOf item Is CheckBox Then
                 item.Checked = False
             End If
@@ -73,11 +73,25 @@
     End Sub
 
     Private Sub Main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'Display settings to show the form correctly for all DPI settings
+        'cbTIF is the longest Checkbox so the Form width adjusts around it
+        If cbTIF.Width + 40 <= 340 Then
+            Me.Width = cbTIF.Width + 40
+        Else
+            Me.Width = cbTIF.Width + 60
+        End If
+        'Makes FlowOptions end at this particular point 
+        flwOptions.Height = cbTIF.Location.Y + (cbTIF.Height * 2)
+        'Put cmdAbout in line with DriveTidy text
+        Dim AboutLocation As New System.Drawing.Point(cmdAbout.Location.X, lblProductName.Location.Y)
+        cmdAbout.Location = AboutLocation
+
         'OS Detection
         Dim OS_WindowsXP As Boolean
         Dim OS_WindowsVista As Boolean
         Dim OS_Windows7 As Boolean
 
+        'Detect OSVersion and assign True to correct Boolean
         If Environment.OSVersion.Platform = PlatformID.Win32NT And _
         Environment.OSVersion.Version.Major = 5 And _
         Environment.OSVersion.Version.Minor = 1 Then
@@ -202,7 +216,7 @@
         cbCount = 0
         cbCheckedCount = 0
         'Make cbCount = Number of visible checkboxes
-        For Each Me.item In FlowLayout.Controls
+        For Each Me.item In flwOptions.Controls
             If TypeOf item Is CheckBox Then
                 If item.Visible = True Then
                     cbCount = cbCount + 1
@@ -217,7 +231,7 @@
 
     Public Sub Uncheck_Invisible()
         'Makes sure there that all invisible checkboxes are unchecked to help cbCheckedCount
-        For Each Me.item In FlowLayout.Controls
+        For Each Me.item In flwOptions.Controls
             If TypeOf item Is CheckBox Then
                 If item.Visible = False Then
                     item.Checked = False
@@ -252,6 +266,7 @@
     End Sub
 
     Private Sub tmSelectAll_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmSelectAll.Tick
+        'Text will display Select None if all are checked.
         Checkbox_Count()
         If cbCheckedCount < cbCount Then
             cmdSelectAll.Text = "Select All"
@@ -263,6 +278,7 @@
     Private Sub cmdAbout_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdAbout.Click
         About.Show()
         Me.Hide()
+        'Disable the Select All timer as the form isn't open
         tmSelectAll.Enabled = False
     End Sub
 
@@ -278,21 +294,23 @@
         cbCHK.Checked = True
         cbDMP.Checked = True
         Uncheck_Invisible()
-        FlowLayout.VerticalScroll.Value = FlowLayout.VerticalScroll.Maximum
-        FlowLayout.ScrollControlIntoView(FlowLayout)
+        'Scroll to bottom of FlowOptions to demonstrate the extra options selected by Advanced
+        flwOptions.VerticalScroll.Value = flwOptions.VerticalScroll.Maximum
+        flwOptions.ScrollControlIntoView(flwOptions)
     End Sub
 
     Private Sub cmdSelectAll_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles cmdSelectAll.LinkClicked
+        'If all of the checkboxes are checked they will all be unchecked, otherwise they will all be checked. 
         Checkbox_Count()
         If cbCheckedCount < cbCount Then
-            For Each Me.item In FlowLayout.Controls
+            For Each Me.item In flwOptions.Controls
                 If TypeOf item Is CheckBox Then
                     item.Checked = True
                     Checkbox_Count()
                 End If
             Next
         ElseIf cbCheckedCount = cbCount Then
-            For Each Me.item In FlowLayout.Controls
+            For Each Me.item In flwOptions.Controls
                 If TypeOf item Is CheckBox Then
                     item.Checked = False
                     Checkbox_Count()
@@ -302,12 +320,12 @@
         Uncheck_Invisible()
     End Sub
 
-    Private Sub FlowLayout_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles FlowLayout.Click
-        FlowLayout.Focus() 'Allows the mouse wheel to work after the panel is clicked
+    Private Sub FlowLayout_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles flwOptions.Click
+        flwOptions.Focus() 'Allows the mouse wheel to work after the panel is clicked
     End Sub
 
-    Private Sub FlowLayout_MouseEnter(ByVal sender As Object, ByVal e As System.EventArgs) Handles FlowLayout.MouseEnter
-        FlowLayout.Focus() 'Allows the mouse wheel to work after the panel has had the mouse move over it
+    Private Sub FlowLayout_MouseEnter(ByVal sender As Object, ByVal e As System.EventArgs) Handles flwOptions.MouseEnter
+        flwOptions.Focus() 'Allows the mouse wheel to work after the panel has had the mouse move over it
     End Sub
 
     Private Sub cmdClean_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClean.Click
@@ -315,6 +333,11 @@
         'If the program fails to write a file then an error will generate and restart the program
         'On Error GoTo ErrorHandler
         'Checking to see if at least one option is checked
+
+        'Ready Value Legend.
+        '0 = Not Ready, No Options Selected
+        '1 = Ready
+        '2 = Not Ready, Aborted By User
 
         Checkbox_Count()
         If cbCheckedCount = 0 Then
@@ -358,8 +381,9 @@
                     KillMsg()
                 End If
             End If
-
-            If Not Ready = 2 Then 'If a new value other than 2 has not been assigned then it will be changed to 1 to proceed
+            'If a new value other than 2 has not been assigned then it will be changed to 1 to proceed.
+            'Used incase the user is not prompted by Process Detection
+            If Not Ready = 2 Then
                 Ready = 1
             End If
         End If
@@ -449,5 +473,4 @@ ErrorHandler:
             'Advanced method with F numbers, no file extension = Q numbers
         End If
     End Sub
-
 End Class
