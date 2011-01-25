@@ -74,14 +74,8 @@
 
     Private Sub Main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Display settings to show the form correctly for all DPI settings
-        'cbTIF is the longest Checkbox so the Form width adjusts around it
-        If cbTIF.Width + 40 <= 340 Then
-            Me.Width = cbTIF.Width + 40
-        Else
-            Me.Width = cbTIF.Width + 60
-        End If
         'Makes FlowOptions end at this particular point 
-        flwOptions.Height = cbTIF.Location.Y + (cbTIF.Height * 2)
+        flwOptions.Height = cbTIF.Location.Y + (cbTIF.Height * 3)
         'Put cmdAbout in line with DriveTidy text
         Dim AboutLocation As New System.Drawing.Point(cmdAbout.Location.X, lblProductName.Location.Y)
         cmdAbout.Location = AboutLocation
@@ -91,6 +85,7 @@
         Dim OS_WindowsVista As Boolean
         Dim OS_Windows7 As Boolean
 
+        On Error GoTo ErrorEnvPerm 'Running on a network drive may throw error about security permissions
         'Detect OSVersion and assign True to correct Boolean
         If Environment.OSVersion.Platform = PlatformID.Win32NT And _
         Environment.OSVersion.Version.Major = 5 And _
@@ -114,6 +109,11 @@
         End If
 
         'Environment Variables for Windows Vista / 7
+        'Version
+        Environment.SetEnvironmentVariable("version", My.Application.Info.Version.Major & "." & My.Application.Info.Version.Minor & "." & My.Application.Info.Version.Build & "." & My.Application.Info.Version.Revision)
+        'Version as a value (1 decimal place)
+        Environment.SetEnvironmentVariable("version_value", My.Application.Info.Version.Major & "." & My.Application.Info.Version.Minor & My.Application.Info.Version.Build & My.Application.Info.Version.Revision)
+
         'Paths include "/" to ensure wanted files aren't deleted. 
         'Command List is also adjusted accordingly. 
         'E.g. %userprofile%temp.tmp and not %userprofile%\temp.tmp
@@ -136,10 +136,7 @@
             Environment.SetEnvironmentVariable("tif", Environ("userprofile") + "\Local Settings\Temporary Internet Files\")
             Environment.SetEnvironmentVariable("allusersappdata", Environ("allusersprofile") + "\Application Data\")
         End If
-        'Version
-        Environment.SetEnvironmentVariable("version", My.Application.Info.Version.Major & "." & My.Application.Info.Version.Minor & "." & My.Application.Info.Version.Build & "." & My.Application.Info.Version.Revision)
-        'Version as a value (1 decimal place)
-        Environment.SetEnvironmentVariable("version_value", My.Application.Info.Version.Major & "." & My.Application.Info.Version.Minor & My.Application.Info.Version.Build & My.Application.Info.Version.Revision)
+        On Error GoTo 0 'End of Setting Environment Permissions
 
         'KVP Lists
         'List of Current Options here get added to the Dictionary so they can be referenced
@@ -200,6 +197,9 @@
         Detect.Definitions()
         Checkbox_Count()
         tmSelectAll.Enabled = True
+        Exit Sub
+ErrorEnvPerm:
+        MsgBox("You may be running from a network drive which is not recommended. Please copy the file to a local drive.", MsgBoxStyle.Information, "Permission Error")
     End Sub
 
     Private Sub Main_FormClosing(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
@@ -331,7 +331,7 @@
     Private Sub cmdClean_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClean.Click
         Dim ieVersion As New Version(My.Computer.Registry.LocalMachine.OpenSubKey("SOFTWARE\Microsoft\Internet Explorer").GetValue("Version"))
         'If the program fails to write a file then an error will generate and restart the program
-        'On Error GoTo ErrorHandler
+        On Error GoTo ErrorHandler
         'Checking to see if at least one option is checked
 
         'Ready Value Legend.

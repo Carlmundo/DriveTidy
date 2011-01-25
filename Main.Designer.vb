@@ -98,9 +98,9 @@ Partial Class Main
         Me.lblNote.AutoSize = True
         Me.lblNote.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lblNote.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNote.Location = New System.Drawing.Point(6, 31)
+        Me.lblNote.Location = New System.Drawing.Point(13, 38)
         Me.lblNote.Name = "lblNote"
-        Me.lblNote.Size = New System.Drawing.Size(182, 15)
+        Me.lblNote.Size = New System.Drawing.Size(223, 15)
         Me.lblNote.TabIndex = 1
         Me.lblNote.Text = "BETA"
         Me.lblNote.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -110,10 +110,10 @@ Partial Class Main
         Me.lblProductName.AutoSize = True
         Me.lblProductName.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lblProductName.Font = New System.Drawing.Font("Arial", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblProductName.Location = New System.Drawing.Point(3, 3)
+        Me.lblProductName.Location = New System.Drawing.Point(10, 10)
         Me.lblProductName.Margin = New System.Windows.Forms.Padding(0)
         Me.lblProductName.Name = "lblProductName"
-        Me.lblProductName.Size = New System.Drawing.Size(188, 28)
+        Me.lblProductName.Size = New System.Drawing.Size(229, 28)
         Me.lblProductName.TabIndex = 0
         Me.lblProductName.Text = "DriveTidy"
         Me.lblProductName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -173,9 +173,10 @@ Partial Class Main
         Me.flwOptions.Controls.Add(Me.cbERR)
         Me.flwOptions.Dock = System.Windows.Forms.DockStyle.Fill
         Me.flwOptions.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.flwOptions.Location = New System.Drawing.Point(6, 94)
+        Me.flwOptions.Location = New System.Drawing.Point(13, 98)
+        Me.flwOptions.Margin = New System.Windows.Forms.Padding(3, 0, 3, 3)
         Me.flwOptions.Name = "flwOptions"
-        Me.flwOptions.Size = New System.Drawing.Size(182, 190)
+        Me.flwOptions.Size = New System.Drawing.Size(223, 209)
         Me.flwOptions.TabIndex = 4
         Me.flwOptions.WrapContents = False
         '
@@ -784,11 +785,11 @@ Partial Class Main
         Me.cmdClean.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.cmdClean.AutoSize = True
         Me.cmdClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.cmdClean.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdClean.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdClean.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdClean.Location = New System.Drawing.Point(39, 290)
+        Me.cmdClean.Location = New System.Drawing.Point(67, 313)
         Me.cmdClean.Name = "cmdClean"
-        Me.cmdClean.Size = New System.Drawing.Size(115, 30)
+        Me.cmdClean.Size = New System.Drawing.Size(115, 34)
         Me.cmdClean.TabIndex = 5
         Me.cmdClean.Text = "Start Cleanup"
         Me.cmdClean.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -799,7 +800,7 @@ Partial Class Main
         Me.cmdSelectAll.AutoSize = True
         Me.cmdSelectAll.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdSelectAll.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
-        Me.cmdSelectAll.Location = New System.Drawing.Point(6, 77)
+        Me.cmdSelectAll.Location = New System.Drawing.Point(13, 84)
         Me.cmdSelectAll.Name = "cmdSelectAll"
         Me.cmdSelectAll.Size = New System.Drawing.Size(52, 14)
         Me.cmdSelectAll.TabIndex = 3
@@ -843,8 +844,9 @@ Partial Class Main
         Me.tblDesign.Controls.Add(Me.cmdSelectAll, 0, 3)
         Me.tblDesign.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tblDesign.Location = New System.Drawing.Point(0, 0)
+        Me.tblDesign.Margin = New System.Windows.Forms.Padding(5)
         Me.tblDesign.Name = "tblDesign"
-        Me.tblDesign.Padding = New System.Windows.Forms.Padding(3)
+        Me.tblDesign.Padding = New System.Windows.Forms.Padding(10)
         Me.tblDesign.RowCount = 7
         Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle)
         Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle)
@@ -853,7 +855,7 @@ Partial Class Main
         Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle)
         Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle)
         Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle)
-        Me.tblDesign.Size = New System.Drawing.Size(194, 322)
+        Me.tblDesign.Size = New System.Drawing.Size(249, 350)
         Me.tblDesign.TabIndex = 6
         '
         'flwPresets
@@ -862,7 +864,7 @@ Partial Class Main
         Me.flwPresets.AutoSize = True
         Me.flwPresets.Controls.Add(Me.cmdQuick)
         Me.flwPresets.Controls.Add(Me.cmdAdvanced)
-        Me.flwPresets.Location = New System.Drawing.Point(6, 49)
+        Me.flwPresets.Location = New System.Drawing.Point(33, 56)
         Me.flwPresets.Name = "flwPresets"
         Me.flwPresets.Size = New System.Drawing.Size(182, 25)
         Me.flwPresets.TabIndex = 2
@@ -873,7 +875,7 @@ Partial Class Main
         Me.cmdAbout.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdAbout.AutoSize = True
         Me.cmdAbout.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdAbout.Location = New System.Drawing.Point(163, 3)
+        Me.cmdAbout.Location = New System.Drawing.Point(218, 3)
         Me.cmdAbout.Name = "cmdAbout"
         Me.cmdAbout.Size = New System.Drawing.Size(25, 28)
         Me.cmdAbout.TabIndex = 0
@@ -886,7 +888,7 @@ Partial Class Main
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(194, 322)
+        Me.ClientSize = New System.Drawing.Size(249, 350)
         Me.Controls.Add(Me.cmdAbout)
         Me.Controls.Add(Me.tblDesign)
         Me.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
