@@ -35,29 +35,30 @@
     End Sub
 
     Private Sub lnkUpdate_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles lnkUpdate.LinkClicked
-        Dim BuildCheck As Integer 'The process that downloads the file to the computer
-        Dim url As String 'The URL of the build.txt file that contains the most recent build number
-        Dim localFileName As String 'Where the file is downloaded to
-        Dim BuildValue As Decimal 'Writes the version number as one integer
-        Dim BuildFile As Object 'The file to check for FileContent (same as the downloaded location)
-        Dim FileContent As Object
-        Dim intmessage As Object
-        Dim objShell As Object 'Used to open the link to download an updated version
+        'Used to open the link to download an updated version
+        Dim objShell As Object = CreateObject("WScript.Shell")
+        'The URL of the build.txt file that contains the most recent build number
+        Dim url As String = "http://www.aspromos.com/build.txt"
+        'Where the file is downloaded to
+        Dim LocalFile As String = Environ("temp") & "\build.txt"
+        'The process that downloads the file to the computer
+        Dim BuildCheck As Integer = URLDownloadToFile(0, url, LocalFile, 0, 0)
+        'Writes the version number as one number
+        Dim BuildValue As Decimal = (Environ("version_value"))
+        'The file to check for FileContent (same as the downloaded location)
+        Dim FileContent As Object = ""
+
         Me.Cursor = Cursors.WaitCursor
-        objShell = CreateObject("WScript.Shell")
-        url = "http://www.aspromos.com/build.txt"
-        localFileName = Environ("temp") & "\build.txt"
-        BuildFile = Environ("temp") & "\build.txt"
-        BuildCheck = URLDownloadToFile(0, url, localFileName, 0, 0)
-        BuildValue = (Environ("version_value"))
-        FileContent = ""
+
         On Error GoTo UpdateCheckFailed
-        FileOpen(5, BuildFile, OpenMode.Input)
+        FileOpen(5, LocalFile, OpenMode.Input)
         Input(5, FileContent)
         Me.Cursor = Cursors.Default
+
+        Dim MsgNewUpdate As Object
         If FileContent > BuildValue Then
-            intmessage = MsgBox("A newer version of DriveTidy is available. Do you want to download it?", MsgBoxStyle.YesNo, "Update")
-            If intmessage = MsgBoxResult.Yes Then
+            MsgNewUpdate = MsgBox("A newer version of DriveTidy is available. Do you want to download it?", MsgBoxStyle.YesNo, "Update")
+            If MsgNewUpdate = MsgBoxResult.Yes Then
                 MsgBox("Make sure to delete or overwrite your older DriveTidy after downloading the new version.")
                 objShell.Run("http://www.aspromos.com/DriveTidy.exe")
                 Main.Close()
