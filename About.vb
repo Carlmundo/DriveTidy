@@ -12,6 +12,11 @@
 
     Private Sub About_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.Icon = Main.Icon
+        'AutoSize buttons if fonts have been enlarged
+        If cmdUpdate.Font.Size > 9 Then
+            cmdUpdate.AutoSize = True
+            cmdReadme.AutoSize = True
+        End If
         lblVersion.Text = "v" & My.Application.Info.Version.Major & "." & My.Application.Info.Version.Minor & "." & My.Application.Info.Version.Build & "." & My.Application.Info.Version.Revision
         lblCopyright.Text = My.Application.Info.Copyright
         'Make form the same position as Main
@@ -29,12 +34,9 @@
         Main.tmSelectAll.Enabled = True
     End Sub
 
-    Private Sub cmdClose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClose.Click
-        Me.Close()
-        Main.Show()
-    End Sub
+    Private Sub cmdUpdate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdUpdate.Click
+        Me.Cursor = Cursors.WaitCursor
 
-    Private Sub lnkUpdate_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles lnkUpdate.LinkClicked
         'Used to open the link to download an updated version
         Dim objShell As Object = CreateObject("WScript.Shell")
         'The URL of the build.txt file that contains the most recent build number
@@ -47,8 +49,6 @@
         Dim BuildValue As Decimal = (Environ("version_value"))
         'The file to check for FileContent (same as the downloaded location)
         Dim FileContent As Object = ""
-
-        Me.Cursor = Cursors.WaitCursor
 
         On Error GoTo UpdateCheckFailed
         FileOpen(5, LocalFile, OpenMode.Input)
@@ -81,7 +81,7 @@ UpdateCheckFailed:
         FileClose(5)
     End Sub
 
-    Private Sub lnkReadme_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles lnkReadme.LinkClicked
+    Private Sub cmdReadme_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdReadme.Click
         FileOpen(6, Environ("temp") & "\DriveTidy_Readme.txt", OpenMode.Output)
         PrintLine(6, Readme.txtReadme.Text)
         FileClose(6)
