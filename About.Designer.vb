@@ -57,7 +57,7 @@ Partial Class About
         Me.flwButtons.Controls.Add(Me.lnkReadme)
         Me.flwButtons.Controls.Add(Me.cmdClose)
         Me.flwButtons.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.flwButtons.Location = New System.Drawing.Point(3, 95)
+        Me.flwButtons.Location = New System.Drawing.Point(7, 95)
         Me.flwButtons.Name = "flwButtons"
         Me.flwButtons.Size = New System.Drawing.Size(119, 61)
         Me.flwButtons.TabIndex = 26
@@ -91,7 +91,7 @@ Partial Class About
         '
         Me.FlowLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.FlowLayoutPanel1.AutoSize = True
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(63, 159)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(66, 166)
         Me.FlowLayoutPanel1.Margin = New System.Windows.Forms.Padding(0)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
         Me.FlowLayoutPanel1.Size = New System.Drawing.Size(0, 0)
@@ -101,7 +101,7 @@ Partial Class About
         '
         Me.pbLogo.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.pbLogo.Image = CType(resources.GetObject("pbLogo.Image"), System.Drawing.Image)
-        Me.pbLogo.Location = New System.Drawing.Point(47, 3)
+        Me.pbLogo.Location = New System.Drawing.Point(50, 3)
         Me.pbLogo.Name = "pbLogo"
         Me.pbLogo.Size = New System.Drawing.Size(32, 32)
         Me.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -115,7 +115,7 @@ Partial Class About
         Me.Label4.Font = New System.Drawing.Font("Arial", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(3, 38)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(120, 24)
+        Me.Label4.Size = New System.Drawing.Size(127, 24)
         Me.Label4.TabIndex = 27
         Me.Label4.Text = "DriveTidy"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -127,7 +127,7 @@ Partial Class About
         Me.lblVersion.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblVersion.Location = New System.Drawing.Point(3, 62)
         Me.lblVersion.Name = "lblVersion"
-        Me.lblVersion.Size = New System.Drawing.Size(120, 15)
+        Me.lblVersion.Size = New System.Drawing.Size(127, 15)
         Me.lblVersion.TabIndex = 29
         Me.lblVersion.Text = "Version"
         Me.lblVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -139,7 +139,7 @@ Partial Class About
         Me.lblCopyright.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCopyright.Location = New System.Drawing.Point(3, 77)
         Me.lblCopyright.Name = "lblCopyright"
-        Me.lblCopyright.Size = New System.Drawing.Size(120, 15)
+        Me.lblCopyright.Size = New System.Drawing.Size(127, 15)
         Me.lblCopyright.TabIndex = 30
         Me.lblCopyright.Text = "Copyright"
         Me.lblCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -156,7 +156,7 @@ Partial Class About
         Me.tblDesign.Controls.Add(Me.FlowLayoutPanel1, 0, 6)
         Me.tblDesign.Controls.Add(Me.flwButtons, 0, 4)
         Me.tblDesign.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tblDesign.Location = New System.Drawing.Point(0, 0)
+        Me.tblDesign.Location = New System.Drawing.Point(10, 5)
         Me.tblDesign.Name = "tblDesign"
         Me.tblDesign.RowCount = 7
         Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle)
@@ -167,7 +167,7 @@ Partial Class About
         Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle)
         Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0.0!))
         Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.tblDesign.Size = New System.Drawing.Size(126, 160)
+        Me.tblDesign.Size = New System.Drawing.Size(133, 161)
         Me.tblDesign.TabIndex = 24
         '
         'About
@@ -175,13 +175,14 @@ Partial Class About
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(126, 160)
+        Me.ClientSize = New System.Drawing.Size(153, 166)
         Me.Controls.Add(Me.tblDesign)
         Me.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.Name = "About"
+        Me.Padding = New System.Windows.Forms.Padding(10, 5, 10, 0)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "About DriveTidy"
         Me.flwButtons.ResumeLayout(False)
