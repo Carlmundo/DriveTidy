@@ -12,19 +12,11 @@
 
     Private Sub About_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.Icon = Main.Icon
-        Me.Width = Main.Width
         lblVersion.Text = "v" & My.Application.Info.Version.Major & "." & My.Application.Info.Version.Minor & "." & My.Application.Info.Version.Build & "." & My.Application.Info.Version.Revision
         lblCopyright.Text = My.Application.Info.Copyright
-        tbDescription.Text = My.Application.Info.Description
         'Make form the same position as Main
         Me.Top = Main.Top
         Me.Left = Main.Left - (Me.Width - Main.Width)
-        lblEmail.TabStop = False 'TabStop is not available in UI
-    End Sub
-
-    Private Sub lblEmail_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles lblEmail.LinkClicked
-        On Error Resume Next 'An error may be returned if no mail program is installed
-        System.Diagnostics.Process.Start("mailto:DriveTidy@gmail.com?Subject=DriveTidy")
     End Sub
 
     Private Sub About_FormClosing(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
@@ -36,7 +28,13 @@
         Main.Show()
         Main.tmSelectAll.Enabled = True
     End Sub
-    Private Sub cmdUpdate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdUpdate.Click
+
+    Private Sub cmdClose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClose.Click
+        Me.Close()
+        Main.Show()
+    End Sub
+
+    Private Sub lnkUpdate_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles lnkUpdate.LinkClicked
         Dim BuildCheck As Integer 'The process that downloads the file to the computer
         Dim url As String 'The URL of the build.txt file that contains the most recent build number
         Dim localFileName As String 'Where the file is downloaded to
@@ -82,15 +80,10 @@ UpdateCheckFailed:
         FileClose(5)
     End Sub
 
-    Private Sub cmdReadme_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdReadMe.Click
+    Private Sub lnkReadme_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles lnkReadme.LinkClicked
         FileOpen(6, Environ("temp") & "\DriveTidy_Readme.txt", OpenMode.Output)
         PrintLine(6, Readme.txtReadme.Text)
         FileClose(6)
         ShellExecute(0, vbNullString, "notepad", Environ("temp") & "\DriveTidy_Readme.txt", vbNullString, AppWinStyle.NormalFocus)
-    End Sub
-
-    Private Sub cmdClose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClose.Click
-        Me.Close()
-        Main.Show()
     End Sub
 End Class
