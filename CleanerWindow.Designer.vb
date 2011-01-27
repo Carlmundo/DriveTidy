@@ -338,7 +338,6 @@ Partial Class CleanerWindow
         Me.CleanSubStatus.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.CleanSubStatus.Size = New System.Drawing.Size(249, 15)
         Me.CleanSubStatus.TabIndex = 61
-        Me.CleanSubStatus.Text = "..."
         Me.CleanSubStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'CleanerWindow
