@@ -337,7 +337,7 @@ ErrorEnvPerm:
     Private Sub cmdClean_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClean.Click
         Dim ieVersion As New Version(My.Computer.Registry.LocalMachine.OpenSubKey("SOFTWARE\Microsoft\Internet Explorer").GetValue("Version"))
         'If the program fails to write a file then an error will generate and restart the program
-        On Error GoTo ErrorHandler
+        'On Error GoTo ErrorHandler
         'Checking to see if at least one option is checked
 
         'Ready Value Legend.
@@ -352,41 +352,53 @@ ErrorEnvPerm:
             'Process Detection - checks to see if programs are running and need to be closed
             Ready = 1 'Value starts at 1 and will be changed to 2 if the No option is selected for any running processes
             MsgString = " is running and needs to be closed." & vbCrLf & "To save what you are doing close the program manually." & vbCrLf & "Are you sure you want to continue?"
-            If cbTIF.Checked = True Then
-                If Ready = 1 Then
-                    MsgApp = "Internet Explorer"
-                    MsgProcess = "iexplore"
-                    KillMsg()
+
+            Dim pdUBound As Integer
+            pdUBound = 5 'Upper Bound for arrays. +1 for each entry added
+            Dim pdCB(0 To pdUBound) As CheckBox
+            Dim pdApp(0 To pdUBound), pdProcess(0 To pdUBound) As String
+            Dim pdNum As Integer
+            pdNum = 0
+            pdCB(pdNum) = cbTIF
+            pdApp(pdNum) = "Internet Explorer"
+            pdProcess(pdNum) = "iexplore"
+            pdNum = pdNum + 1
+
+            pdCB(pdNum) = cbFirefox
+            pdApp(pdNum) = "Mozilla Firefox"
+            pdProcess(pdNum) = "firefox"
+            pdNum = pdNum + 1
+
+            pdCB(pdNum) = cbChrome
+            pdApp(pdNum) = "Google Chrome"
+            pdProcess(pdNum) = "chrome"
+            pdNum = pdNum + 1
+
+            pdCB(pdNum) = cbOpera
+            pdApp(pdNum) = "Opera"
+            pdProcess(pdNum) = "opera"
+            pdNum = pdNum + 1
+
+            pdCB(pdNum) = cbSafari
+            pdApp(pdNum) = "Safari"
+            pdProcess(pdNum) = "safari"
+            pdNum = pdNum + 1
+
+            pdCB(pdNum) = cbMessenger
+            pdApp(pdNum) = "Windows Live Messenger"
+            pdProcess(pdNum) = "msnmsgr"
+            pdNum = pdNum + 1
+
+            For i = 0 To pdUBound
+                If pdCB(i).Checked = True Then
+                    If Ready = 1 Then
+                        MsgApp = pdApp(i)
+                        MsgProcess = pdProcess(i)
+                        KillMsg()
+                    End If
                 End If
-            End If
-            If cbFirefox.Checked = True Then
-                If Ready = 1 Then
-                    MsgApp = "Mozilla Firefox"
-                    MsgProcess = "firefox"
-                    KillMsg()
-                End If
-            End If
-            If cbChrome.Checked = True Then
-                If Ready = 1 Then
-                    MsgApp = "Google Chrome"
-                    MsgProcess = "chrome"
-                    KillMsg()
-                End If
-            End If
-            If cbOpera.Checked = True Then
-                If Ready = 1 Then
-                    MsgApp = "Opera"
-                    MsgProcess = "opera"
-                    KillMsg()
-                End If
-            End If
-            If cbSafari.Checked = True Then
-                If Ready = 1 Then
-                    MsgApp = "Safari"
-                    MsgProcess = "safari"
-                    KillMsg()
-                End If
-            End If
+            Next
+
             'If a new value other than 2 has not been assigned then it will be changed to 1 to proceed.
             'Used incase the user is not prompted by Process Detection
             If Not Ready = 2 Then
