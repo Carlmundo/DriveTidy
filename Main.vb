@@ -196,6 +196,14 @@
         d3.Add(cb_MP, CleanDefs.txt_MP)
         d3.Add(cbERR, CleanDefs.txtERR)
 
+        'Process Detection Rules
+        pdList.Add(New ProcessDetect(cbTIF, "Internet Explorer", "iexplore"))
+        pdList.Add(New ProcessDetect(cbFirefox, "Mozilla Firefox", "firefox"))
+        pdList.Add(New ProcessDetect(cbChrome, "Google Chrome", "chrome"))
+        pdList.Add(New ProcessDetect(cbOpera, "Opera", "opera"))
+        pdList.Add(New ProcessDetect(cbSafari, "Safari", "safari"))
+        pdList.Add(New ProcessDetect(cbMessenger, "Windows Live Messenger", "msnmsgr"))
+
         lblNote.Text = "BETA " & My.Application.Info.Version.Revision
 
         'If certain files dont exist then delete their button
@@ -366,13 +374,6 @@ ErrorEnvPerm:
             'Process Detection - checks to see if programs are running and need to be closed
             Ready = 1 'Value starts at 1 and will be changed to 2 if the No option is selected for any running processes
             MsgString = " is running and needs to be closed." & vbCrLf & "To save what you are doing close the program manually." & vbCrLf & "Are you sure you want to continue?"
-
-            pdList.Add(New ProcessDetect(cbTIF, "Internet Explorer", "iexplore"))
-            pdList.Add(New ProcessDetect(cbFirefox, "Mozilla Firefox", "firefox"))
-            pdList.Add(New ProcessDetect(cbChrome, "Google Chrome", "chrome"))
-            pdList.Add(New ProcessDetect(cbOpera, "Opera", "opera"))
-            pdList.Add(New ProcessDetect(cbSafari, "Safari", "safari"))
-            pdList.Add(New ProcessDetect(cbMessenger, "Windows Live Messenger", "msnmsgr"))
 
             For i = 0 To (pdList.Count - 1)
                 If pdList(i).CheckboxRef.Checked = True Then
