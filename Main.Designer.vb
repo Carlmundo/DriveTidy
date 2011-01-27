@@ -173,7 +173,7 @@ Partial Class Main
         Me.flwOptions.Controls.Add(Me.cbERR)
         Me.flwOptions.Dock = System.Windows.Forms.DockStyle.Fill
         Me.flwOptions.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.flwOptions.Location = New System.Drawing.Point(13, 98)
+        Me.flwOptions.Location = New System.Drawing.Point(13, 94)
         Me.flwOptions.Margin = New System.Windows.Forms.Padding(3, 0, 3, 3)
         Me.flwOptions.Name = "flwOptions"
         Me.flwOptions.Size = New System.Drawing.Size(223, 209)
@@ -787,7 +787,8 @@ Partial Class Main
         Me.cmdClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.cmdClean.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdClean.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdClean.Location = New System.Drawing.Point(67, 313)
+        Me.cmdClean.Location = New System.Drawing.Point(67, 309)
+        Me.cmdClean.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
         Me.cmdClean.Name = "cmdClean"
         Me.cmdClean.Size = New System.Drawing.Size(115, 34)
         Me.cmdClean.TabIndex = 5
@@ -800,7 +801,7 @@ Partial Class Main
         Me.cmdSelectAll.AutoSize = True
         Me.cmdSelectAll.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdSelectAll.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
-        Me.cmdSelectAll.Location = New System.Drawing.Point(13, 84)
+        Me.cmdSelectAll.Location = New System.Drawing.Point(13, 80)
         Me.cmdSelectAll.Name = "cmdSelectAll"
         Me.cmdSelectAll.Size = New System.Drawing.Size(52, 14)
         Me.cmdSelectAll.TabIndex = 3
@@ -809,24 +810,22 @@ Partial Class Main
         '
         'cmdAdvanced
         '
-        Me.cmdAdvanced.AutoSize = True
         Me.cmdAdvanced.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdAdvanced.Location = New System.Drawing.Point(94, 0)
         Me.cmdAdvanced.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.cmdAdvanced.Name = "cmdAdvanced"
-        Me.cmdAdvanced.Size = New System.Drawing.Size(85, 25)
+        Me.cmdAdvanced.Size = New System.Drawing.Size(85, 21)
         Me.cmdAdvanced.TabIndex = 2
         Me.cmdAdvanced.Text = "Advanced"
         Me.cmdAdvanced.UseVisualStyleBackColor = True
         '
         'cmdQuick
         '
-        Me.cmdQuick.AutoSize = True
         Me.cmdQuick.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdQuick.Location = New System.Drawing.Point(3, 0)
         Me.cmdQuick.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
         Me.cmdQuick.Name = "cmdQuick"
-        Me.cmdQuick.Size = New System.Drawing.Size(85, 25)
+        Me.cmdQuick.Size = New System.Drawing.Size(85, 21)
         Me.cmdQuick.TabIndex = 1
         Me.cmdQuick.Text = "Quick"
         Me.cmdQuick.UseVisualStyleBackColor = True
@@ -866,18 +865,17 @@ Partial Class Main
         Me.flwPresets.Controls.Add(Me.cmdAdvanced)
         Me.flwPresets.Location = New System.Drawing.Point(33, 56)
         Me.flwPresets.Name = "flwPresets"
-        Me.flwPresets.Size = New System.Drawing.Size(182, 25)
+        Me.flwPresets.Size = New System.Drawing.Size(182, 21)
         Me.flwPresets.TabIndex = 2
-        Me.flwPresets.WrapContents = False
         '
         'cmdAbout
         '
         Me.cmdAbout.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdAbout.AutoSize = True
         Me.cmdAbout.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdAbout.Location = New System.Drawing.Point(218, 3)
+        Me.cmdAbout.Location = New System.Drawing.Point(215, 9)
         Me.cmdAbout.Name = "cmdAbout"
-        Me.cmdAbout.Size = New System.Drawing.Size(25, 28)
+        Me.cmdAbout.Size = New System.Drawing.Size(28, 28)
         Me.cmdAbout.TabIndex = 0
         Me.cmdAbout.Text = "?"
         Me.cmdAbout.UseVisualStyleBackColor = True
@@ -903,7 +901,6 @@ Partial Class Main
         Me.tblDesign.ResumeLayout(False)
         Me.tblDesign.PerformLayout()
         Me.flwPresets.ResumeLayout(False)
-        Me.flwPresets.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
