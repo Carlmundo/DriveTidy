@@ -79,6 +79,11 @@
         'Put cmdAbout in line with DriveTidy text
         Dim AboutLocation As New System.Drawing.Point(cmdAbout.Location.X, lblProductName.Location.Y)
         cmdAbout.Location = AboutLocation
+        'AutoSize buttons if fonts have been enlarged
+        If cmdQuick.Font.Size > 9 Then
+            cmdQuick.AutoSize = True
+            cmdAdvanced.AutoSize = True
+        End If
 
         'OS Detection
         Dim OS_WindowsXP As Boolean
@@ -199,7 +204,8 @@
         tmSelectAll.Enabled = True
         Exit Sub
 ErrorEnvPerm:
-        MsgBox("You may be running from a network drive which is not recommended. Please copy the file to a local drive.", MsgBoxStyle.Information, "Permission Error")
+        MsgBox("You may be running the program from a network drive. Please copy the file to a local drive and try again.", MsgBoxStyle.Exclamation, "Permission Error")
+        Me.Close()
     End Sub
 
     Private Sub Main_FormClosing(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
