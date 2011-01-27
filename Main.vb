@@ -357,37 +357,37 @@ ErrorEnvPerm:
             pdUBound = 5 'Upper Bound for arrays. +1 for each entry added
             Dim pdCB(0 To pdUBound) As CheckBox
             Dim pdApp(0 To pdUBound), pdProcess(0 To pdUBound) As String
-            Dim pdNum As Integer
-            pdNum = 0
+            Dim pdNum As Integer = 0
+
             pdCB(pdNum) = cbTIF
             pdApp(pdNum) = "Internet Explorer"
             pdProcess(pdNum) = "iexplore"
-            pdNum = pdNum + 1
+            pdNum += 1
 
             pdCB(pdNum) = cbFirefox
             pdApp(pdNum) = "Mozilla Firefox"
             pdProcess(pdNum) = "firefox"
-            pdNum = pdNum + 1
+            pdNum += 1
 
             pdCB(pdNum) = cbChrome
             pdApp(pdNum) = "Google Chrome"
             pdProcess(pdNum) = "chrome"
-            pdNum = pdNum + 1
+            pdNum += 1
 
             pdCB(pdNum) = cbOpera
             pdApp(pdNum) = "Opera"
             pdProcess(pdNum) = "opera"
-            pdNum = pdNum + 1
+            pdNum += 1
 
             pdCB(pdNum) = cbSafari
             pdApp(pdNum) = "Safari"
             pdProcess(pdNum) = "safari"
-            pdNum = pdNum + 1
+            pdNum += 1
 
             pdCB(pdNum) = cbMessenger
             pdApp(pdNum) = "Windows Live Messenger"
             pdProcess(pdNum) = "msnmsgr"
-            pdNum = pdNum + 1
+            pdNum += 1
 
             For i = 0 To pdUBound
                 If pdCB(i).Checked = True Then
