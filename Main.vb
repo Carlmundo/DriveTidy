@@ -334,6 +334,20 @@ ErrorEnvPerm:
         flwOptions.Focus() 'Allows the mouse wheel to work after the panel has had the mouse move over it
     End Sub
 
+    Public Class ProcessDetect
+        'Class to store 3 elements required into one collection
+        Public CheckboxRef As CheckBox
+        Public AppName As String
+        Public ProcessName As String
+
+        Public Sub New(ByVal CBName As CheckBox, ByVal aName As String, ByVal pName As String)
+            CheckboxRef = CBName
+            AppName = aName
+            ProcessName = pName
+        End Sub
+    End Class
+    Private pdList As New List(Of ProcessDetect)
+
     Private Sub cmdClean_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClean.Click
         Dim ieVersion As New Version(My.Computer.Registry.LocalMachine.OpenSubKey("SOFTWARE\Microsoft\Internet Explorer").GetValue("Version"))
         'If the program fails to write a file then an error will generate and restart the program
@@ -353,47 +367,18 @@ ErrorEnvPerm:
             Ready = 1 'Value starts at 1 and will be changed to 2 if the No option is selected for any running processes
             MsgString = " is running and needs to be closed." & vbCrLf & "To save what you are doing close the program manually." & vbCrLf & "Are you sure you want to continue?"
 
-            Dim pdUBound As Integer
-            pdUBound = 5 'Upper Bound for arrays. +1 for each entry added
-            Dim pdCB(0 To pdUBound) As CheckBox
-            Dim pdApp(0 To pdUBound), pdProcess(0 To pdUBound) As String
-            Dim pdNum As Integer = 0
+            pdList.Add(New ProcessDetect(cbTIF, "Internet Explorer", "iexplore"))
+            pdList.Add(New ProcessDetect(cbFirefox, "Mozilla Firefox", "firefox"))
+            pdList.Add(New ProcessDetect(cbChrome, "Google Chrome", "chrome"))
+            pdList.Add(New ProcessDetect(cbOpera, "Opera", "opera"))
+            pdList.Add(New ProcessDetect(cbSafari, "Safari", "safari"))
+            pdList.Add(New ProcessDetect(cbMessenger, "Windows Live Messenger", "msnmsgr"))
 
-            pdCB(pdNum) = cbTIF
-            pdApp(pdNum) = "Internet Explorer"
-            pdProcess(pdNum) = "iexplore"
-            pdNum += 1
-
-            pdCB(pdNum) = cbFirefox
-            pdApp(pdNum) = "Mozilla Firefox"
-            pdProcess(pdNum) = "firefox"
-            pdNum += 1
-
-            pdCB(pdNum) = cbChrome
-            pdApp(pdNum) = "Google Chrome"
-            pdProcess(pdNum) = "chrome"
-            pdNum += 1
-
-            pdCB(pdNum) = cbOpera
-            pdApp(pdNum) = "Opera"
-            pdProcess(pdNum) = "opera"
-            pdNum += 1
-
-            pdCB(pdNum) = cbSafari
-            pdApp(pdNum) = "Safari"
-            pdProcess(pdNum) = "safari"
-            pdNum += 1
-
-            pdCB(pdNum) = cbMessenger
-            pdApp(pdNum) = "Windows Live Messenger"
-            pdProcess(pdNum) = "msnmsgr"
-            pdNum += 1
-
-            For i = 0 To pdUBound
-                If pdCB(i).Checked = True Then
+            For i = 0 To (pdList.Count - 1)
+                If pdList(i).CheckboxRef.Checked = True Then
                     If Ready = 1 Then
-                        MsgApp = pdApp(i)
-                        MsgProcess = pdProcess(i)
+                        MsgApp = pdList(i).AppName
+                        MsgProcess = pdList(i).ProcessName
                         KillMsg()
                     End If
                 End If
