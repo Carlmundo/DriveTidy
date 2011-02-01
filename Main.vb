@@ -40,13 +40,16 @@
         cbAdobeCameraRAW.Checked = True
         cbAdobeReader.Checked = True
         cbAppleInstaller.Checked = True
+        cbAutoDesk.Checked = True
         cbAVG.Checked = True
+        cbBigFishGames.Checked = True
         cbGIMP.Checked = True
         cbGoogleEarth.Checked = True
         cbGoogleUpdater.Checked = True
         cbHPDigitalImaging.Checked = True
         cbIMVU.Checked = True
         cbiTunes.Checked = True
+        cbJagex.Checked = True
         cbKaspersky.Checked = True
         cbNokiaOvi.Checked = True
         cbQuicktime.Checked = True
@@ -170,13 +173,16 @@
         d2.Add(cbAdobeCameraRAW, CleanDefs2.txtAdobeCameraRAW)
         d2.Add(cbAdobeReader, CleanDefs2.txtAdobeReader)
         d2.Add(cbAppleInstaller, CleanDefs2.txtAppleInstaller)
+        d2.Add(cbAutoDesk, CleanDefs2.txtAutoDesk)
         d2.Add(cbAVG, CleanDefs2.txtAVG)
+        d2.Add(cbBigFishGames, CleanDefs2.txtBigFishGames)
         d2.Add(cbGIMP, CleanDefs2.txtGIMP)
         d2.Add(cbGoogleEarth, CleanDefs2.txtGoogleEarth)
         d2.Add(cbGoogleUpdater, CleanDefs2.txtGoogleUpdater)
         d2.Add(cbHPDigitalImaging, CleanDefs2.txtHPDigitalImaging)
         d2.Add(cbIMVU, CleanDefs2.txtIMVU)
         d2.Add(cbiTunes, CleanDefs2.txtiTunes)
+        d2.Add(cbJagex, CleanDefs2.txtJagex)
         d2.Add(cbKaspersky, CleanDefs2.txtKaspersky)
         d2.Add(cbNokiaOvi, CleanDefs2.txtNokiaOvi)
         d2.Add(cbQuicktime, CleanDefs2.txtQuicktime)

@@ -65,10 +65,16 @@
                 Main.cbAppleInstaller.Visible = False
             End If
         End If
+        If Not My.Computer.FileSystem.DirectoryExists(Environ("systemdrive") & "\Autodesk") Then
+            Main.cbAutoDesk.Visible = False
+        End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("programfiles") & "\AVG") Then
             If Not My.Computer.FileSystem.DirectoryExists(Environ("programfiles(x86)") & "\AVG") Then
                 Main.cbAVG.Visible = False
             End If
+        End If
+        If Not My.Computer.FileSystem.DirectoryExists(Environ("systemdrive") & "\BigFishGamesCache") Then
+            Main.cbBigFishGames.Visible = False
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("userprofile") & "\.thumbnails\normal") Then
             Main.cbGIMP.Visible = False
@@ -94,6 +100,17 @@
         If Not My.Computer.FileSystem.FileExists(Environ("localappdata") & "\Apple Computer\Cache.db") Then
             If Not My.Computer.FileSystem.FileExists(Environ("localappdata") & "\Apple Computer\iTunes\Cache.db") Then
                 Main.cbiTunes.Visible = False
+            End If
+        End If
+        If Not My.Computer.FileSystem.DirectoryExists(Environ("systemdrive") & "\rscache") Then
+            If Not My.Computer.FileSystem.DirectoryExists(Environ("systemdrive") & "\.jagex_cache_32") Then
+                If Not My.Computer.FileSystem.DirectoryExists(Environ("windir") & "\.jagex_cache_32") Then
+                    If Not My.Computer.FileSystem.DirectoryExists(Environ("systemdrive") & "\.jagex_cache_64") Then
+                        If Not My.Computer.FileSystem.DirectoryExists(Environ("windir") & "\.jagex_cache_64") Then
+                            Main.cbJagex.Visible = False
+                        End If
+                    End If
+                End If
             End If
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("programfiles") & "\Kaspersky Lab") Then

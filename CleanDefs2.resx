@@ -227,6 +227,20 @@ del /f /s /q "%appdata%\IMVU\PixmapCache\*.*"
 rd /s /q "%appdata%\IMVU\PixmapCache\"
 del /f /s /q "%appdata%\IMVU\*.log"</value>
   </data>
+  <data name="txtJagex.Text" xml:space="preserve">
+    <value>echo Jagex cache...
+del /f /q "%userprofile%\jagex_*.dat"
+del /f /s /q "%systemdrive%\rscache\*.*"
+rd /s /q "%systemdrive%\rscache\"
+del /f /s /q "%systemdrive%\.jagex_cache_32\*.*"
+rd /s /q "%systemdrive%\.jagex_cache_32\"
+del /f /s /q "%systemdrive%\.jagex_cache_64\*.*"
+rd /s /q "%systemdrive%\.jagex_cache_64\"
+del /f /s /q "%windir%\.jagex_cache_32\*.*"
+rd /s /q "%windir%\.jagex_cache_32\"
+del /f /s /q "%windir%\.jagex_cache_64\*.*"
+rd /s /q "%windir%\.jagex_cache_64\"</value>
+  </data>
   <data name="txtKaspersky.Text" xml:space="preserve">
     <value>echo Kaspersky reports and temp files...
 del /f /s /q "%allusersappdata%\Kaspersky Lab\*.dmp"
@@ -274,6 +288,17 @@ del /f /s /q "%localappdata%\Microsoft\Silverlight\*.*"
 rd /s /q "%localappdata%\Microsoft\Silverlight\"
 del /f /s /q "%locallowappdata%\Microsoft\Silverlight\*.*"
 rd /s /q "%locallowappdata%\Microsoft\Silverlight\"</value>
+  </data>
+  <data name="txtSpotify.Text" xml:space="preserve">
+    <value>echo Spotify cache...
+If Exist "%localappdata%\Spotify\Storage\index.dat" GoTo SpotifyIndexExists
+del /f /s /q "%localappdata%\Spotify\Storage\*.*"
+rd /s /q "%localappdata%\Spotify\Storage\"
+
+:SpotifyIndexExists
+move "%localappdata%\Spotify\Storage\index.dat" "%temp%"
+del /f /s /q "%localappdata%\Spotify\Storage\*.*"
+move "%temp%\index.dat" "%localappdata%\Spotify\Storage\"</value>
   </data>
   <data name="txtSymantec.Text" xml:space="preserve">
     <value>echo Symantec caches...
