@@ -1,6 +1,12 @@
 ﻿Public Class Main
+    'OS Detection
+    Dim OS_WindowsXP As Boolean
+    Dim OS_WindowsVista As Boolean
+    Dim OS_Windows7 As Boolean
+    Dim OS_Undetected As Boolean
 
     Private Declare Function ShellExecute Lib "shell32.dll" Alias "ShellExecuteA" (ByVal hwnd As Integer, ByVal lpOperation As String, ByVal lpFile As String, ByVal lpParameters As String, ByVal lpDirectory As String, ByVal nShowCmd As Integer) As Integer
+
     Dim item As Object
     Dim cbCount As Integer
     Dim cbCheckedCount As Integer
@@ -88,11 +94,6 @@
             cmdAdvanced.AutoSize = True
         End If
 
-        'OS Detection
-        Dim OS_WindowsXP As Boolean
-        Dim OS_WindowsVista As Boolean
-        Dim OS_Windows7 As Boolean
-
         On Error GoTo ErrorEnvPerm 'Running on a network drive may throw error about security permissions
         'Detect OSVersion and assign True to correct Boolean
         If Environment.OSVersion.Platform = PlatformID.Win32NT And _
@@ -112,8 +113,8 @@
             Environment.SetEnvironmentVariable("osd", "Windows 7")
         Else
             Environment.SetEnvironmentVariable("osd", "Unsupported OS.")
+            OS_Undetected = True
             MsgBox("Warning! Your version of Windows may be unsupported.")
-
         End If
 
         'Environment Variables for Windows Vista / 7
@@ -167,6 +168,7 @@
         d2.Add(cbVistaSP1, CleanDefs2.txtVistaSP1)
         d2.Add(cbVistaSP2, CleanDefs2.txtVistaSP2)
         d2.Add(cbHibernate, CleanDefs2.txtHibernate)
+        d2.Add(cbThumbnails, CleanDefs2.txtThumbnails)
         d2.Add(cbMSI, CleanDefs2.txtMSI)
         d2.Add(cbSampleMusic, CleanDefs2.txtSampleMusic)
         d2.Add(cbSamplePictures, CleanDefs2.txtSamplePictures)
@@ -435,6 +437,12 @@ ErrorEnvPerm:
                 End If
             End If
 
+            If cbThumbnails.Checked = True Then
+                If OS_WindowsXP Or OS_Undetected = True Then
+                    CleanDefs2.txtThumbnails.Text = CleanDefs2.txtThumbnailsXP.Text
+                End If
+            End If
+
             'Write check file
             My.Computer.FileSystem.CreateDirectory(Environ("appdata") & "\DriveTidy")
             FileOpen(1, Environ("appdata") & "\DriveTidy\cleanchk.txt", OpenMode.Output)
@@ -465,23 +473,34 @@ ErrorEnvPerm:
 
             FileOpen(3, Environ("appdata") & "\DriveTidy\start.bat", OpenMode.Output)
             PrintLine(3, CleanDefs.txtStart1.Text)
-            PrintLine(3, CleanDefs.txtAttribRecycle.Text)
-            PrintLine(3, CleanDefs.txtAttribSQM.Text)
-            PrintLine(3, CleanDefs.txtStart2.Text)
-            FileClose(3)
-            ShellExecute(0, vbNullString, Environ("appdata") & "\DriveTidy\start.bat", vbNullString, vbNullString, AppWinStyle.NormalFocus)
-            'Show Cleaner Window
-            CleanerWindow.Show()
-            Me.Close()
-            CleanDefs.Close()
-            CleanDefs2.Close()
-            Exit Sub
-ErrorHandler:
-            CleanerErrors()
-
-            'F numbers start the bar again.
-            'If a file extension is selected then it does the
-            'Advanced method with F numbers, no file extension = Q numbers
+            If cbRecycle.Checked Then
+                PrintLine(3, CleanDefs.txtAttribRecycle.Text)
+            End If
+            If cbMessenger.Checked Then
+                PrintLine(3, CleanDefs.txtAttribSQM.Text)
+            End If
+            If cbThumbnails.Checked Then
+                If OS_WindowsXP Or OS_Undetected = True Then
+                    PrintLine(3, CleanDefs.txtAttribThumbnailsXP.Text)
+                Else
+                    PrintLine(3, CleanDefs.txtAttribThumbnailsVista.Text)
+                End If
         End If
+        PrintLine(3, CleanDefs.txtStart2.Text)
+        FileClose(3)
+        ShellExecute(0, vbNullString, Environ("appdata") & "\DriveTidy\start.bat", vbNullString, vbNullString, AppWinStyle.NormalFocus)
+        'Show Cleaner Window
+        CleanerWindow.Show()
+        Me.Close()
+        CleanDefs.Close()
+        CleanDefs2.Close()
+        Exit Sub
+ErrorHandler:
+        CleanerErrors()
+
+        'F numbers start the bar again.
+        'If a file extension is selected then it does the
+        'Advanced method with F numbers, no file extension = Q numbers
+            End If
     End Sub
 End Class
