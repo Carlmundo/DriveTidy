@@ -24,7 +24,7 @@ Partial Class CleanDefs2
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CleanDefs2))
         Me.txtAdobeCameraRAW = New System.Windows.Forms.TextBox
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel
+        Me.FlowLayout = New System.Windows.Forms.FlowLayoutPanel
         Me.txtQ12 = New System.Windows.Forms.TextBox
         Me.txtVistaSP1 = New System.Windows.Forms.TextBox
         Me.txtVistaSP2 = New System.Windows.Forms.TextBox
@@ -34,13 +34,16 @@ Partial Class CleanDefs2
         Me.txtSampleVideos = New System.Windows.Forms.TextBox
         Me.txtAdobeReader = New System.Windows.Forms.TextBox
         Me.txtAppleInstaller = New System.Windows.Forms.TextBox
+        Me.txtAutoDesk = New System.Windows.Forms.TextBox
         Me.txtAVG = New System.Windows.Forms.TextBox
+        Me.txtBigFishGames = New System.Windows.Forms.TextBox
         Me.txtGIMP = New System.Windows.Forms.TextBox
         Me.txtGoogleEarth = New System.Windows.Forms.TextBox
         Me.txtGoogleUpdater = New System.Windows.Forms.TextBox
         Me.txtHPDigitalImaging = New System.Windows.Forms.TextBox
         Me.txtIMVU = New System.Windows.Forms.TextBox
         Me.txtiTunes = New System.Windows.Forms.TextBox
+        Me.txtJagex = New System.Windows.Forms.TextBox
         Me.txtKaspersky = New System.Windows.Forms.TextBox
         Me.txtNokiaOvi = New System.Windows.Forms.TextBox
         Me.txtQuicktime = New System.Windows.Forms.TextBox
@@ -52,10 +55,7 @@ Partial Class CleanDefs2
         Me.txtTrackmania = New System.Windows.Forms.TextBox
         Me.txtUnity = New System.Windows.Forms.TextBox
         Me.txtQ13 = New System.Windows.Forms.TextBox
-        Me.txtJagex = New System.Windows.Forms.TextBox
-        Me.txtBigFishGames = New System.Windows.Forms.TextBox
-        Me.txtAutoDesk = New System.Windows.Forms.TextBox
-        Me.FlowLayoutPanel1.SuspendLayout()
+        Me.FlowLayout.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtAdobeCameraRAW
@@ -68,53 +68,54 @@ Partial Class CleanDefs2
         Me.txtAdobeCameraRAW.Text = "echo Adobe Camera RAW cache..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%appdata%\Adobe\CameraRaw\Cache\*.*" & _
             """" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "rd /s /q ""%appdata%\Adobe\CameraRaw\Cache\"""
         '
-        'FlowLayoutPanel1
+        'FlowLayout
         '
-        Me.FlowLayoutPanel1.AutoScroll = True
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtQ12)
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtVistaSP1)
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtVistaSP2)
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtHibernate)
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtSampleMusic)
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtSamplePictures)
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtSampleVideos)
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtAdobeCameraRAW)
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtAdobeReader)
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtAppleInstaller)
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtAutoDesk)
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtAVG)
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtBigFishGames)
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtGIMP)
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtGoogleEarth)
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtGoogleUpdater)
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtHPDigitalImaging)
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtIMVU)
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtiTunes)
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtJagex)
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtKaspersky)
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtNokiaOvi)
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtQuicktime)
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtRealPlayer)
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtRDP)
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtSilverlight)
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtSpotify)
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtSymantec)
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtTrackmania)
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtUnity)
-        Me.FlowLayoutPanel1.Controls.Add(Me.txtQ13)
-        Me.FlowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(10, 12)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(413, 377)
-        Me.FlowLayoutPanel1.TabIndex = 47
-        Me.FlowLayoutPanel1.WrapContents = False
+        Me.FlowLayout.AutoScroll = True
+        Me.FlowLayout.Controls.Add(Me.txtQ12)
+        Me.FlowLayout.Controls.Add(Me.txtVistaSP1)
+        Me.FlowLayout.Controls.Add(Me.txtVistaSP2)
+        Me.FlowLayout.Controls.Add(Me.txtHibernate)
+        Me.FlowLayout.Controls.Add(Me.txtSampleMusic)
+        Me.FlowLayout.Controls.Add(Me.txtSamplePictures)
+        Me.FlowLayout.Controls.Add(Me.txtSampleVideos)
+        Me.FlowLayout.Controls.Add(Me.txtAdobeCameraRAW)
+        Me.FlowLayout.Controls.Add(Me.txtAdobeReader)
+        Me.FlowLayout.Controls.Add(Me.txtAppleInstaller)
+        Me.FlowLayout.Controls.Add(Me.txtAutoDesk)
+        Me.FlowLayout.Controls.Add(Me.txtAVG)
+        Me.FlowLayout.Controls.Add(Me.txtBigFishGames)
+        Me.FlowLayout.Controls.Add(Me.txtGIMP)
+        Me.FlowLayout.Controls.Add(Me.txtGoogleEarth)
+        Me.FlowLayout.Controls.Add(Me.txtGoogleUpdater)
+        Me.FlowLayout.Controls.Add(Me.txtHPDigitalImaging)
+        Me.FlowLayout.Controls.Add(Me.txtIMVU)
+        Me.FlowLayout.Controls.Add(Me.txtiTunes)
+        Me.FlowLayout.Controls.Add(Me.txtJagex)
+        Me.FlowLayout.Controls.Add(Me.txtKaspersky)
+        Me.FlowLayout.Controls.Add(Me.txtNokiaOvi)
+        Me.FlowLayout.Controls.Add(Me.txtQuicktime)
+        Me.FlowLayout.Controls.Add(Me.txtRealPlayer)
+        Me.FlowLayout.Controls.Add(Me.txtRDP)
+        Me.FlowLayout.Controls.Add(Me.txtSilverlight)
+        Me.FlowLayout.Controls.Add(Me.txtSpotify)
+        Me.FlowLayout.Controls.Add(Me.txtSymantec)
+        Me.FlowLayout.Controls.Add(Me.txtTrackmania)
+        Me.FlowLayout.Controls.Add(Me.txtUnity)
+        Me.FlowLayout.Controls.Add(Me.txtQ13)
+        Me.FlowLayout.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FlowLayout.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.FlowLayout.Location = New System.Drawing.Point(0, 0)
+        Me.FlowLayout.Name = "FlowLayout"
+        Me.FlowLayout.Size = New System.Drawing.Size(416, 397)
+        Me.FlowLayout.TabIndex = 47
+        Me.FlowLayout.WrapContents = False
         '
         'txtQ12
         '
         Me.txtQ12.Location = New System.Drawing.Point(3, 3)
         Me.txtQ12.Multiline = True
         Me.txtQ12.Name = "txtQ12"
-        Me.txtQ12.Size = New System.Drawing.Size(390, 22)
+        Me.txtQ12.Size = New System.Drawing.Size(279, 22)
         Me.txtQ12.TabIndex = 61
         Me.txtQ12.Text = "echo Q12 >""%appdata%\DriveTidy\cleanchk.txt"""
         '
@@ -123,7 +124,7 @@ Partial Class CleanDefs2
         Me.txtVistaSP1.Location = New System.Drawing.Point(3, 31)
         Me.txtVistaSP1.Multiline = True
         Me.txtVistaSP1.Name = "txtVistaSP1"
-        Me.txtVistaSP1.Size = New System.Drawing.Size(250, 60)
+        Me.txtVistaSP1.Size = New System.Drawing.Size(279, 60)
         Me.txtVistaSP1.TabIndex = 64
         Me.txtVistaSP1.Text = "echo Vista SP1 Cleanup..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo VSP1 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "start /" & _
             "min /wait %windir%\System32\vsp1cln.exe /quiet" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo Q12 >""%appdata%\DriveTidy\c" & _
@@ -135,7 +136,7 @@ Partial Class CleanDefs2
         Me.txtVistaSP2.Location = New System.Drawing.Point(3, 97)
         Me.txtVistaSP2.Multiline = True
         Me.txtVistaSP2.Name = "txtVistaSP2"
-        Me.txtVistaSP2.Size = New System.Drawing.Size(250, 60)
+        Me.txtVistaSP2.Size = New System.Drawing.Size(279, 60)
         Me.txtVistaSP2.TabIndex = 63
         Me.txtVistaSP2.Text = "echo Vista SP2 Cleanup..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo VSP2 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "start /" & _
             "min /wait %windir%\System32\compcln.exe /quiet" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo Q12 >""%appdata%\DriveTidy\c" & _
@@ -147,7 +148,7 @@ Partial Class CleanDefs2
         Me.txtHibernate.Location = New System.Drawing.Point(3, 163)
         Me.txtHibernate.Multiline = True
         Me.txtHibernate.Name = "txtHibernate"
-        Me.txtHibernate.Size = New System.Drawing.Size(340, 50)
+        Me.txtHibernate.Size = New System.Drawing.Size(279, 50)
         Me.txtHibernate.TabIndex = 66
         Me.txtHibernate.Text = "echo Disabling Hibernate..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "powercfg /hibernate off" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo You chose to disable h" & _
             "ibernate. To re-enable it see: http://support.microsoft.com/kb/920730 for more i" & _
@@ -199,6 +200,16 @@ Partial Class CleanDefs2
         Me.txtAppleInstaller.TabIndex = 48
         Me.txtAppleInstaller.Text = resources.GetString("txtAppleInstaller.Text")
         '
+        'txtAutoDesk
+        '
+        Me.txtAutoDesk.Location = New System.Drawing.Point(3, 643)
+        Me.txtAutoDesk.Multiline = True
+        Me.txtAutoDesk.Name = "txtAutoDesk"
+        Me.txtAutoDesk.Size = New System.Drawing.Size(390, 50)
+        Me.txtAutoDesk.TabIndex = 76
+        Me.txtAutoDesk.Text = "echo AutoDesk installer cache..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%systemdrive%\Autodesk\*.*""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "rd /" & _
+            "s /q ""%systemdrive%\Autodesk"""
+        '
         'txtAVG
         '
         Me.txtAVG.Location = New System.Drawing.Point(3, 699)
@@ -207,6 +218,15 @@ Partial Class CleanDefs2
         Me.txtAVG.Size = New System.Drawing.Size(390, 112)
         Me.txtAVG.TabIndex = 49
         Me.txtAVG.Text = resources.GetString("txtAVG.Text")
+        '
+        'txtBigFishGames
+        '
+        Me.txtBigFishGames.Location = New System.Drawing.Point(3, 817)
+        Me.txtBigFishGames.Multiline = True
+        Me.txtBigFishGames.Name = "txtBigFishGames"
+        Me.txtBigFishGames.Size = New System.Drawing.Size(390, 49)
+        Me.txtBigFishGames.TabIndex = 75
+        Me.txtBigFishGames.Text = "echo Big Fish Games cache..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%systemdrive%\BigFishGamesCache\*.*""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "rd /s /q ""%systemdrive%\BigFishGamesCache\"""
         '
         'txtGIMP
         '
@@ -265,6 +285,15 @@ Partial Class CleanDefs2
         Me.txtiTunes.TabIndex = 53
         Me.txtiTunes.Text = "echo iTunes cache..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /q ""%localappdata%\Apple Computer\Cache.db""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f " & _
             "/q ""%localappdata%\Apple Computer\iTunes\Cache.db"""
+        '
+        'txtJagex
+        '
+        Me.txtJagex.Location = New System.Drawing.Point(3, 1255)
+        Me.txtJagex.Multiline = True
+        Me.txtJagex.Name = "txtJagex"
+        Me.txtJagex.Size = New System.Drawing.Size(390, 75)
+        Me.txtJagex.TabIndex = 74
+        Me.txtJagex.Text = resources.GetString("txtJagex.Text")
         '
         'txtKaspersky
         '
@@ -368,48 +397,20 @@ Partial Class CleanDefs2
         Me.txtQ13.TabIndex = 46
         Me.txtQ13.Text = "echo Q13 >""%appdata%\DriveTidy\cleanchk.txt"""
         '
-        'txtJagex
-        '
-        Me.txtJagex.Location = New System.Drawing.Point(3, 1255)
-        Me.txtJagex.Multiline = True
-        Me.txtJagex.Name = "txtJagex"
-        Me.txtJagex.Size = New System.Drawing.Size(390, 75)
-        Me.txtJagex.TabIndex = 74
-        Me.txtJagex.Text = resources.GetString("txtJagex.Text")
-        '
-        'txtBigFishGames
-        '
-        Me.txtBigFishGames.Location = New System.Drawing.Point(3, 817)
-        Me.txtBigFishGames.Multiline = True
-        Me.txtBigFishGames.Name = "txtBigFishGames"
-        Me.txtBigFishGames.Size = New System.Drawing.Size(390, 49)
-        Me.txtBigFishGames.TabIndex = 75
-        Me.txtBigFishGames.Text = "echo Big Fish Games cache..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%systemdrive%\BigFishGamesCache\*.*""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "rd /s /q ""%systemdrive%\BigFishGamesCache\"""
-        '
-        'txtAutoDesk
-        '
-        Me.txtAutoDesk.Location = New System.Drawing.Point(3, 643)
-        Me.txtAutoDesk.Multiline = True
-        Me.txtAutoDesk.Name = "txtAutoDesk"
-        Me.txtAutoDesk.Size = New System.Drawing.Size(390, 50)
-        Me.txtAutoDesk.TabIndex = 76
-        Me.txtAutoDesk.Text = "echo AutoDesk installer cache..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%systemdrive%\Autodesk\*.*""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "rd /" & _
-            "s /q ""%systemdrive%\Autodesk"""
-        '
         'CleanDefs2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(435, 397)
-        Me.Controls.Add(Me.FlowLayoutPanel1)
+        Me.ClientSize = New System.Drawing.Size(416, 397)
+        Me.Controls.Add(Me.FlowLayout)
         Me.Name = "CleanDefs2"
-        Me.FlowLayoutPanel1.ResumeLayout(False)
-        Me.FlowLayoutPanel1.PerformLayout()
+        Me.FlowLayout.ResumeLayout(False)
+        Me.FlowLayout.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents txtAdobeCameraRAW As System.Windows.Forms.TextBox
-    Friend WithEvents FlowLayoutPanel1 As System.Windows.Forms.FlowLayoutPanel
+    Friend WithEvents FlowLayout As System.Windows.Forms.FlowLayoutPanel
     Friend WithEvents txtQ13 As System.Windows.Forms.TextBox
     Friend WithEvents txtAdobeReader As System.Windows.Forms.TextBox
     Friend WithEvents txtAppleInstaller As System.Windows.Forms.TextBox
