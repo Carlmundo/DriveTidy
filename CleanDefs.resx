@@ -119,7 +119,7 @@
   </resheader>
   <data name="txtTemp.Text" xml:space="preserve">
     <value>echo Q2 &gt;"%appdata%\DriveTidy\cleanchk.txt"
-echo Clearing temporary files...
+echo [Temporary files...]
 del /f /s /q "%temp%"
 rd /s /q "%temp%"
 del /f /s /q "%locallowappdata%\Temp\*.*"
@@ -145,7 +145,7 @@ rd /s /q "%windir%\system32\config\systemprofile\AppData\Local\Temp\"</value>
   </data>
   <data name="txtTIF.Text" xml:space="preserve">
     <value>echo Q6 &gt;"%appdata%\DriveTidy\cleanchk.txt"
-echo Clearing temporary internet files and caches...
+echo [Temporary internet files and caches...]
 del /f /s /q "%cookies%"
 rd /s /q "%cookies%"
 echo Q6 &gt;"%appdata%\DriveTidy\cleanchk.txt"
@@ -167,7 +167,7 @@ start /wait %windir%\System32\RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8<
   </data>
   <data name="txtFirefox.Text" xml:space="preserve">
     <value>echo Q7 &gt;"%appdata%\DriveTidy\cleanchk.txt"
-echo Clearing Firefox caches...
+echo [Firefox caches...]
 del /f /s /q "%localappdata%\Mozilla\Firefox\Profiles\*.*"
 rd /s /q "%localappdata%\Mozilla\Firefox\Profiles\"
 del /f /s /q "%appdata%\Mozilla\Firefox\Crash Reports\*.*"
@@ -183,7 +183,7 @@ popd
   </data>
   <data name="txtWindowsUpdate.Text" xml:space="preserve">
     <value>echo Q4 &gt;"%appdata%\DriveTidy\cleanchk.txt"
-echo Clearing Windows Update cache...
+echo [Windows Update cache...]
 del /f /s /q "%windir%\SoftwareDistribution\Download\*.*"
 rd /s /q "%windir%\SoftwareDistribution\Download\"
 del /f /s /q "%windir%\Installer\$PatchCache$\*.*"
@@ -191,7 +191,7 @@ rd /s /q "%windir%\Installer\$PatchCache$\"</value>
   </data>
   <data name="txtJava.Text" xml:space="preserve">
     <value>echo Q10 &gt;"%appdata%\DriveTidy\cleanchk.txt"
-echo Clearing java cache...
+echo [Java cache...]
 del /f /s /q "%appdata%\Sun\Java\Deployment\cache\*.*"
 rd /s /q "%appdata%\Sun\Java\Deployment\cache\"
 del /f /s /q "%appdata%\Sun\Java\Deployment\javaws\cache\*.*"
@@ -215,7 +215,7 @@ rd /s /q "%locallowappdata%\Sun\Java\Deployment\tmp\"</value>
   </data>
   <data name="txtFlash.Text" xml:space="preserve">
     <value>echo Q9 &gt;"%appdata%\DriveTidy\cleanchk.txt"
-echo Clearing flash player cache...
+echo [Flash player cache...]
 del /f /s /q "%appdata%\Adobe\Flash Player\AssetCache\*.*"
 rd /s /q "%appdata%\Adobe\Flash Player\AssetCache\"
 del /f /s /q "%appdata%\Macromedia\Flash Player\*.*"
@@ -223,7 +223,7 @@ rd /s /q "%appdata%\Macromedia\Flash Player\"</value>
   </data>
   <data name="txtMessenger.Text" xml:space="preserve">
     <value>echo Q11 &gt;"%appdata%\DriveTidy\cleanchk.txt"
-echo Clearing messenger caches...
+echo [Messenger caches...]
 del /f /s /q "%appdata%\Microsoft\MSN Messenger\*.*"
 rd /s /q "%appdata%\Microsoft\MSN Messenger\"
 del /f /q "%localappdata%\Microsoft\Messenger\ContactsLog.txt"
@@ -255,7 +255,7 @@ rd /s /q "%ProgramFiles%\Yahoo!\Messenger\IMVCache\"</value>
   </data>
   <data name="txtOpera.Text" xml:space="preserve">
     <value>echo Q7 &gt;"%appdata%\DriveTidy\cleanchk.txt"
-echo Clearing Opera caches...
+echo [Opera caches...]
 
 :Opera1
 IF NOT EXIST "%localappdata%\Opera" GOTO Opera2
@@ -304,7 +304,7 @@ popd
   </data>
   <data name="txtChrome.Text" xml:space="preserve">
     <value>echo Q7 &gt;"%appdata%\DriveTidy\cleanchk.txt"
-echo Clearing Google Chrome caches...
+echo [Google Chrome caches...]
 del /f /s /q "%localappdata%\Google\Chrome\User Data\Default\Cache\*.*"
 rd /s /q "%localappdata%\Google\Chrome\User Data\Default\Cache\"
 del /f /s /q "%localappdata%\Google\Chrome\User Data\Default\Cached Theme Images\*.*"
@@ -325,7 +325,7 @@ del /f /q "%localappdata%\Google\Chrome\User Data\Default\Thumbnails"</value>
   </data>
   <data name="txtSafari.Text" xml:space="preserve">
     <value>echo Q7 &gt;"%appdata%\DriveTidy\cleanchk.txt"
-echo Clearing Safari caches...
+echo [Safari caches...]
 
 :Safari
 del /f /q "%appdata%\Apple Computer\Safari\Cookies\Cookies.plist"
@@ -342,7 +342,7 @@ rd /s /q "%localappdata%\Apple Computer\Safari\Webpage Previews\"</value>
   </data>
   <data name="txtErrorReports.Text" xml:space="preserve">
     <value>echo Q5 &gt;"%appdata%\DriveTidy\cleanchk.txt"
-echo Windows Error Reports...
+echo [Windows Error Reports...]
 del /f /s /q "%localappdata%\Microsoft\Windows\WER\ReportArchive\*.*"
 del /f /s /q "%localappdata%\Microsoft\Windows\WER\ReportQueue\*.*"
 del /f /s /q "%allusersappdata%\Microsoft\Windows\WER\ReportArchive\*.*"
@@ -354,7 +354,7 @@ rd /s /q "%allusersappdata%\Microsoft\Windows\WER\ReportQueue\"</value>
   </data>
   <data name="txtTIF_IE6.Text" xml:space="preserve">
     <value>echo Q6 &gt;"%appdata%\DriveTidy\cleanchk.txt"
-echo Clearing temporary internet files and caches...
+echo [Temporary internet files and caches...]
 echo Your version of Internet Explorer is very outdated...
 del /f /s /q "%cookies%"
 rd /s /q "%cookies%"

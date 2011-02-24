@@ -110,8 +110,8 @@ Partial Class CleanDefs
         Me.txtRecycle.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtRecycle.Size = New System.Drawing.Size(254, 63)
         Me.txtRecycle.TabIndex = 25
-        Me.txtRecycle.Text = "echo Q1 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo Emptying Recycle Bin for %syste" & _
-            "mdrive%\ ..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%recycle%"""
+        Me.txtRecycle.Text = "echo Q1 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo [Emptying Recycle Bin for %syst" & _
+            "emdrive%\ ...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%recycle%"""
         '
         'lblTemp
         '
@@ -151,9 +151,7 @@ Partial Class CleanDefs
         Me.txtRecent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtRecent.Size = New System.Drawing.Size(254, 55)
         Me.txtRecent.TabIndex = 29
-        Me.txtRecent.Text = "echo Q3 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo Clearing recent accessed file d" & _
-            "ata..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%recent%""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%appdata%\Microsoft\Office\Recent" & _
-            "\*.*"""
+        Me.txtRecent.Text = "echo Q3 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo [Recent accessed file data...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%recent%""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%appdata%\Microsoft\Office\Recent\*.*"""
         '
         'lblTIF
         '
@@ -301,8 +299,8 @@ Partial Class CleanDefs
         Me.txtTMP.Name = "txtTMP"
         Me.txtTMP.Size = New System.Drawing.Size(254, 52)
         Me.txtTMP.TabIndex = 52
-        Me.txtTMP.Text = "echo F1 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo Clearing .tmp files..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f " & _
-            "/s /q %systemdrive%\*.tmp"
+        Me.txtTMP.Text = "echo F1 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo [.tmp files...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q %" & _
+            "systemdrive%\*.tmp"
         Me.txtTMP.WordWrap = False
         '
         'txtLOG
@@ -312,8 +310,8 @@ Partial Class CleanDefs
         Me.txtLOG.Name = "txtLOG"
         Me.txtLOG.Size = New System.Drawing.Size(254, 52)
         Me.txtLOG.TabIndex = 53
-        Me.txtLOG.Text = "echo F2 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo Clearing .log files..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f " & _
-            "/s /q %systemdrive%\*.log"
+        Me.txtLOG.Text = "echo F2 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo [.log files...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q %" & _
+            "systemdrive%\*.log"
         Me.txtLOG.WordWrap = False
         '
         'txtCHK
@@ -323,8 +321,8 @@ Partial Class CleanDefs
         Me.txtCHK.Name = "txtCHK"
         Me.txtCHK.Size = New System.Drawing.Size(254, 52)
         Me.txtCHK.TabIndex = 54
-        Me.txtCHK.Text = "echo F3 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo Clearing .chk files..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f " & _
-            "/s /q %systemdrive%\*.chk"
+        Me.txtCHK.Text = "echo F3 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo [.chk files...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q %" & _
+            "systemdrive%\*.chk"
         Me.txtCHK.WordWrap = False
         '
         'txtDMP
@@ -334,8 +332,8 @@ Partial Class CleanDefs
         Me.txtDMP.Name = "txtDMP"
         Me.txtDMP.Size = New System.Drawing.Size(254, 52)
         Me.txtDMP.TabIndex = 55
-        Me.txtDMP.Text = "echo F4 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo Clearing .dmp files..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f " & _
-            "/s /q %systemdrive%\*.dmp"
+        Me.txtDMP.Text = "echo F4 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo [.dmp files...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q %" & _
+            "systemdrive%\*.dmp"
         Me.txtDMP.WordWrap = False
         '
         'txt_MP
@@ -345,8 +343,8 @@ Partial Class CleanDefs
         Me.txt_MP.Name = "txt_MP"
         Me.txt_MP.Size = New System.Drawing.Size(254, 52)
         Me.txt_MP.TabIndex = 56
-        Me.txt_MP.Text = "echo F5 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo Clearing ._mp files..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f " & _
-            "/s /q %systemdrive%\*._mp"
+        Me.txt_MP.Text = "echo F5 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo [._mp files...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q %" & _
+            "systemdrive%\*._mp"
         Me.txt_MP.WordWrap = False
         '
         'txtERR
@@ -356,8 +354,8 @@ Partial Class CleanDefs
         Me.txtERR.Name = "txtERR"
         Me.txtERR.Size = New System.Drawing.Size(254, 52)
         Me.txtERR.TabIndex = 57
-        Me.txtERR.Text = "echo F6 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo Clearing .err files..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f " & _
-            "/s /q %systemdrive%\*.err"
+        Me.txtERR.Text = "echo F6 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo [.err files...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q %" & _
+            "systemdrive%\*.err"
         Me.txtERR.WordWrap = False
         '
         'lblFinish
@@ -377,8 +375,8 @@ Partial Class CleanDefs
         Me.txtFinish.Name = "txtFinish"
         Me.txtFinish.Size = New System.Drawing.Size(254, 54)
         Me.txtFinish.TabIndex = 59
-        Me.txtFinish.Text = "echo ==================" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo Cleanup Complete." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo FIN >""%appdata%\DriveTidy\c" & _
-            "leanchk.txt"""
+        Me.txtFinish.Text = "echo ==================" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo [Cleanup Complete.]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo FIN >""%appdata%\DriveTidy" & _
+            "\cleanchk.txt"""
         '
         'txtAttribRecycle
         '

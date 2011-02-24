@@ -66,8 +66,8 @@ Partial Class CleanDefs2
         Me.txtAdobeCameraRAW.Name = "txtAdobeCameraRAW"
         Me.txtAdobeCameraRAW.Size = New System.Drawing.Size(390, 52)
         Me.txtAdobeCameraRAW.TabIndex = 45
-        Me.txtAdobeCameraRAW.Text = "echo Adobe Camera RAW cache..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%appdata%\Adobe\CameraRaw\Cache\*.*" & _
-            """" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "rd /s /q ""%appdata%\Adobe\CameraRaw\Cache\"""
+        Me.txtAdobeCameraRAW.Text = "echo [Adobe Camera RAW cache...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%appdata%\Adobe\CameraRaw\Cache\*" & _
+            ".*""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "rd /s /q ""%appdata%\Adobe\CameraRaw\Cache\"""
         '
         'FlowLayout
         '
@@ -128,9 +128,9 @@ Partial Class CleanDefs2
         Me.txtVistaSP1.Name = "txtVistaSP1"
         Me.txtVistaSP1.Size = New System.Drawing.Size(279, 60)
         Me.txtVistaSP1.TabIndex = 64
-        Me.txtVistaSP1.Text = "echo Vista SP1 Cleanup..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo VSP1 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "start /" & _
-            "min /wait %windir%\System32\vsp1cln.exe /quiet" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo Q12 >""%appdata%\DriveTidy\c" & _
-            "leanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.txtVistaSP1.Text = "echo [Vista SP1 Cleanup...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo VSP1 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "start" & _
+            " /min /wait %windir%\System32\vsp1cln.exe /quiet" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo Q12 >""%appdata%\DriveTidy" & _
+            "\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.txtVistaSP1.WordWrap = False
         '
         'txtVistaSP2
@@ -140,9 +140,9 @@ Partial Class CleanDefs2
         Me.txtVistaSP2.Name = "txtVistaSP2"
         Me.txtVistaSP2.Size = New System.Drawing.Size(279, 60)
         Me.txtVistaSP2.TabIndex = 63
-        Me.txtVistaSP2.Text = "echo Vista SP2 Cleanup..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo VSP2 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "start /" & _
-            "min /wait %windir%\System32\compcln.exe /quiet" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo Q12 >""%appdata%\DriveTidy\c" & _
-            "leanchk.txt"""
+        Me.txtVistaSP2.Text = "echo [Vista SP2 Cleanup...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo VSP2 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "start" & _
+            " /min /wait %windir%\System32\compcln.exe /quiet" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo Q12 >""%appdata%\DriveTidy" & _
+            "\cleanchk.txt"""
         Me.txtVistaSP2.WordWrap = False
         '
         'txtHibernate
@@ -152,9 +152,9 @@ Partial Class CleanDefs2
         Me.txtHibernate.Name = "txtHibernate"
         Me.txtHibernate.Size = New System.Drawing.Size(279, 50)
         Me.txtHibernate.TabIndex = 66
-        Me.txtHibernate.Text = "echo Disabling Hibernate..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "powercfg /hibernate off" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo You chose to disable h" & _
-            "ibernate. To re-enable it see: http://support.microsoft.com/kb/920730 for more i" & _
-            "nfo."
+        Me.txtHibernate.Text = "echo [Disabling Hibernate...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "powercfg /hibernate off" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo You chose to disable" & _
+            " hibernate. To re-enable it see: http://support.microsoft.com/kb/920730 for more" & _
+            " info."
         Me.txtHibernate.WordWrap = False
         '
         'txtSampleMusic
@@ -209,8 +209,8 @@ Partial Class CleanDefs2
         Me.txtAutoDesk.Name = "txtAutoDesk"
         Me.txtAutoDesk.Size = New System.Drawing.Size(390, 50)
         Me.txtAutoDesk.TabIndex = 76
-        Me.txtAutoDesk.Text = "echo AutoDesk installer cache..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%systemdrive%\Autodesk\*.*""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "rd /" & _
-            "s /q ""%systemdrive%\Autodesk"""
+        Me.txtAutoDesk.Text = "echo [AutoDesk installer cache...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%systemdrive%\Autodesk\*.*""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "rd" & _
+            " /s /q ""%systemdrive%\Autodesk"""
         '
         'txtAVG
         '
@@ -228,7 +228,8 @@ Partial Class CleanDefs2
         Me.txtBigFishGames.Name = "txtBigFishGames"
         Me.txtBigFishGames.Size = New System.Drawing.Size(390, 49)
         Me.txtBigFishGames.TabIndex = 75
-        Me.txtBigFishGames.Text = "echo Big Fish Games cache..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%systemdrive%\BigFishGamesCache\*.*""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "rd /s /q ""%systemdrive%\BigFishGamesCache\"""
+        Me.txtBigFishGames.Text = "echo [Big Fish Games cache...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%systemdrive%\BigFishGamesCache\*.*" & _
+            """" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "rd /s /q ""%systemdrive%\BigFishGamesCache\"""
         '
         'txtGIMP
         '
@@ -237,8 +238,8 @@ Partial Class CleanDefs2
         Me.txtGIMP.Name = "txtGIMP"
         Me.txtGIMP.Size = New System.Drawing.Size(390, 47)
         Me.txtGIMP.TabIndex = 60
-        Me.txtGIMP.Text = "echo GIMP thumbnails..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%userprofile%\.thumbnails\normal\*.*""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "rd " & _
-            "/s /q ""%userprofile%\.thumbnails\normal\"""
+        Me.txtGIMP.Text = "echo [GIMP thumbnails...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%userprofile%\.thumbnails\normal\*.*""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "r" & _
+            "d /s /q ""%userprofile%\.thumbnails\normal\"""
         '
         'txtGoogleEarth
         '
@@ -256,8 +257,8 @@ Partial Class CleanDefs2
         Me.txtGoogleUpdater.Name = "txtGoogleUpdater"
         Me.txtGoogleUpdater.Size = New System.Drawing.Size(390, 50)
         Me.txtGoogleUpdater.TabIndex = 51
-        Me.txtGoogleUpdater.Text = "echo Google Updater cache..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%allusersappdata%\Google Updater\cach" & _
-            "e\*.*""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "rd /s /q ""%allusersappdata%\Google Updater\cache\"""
+        Me.txtGoogleUpdater.Text = "echo [Google Updater cache...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%allusersappdata%\Google Updater\ca" & _
+            "che\*.*""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "rd /s /q ""%allusersappdata%\Google Updater\cache\"""
         '
         'txtHPDigitalImaging
         '
@@ -266,8 +267,8 @@ Partial Class CleanDefs2
         Me.txtHPDigitalImaging.Name = "txtHPDigitalImaging"
         Me.txtHPDigitalImaging.Size = New System.Drawing.Size(390, 50)
         Me.txtHPDigitalImaging.TabIndex = 52
-        Me.txtHPDigitalImaging.Text = "echo HP Digital Imaging cache..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%localappdata%\HP\Digital Imaging" & _
-            "\cache\*.*""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "rd /s /q ""%localappdata%\HP\Digital Imaging\cache\"""
+        Me.txtHPDigitalImaging.Text = "echo [HP Digital Imaging cache...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%localappdata%\HP\Digital Imagi" & _
+            "ng\cache\*.*""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "rd /s /q ""%localappdata%\HP\Digital Imaging\cache\"""
         '
         'txtIMVU
         '
@@ -285,8 +286,8 @@ Partial Class CleanDefs2
         Me.txtiTunes.Name = "txtiTunes"
         Me.txtiTunes.Size = New System.Drawing.Size(390, 50)
         Me.txtiTunes.TabIndex = 53
-        Me.txtiTunes.Text = "echo iTunes cache..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /q ""%localappdata%\Apple Computer\Cache.db""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f " & _
-            "/q ""%localappdata%\Apple Computer\iTunes\Cache.db"""
+        Me.txtiTunes.Text = "echo [iTunes cache...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /q ""%localappdata%\Apple Computer\Cache.db""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /" & _
+            "f /q ""%localappdata%\Apple Computer\iTunes\Cache.db"""
         '
         'txtJagex
         '
@@ -313,8 +314,8 @@ Partial Class CleanDefs2
         Me.txtNokiaOvi.Name = "txtNokiaOvi"
         Me.txtNokiaOvi.Size = New System.Drawing.Size(390, 51)
         Me.txtNokiaOvi.TabIndex = 56
-        Me.txtNokiaOvi.Text = "echo Nokia Ovi Suite cache..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%allusersappdata%\oviinstallercache\" & _
-            "*.*""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "rd /s /q ""%allusersappdata%\OviInstallerCache\"""
+        Me.txtNokiaOvi.Text = "echo [Nokia Ovi Suite cache...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%allusersappdata%\oviinstallercach" & _
+            "e\*.*""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "rd /s /q ""%allusersappdata%\OviInstallerCache\"""
         '
         'txtQuicktime
         '
@@ -341,9 +342,9 @@ Partial Class CleanDefs2
         Me.txtRDP.Name = "txtRDP"
         Me.txtRDP.Size = New System.Drawing.Size(390, 49)
         Me.txtRDP.TabIndex = 69
-        Me.txtRDP.Text = "echo Remote Desktop cache..." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%localappdata%\Microsoft\Terminal Ser" & _
-            "ver Client\Cache\*.*""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "rd /s /q """"%localappdata%\Microsoft\Terminal Server Clien" & _
-            "t\Cache\"""
+        Me.txtRDP.Text = "echo [Remote Desktop cache...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%localappdata%\Microsoft\Terminal S" & _
+            "erver Client\Cache\*.*""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "rd /s /q """"%localappdata%\Microsoft\Terminal Server Cli" & _
+            "ent\Cache\"""
         '
         'txtSilverlight
         '

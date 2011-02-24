@@ -118,28 +118,28 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="txtSampleMusic.Text" xml:space="preserve">
-    <value>echo Windows Sample Music...
+    <value>echo [Windows Sample Music...]
 del /f /s /q "%systemdrive%\Users\Public\Music\Sample Music\*.*"
 rd /s /q "%systemdrive%\Users\Public\Music\Sample Music\"
 del /f /s /q "%systemdrive%\Documents and Settings\All Users\Documents\My Music\Sample Music\*.*"
 rd /s /q "%systemdrive%\Documents and Settings\All Users\Documents\My Music\Sample Music\"</value>
   </data>
   <data name="txtSamplePictures.Text" xml:space="preserve">
-    <value>echo Windows Sample Pictures...
+    <value>echo [Windows Sample Pictures...]
 del /f /s /q "%systemdrive%\Users\Public\Pictures\Sample Pictures\*.*"
 rd /s /q "%systemdrive%\Users\Public\Pictures\Sample Pictures\"
 del /f /s /q "%systemdrive%\Documents and Settings\All Users\Documents\My Pictures\Sample Pictures\*.*"
 rd /s /q "%systemdrive%\Documents and Settings\All Users\Documents\My Pictures\Sample Pictures\"</value>
   </data>
   <data name="txtSampleVideos.Text" xml:space="preserve">
-    <value>echo Windows Sample Videos...
+    <value>echo [Windows Sample Videos...]
 del /f /s /q "%systemdrive%\Users\Public\Videos\Sample Videos\*.*"
 rd /s /q "%systemdrive%\Users\Public\Videos\Sample Videos\"
 del /f /s /q "%systemdrive%\Users\Public\Recorded TV\Sample Media\*.*"
 rd /s /q "%systemdrive%\Users\Public\Recorded TV\Sample Media\"</value>
   </data>
   <data name="txtAdobeReader.Text" xml:space="preserve">
-    <value>echo Adobe Reader cache...
+    <value>echo [Adobe Reader cache...]
 :Adobe Cache
 IF NOT EXIST "%localappdata%\Adobe\Acrobat" GOTO AdobeSetup
 pushd "%localappdata%\Adobe\Acrobat" ||goto :eof
@@ -190,14 +190,14 @@ popd
 :End_AdobeReader</value>
   </data>
   <data name="txtAppleInstaller.Text" xml:space="preserve">
-    <value>echo Apple Installer cache...
+    <value>echo [Apple Installer cache...]
 del /f /s /q "%allusersappdata%\Apple\Installer Cache\*.*"
 rd /s /q "%allusersappdata%\Apple\Installer Cache\"
 del /f /s /q "%allusersappdata%\Apple Computer\Installer Cache\*.*"
 rd /s /q "%allusersappdata%\Apple Computer\Installer Cache\"</value>
   </data>
   <data name="txtAVG.Text" xml:space="preserve">
-    <value>echo AVG logs and temp files...
+    <value>echo [AVG logs and temp files...]
 pushd "%allusersappdata%" ||goto :eof
 for /d %%a in (avg*) do (
 del /f /s /q "%%a\Log\*.*"
@@ -209,7 +209,7 @@ del /f /s /q "%%a\update\backup\*.*"
 popd</value>
   </data>
   <data name="txtGoogleEarth.Text" xml:space="preserve">
-    <value>echo Google Earth cache...
+    <value>echo [Google Earth cache...]
 del /f /q "%appdata%\Google\GoogleEarth\dbCache.dat"
 del /f /q "%appdata%\Google\GoogleEarth\dbCache.dat.index"
 del /f /q "%localappdata%\Google\GoogleEarth\dbCache.dat"
@@ -218,7 +218,7 @@ del /f /q "%locallowappdata%\Google\GoogleEarth\dbCache.dat"
 del /f /q "%locallowappdata%\Google\GoogleEarth\dbCache.dat.index"</value>
   </data>
   <data name="txtIMVU.Text" xml:space="preserve">
-    <value>echo IMVU cache...
+    <value>echo [IMVU cache...]
 del /f /s /q "%appdata%\IMVU\cache\*.*"
 rd /s /q "%appdata%\IMVU\cache\"
 del /f /s /q "%appdata%\IMVU\AssetCache\*.*"
@@ -228,7 +228,7 @@ rd /s /q "%appdata%\IMVU\PixmapCache\"
 del /f /s /q "%appdata%\IMVU\*.log"</value>
   </data>
   <data name="txtJagex.Text" xml:space="preserve">
-    <value>echo Jagex cache...
+    <value>echo [Jagex cache...]
 del /f /q "%userprofile%\jagex_*.dat"
 del /f /s /q "%systemdrive%\rscache\*.*"
 rd /s /q "%systemdrive%\rscache\"
@@ -242,7 +242,7 @@ del /f /s /q "%windir%\.jagex_cache_64\*.*"
 rd /s /q "%windir%\.jagex_cache_64\"</value>
   </data>
   <data name="txtKaspersky.Text" xml:space="preserve">
-    <value>echo Kaspersky reports and temp files...
+    <value>echo [Kaspersky reports and temp files...]
 del /f /s /q "%allusersappdata%\Kaspersky Lab\*.dmp"
 del /f /s /q "%allusersappdata%\Kaspersky Lab\*.tmp"
 del /f /s /q "%allusersappdata%\Kaspersky Lab\*.log"
@@ -261,7 +261,7 @@ popd
 :End_Kaspersky</value>
   </data>
   <data name="txtQuicktime.Text" xml:space="preserve">
-    <value>echo Quicktime downloads...
+    <value>echo [Quicktime downloads...]
 del /f /s /q "%localappdata%\Apple Computer\QuickTime\downloads\*.*"
 rd /s /q "%localappdata%\Apple Computer\QuickTime\downloads\"
 del /f /s /q "%locallowappdata%\Apple Computer\Quicktime\downloads\*.*"
@@ -272,7 +272,7 @@ del /f /q  "%localappdata%\Apple Computer\QuickTime\QTPlayerSession.xml"
 del /f /q  "%locallowappdata%\Apple Computer\QuickTime\QTPlayerSession.xml"</value>
   </data>
   <data name="txtRealPlayer.Text" xml:space="preserve">
-    <value>echo RealPlayer history and cookies...
+    <value>echo [RealPlayer history and cookies...]
 del /f /q "%appdata%\Real\RealPlayer\cookies.txt"
 del /f /q "%appdata%\Real\RealPlayer\ctd.dat"
 del /f /q "%appdata%\Real\RealPlayer\realplayer.ste"
@@ -283,14 +283,14 @@ del /f /q "%appdata%\Real\RealOne Player\realplayer.ste"
 del /f /s /q "%appdata%\Real\RealOne Player\History\*.*"</value>
   </data>
   <data name="txtSilverlight.Text" xml:space="preserve">
-    <value>echo Silverlight cookies...
+    <value>echo [Silverlight cookies...]
 del /f /s /q "%localappdata%\Microsoft\Silverlight\*.*"
 rd /s /q "%localappdata%\Microsoft\Silverlight\"
 del /f /s /q "%locallowappdata%\Microsoft\Silverlight\*.*"
 rd /s /q "%locallowappdata%\Microsoft\Silverlight\"</value>
   </data>
   <data name="txtSpotify.Text" xml:space="preserve">
-    <value>echo Spotify cache...
+    <value>echo [Spotify cache...]
 If Exist "%localappdata%\Spotify\Storage\index.dat" GoTo SpotifyIndexExists
 del /f /s /q "%localappdata%\Spotify\Storage\*.*"
 rd /s /q "%localappdata%\Spotify\Storage\"
@@ -301,21 +301,21 @@ del /f /s /q "%localappdata%\Spotify\Storage\*.*"
 move "%temp%\index.dat" "%localappdata%\Spotify\Storage\"</value>
   </data>
   <data name="txtSymantec.Text" xml:space="preserve">
-    <value>echo Symantec caches...
+    <value>echo [Symantec caches...]
 del /f /s /q "%allusersappdata%\Symantec Temporary Files\*.*"
 rd /s /q "%allusersappdata%\Symantec Temporary Files\"
 del /f /s /q "%allusersappdata%\Symantec\LiveUpdate\Downloads\*.*"
 rd /s /q "%allusersappdata%\Symantec\LiveUpdate\Downloads\"</value>
   </data>
   <data name="txtTrackmania.Text" xml:space="preserve">
-    <value>echo TrackMania cache...
+    <value>echo [TrackMania cache...]
 del /f /s /q "%allusersappdata%\TrackMania\Cache\*.*"
 rd /s /q "%allusersappdata%\TrackMania\Cache\"
 del /f /s /q "%localappdata%\VirtualStore\ProgramData\TrackMania\Cache\*.*"
 rd /s /q "%localappdata%\VirtualStore\ProgramData\TrackMania\Cache\"</value>
   </data>
   <data name="txtUnity.Text" xml:space="preserve">
-    <value>echo Unity Web Player cache...
+    <value>echo [Unity Web Player cache...]
 del /f /s /q "%localappdata%\Unity\Web Player\Cache\*.*"
 rd /s /q "%localappdata%\Unity\Web Player\Cache\"
 del /f /s /q "%locallowappdata%\Unity\Web Player\Cache\*.*"
