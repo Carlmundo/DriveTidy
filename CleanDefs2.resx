@@ -253,6 +253,8 @@ pushd "%allusersappdata%\Kaspersky Lab" ||goto :eof
 for /d %%a in (AVP*) do (
 del /f /s /q "%%a\*.tmp"
 del /f /s /q "%%a\*.dmp"
+del /f /s /q "%%a\Bases\Cache\*.*"
+rd /s /q "%%a\Bases\Cache\"
 del /f /s /q "%%a\Report\*.*"
 del /f /s /q "%%a\PdmHist\*.*"
 del /f /s /q "%%a\Data\Updater\Temporary Files\*.*"
