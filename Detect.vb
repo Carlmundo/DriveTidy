@@ -62,6 +62,9 @@
         If Not My.Computer.FileSystem.DirectoryExists(Environ("appdata") & "\Adobe\CameraRaw\Cache") Then
             Main.cbAdobeCameraRAW.Visible = False
         End If
+        If Not My.Computer.FileSystem.DirectoryExists(Environ("appdata") & "\Adobe\Common\Media Cache") Then
+            Main.cbAdobeMedia.Visible = False
+        End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("localappdata") & "\Adobe\Acrobat") Then
             Main.cbAdobeReader.Visible = False
         End If
