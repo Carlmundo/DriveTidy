@@ -5,6 +5,8 @@
     Dim OS_Windows7 As Boolean
     Dim OS_Undetected As Boolean
 
+    Dim flwAll(0 To 4)
+
     Private Declare Function ShellExecute Lib "shell32.dll" Alias "ShellExecuteA" (ByVal hwnd As Integer, ByVal lpOperation As String, ByVal lpFile As String, ByVal lpParameters As String, ByVal lpDirectory As String, ByVal nShowCmd As Integer) As Integer
 
     Dim item As Object
@@ -21,51 +23,30 @@
     Dim MsgApp, MsgProcess, MsgString
 
     Public Sub QuickSelect()
-        'Unchecks all checkboxes
-        For Each Me.item In flwOptions.Controls
+        'Check specific Checkboxes
+        For i = 0 To 1
+            For Each Me.item In flwAll(i)
+                If TypeOf item Is CheckBox Then
+                    item.Checked = True
+                End If
+            Next
+        Next
+        For Each Me.item In flwAll(3)
+            If TypeOf item Is CheckBox Then
+                item.Checked = True
+            End If
+        Next
+        For Each Me.item In flwAll(2)
             If TypeOf item Is CheckBox Then
                 item.Checked = False
             End If
         Next
-        'Check specific Checkboxes
-        cbRecycle.Checked = True
-        cbTemp.Checked = True
-        cbRecent.Checked = True
-        cbWindowsUpdate.Checked = True
-        cbErrorReports.Checked = True
+        For Each Me.item In flwAll(4)
+            If TypeOf item Is CheckBox Then
+                item.Checked = False
+            End If
+        Next
 
-        cbTIF.Checked = True
-        cbFirefox.Checked = True
-        cbChrome.Checked = True
-        cbOpera.Checked = True
-        cbSafari.Checked = True
-        cbFlash.Checked = True
-        cbJava.Checked = True
-        cbMessenger.Checked = True
-
-        cbAdobeCameraRAW.Checked = True
-        cbAdobeReader.Checked = True
-        cbAppleInstaller.Checked = True
-        cbAutoDesk.Checked = True
-        cbAVG.Checked = True
-        cbBigFishGames.Checked = True
-        cbGIMP.Checked = True
-        cbGoogleEarth.Checked = True
-        cbGoogleUpdater.Checked = True
-        cbHPDigitalImaging.Checked = True
-        cbIMVU.Checked = True
-        cbiTunes.Checked = True
-        cbJagex.Checked = True
-        cbKaspersky.Checked = True
-        cbNokiaOvi.Checked = True
-        cbQuicktime.Checked = True
-        cbRealPlayer.Checked = True
-        cbRDP.Checked = True
-        cbSilverlight.Checked = True
-        cbSpotify.Checked = True
-        cbSymantec.Checked = True
-        cbTrackmania.Checked = True
-        cbUnity.Checked = True
     End Sub
 
     Private Sub CleanerErrors()
@@ -84,7 +65,7 @@
     Private Sub Main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Display settings to show the form correctly for all DPI settings
         'Makes FlowOptions end at this particular point 
-        flwOptions.Height = cbTIF.Location.Y + (cbTIF.Height * 3)
+        flwOptions.Height = cbTIF.Location.Y + (cbTIF.Height * 10)
         'Put cmdAbout in line with DriveTidy text
         Dim AboutLocation As New System.Drawing.Point(cmdAbout.Location.X, lblProductName.Location.Y)
         cmdAbout.Location = AboutLocation
@@ -147,6 +128,13 @@
         End If
         On Error GoTo 0 'End of Setting Environment Permissions
 
+        'Set FlowLayoutPanel Array values
+        flwAll(0) = flwSystem.Controls
+        flwAll(1) = flwInternet.Controls
+        flwAll(2) = flwMore.Controls
+        flwAll(3) = flwOtherApps.Controls
+        flwAll(4) = flwFileExt.Controls
+
         'KVP Lists
         'List of Current Options here get added to the Dictionary so they can be referenced
         'CleanDefs (without File Extensions)
@@ -174,6 +162,7 @@
         d2.Add(cbSamplePictures, CleanDefs2.txtSamplePictures)
         d2.Add(cbSampleVideos, CleanDefs2.txtSampleVideos)
         d2.Add(cbAdobeCameraRAW, CleanDefs2.txtAdobeCameraRAW)
+        d2.Add(cbAdobeMedia, CleanDefs2.txtAdobeMedia)
         d2.Add(cbAdobeReader, CleanDefs2.txtAdobeReader)
         d2.Add(cbAppleInstaller, CleanDefs2.txtAppleInstaller)
         d2.Add(cbAutoDesk, CleanDefs2.txtAutoDesk)
@@ -239,27 +228,30 @@ ErrorEnvPerm:
         cbCount = 0
         cbCheckedCount = 0
         'Make cbCount = Number of visible checkboxes
-        For Each Me.item In flwOptions.Controls
-            If TypeOf item Is CheckBox Then
-                If item.Visible = True Then
-                    cbCount = cbCount + 1
+        For i = 0 To 4
+            For Each Me.item In flwAll(i)
+                If TypeOf item Is CheckBox Then
+                    If item.Visible = True Then
+                        cbCount = cbCount + 1
+                    End If
+                    If item.Checked = True Then
+                        cbCheckedCount = cbCheckedCount + 1
+                    End If
                 End If
-                'Make cbCheckedCount = Number of checked boxes
-                If item.Checked = True Then
-                    cbCheckedCount = cbCheckedCount + 1
-                End If
-            End If
+            Next
         Next
     End Sub
 
     Public Sub Uncheck_Invisible()
         'Makes sure there that all invisible checkboxes are unchecked to help cbCheckedCount
-        For Each Me.item In flwOptions.Controls
-            If TypeOf item Is CheckBox Then
-                If item.Visible = False Then
-                    item.Checked = False
+        For i = 0 To 4
+            For Each Me.item In flwAll(i)
+                If TypeOf item Is CheckBox Then
+                    If item.Visible = False Then
+                        item.Checked = False
+                    End If
                 End If
-            End If
+            Next
         Next
     End Sub
 
@@ -326,29 +318,25 @@ ErrorEnvPerm:
         'If all of the checkboxes are checked they will all be unchecked, otherwise they will all be checked. 
         Checkbox_Count()
         If cbCheckedCount < cbCount Then
-            For Each Me.item In flwOptions.Controls
-                If TypeOf item Is CheckBox Then
-                    item.Checked = True
-                    Checkbox_Count()
-                End If
+            For i = 0 To 4
+                For Each Me.item In flwAll(i)
+                    If TypeOf item Is CheckBox Then
+                        item.Checked = True
+                        Checkbox_Count()
+                    End If
+                Next
             Next
         ElseIf cbCheckedCount = cbCount Then
-            For Each Me.item In flwOptions.Controls
-                If TypeOf item Is CheckBox Then
-                    item.Checked = False
-                    Checkbox_Count()
-                End If
+            For i = 0 To 4
+                For Each Me.item In flwAll(i)
+                    If TypeOf item Is CheckBox Then
+                        item.Checked = False
+                        Checkbox_Count()
+                    End If
+                Next
             Next
         End If
         Uncheck_Invisible()
-    End Sub
-
-    Private Sub FlowLayout_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles flwOptions.Click
-        flwOptions.Focus() 'Allows the mouse wheel to work after the panel is clicked
-    End Sub
-
-    Private Sub FlowLayout_MouseEnter(ByVal sender As Object, ByVal e As System.EventArgs) Handles flwOptions.MouseEnter
-        flwOptions.Focus() 'Allows the mouse wheel to work after the panel has had the mouse move over it
     End Sub
 
     Public Class ProcessDetect
@@ -502,5 +490,10 @@ ErrorHandler:
         'If a file extension is selected then it does the
         'Advanced method with F numbers, no file extension = Q numbers
             End If
+    End Sub
+
+    'Fix issue with FlowLayoutPanel not scrolling
+    Private Sub Main_MouseWheel(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseWheel
+        flwOptions.Focus()
     End Sub
 End Class
