@@ -167,6 +167,7 @@
         d2.Add(cbVistaSP1, CleanDefs2.txtVistaSP1)
         d2.Add(cbVistaSP2, CleanDefs2.txtVistaSP2)
         d2.Add(cbHibernate, CleanDefs2.txtHibernate)
+        d2.Add(cbMSI, CleanDefs2.txtMSI)
         d2.Add(cbSampleMusic, CleanDefs2.txtSampleMusic)
         d2.Add(cbSamplePictures, CleanDefs2.txtSamplePictures)
         d2.Add(cbSampleVideos, CleanDefs2.txtSampleVideos)

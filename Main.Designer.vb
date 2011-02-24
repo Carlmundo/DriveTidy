@@ -54,13 +54,16 @@ Partial Class Main
         Me.cbAdobeCameraRAW = New System.Windows.Forms.CheckBox
         Me.cbAdobeReader = New System.Windows.Forms.CheckBox
         Me.cbAppleInstaller = New System.Windows.Forms.CheckBox
+        Me.cbAutoDesk = New System.Windows.Forms.CheckBox
         Me.cbAVG = New System.Windows.Forms.CheckBox
+        Me.cbBigFishGames = New System.Windows.Forms.CheckBox
         Me.cbGIMP = New System.Windows.Forms.CheckBox
         Me.cbGoogleEarth = New System.Windows.Forms.CheckBox
         Me.cbGoogleUpdater = New System.Windows.Forms.CheckBox
         Me.cbHPDigitalImaging = New System.Windows.Forms.CheckBox
         Me.cbIMVU = New System.Windows.Forms.CheckBox
         Me.cbiTunes = New System.Windows.Forms.CheckBox
+        Me.cbJagex = New System.Windows.Forms.CheckBox
         Me.cbKaspersky = New System.Windows.Forms.CheckBox
         Me.cbNokiaOvi = New System.Windows.Forms.CheckBox
         Me.cbQuicktime = New System.Windows.Forms.CheckBox
@@ -85,9 +88,7 @@ Partial Class Main
         Me.tblDesign = New System.Windows.Forms.TableLayoutPanel
         Me.flwPresets = New System.Windows.Forms.FlowLayoutPanel
         Me.cmdAbout = New System.Windows.Forms.Button
-        Me.cbJagex = New System.Windows.Forms.CheckBox
-        Me.cbBigFishGames = New System.Windows.Forms.CheckBox
-        Me.cbAutoDesk = New System.Windows.Forms.CheckBox
+        Me.cbMSI = New System.Windows.Forms.CheckBox
         Me.flwOptions.SuspendLayout()
         Me.tblDesign.SuspendLayout()
         Me.flwPresets.SuspendLayout()
@@ -143,6 +144,7 @@ Partial Class Main
         Me.flwOptions.Controls.Add(Me.cbVistaSP1)
         Me.flwOptions.Controls.Add(Me.cbVistaSP2)
         Me.flwOptions.Controls.Add(Me.cbHibernate)
+        Me.flwOptions.Controls.Add(Me.cbMSI)
         Me.flwOptions.Controls.Add(Me.cbSampleMusic)
         Me.flwOptions.Controls.Add(Me.cbSamplePictures)
         Me.flwOptions.Controls.Add(Me.cbSampleVideos)
@@ -418,7 +420,7 @@ Partial Class Main
         '
         Me.cbSampleMusic.AutoSize = True
         Me.cbSampleMusic.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbSampleMusic.Location = New System.Drawing.Point(0, 364)
+        Me.cbSampleMusic.Location = New System.Drawing.Point(0, 383)
         Me.cbSampleMusic.Margin = New System.Windows.Forms.Padding(0)
         Me.cbSampleMusic.Name = "cbSampleMusic"
         Me.cbSampleMusic.Size = New System.Drawing.Size(104, 19)
@@ -430,7 +432,7 @@ Partial Class Main
         '
         Me.cbSamplePictures.AutoSize = True
         Me.cbSamplePictures.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbSamplePictures.Location = New System.Drawing.Point(0, 383)
+        Me.cbSamplePictures.Location = New System.Drawing.Point(0, 402)
         Me.cbSamplePictures.Margin = New System.Windows.Forms.Padding(0)
         Me.cbSamplePictures.Name = "cbSamplePictures"
         Me.cbSamplePictures.Size = New System.Drawing.Size(117, 19)
@@ -442,7 +444,7 @@ Partial Class Main
         '
         Me.cbSampleVideos.AutoSize = True
         Me.cbSampleVideos.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbSampleVideos.Location = New System.Drawing.Point(0, 402)
+        Me.cbSampleVideos.Location = New System.Drawing.Point(0, 421)
         Me.cbSampleVideos.Margin = New System.Windows.Forms.Padding(0)
         Me.cbSampleVideos.Name = "cbSampleVideos"
         Me.cbSampleVideos.Size = New System.Drawing.Size(110, 19)
@@ -454,7 +456,7 @@ Partial Class Main
         '
         Me.lblOtherApps.AutoSize = True
         Me.lblOtherApps.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOtherApps.Location = New System.Drawing.Point(3, 421)
+        Me.lblOtherApps.Location = New System.Drawing.Point(3, 440)
         Me.lblOtherApps.Name = "lblOtherApps"
         Me.lblOtherApps.Size = New System.Drawing.Size(125, 20)
         Me.lblOtherApps.TabIndex = 22
@@ -466,7 +468,7 @@ Partial Class Main
         '
         Me.cbAdobeCameraRAW.AutoSize = True
         Me.cbAdobeCameraRAW.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbAdobeCameraRAW.Location = New System.Drawing.Point(0, 441)
+        Me.cbAdobeCameraRAW.Location = New System.Drawing.Point(0, 460)
         Me.cbAdobeCameraRAW.Margin = New System.Windows.Forms.Padding(0)
         Me.cbAdobeCameraRAW.Name = "cbAdobeCameraRAW"
         Me.cbAdobeCameraRAW.Size = New System.Drawing.Size(139, 19)
@@ -478,7 +480,7 @@ Partial Class Main
         '
         Me.cbAdobeReader.AutoSize = True
         Me.cbAdobeReader.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbAdobeReader.Location = New System.Drawing.Point(0, 460)
+        Me.cbAdobeReader.Location = New System.Drawing.Point(0, 479)
         Me.cbAdobeReader.Margin = New System.Windows.Forms.Padding(0)
         Me.cbAdobeReader.Name = "cbAdobeReader"
         Me.cbAdobeReader.Size = New System.Drawing.Size(105, 19)
@@ -490,7 +492,7 @@ Partial Class Main
         '
         Me.cbAppleInstaller.AutoSize = True
         Me.cbAppleInstaller.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbAppleInstaller.Location = New System.Drawing.Point(0, 479)
+        Me.cbAppleInstaller.Location = New System.Drawing.Point(0, 498)
         Me.cbAppleInstaller.Margin = New System.Windows.Forms.Padding(0)
         Me.cbAppleInstaller.Name = "cbAppleInstaller"
         Me.cbAppleInstaller.Size = New System.Drawing.Size(104, 19)
@@ -498,11 +500,23 @@ Partial Class Main
         Me.cbAppleInstaller.Text = "Apple Installer"
         Me.cbAppleInstaller.UseVisualStyleBackColor = True
         '
+        'cbAutoDesk
+        '
+        Me.cbAutoDesk.AutoSize = True
+        Me.cbAutoDesk.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbAutoDesk.Location = New System.Drawing.Point(0, 517)
+        Me.cbAutoDesk.Margin = New System.Windows.Forms.Padding(0)
+        Me.cbAutoDesk.Name = "cbAutoDesk"
+        Me.cbAutoDesk.Size = New System.Drawing.Size(79, 19)
+        Me.cbAutoDesk.TabIndex = 26
+        Me.cbAutoDesk.Text = "AutoDesk"
+        Me.cbAutoDesk.UseVisualStyleBackColor = True
+        '
         'cbAVG
         '
         Me.cbAVG.AutoSize = True
         Me.cbAVG.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbAVG.Location = New System.Drawing.Point(0, 517)
+        Me.cbAVG.Location = New System.Drawing.Point(0, 536)
         Me.cbAVG.Margin = New System.Windows.Forms.Padding(0)
         Me.cbAVG.Name = "cbAVG"
         Me.cbAVG.Size = New System.Drawing.Size(49, 19)
@@ -510,11 +524,23 @@ Partial Class Main
         Me.cbAVG.Text = "AVG"
         Me.cbAVG.UseVisualStyleBackColor = True
         '
+        'cbBigFishGames
+        '
+        Me.cbBigFishGames.AutoSize = True
+        Me.cbBigFishGames.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbBigFishGames.Location = New System.Drawing.Point(0, 555)
+        Me.cbBigFishGames.Margin = New System.Windows.Forms.Padding(0)
+        Me.cbBigFishGames.Name = "cbBigFishGames"
+        Me.cbBigFishGames.Size = New System.Drawing.Size(115, 19)
+        Me.cbBigFishGames.TabIndex = 28
+        Me.cbBigFishGames.Text = "Big Fish Games"
+        Me.cbBigFishGames.UseVisualStyleBackColor = True
+        '
         'cbGIMP
         '
         Me.cbGIMP.AutoSize = True
         Me.cbGIMP.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbGIMP.Location = New System.Drawing.Point(0, 555)
+        Me.cbGIMP.Location = New System.Drawing.Point(0, 574)
         Me.cbGIMP.Margin = New System.Windows.Forms.Padding(0)
         Me.cbGIMP.Name = "cbGIMP"
         Me.cbGIMP.Size = New System.Drawing.Size(55, 19)
@@ -526,7 +552,7 @@ Partial Class Main
         '
         Me.cbGoogleEarth.AutoSize = True
         Me.cbGoogleEarth.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbGoogleEarth.Location = New System.Drawing.Point(0, 574)
+        Me.cbGoogleEarth.Location = New System.Drawing.Point(0, 593)
         Me.cbGoogleEarth.Margin = New System.Windows.Forms.Padding(0)
         Me.cbGoogleEarth.Name = "cbGoogleEarth"
         Me.cbGoogleEarth.Size = New System.Drawing.Size(98, 19)
@@ -538,7 +564,7 @@ Partial Class Main
         '
         Me.cbGoogleUpdater.AutoSize = True
         Me.cbGoogleUpdater.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbGoogleUpdater.Location = New System.Drawing.Point(0, 593)
+        Me.cbGoogleUpdater.Location = New System.Drawing.Point(0, 612)
         Me.cbGoogleUpdater.Margin = New System.Windows.Forms.Padding(0)
         Me.cbGoogleUpdater.Name = "cbGoogleUpdater"
         Me.cbGoogleUpdater.Size = New System.Drawing.Size(113, 19)
@@ -550,7 +576,7 @@ Partial Class Main
         '
         Me.cbHPDigitalImaging.AutoSize = True
         Me.cbHPDigitalImaging.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbHPDigitalImaging.Location = New System.Drawing.Point(0, 612)
+        Me.cbHPDigitalImaging.Location = New System.Drawing.Point(0, 631)
         Me.cbHPDigitalImaging.Margin = New System.Windows.Forms.Padding(0)
         Me.cbHPDigitalImaging.Name = "cbHPDigitalImaging"
         Me.cbHPDigitalImaging.Size = New System.Drawing.Size(129, 19)
@@ -562,7 +588,7 @@ Partial Class Main
         '
         Me.cbIMVU.AutoSize = True
         Me.cbIMVU.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbIMVU.Location = New System.Drawing.Point(0, 631)
+        Me.cbIMVU.Location = New System.Drawing.Point(0, 650)
         Me.cbIMVU.Margin = New System.Windows.Forms.Padding(0)
         Me.cbIMVU.Name = "cbIMVU"
         Me.cbIMVU.Size = New System.Drawing.Size(54, 19)
@@ -574,7 +600,7 @@ Partial Class Main
         '
         Me.cbiTunes.AutoSize = True
         Me.cbiTunes.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbiTunes.Location = New System.Drawing.Point(0, 650)
+        Me.cbiTunes.Location = New System.Drawing.Point(0, 669)
         Me.cbiTunes.Margin = New System.Windows.Forms.Padding(0)
         Me.cbiTunes.Name = "cbiTunes"
         Me.cbiTunes.Size = New System.Drawing.Size(64, 19)
@@ -582,11 +608,23 @@ Partial Class Main
         Me.cbiTunes.Text = "iTunes"
         Me.cbiTunes.UseVisualStyleBackColor = True
         '
+        'cbJagex
+        '
+        Me.cbJagex.AutoSize = True
+        Me.cbJagex.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbJagex.Location = New System.Drawing.Point(0, 688)
+        Me.cbJagex.Margin = New System.Windows.Forms.Padding(0)
+        Me.cbJagex.Name = "cbJagex"
+        Me.cbJagex.Size = New System.Drawing.Size(58, 19)
+        Me.cbJagex.TabIndex = 35
+        Me.cbJagex.Text = "Jagex"
+        Me.cbJagex.UseVisualStyleBackColor = True
+        '
         'cbKaspersky
         '
         Me.cbKaspersky.AutoSize = True
         Me.cbKaspersky.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbKaspersky.Location = New System.Drawing.Point(0, 688)
+        Me.cbKaspersky.Location = New System.Drawing.Point(0, 707)
         Me.cbKaspersky.Margin = New System.Windows.Forms.Padding(0)
         Me.cbKaspersky.Name = "cbKaspersky"
         Me.cbKaspersky.Size = New System.Drawing.Size(84, 19)
@@ -598,7 +636,7 @@ Partial Class Main
         '
         Me.cbNokiaOvi.AutoSize = True
         Me.cbNokiaOvi.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbNokiaOvi.Location = New System.Drawing.Point(0, 707)
+        Me.cbNokiaOvi.Location = New System.Drawing.Point(0, 726)
         Me.cbNokiaOvi.Margin = New System.Windows.Forms.Padding(0)
         Me.cbNokiaOvi.Name = "cbNokiaOvi"
         Me.cbNokiaOvi.Size = New System.Drawing.Size(109, 19)
@@ -610,7 +648,7 @@ Partial Class Main
         '
         Me.cbQuicktime.AutoSize = True
         Me.cbQuicktime.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbQuicktime.Location = New System.Drawing.Point(0, 726)
+        Me.cbQuicktime.Location = New System.Drawing.Point(0, 745)
         Me.cbQuicktime.Margin = New System.Windows.Forms.Padding(0)
         Me.cbQuicktime.Name = "cbQuicktime"
         Me.cbQuicktime.Size = New System.Drawing.Size(81, 19)
@@ -622,7 +660,7 @@ Partial Class Main
         '
         Me.cbRealPlayer.AutoSize = True
         Me.cbRealPlayer.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbRealPlayer.Location = New System.Drawing.Point(0, 745)
+        Me.cbRealPlayer.Location = New System.Drawing.Point(0, 764)
         Me.cbRealPlayer.Margin = New System.Windows.Forms.Padding(0)
         Me.cbRealPlayer.Name = "cbRealPlayer"
         Me.cbRealPlayer.Size = New System.Drawing.Size(86, 19)
@@ -634,7 +672,7 @@ Partial Class Main
         '
         Me.cbRDP.AutoSize = True
         Me.cbRDP.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbRDP.Location = New System.Drawing.Point(0, 764)
+        Me.cbRDP.Location = New System.Drawing.Point(0, 783)
         Me.cbRDP.Margin = New System.Windows.Forms.Padding(0)
         Me.cbRDP.Name = "cbRDP"
         Me.cbRDP.Size = New System.Drawing.Size(119, 19)
@@ -646,7 +684,7 @@ Partial Class Main
         '
         Me.cbSilverlight.AutoSize = True
         Me.cbSilverlight.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbSilverlight.Location = New System.Drawing.Point(0, 783)
+        Me.cbSilverlight.Location = New System.Drawing.Point(0, 802)
         Me.cbSilverlight.Margin = New System.Windows.Forms.Padding(0)
         Me.cbSilverlight.Name = "cbSilverlight"
         Me.cbSilverlight.Size = New System.Drawing.Size(79, 19)
@@ -658,7 +696,7 @@ Partial Class Main
         '
         Me.cbSpotify.AutoSize = True
         Me.cbSpotify.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbSpotify.Location = New System.Drawing.Point(0, 802)
+        Me.cbSpotify.Location = New System.Drawing.Point(0, 821)
         Me.cbSpotify.Margin = New System.Windows.Forms.Padding(0)
         Me.cbSpotify.Name = "cbSpotify"
         Me.cbSpotify.Size = New System.Drawing.Size(62, 19)
@@ -670,7 +708,7 @@ Partial Class Main
         '
         Me.cbSymantec.AutoSize = True
         Me.cbSymantec.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbSymantec.Location = New System.Drawing.Point(0, 821)
+        Me.cbSymantec.Location = New System.Drawing.Point(0, 840)
         Me.cbSymantec.Margin = New System.Windows.Forms.Padding(0)
         Me.cbSymantec.Name = "cbSymantec"
         Me.cbSymantec.Size = New System.Drawing.Size(80, 19)
@@ -682,7 +720,7 @@ Partial Class Main
         '
         Me.cbTrackmania.AutoSize = True
         Me.cbTrackmania.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbTrackmania.Location = New System.Drawing.Point(0, 840)
+        Me.cbTrackmania.Location = New System.Drawing.Point(0, 859)
         Me.cbTrackmania.Margin = New System.Windows.Forms.Padding(0)
         Me.cbTrackmania.Name = "cbTrackmania"
         Me.cbTrackmania.Size = New System.Drawing.Size(89, 19)
@@ -694,7 +732,7 @@ Partial Class Main
         '
         Me.cbUnity.AutoSize = True
         Me.cbUnity.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbUnity.Location = New System.Drawing.Point(0, 859)
+        Me.cbUnity.Location = New System.Drawing.Point(0, 878)
         Me.cbUnity.Margin = New System.Windows.Forms.Padding(0)
         Me.cbUnity.Name = "cbUnity"
         Me.cbUnity.Size = New System.Drawing.Size(118, 19)
@@ -706,7 +744,7 @@ Partial Class Main
         '
         Me.lblFileExt.AutoSize = True
         Me.lblFileExt.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFileExt.Location = New System.Drawing.Point(3, 878)
+        Me.lblFileExt.Location = New System.Drawing.Point(3, 897)
         Me.lblFileExt.Name = "lblFileExt"
         Me.lblFileExt.Size = New System.Drawing.Size(103, 20)
         Me.lblFileExt.TabIndex = 46
@@ -718,7 +756,7 @@ Partial Class Main
         '
         Me.cbTMP.AutoSize = True
         Me.cbTMP.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbTMP.Location = New System.Drawing.Point(0, 898)
+        Me.cbTMP.Location = New System.Drawing.Point(0, 917)
         Me.cbTMP.Margin = New System.Windows.Forms.Padding(0)
         Me.cbTMP.Name = "cbTMP"
         Me.cbTMP.Size = New System.Drawing.Size(50, 19)
@@ -730,7 +768,7 @@ Partial Class Main
         '
         Me.cbLOG.AutoSize = True
         Me.cbLOG.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbLOG.Location = New System.Drawing.Point(0, 917)
+        Me.cbLOG.Location = New System.Drawing.Point(0, 936)
         Me.cbLOG.Margin = New System.Windows.Forms.Padding(0)
         Me.cbLOG.Name = "cbLOG"
         Me.cbLOG.Size = New System.Drawing.Size(46, 19)
@@ -742,7 +780,7 @@ Partial Class Main
         '
         Me.cbCHK.AutoSize = True
         Me.cbCHK.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbCHK.Location = New System.Drawing.Point(0, 936)
+        Me.cbCHK.Location = New System.Drawing.Point(0, 955)
         Me.cbCHK.Margin = New System.Windows.Forms.Padding(0)
         Me.cbCHK.Name = "cbCHK"
         Me.cbCHK.Size = New System.Drawing.Size(48, 19)
@@ -754,7 +792,7 @@ Partial Class Main
         '
         Me.cbDMP.AutoSize = True
         Me.cbDMP.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbDMP.Location = New System.Drawing.Point(0, 955)
+        Me.cbDMP.Location = New System.Drawing.Point(0, 974)
         Me.cbDMP.Margin = New System.Windows.Forms.Padding(0)
         Me.cbDMP.Name = "cbDMP"
         Me.cbDMP.Size = New System.Drawing.Size(54, 19)
@@ -766,7 +804,7 @@ Partial Class Main
         '
         Me.cb_MP.AutoSize = True
         Me.cb_MP.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cb_MP.Location = New System.Drawing.Point(0, 974)
+        Me.cb_MP.Location = New System.Drawing.Point(0, 993)
         Me.cb_MP.Margin = New System.Windows.Forms.Padding(0)
         Me.cb_MP.Name = "cb_MP"
         Me.cb_MP.Size = New System.Drawing.Size(54, 19)
@@ -778,7 +816,7 @@ Partial Class Main
         '
         Me.cbERR.AutoSize = True
         Me.cbERR.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbERR.Location = New System.Drawing.Point(0, 993)
+        Me.cbERR.Location = New System.Drawing.Point(0, 1012)
         Me.cbERR.Margin = New System.Windows.Forms.Padding(0)
         Me.cbERR.Name = "cbERR"
         Me.cbERR.Size = New System.Drawing.Size(44, 19)
@@ -886,41 +924,17 @@ Partial Class Main
         Me.cmdAbout.Text = "?"
         Me.cmdAbout.UseVisualStyleBackColor = True
         '
-        'cbJagex
+        'cbMSI
         '
-        Me.cbJagex.AutoSize = True
-        Me.cbJagex.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbJagex.Location = New System.Drawing.Point(0, 669)
-        Me.cbJagex.Margin = New System.Windows.Forms.Padding(0)
-        Me.cbJagex.Name = "cbJagex"
-        Me.cbJagex.Size = New System.Drawing.Size(58, 19)
-        Me.cbJagex.TabIndex = 35
-        Me.cbJagex.Text = "Jagex"
-        Me.cbJagex.UseVisualStyleBackColor = True
-        '
-        'cbBigFishGames
-        '
-        Me.cbBigFishGames.AutoSize = True
-        Me.cbBigFishGames.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbBigFishGames.Location = New System.Drawing.Point(0, 536)
-        Me.cbBigFishGames.Margin = New System.Windows.Forms.Padding(0)
-        Me.cbBigFishGames.Name = "cbBigFishGames"
-        Me.cbBigFishGames.Size = New System.Drawing.Size(115, 19)
-        Me.cbBigFishGames.TabIndex = 28
-        Me.cbBigFishGames.Text = "Big Fish Games"
-        Me.cbBigFishGames.UseVisualStyleBackColor = True
-        '
-        'cbAutoDesk
-        '
-        Me.cbAutoDesk.AutoSize = True
-        Me.cbAutoDesk.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbAutoDesk.Location = New System.Drawing.Point(0, 498)
-        Me.cbAutoDesk.Margin = New System.Windows.Forms.Padding(0)
-        Me.cbAutoDesk.Name = "cbAutoDesk"
-        Me.cbAutoDesk.Size = New System.Drawing.Size(79, 19)
-        Me.cbAutoDesk.TabIndex = 26
-        Me.cbAutoDesk.Text = "AutoDesk"
-        Me.cbAutoDesk.UseVisualStyleBackColor = True
+        Me.cbMSI.AutoSize = True
+        Me.cbMSI.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbMSI.Location = New System.Drawing.Point(0, 364)
+        Me.cbMSI.Margin = New System.Windows.Forms.Padding(0)
+        Me.cbMSI.Name = "cbMSI"
+        Me.cbMSI.Size = New System.Drawing.Size(174, 19)
+        Me.cbMSI.TabIndex = 53
+        Me.cbMSI.Text = "Windows Installer Cleanup"
+        Me.cbMSI.UseVisualStyleBackColor = True
         '
         'Main
         '
@@ -1011,4 +1025,5 @@ Partial Class Main
     Friend WithEvents cbJagex As System.Windows.Forms.CheckBox
     Friend WithEvents cbBigFishGames As System.Windows.Forms.CheckBox
     Friend WithEvents cbAutoDesk As System.Windows.Forms.CheckBox
+    Friend WithEvents cbMSI As System.Windows.Forms.CheckBox
 End Class

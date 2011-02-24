@@ -37,6 +37,11 @@
         If Not My.Computer.FileSystem.FileExists(Environ("systemdrive") & "\hiberfil.sys") Then
             Main.cbHibernate.Visible = False
         End If
+        If Not My.Computer.FileSystem.DirectoryExists(Environ("systemdrive") & "\Config.Msi") Then
+            If Not My.Computer.FileSystem.DirectoryExists(Environ("programfiles") & "\MSECache") Then
+                Main.cbMSI.Visible = False
+            End If
+        End If
 
         If Not My.Computer.FileSystem.DirectoryExists(Environ("systemdrive") & "\Users\Public\Music\Sample Music") Then
             If Not My.Computer.FileSystem.DirectoryExists(Environ("systemdrive") & "\Documents and Settings\All Users\Documents\My Music\Sample Music") Then
