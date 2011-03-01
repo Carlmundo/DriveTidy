@@ -165,11 +165,11 @@
         End If
 
         'Determines if should show "More..." label
-        If Main.lblOtherApps.Location.Y = Main.lblMore.Location.Y + Main.lblMore.Size.Height Then
+        If Main.flwOtherApps.Location.Y = Main.flwMore.Location.Y + Main.flwMore.Size.Height Then
             Main.lblMore.Visible = False
         End If
         'Determines if should show "Other Applications" label
-        If Main.lblFileExt.Location.Y = Main.lblOtherApps.Location.Y + Main.lblOtherApps.Size.Height Then
+        If Main.flwFileExt.Location.Y = Main.flwOtherApps.Location.Y + Main.flwOtherApps.Size.Height Then
             Main.lblOtherApps.Visible = False
         End If
     End Sub
