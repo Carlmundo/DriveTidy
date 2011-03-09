@@ -11,7 +11,7 @@
     End Sub
 
     Private Sub About_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Me.Icon = Main.Icon
+        Me.Icon = Start.Icon
         'AutoSize buttons if fonts have been enlarged
         If cmdUpdate.Font.Size > 9 Then
             cmdUpdate.AutoSize = True
