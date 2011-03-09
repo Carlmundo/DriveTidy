@@ -348,7 +348,7 @@ Partial Class CleanerWindow
         Me.ClientSize = New System.Drawing.Size(249, 199)
         Me.Controls.Add(Me.tblDesign)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
         Me.Name = "CleanerWindow"
         Me.Text = "DriveTidy"

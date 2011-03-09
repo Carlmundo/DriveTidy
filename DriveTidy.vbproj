@@ -94,12 +94,6 @@
     <Compile Include="CleanDefs.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Detect.Designer.vb">
-      <DependentUpon>Detect.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Detect.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Main.Designer.vb">
       <DependentUpon>Main.vb</DependentUpon>
     </Compile>
@@ -133,6 +127,12 @@
     <Compile Include="Readme.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Start.Designer.vb">
+      <DependentUpon>Start.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Start.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="About.resx">
@@ -143,9 +143,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CleanDefs.resx">
       <DependentUpon>CleanDefs.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Detect.resx">
-      <DependentUpon>Detect.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.vb</DependentUpon>
@@ -161,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Readme.resx">
       <DependentUpon>Readme.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Start.resx">
+      <DependentUpon>Start.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -63,6 +63,7 @@
     End Sub
 
     Private Sub Main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Me.AutoSizeMode = Windows.Forms.AutoSizeMode.GrowAndShrink
         'Display settings to show the form correctly for all DPI settings
         'Makes FlowOptions end at this particular point 
         flwOptions.Height = cbTIF.Location.Y + (cbTIF.Height * 10)
@@ -205,7 +206,7 @@
         lblNote.Text = "BETA " & My.Application.Info.Version.Revision
 
         'If certain files dont exist then delete their button
-        Detect.Definitions()
+        Start.Definitions()
         Checkbox_Count()
         tmSelectAll.Enabled = True
         Exit Sub
@@ -219,7 +220,6 @@ ErrorEnvPerm:
         CleanDefs.Close()
         CleanDefs2.Close()
         'CleanerWindow is not closed as Main closes and CleanerWindow opens when "Start Cleanup" is clicked
-        Detect.Close()
         About.Close()
     End Sub
 
@@ -292,9 +292,7 @@ ErrorEnvPerm:
 
     Private Sub cmdAbout_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdAbout.Click
         About.Show()
-        Me.Enabled = False
-        'Disable the Select All timer as the form isn't open
-        tmSelectAll.Enabled = False
+        Start.Enabled = False
     End Sub
 
     Private Sub cmdQuick_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdQuick.Click
@@ -477,12 +475,11 @@ ErrorEnvPerm:
         PrintLine(3, CleanDefs.txtStart2.Text)
         FileClose(3)
         ShellExecute(0, vbNullString, Environ("appdata") & "\DriveTidy\start.bat", vbNullString, vbNullString, AppWinStyle.NormalFocus)
-        'Show Cleaner Window
-        CleanerWindow.Show()
-        Me.Close()
-        CleanDefs.Close()
-        CleanDefs2.Close()
-        Exit Sub
+
+            'Show Cleaner Window
+            Start.Load_CW()
+            Me.Close()
+            Exit Sub
 ErrorHandler:
         CleanerErrors()
 

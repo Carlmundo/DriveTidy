@@ -25,8 +25,7 @@
         On Error Resume Next
         My.Computer.FileSystem.DeleteFile(Environ("temp") & "\build.txt")
         My.Computer.FileSystem.DeleteFile(Environ("temp") & "\DriveTidy_Readme.txt")
-        Main.Enabled = True
-        Main.tmSelectAll.Enabled = True
+        Start.Enabled = True
     End Sub
 
     Private Sub cmdUpdate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdUpdate.Click

@@ -1,113 +1,146 @@
-﻿Public Class Detect
+﻿Public Class Start
+    Dim frmMain As New Main
+    Dim frmCW As New CleanerWindow
+    Dim item As Object
+
+    Private Sub Start_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Load_Main()
+    End Sub
+
+    Private Sub Start_FormClosing(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+        If frmCW.cmdCancel.Visible = True Then
+            frmCW.Close()
+            eventArgs.Cancel = True
+        End If
+    End Sub
+
+    Public Sub Load_Main()
+        If frmMain.Visible = False Then
+            frmMain = New Main
+        End If
+        frmMain.TopLevel = False
+        frmMain.Visible = True
+        Me.Controls.Add(frmMain)
+    End Sub
+
+    Public Sub Load_CW()
+        If frmCW.Visible = False Then
+            frmCW = New CleanerWindow
+        End If
+        frmCW.TopLevel = False
+        frmCW.Visible = True
+        Me.Controls.Add(frmCW)
+    End Sub
+
     Public Sub Definitions()
         If Not My.Computer.FileSystem.DirectoryExists(Environ("allusersappdata") & "\Microsoft\Windows\WER\ReportArchive") Then
             If Not My.Computer.FileSystem.DirectoryExists(Environ("allusersappdata") & "\Microsoft\Windows\WER\ReportQueue") Then
                 If Not My.Computer.FileSystem.DirectoryExists(Environ("localappdata") & "\Microsoft\Windows\WER\ReportArchive") Then
                     If Not My.Computer.FileSystem.DirectoryExists(Environ("localappdata") & "\Microsoft\Windows\WER\ReportQueue") Then
-                        Main.cbErrorReports.Visible = False
+                        frmMain.cbErrorReports.Visible = False
                     End If
                 End If
             End If
         End If
 
         If Not My.Computer.FileSystem.DirectoryExists(Environ("localappdata") & "\Mozilla\Firefox") Then
-            Main.cbFirefox.Visible = False
+            frmMain.cbFirefox.Visible = False
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("localappdata") & "\Google\Chrome") Then
-            Main.cbChrome.Visible = False
+            frmMain.cbChrome.Visible = False
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("localappdata") & "\Opera") Then
             If Not My.Computer.FileSystem.DirectoryExists(Environ("appdata") & "\Opera") Then
-                Main.cbOpera.Visible = False
+                frmMain.cbOpera.Visible = False
             End If
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("localappdata") & "\Apple Computer\Safari") Then
             If Not My.Computer.FileSystem.DirectoryExists(Environ("appdata") & "\Apple Computer\Safari") Then
-                Main.cbSafari.Visible = False
+                frmMain.cbSafari.Visible = False
             End If
         End If
 
 
         If Not My.Computer.FileSystem.FileExists(Environ("windir") & "\system32\vsp1cln.exe") Then
-            Main.cbVistaSP1.Visible = False
+            frmMain.cbVistaSP1.Visible = False
         End If
         If Not My.Computer.FileSystem.FileExists(Environ("windir") & "\system32\compcln.exe") Then
-            Main.cbVistaSP2.Visible = False
+            frmMain.cbVistaSP2.Visible = False
         End If
         If Not My.Computer.FileSystem.FileExists(Environ("systemdrive") & "\hiberfil.sys") Then
-            Main.cbHibernate.Visible = False
+            frmMain.cbHibernate.Visible = False
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("systemdrive") & "\Config.Msi") Then
             If Not My.Computer.FileSystem.DirectoryExists(Environ("programfiles") & "\MSECache") Then
-                Main.cbMSI.Visible = False
+                frmMain.cbMSI.Visible = False
             End If
         End If
 
         If Not My.Computer.FileSystem.DirectoryExists(Environ("systemdrive") & "\Users\Public\Music\Sample Music") Then
             If Not My.Computer.FileSystem.DirectoryExists(Environ("systemdrive") & "\Documents and Settings\All Users\Documents\My Music\Sample Music") Then
-                Main.cbSampleMusic.Visible = False
+                frmMain.cbSampleMusic.Visible = False
             End If
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("systemdrive") & "\Users\Public\Pictures\Sample Pictures") Then
             If Not My.Computer.FileSystem.DirectoryExists(Environ("systemdrive") & "\Documents and Settings\All Users\Documents\My Pictures\Sample Pictures") Then
-                Main.cbSamplePictures.Visible = False
+                frmMain.cbSamplePictures.Visible = False
             End If
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("systemdrive") & "\Users\Public\Videos\Sample Videos") Then
             If Not My.Computer.FileSystem.DirectoryExists(Environ("systemdrive") & "\Users\Public\Recorded TV\Sample Media") Then
-                Main.cbSampleVideos.Visible = False
+                frmMain.cbSampleVideos.Visible = False
             End If
         End If
 
         If Not My.Computer.FileSystem.DirectoryExists(Environ("appdata") & "\Adobe\CameraRaw\Cache") Then
-            Main.cbAdobeCameraRAW.Visible = False
+            frmMain.cbAdobeCameraRAW.Visible = False
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("appdata") & "\Adobe\Common\Media Cache") Then
-            Main.cbAdobeMedia.Visible = False
+            frmMain.cbAdobeMedia.Visible = False
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("localappdata") & "\Adobe\Acrobat") Then
-            Main.cbAdobeReader.Visible = False
+            frmMain.cbAdobeReader.Visible = False
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("allusersappdata") & "\Apple\Installer Cache") Then
             If Not My.Computer.FileSystem.DirectoryExists(Environ("allusersappdata") & "\Apple Computer\Installer Cache") Then
-                Main.cbAppleInstaller.Visible = False
+                frmMain.cbAppleInstaller.Visible = False
             End If
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("systemdrive") & "\Autodesk") Then
-            Main.cbAutoDesk.Visible = False
+            frmMain.cbAutoDesk.Visible = False
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("programfiles") & "\AVG") Then
             If Not My.Computer.FileSystem.DirectoryExists(Environ("programfiles(x86)") & "\AVG") Then
-                Main.cbAVG.Visible = False
+                frmMain.cbAVG.Visible = False
             End If
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("systemdrive") & "\BigFishGamesCache") Then
-            Main.cbBigFishGames.Visible = False
+            frmMain.cbBigFishGames.Visible = False
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("userprofile") & "\.thumbnails\normal") Then
-            Main.cbGIMP.Visible = False
+            frmMain.cbGIMP.Visible = False
         End If
         If Not My.Computer.FileSystem.FileExists(Environ("localappdata") & "\Google\GoogleEarth\dbCache.dat") Then
             If Not My.Computer.FileSystem.FileExists(Environ("localappdata") & "\Google\GoogleEarth\dbCache.dat.index") Then
                 If Not My.Computer.FileSystem.FileExists(Environ("locallowappdata") & "\Google\GoogleEarth\dbCache.dat") Then
                     If Not My.Computer.FileSystem.FileExists(Environ("locallowappdata") & "\Google\GoogleEarth\dbCache.dat.index") Then
-                        Main.cbGoogleEarth.Visible = False
+                        frmMain.cbGoogleEarth.Visible = False
                     End If
                 End If
             End If
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("allusersappdata") & "\Google Updater\cache") Then
-            Main.cbGoogleUpdater.Visible = False
+            frmMain.cbGoogleUpdater.Visible = False
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("localappdata") & "\HP\Digital Imaging\cache") Then
-            Main.cbHPDigitalImaging.Visible = False
+            frmMain.cbHPDigitalImaging.Visible = False
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("appdata") & "\IMVU") Then
-            Main.cbIMVU.Visible = False
+            frmMain.cbIMVU.Visible = False
         End If
         If Not My.Computer.FileSystem.FileExists(Environ("localappdata") & "\Apple Computer\Cache.db") Then
             If Not My.Computer.FileSystem.FileExists(Environ("localappdata") & "\Apple Computer\iTunes\Cache.db") Then
-                Main.cbiTunes.Visible = False
+                frmMain.cbiTunes.Visible = False
             End If
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("systemdrive") & "\rscache") Then
@@ -115,7 +148,7 @@
                 If Not My.Computer.FileSystem.DirectoryExists(Environ("windir") & "\.jagex_cache_32") Then
                     If Not My.Computer.FileSystem.DirectoryExists(Environ("systemdrive") & "\.jagex_cache_64") Then
                         If Not My.Computer.FileSystem.DirectoryExists(Environ("windir") & "\.jagex_cache_64") Then
-                            Main.cbJagex.Visible = False
+                            frmMain.cbJagex.Visible = False
                         End If
                     End If
                 End If
@@ -123,54 +156,73 @@
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("programfiles") & "\Kaspersky Lab") Then
             If Not My.Computer.FileSystem.DirectoryExists(Environ("programfiles(x86)") & "\Kaspersky Lab") Then
-                Main.cbKaspersky.Visible = False
+                frmMain.cbKaspersky.Visible = False
             End If
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("allusersappdata") & "\oviinstallercache") Then
-            Main.cbNokiaOvi.Visible = False
+            frmMain.cbNokiaOvi.Visible = False
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("localappdata") & "\Apple Computer\QuickTime\downloads") Then
             If Not My.Computer.FileSystem.DirectoryExists(Environ("locallowappdata") & "\Apple Computer\QuickTime\downloads") Then
-                Main.cbQuicktime.Visible = False
+                frmMain.cbQuicktime.Visible = False
             End If
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("appdata") & "\Real\RealPlayer") Then
             If Not My.Computer.FileSystem.DirectoryExists(Environ("appdata") & "\Real\RealOne Player") Then
-                Main.cbRealPlayer.Visible = False
+                frmMain.cbRealPlayer.Visible = False
             End If
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("localappdata") & "\Microsoft\Terminal Server Client\Cache") Then
-            Main.cbRDP.Visible = False
+            frmMain.cbRDP.Visible = False
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("localappdata") & "\Microsoft\Silverlight") Then
             If Not My.Computer.FileSystem.DirectoryExists(Environ("locallowappdata") & "\Microsoft\Silverlight") Then
-                Main.cbSilverlight.Visible = False
+                frmMain.cbSilverlight.Visible = False
             End If
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("localappdata") & "\Spotify\Storage") Then
-            Main.cbSpotify.Visible = False
+            frmMain.cbSpotify.Visible = False
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("allusersappdata") & "\Symantec Temporary Files") Then
-            Main.cbSymantec.Visible = False
+            frmMain.cbSymantec.Visible = False
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("allusersappdata") & "\TrackMania\Cache") Then
             If Not My.Computer.FileSystem.DirectoryExists(Environ("localappdata") & "\VirtualStore\ProgramData\TrackMania\Cache") Then
-                Main.cbTrackmania.Visible = False
+                frmMain.cbTrackmania.Visible = False
             End If
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("localappdata") & "\Unity\Web Player\Cache") Then
             If Not My.Computer.FileSystem.DirectoryExists(Environ("locallowappdata") & "\Unity\Web Player\Cache") Then
-                Main.cbUnity.Visible = False
+                frmMain.cbUnity.Visible = False
             End If
         End If
 
         'Determines if should show "More..." label
-        If Main.flwOtherApps.Location.Y = Main.flwMore.Location.Y + Main.flwMore.Size.Height Then
-            Main.lblMore.Visible = False
+        Dim CountMore As Integer
+        For Each Me.item In frmMain.flwMore.Controls
+            If TypeOf item Is CheckBox Then
+                If item.Visible = True Then
+                    CountMore = CountMore + 1
+                End If
+            End If
+        Next
+
+        If CountMore = 0 Then
+            frmMain.lblMore.Visible = False
         End If
+
         'Determines if should show "Other Applications" label
-        If Main.flwFileExt.Location.Y = Main.flwOtherApps.Location.Y + Main.flwOtherApps.Size.Height Then
-            Main.lblOtherApps.Visible = False
+        Dim CountOtherApps As Integer
+        For Each Me.item In frmMain.flwOtherApps.Controls
+            If TypeOf item Is CheckBox Then
+                If item.Visible = True Then
+                    CountOtherApps = CountOtherApps + 1
+                End If
+            End If
+        Next
+
+        If CountOtherApps = 0 Then
+            frmMain.lblOtherApps.Visible = False
         End If
     End Sub
 End Class

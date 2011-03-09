@@ -58,6 +58,7 @@ Partial Class Main
         Me.flwOtherApps = New System.Windows.Forms.FlowLayoutPanel
         Me.lblOtherApps = New System.Windows.Forms.Label
         Me.cbAdobeCameraRAW = New System.Windows.Forms.CheckBox
+        Me.cbAdobeMedia = New System.Windows.Forms.CheckBox
         Me.cbAdobeReader = New System.Windows.Forms.CheckBox
         Me.cbAppleInstaller = New System.Windows.Forms.CheckBox
         Me.cbAutoDesk = New System.Windows.Forms.CheckBox
@@ -82,12 +83,12 @@ Partial Class Main
         Me.cbUnity = New System.Windows.Forms.CheckBox
         Me.flwFileExt = New System.Windows.Forms.FlowLayoutPanel
         Me.lblFileExt = New System.Windows.Forms.Label
-        Me.cbERR = New System.Windows.Forms.CheckBox
-        Me.cb_MP = New System.Windows.Forms.CheckBox
-        Me.cbDMP = New System.Windows.Forms.CheckBox
-        Me.cbCHK = New System.Windows.Forms.CheckBox
-        Me.cbLOG = New System.Windows.Forms.CheckBox
         Me.cbTMP = New System.Windows.Forms.CheckBox
+        Me.cbLOG = New System.Windows.Forms.CheckBox
+        Me.cbCHK = New System.Windows.Forms.CheckBox
+        Me.cbDMP = New System.Windows.Forms.CheckBox
+        Me.cb_MP = New System.Windows.Forms.CheckBox
+        Me.cbERR = New System.Windows.Forms.CheckBox
         Me.cmdClean = New System.Windows.Forms.Button
         Me.cmdSelectAll = New System.Windows.Forms.LinkLabel
         Me.cmdAdvanced = New System.Windows.Forms.Button
@@ -95,7 +96,6 @@ Partial Class Main
         Me.tblDesign = New System.Windows.Forms.TableLayoutPanel
         Me.flwPresets = New System.Windows.Forms.FlowLayoutPanel
         Me.cmdAbout = New System.Windows.Forms.Button
-        Me.cbAdobeMedia = New System.Windows.Forms.CheckBox
         Me.flwOptions.SuspendLayout()
         Me.flwSystem.SuspendLayout()
         Me.flwInternet.SuspendLayout()
@@ -564,6 +564,18 @@ Partial Class Main
         Me.cbAdobeCameraRAW.Text = "Adobe Camera RAW"
         Me.cbAdobeCameraRAW.UseVisualStyleBackColor = True
         '
+        'cbAdobeMedia
+        '
+        Me.cbAdobeMedia.AutoSize = True
+        Me.cbAdobeMedia.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbAdobeMedia.Location = New System.Drawing.Point(0, 39)
+        Me.cbAdobeMedia.Margin = New System.Windows.Forms.Padding(0)
+        Me.cbAdobeMedia.Name = "cbAdobeMedia"
+        Me.cbAdobeMedia.Size = New System.Drawing.Size(97, 19)
+        Me.cbAdobeMedia.TabIndex = 70
+        Me.cbAdobeMedia.Text = "Adobe Media"
+        Me.cbAdobeMedia.UseVisualStyleBackColor = True
+        '
         'cbAdobeReader
         '
         Me.cbAdobeReader.AutoSize = True
@@ -860,53 +872,17 @@ Partial Class Main
         Me.lblFileExt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.lblFileExt.UseCompatibleTextRendering = True
         '
-        'cbERR
+        'cbTMP
         '
-        Me.cbERR.AutoSize = True
-        Me.cbERR.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbERR.Location = New System.Drawing.Point(0, 115)
-        Me.cbERR.Margin = New System.Windows.Forms.Padding(0)
-        Me.cbERR.Name = "cbERR"
-        Me.cbERR.Size = New System.Drawing.Size(44, 19)
-        Me.cbERR.TabIndex = 52
-        Me.cbERR.Text = ".err"
-        Me.cbERR.UseVisualStyleBackColor = True
-        '
-        'cb_MP
-        '
-        Me.cb_MP.AutoSize = True
-        Me.cb_MP.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cb_MP.Location = New System.Drawing.Point(0, 96)
-        Me.cb_MP.Margin = New System.Windows.Forms.Padding(0)
-        Me.cb_MP.Name = "cb_MP"
-        Me.cb_MP.Size = New System.Drawing.Size(54, 19)
-        Me.cb_MP.TabIndex = 51
-        Me.cb_MP.Text = "._mp"
-        Me.cb_MP.UseVisualStyleBackColor = True
-        '
-        'cbDMP
-        '
-        Me.cbDMP.AutoSize = True
-        Me.cbDMP.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbDMP.Location = New System.Drawing.Point(0, 77)
-        Me.cbDMP.Margin = New System.Windows.Forms.Padding(0)
-        Me.cbDMP.Name = "cbDMP"
-        Me.cbDMP.Size = New System.Drawing.Size(54, 19)
-        Me.cbDMP.TabIndex = 50
-        Me.cbDMP.Text = ".dmp"
-        Me.cbDMP.UseVisualStyleBackColor = True
-        '
-        'cbCHK
-        '
-        Me.cbCHK.AutoSize = True
-        Me.cbCHK.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbCHK.Location = New System.Drawing.Point(0, 58)
-        Me.cbCHK.Margin = New System.Windows.Forms.Padding(0)
-        Me.cbCHK.Name = "cbCHK"
-        Me.cbCHK.Size = New System.Drawing.Size(48, 19)
-        Me.cbCHK.TabIndex = 49
-        Me.cbCHK.Text = ".chk"
-        Me.cbCHK.UseVisualStyleBackColor = True
+        Me.cbTMP.AutoSize = True
+        Me.cbTMP.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbTMP.Location = New System.Drawing.Point(0, 20)
+        Me.cbTMP.Margin = New System.Windows.Forms.Padding(0)
+        Me.cbTMP.Name = "cbTMP"
+        Me.cbTMP.Size = New System.Drawing.Size(50, 19)
+        Me.cbTMP.TabIndex = 47
+        Me.cbTMP.Text = ".tmp"
+        Me.cbTMP.UseVisualStyleBackColor = True
         '
         'cbLOG
         '
@@ -920,17 +896,53 @@ Partial Class Main
         Me.cbLOG.Text = ".log"
         Me.cbLOG.UseVisualStyleBackColor = True
         '
-        'cbTMP
+        'cbCHK
         '
-        Me.cbTMP.AutoSize = True
-        Me.cbTMP.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbTMP.Location = New System.Drawing.Point(0, 20)
-        Me.cbTMP.Margin = New System.Windows.Forms.Padding(0)
-        Me.cbTMP.Name = "cbTMP"
-        Me.cbTMP.Size = New System.Drawing.Size(50, 19)
-        Me.cbTMP.TabIndex = 47
-        Me.cbTMP.Text = ".tmp"
-        Me.cbTMP.UseVisualStyleBackColor = True
+        Me.cbCHK.AutoSize = True
+        Me.cbCHK.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbCHK.Location = New System.Drawing.Point(0, 58)
+        Me.cbCHK.Margin = New System.Windows.Forms.Padding(0)
+        Me.cbCHK.Name = "cbCHK"
+        Me.cbCHK.Size = New System.Drawing.Size(48, 19)
+        Me.cbCHK.TabIndex = 49
+        Me.cbCHK.Text = ".chk"
+        Me.cbCHK.UseVisualStyleBackColor = True
+        '
+        'cbDMP
+        '
+        Me.cbDMP.AutoSize = True
+        Me.cbDMP.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbDMP.Location = New System.Drawing.Point(0, 77)
+        Me.cbDMP.Margin = New System.Windows.Forms.Padding(0)
+        Me.cbDMP.Name = "cbDMP"
+        Me.cbDMP.Size = New System.Drawing.Size(54, 19)
+        Me.cbDMP.TabIndex = 50
+        Me.cbDMP.Text = ".dmp"
+        Me.cbDMP.UseVisualStyleBackColor = True
+        '
+        'cb_MP
+        '
+        Me.cb_MP.AutoSize = True
+        Me.cb_MP.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cb_MP.Location = New System.Drawing.Point(0, 96)
+        Me.cb_MP.Margin = New System.Windows.Forms.Padding(0)
+        Me.cb_MP.Name = "cb_MP"
+        Me.cb_MP.Size = New System.Drawing.Size(54, 19)
+        Me.cb_MP.TabIndex = 51
+        Me.cb_MP.Text = "._mp"
+        Me.cb_MP.UseVisualStyleBackColor = True
+        '
+        'cbERR
+        '
+        Me.cbERR.AutoSize = True
+        Me.cbERR.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbERR.Location = New System.Drawing.Point(0, 115)
+        Me.cbERR.Margin = New System.Windows.Forms.Padding(0)
+        Me.cbERR.Name = "cbERR"
+        Me.cbERR.Size = New System.Drawing.Size(44, 19)
+        Me.cbERR.TabIndex = 52
+        Me.cbERR.Text = ".err"
+        Me.cbERR.UseVisualStyleBackColor = True
         '
         'cmdClean
         '
@@ -1032,18 +1044,6 @@ Partial Class Main
         Me.cmdAbout.Text = "?"
         Me.cmdAbout.UseVisualStyleBackColor = True
         '
-        'cbAdobeMedia
-        '
-        Me.cbAdobeMedia.AutoSize = True
-        Me.cbAdobeMedia.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbAdobeMedia.Location = New System.Drawing.Point(0, 39)
-        Me.cbAdobeMedia.Margin = New System.Windows.Forms.Padding(0)
-        Me.cbAdobeMedia.Name = "cbAdobeMedia"
-        Me.cbAdobeMedia.Size = New System.Drawing.Size(97, 19)
-        Me.cbAdobeMedia.TabIndex = 70
-        Me.cbAdobeMedia.Text = "Adobe Media"
-        Me.cbAdobeMedia.UseVisualStyleBackColor = True
-        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -1054,7 +1054,7 @@ Partial Class Main
         Me.Controls.Add(Me.cmdAbout)
         Me.Controls.Add(Me.tblDesign)
         Me.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "Main"

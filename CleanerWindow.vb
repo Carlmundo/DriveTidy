@@ -94,11 +94,10 @@
             My.Computer.FileSystem.DeleteFile(Environ("appdata") & "\DriveTidy\log.txt")
             My.Computer.FileSystem.DeleteFile(Environ("appdata") & "\DriveTidy\cleanchk.txt")
             My.Computer.FileSystem.DeleteDirectory(Environ("appdata") & "\DriveTidy\", FileIO.DeleteDirectoryOption.DeleteAllContents)
-            'The main form will now copy the position of the About form upon exit
-            Main.Show()
-            Main.Top = Me.Top
-            Main.Left = Me.Left + (Me.Width - Main.Width)
+            Start.Load_Main()
             Me.Close()
+            CleanDefs.Close()
+            CleanDefs2.Close()
         End If
     End Sub
 
