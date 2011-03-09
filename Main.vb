@@ -292,7 +292,7 @@ ErrorEnvPerm:
 
     Private Sub cmdAbout_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdAbout.Click
         About.Show()
-        Me.Hide()
+        Me.Enabled = False
         'Disable the Select All timer as the form isn't open
         tmSelectAll.Enabled = False
     End Sub

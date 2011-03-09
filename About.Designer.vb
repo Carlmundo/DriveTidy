@@ -168,7 +168,7 @@ Partial Class About
         Me.MaximizeBox = False
         Me.Name = "About"
         Me.Padding = New System.Windows.Forms.Padding(10, 5, 10, 0)
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "About DriveTidy"
         Me.flwButtons.ResumeLayout(False)
         CType(Me.pbLogo, System.ComponentModel.ISupportInitialize).EndInit()

@@ -19,18 +19,13 @@
         End If
         lblVersion.Text = "v" & My.Application.Info.Version.Major & "." & My.Application.Info.Version.Minor & "." & My.Application.Info.Version.Build & "." & My.Application.Info.Version.Revision
         lblCopyright.Text = My.Application.Info.Copyright
-        'Make form the same position as Main
-        Me.Top = Main.Top
-        Me.Left = Main.Left - (Me.Width - Main.Width)
     End Sub
 
     Private Sub About_FormClosing(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         On Error Resume Next
         My.Computer.FileSystem.DeleteFile(Environ("temp") & "\build.txt")
         My.Computer.FileSystem.DeleteFile(Environ("temp") & "\DriveTidy_Readme.txt")
-        Main.Top = Me.Top
-        Main.Left = Me.Left + (Me.Width - Main.Width)
-        Main.Show()
+        Main.Enabled = True
         Main.tmSelectAll.Enabled = True
     End Sub
 
