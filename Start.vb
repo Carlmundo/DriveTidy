@@ -34,7 +34,7 @@
 
     Public Sub Definitions()
 
-        If My.User.IsInRole(ApplicationServices.BuiltInRole.Administrator) Then
+        If Not My.User.IsInRole(ApplicationServices.BuiltInRole.Administrator) Then
             frmMain.cbWindowsUpdate.Enabled = False
             frmMain.cbHibernate.Enabled = False
             frmMain.cbThumbnails.Enabled = False
