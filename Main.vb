@@ -63,18 +63,22 @@
     End Sub
 
     Private Sub Main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Me.AutoSizeMode = Windows.Forms.AutoSizeMode.GrowAndShrink
-        'Display settings to show the form correctly for all DPI settings
-        'Makes FlowOptions end at this particular point 
-        flwOptions.Height = cbTIF.Location.Y + (cbTIF.Height * 10)
         'Put cmdAbout in line with DriveTidy text
         Dim AboutLocation As New System.Drawing.Point(cmdAbout.Location.X, lblProductName.Location.Y)
         cmdAbout.Location = AboutLocation
-        'AutoSize buttons if fonts have been enlarged
-        If cmdQuick.Font.Size > 9 Then
+
+        'Display settings to show the form correctly for all DPI settings
+        Dim gfx As Graphics
+        gfx = Graphics.FromHwnd(Me.Handle)
+
+        If gfx.DpiX > 96 Then
             cmdQuick.AutoSize = True
             cmdAdvanced.AutoSize = True
+            'Adjust Height & Width of flwOptions
+            flwOptions.Height = cbTIF.Location.Y + (cbTIF.Height * 10)
+            flwOptions.Width = (flwOptions.Location.X * 2) + cbTIF.Width
         End If
+        gfx.Dispose()
 
         On Error GoTo ErrorEnvPerm 'Running on a network drive may throw error about security permissions
         'Detect OSVersion and assign True to correct Boolean

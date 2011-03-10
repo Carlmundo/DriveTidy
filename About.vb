@@ -12,11 +12,17 @@
 
     Private Sub About_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.Icon = Start.Icon
-        'AutoSize buttons if fonts have been enlarged
-        If cmdUpdate.Font.Size > 9 Then
+
+        'Display settings to show the form correctly for all DPI settings
+        Dim gfx As Graphics
+        gfx = Graphics.FromHwnd(Me.Handle)
+
+        If gfx.DpiX > 96 Then
             cmdUpdate.AutoSize = True
             cmdReadme.AutoSize = True
         End If
+        gfx.Dispose()
+
         lblVersion.Text = "v" & My.Application.Info.Version.Major & "." & My.Application.Info.Version.Minor & "." & My.Application.Info.Version.Build & "." & My.Application.Info.Version.Revision
         lblCopyright.Text = My.Application.Info.Copyright
     End Sub
