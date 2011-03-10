@@ -33,6 +33,13 @@
     End Sub
 
     Public Sub Definitions()
+
+        If My.User.IsInRole(ApplicationServices.BuiltInRole.Administrator) Then
+            frmMain.cbWindowsUpdate.Enabled = False
+            frmMain.cbHibernate.Enabled = False
+            frmMain.cbThumbnails.Enabled = False
+        End If
+
         If Not My.Computer.FileSystem.DirectoryExists(Environ("allusersappdata") & "\Microsoft\Windows\WER\ReportArchive") Then
             If Not My.Computer.FileSystem.DirectoryExists(Environ("allusersappdata") & "\Microsoft\Windows\WER\ReportQueue") Then
                 If Not My.Computer.FileSystem.DirectoryExists(Environ("localappdata") & "\Microsoft\Windows\WER\ReportArchive") Then

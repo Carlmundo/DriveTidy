@@ -236,7 +236,9 @@ ErrorEnvPerm:
             For Each Me.item In flwAll(i)
                 If TypeOf item Is CheckBox Then
                     If item.Visible = True Then
-                        cbCount = cbCount + 1
+                        If item.Enabled = True Then
+                            cbCount = cbCount + 1
+                        End If
                     End If
                     If item.Checked = True Then
                         cbCheckedCount = cbCheckedCount + 1
@@ -323,8 +325,10 @@ ErrorEnvPerm:
             For i = 0 To 4
                 For Each Me.item In flwAll(i)
                     If TypeOf item Is CheckBox Then
-                        item.Checked = True
-                        Checkbox_Count()
+                        If item.Enabled = True Then
+                            item.Checked = True
+                            Checkbox_Count()
+                        End If
                     End If
                 Next
             Next
