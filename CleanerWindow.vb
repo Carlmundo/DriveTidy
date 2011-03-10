@@ -53,11 +53,6 @@
     End Sub
 
     Private Sub CleanerWindow_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
-        Me.Icon = Main.Icon
-        Me.Width = Main.Width
-        'Make form the same position as Main
-        Me.Top = Main.Top
-        Me.Left = Main.Left - (Me.Width - Main.Width)
 
         Tot = My.Computer.FileSystem.GetDriveInfo(System.Environment.ExpandEnvironmentVariables("%SystemDrive%")).TotalSize
         Free = My.Computer.FileSystem.GetDriveInfo(System.Environment.ExpandEnvironmentVariables("%SystemDrive%")).TotalFreeSpace.ToString
