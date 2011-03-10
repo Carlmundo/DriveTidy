@@ -38,6 +38,8 @@
             frmMain.cbWindowsUpdate.Enabled = False
             frmMain.cbHibernate.Enabled = False
             frmMain.cbThumbnails.Enabled = False
+            frmMain.cbVistaSP1.Enabled = False
+            frmMain.cbVistaSP2.Enabled = False
         End If
 
         If Not My.Computer.FileSystem.DirectoryExists(Environ("allusersappdata") & "\Microsoft\Windows\WER\ReportArchive") Then
