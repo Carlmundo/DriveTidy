@@ -75,7 +75,7 @@ Partial Class CleanerWindow
         Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle)
         Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle)
         Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0.0!))
-        Me.tblDesign.Size = New System.Drawing.Size(249, 199)
+        Me.tblDesign.Size = New System.Drawing.Size(249, 194)
         Me.tblDesign.TabIndex = 65
         '
         'flwButtons
@@ -85,7 +85,7 @@ Partial Class CleanerWindow
         Me.flwButtons.Controls.Add(Me.cmdLog)
         Me.flwButtons.Controls.Add(Me.cmdCancel)
         Me.flwButtons.Controls.Add(Me.cmdClose)
-        Me.flwButtons.Location = New System.Drawing.Point(3, 166)
+        Me.flwButtons.Location = New System.Drawing.Point(3, 161)
         Me.flwButtons.Name = "flwButtons"
         Me.flwButtons.Size = New System.Drawing.Size(243, 31)
         Me.flwButtons.TabIndex = 65
@@ -173,7 +173,7 @@ Partial Class CleanerWindow
         Me.tblStats.Controls.Add(Me.FreeSpaceAfter, 1, 2)
         Me.tblStats.Controls.Add(Me.Label4, 0, 3)
         Me.tblStats.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tblStats.Location = New System.Drawing.Point(3, 91)
+        Me.tblStats.Location = New System.Drawing.Point(3, 86)
         Me.tblStats.Name = "tblStats"
         Me.tblStats.RowCount = 4
         Me.tblStats.RowStyles.Add(New System.Windows.Forms.RowStyle)
@@ -319,7 +319,7 @@ Partial Class CleanerWindow
         Me.ProgressBar0.Maximum = 13
         Me.ProgressBar0.Minimum = 1
         Me.ProgressBar0.Name = "ProgressBar0"
-        Me.ProgressBar0.Size = New System.Drawing.Size(150, 25)
+        Me.ProgressBar0.Size = New System.Drawing.Size(150, 20)
         Me.ProgressBar0.Step = 1
         Me.ProgressBar0.TabIndex = 62
         Me.ProgressBar0.Value = 1
@@ -345,7 +345,7 @@ Partial Class CleanerWindow
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(249, 199)
+        Me.ClientSize = New System.Drawing.Size(249, 194)
         Me.Controls.Add(Me.tblDesign)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
