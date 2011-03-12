@@ -4,7 +4,16 @@
     Dim item As Object
 
     Private Sub Start_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        On Error GoTo ErrorHandler
         Load_Main()
+        Exit Sub
+ErrorHandler:
+        'If Err.Number = (Permissions Error) Then
+        'MsgBox("You may be running the program from a network drive. Please copy the file to a local drive and try again.", MsgBoxStyle.Exclamation, "Permission Error")
+        'Else
+        MsgBox(Err.Description, MsgBoxStyle.Exclamation, "Error " & Err.Number)
+        'End If
+        Me.Close()
     End Sub
 
     Private Sub Start_FormClosing(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing

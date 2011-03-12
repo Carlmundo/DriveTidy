@@ -80,7 +80,6 @@
         End If
         gfx.Dispose()
 
-        On Error GoTo ErrorEnvPerm 'Running on a network drive may throw error about security permissions
         'Detect OSVersion and assign True to correct Boolean
         If Environment.OSVersion.Platform = PlatformID.Win32NT And _
         Environment.OSVersion.Version.Major = 5 And _
@@ -102,13 +101,11 @@
             OS_Undetected = True
             MsgBox("Warning! Your version of Windows may be unsupported.")
         End If
-
         'Environment Variables for Windows Vista / 7
         'Version
         Environment.SetEnvironmentVariable("version", My.Application.Info.Version.Major & "." & My.Application.Info.Version.Minor & "." & My.Application.Info.Version.Build & "." & My.Application.Info.Version.Revision)
         'Version as a value (1 decimal place)
         Environment.SetEnvironmentVariable("version_value", My.Application.Info.Version.Major & "." & My.Application.Info.Version.Minor & My.Application.Info.Version.Build & My.Application.Info.Version.Revision)
-
         'Paths include "/" to ensure wanted files aren't deleted. 
         'Command List is also adjusted accordingly. 
         'E.g. %userprofile%temp.tmp and not %userprofile%\temp.tmp
@@ -213,10 +210,6 @@
         Start.Definitions()
         Checkbox_Count()
         tmSelectAll.Enabled = True
-        Exit Sub
-ErrorEnvPerm:
-        MsgBox("You may be running the program from a network drive. Please copy the file to a local drive and try again.", MsgBoxStyle.Exclamation, "Permission Error")
-        Me.Close()
     End Sub
 
     Private Sub Main_FormClosing(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
