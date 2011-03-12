@@ -187,6 +187,16 @@
             My.Computer.FileSystem.DeleteFile(Environ("appdata") & "\DriveTidy\cleaner.bat")
             My.Computer.FileSystem.DeleteFile(Environ("appdata") & "\DriveTidy\start.bat")
         End If
+
+        'Added process detection to ensure the SubStatus displays the correct info
+        Dim Proc() As Process = Process.GetProcesses
+        For i As Integer = 0 To Proc.GetUpperBound(0)
+            If Proc(i).ProcessName = "vsp1cln" Then
+                CleanSubStatus.Text = "Vista SP1 Cleanup"
+            ElseIf Proc(i).ProcessName = "compcln" Then
+                CleanSubStatus.Text = "Vista SP2 Cleanup"
+            End If
+        Next
         FileClose(2)
     End Sub
     Private Sub tmSpace_Tick(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles tmSpace.Tick
