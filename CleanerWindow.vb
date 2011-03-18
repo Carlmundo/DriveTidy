@@ -119,8 +119,6 @@
         Input(2, FileContent)
         If FileContent = "0" Then
             CleanStatus.Text = "Cleaning..."
-        ElseIf FileContent = "P" Then
-            CleanSubStatus.Text = "Applying Attributes"
         ElseIf FileContent = "Q1" Then
             CleanSubStatus.Text = "Emptying Recycle Bin"
             ProgressBar0.Value = 1
