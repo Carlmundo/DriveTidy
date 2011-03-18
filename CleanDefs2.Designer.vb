@@ -29,9 +29,13 @@ Partial Class CleanDefs2
         Me.txtVistaSP1 = New System.Windows.Forms.TextBox
         Me.txtVistaSP2 = New System.Windows.Forms.TextBox
         Me.txtHibernate = New System.Windows.Forms.TextBox
+        Me.txtThumbnailsVista = New System.Windows.Forms.TextBox
+        Me.txtThumbnailsXP = New System.Windows.Forms.TextBox
+        Me.txtMSI = New System.Windows.Forms.TextBox
         Me.txtSampleMusic = New System.Windows.Forms.TextBox
         Me.txtSamplePictures = New System.Windows.Forms.TextBox
         Me.txtSampleVideos = New System.Windows.Forms.TextBox
+        Me.txtAdobeMedia = New System.Windows.Forms.TextBox
         Me.txtAdobeReader = New System.Windows.Forms.TextBox
         Me.txtAppleInstaller = New System.Windows.Forms.TextBox
         Me.txtAutoDesk = New System.Windows.Forms.TextBox
@@ -55,16 +59,14 @@ Partial Class CleanDefs2
         Me.txtTrackmania = New System.Windows.Forms.TextBox
         Me.txtUnity = New System.Windows.Forms.TextBox
         Me.txtQ13 = New System.Windows.Forms.TextBox
-        Me.txtMSI = New System.Windows.Forms.TextBox
-        Me.txtThumbnailsXP = New System.Windows.Forms.TextBox
         Me.txtThumbnails = New System.Windows.Forms.TextBox
-        Me.txtAdobeMedia = New System.Windows.Forms.TextBox
+        Me.txtThumbnails7 = New System.Windows.Forms.TextBox
         Me.FlowLayout.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtAdobeCameraRAW
         '
-        Me.txtAdobeCameraRAW.Location = New System.Drawing.Point(3, 544)
+        Me.txtAdobeCameraRAW.Location = New System.Drawing.Point(3, 611)
         Me.txtAdobeCameraRAW.Multiline = True
         Me.txtAdobeCameraRAW.Name = "txtAdobeCameraRAW"
         Me.txtAdobeCameraRAW.Size = New System.Drawing.Size(390, 52)
@@ -80,6 +82,8 @@ Partial Class CleanDefs2
         Me.FlowLayout.Controls.Add(Me.txtVistaSP2)
         Me.FlowLayout.Controls.Add(Me.txtHibernate)
         Me.FlowLayout.Controls.Add(Me.txtThumbnails)
+        Me.FlowLayout.Controls.Add(Me.txtThumbnails7)
+        Me.FlowLayout.Controls.Add(Me.txtThumbnailsVista)
         Me.FlowLayout.Controls.Add(Me.txtThumbnailsXP)
         Me.FlowLayout.Controls.Add(Me.txtMSI)
         Me.FlowLayout.Controls.Add(Me.txtSampleMusic)
@@ -163,9 +167,41 @@ Partial Class CleanDefs2
             " info."
         Me.txtHibernate.WordWrap = False
         '
+        'txtThumbnailsVista
+        '
+        Me.txtThumbnailsVista.Location = New System.Drawing.Point(3, 286)
+        Me.txtThumbnailsVista.Multiline = True
+        Me.txtThumbnailsVista.Name = "txtThumbnailsVista"
+        Me.txtThumbnailsVista.Size = New System.Drawing.Size(390, 50)
+        Me.txtThumbnailsVista.TabIndex = 79
+        Me.txtThumbnailsVista.Text = "echo [Thumbnail Cache...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /a /f /q ""%localappdata%\Microsoft\Windows\Explore" & _
+            "r\*.db""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "if exist ""%localappdata%\IconCache.db"" del /a /f /q ""%localappdata%\Ico" & _
+            "nCache.db"""
+        Me.txtThumbnailsVista.WordWrap = False
+        '
+        'txtThumbnailsXP
+        '
+        Me.txtThumbnailsXP.Location = New System.Drawing.Point(3, 342)
+        Me.txtThumbnailsXP.Multiline = True
+        Me.txtThumbnailsXP.Name = "txtThumbnailsXP"
+        Me.txtThumbnailsXP.Size = New System.Drawing.Size(390, 34)
+        Me.txtThumbnailsXP.TabIndex = 78
+        Me.txtThumbnailsXP.Text = "echo [Thumbnail Cache...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /a /f /s /q %systemdrive%\Thumbs.db"
+        Me.txtThumbnailsXP.WordWrap = False
+        '
+        'txtMSI
+        '
+        Me.txtMSI.Location = New System.Drawing.Point(3, 382)
+        Me.txtMSI.Multiline = True
+        Me.txtMSI.Name = "txtMSI"
+        Me.txtMSI.Size = New System.Drawing.Size(390, 49)
+        Me.txtMSI.TabIndex = 77
+        Me.txtMSI.Text = "echo [Windows Installer Cleanup...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%systemdrive%\Config.Msi\*.*""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "rd /s /q ""%systemdrive%\Config.Msi\""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%programfiles%\MSECache\*.*" & _
+            """" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "rd /s /q ""%programfiles%\MSECache\"""
+        '
         'txtSampleMusic
         '
-        Me.txtSampleMusic.Location = New System.Drawing.Point(3, 370)
+        Me.txtSampleMusic.Location = New System.Drawing.Point(3, 437)
         Me.txtSampleMusic.Multiline = True
         Me.txtSampleMusic.Name = "txtSampleMusic"
         Me.txtSampleMusic.Size = New System.Drawing.Size(390, 52)
@@ -174,7 +210,7 @@ Partial Class CleanDefs2
         '
         'txtSamplePictures
         '
-        Me.txtSamplePictures.Location = New System.Drawing.Point(3, 428)
+        Me.txtSamplePictures.Location = New System.Drawing.Point(3, 495)
         Me.txtSamplePictures.Multiline = True
         Me.txtSamplePictures.Name = "txtSamplePictures"
         Me.txtSamplePictures.Size = New System.Drawing.Size(390, 52)
@@ -183,16 +219,26 @@ Partial Class CleanDefs2
         '
         'txtSampleVideos
         '
-        Me.txtSampleVideos.Location = New System.Drawing.Point(3, 486)
+        Me.txtSampleVideos.Location = New System.Drawing.Point(3, 553)
         Me.txtSampleVideos.Multiline = True
         Me.txtSampleVideos.Name = "txtSampleVideos"
         Me.txtSampleVideos.Size = New System.Drawing.Size(390, 52)
         Me.txtSampleVideos.TabIndex = 62
         Me.txtSampleVideos.Text = resources.GetString("txtSampleVideos.Text")
         '
+        'txtAdobeMedia
+        '
+        Me.txtAdobeMedia.Location = New System.Drawing.Point(3, 669)
+        Me.txtAdobeMedia.Multiline = True
+        Me.txtAdobeMedia.Name = "txtAdobeMedia"
+        Me.txtAdobeMedia.Size = New System.Drawing.Size(390, 52)
+        Me.txtAdobeMedia.TabIndex = 80
+        Me.txtAdobeMedia.Text = "echo [Adobe Media cache...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%appdata%\Adobe\Common\Media Cache\*.*" & _
+            "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "rd /s /q ""%appdata%\Adobe\Common\Media Cache\"""
+        '
         'txtAdobeReader
         '
-        Me.txtAdobeReader.Location = New System.Drawing.Point(3, 660)
+        Me.txtAdobeReader.Location = New System.Drawing.Point(3, 727)
         Me.txtAdobeReader.Multiline = True
         Me.txtAdobeReader.Name = "txtAdobeReader"
         Me.txtAdobeReader.Size = New System.Drawing.Size(390, 105)
@@ -201,7 +247,7 @@ Partial Class CleanDefs2
         '
         'txtAppleInstaller
         '
-        Me.txtAppleInstaller.Location = New System.Drawing.Point(3, 771)
+        Me.txtAppleInstaller.Location = New System.Drawing.Point(3, 838)
         Me.txtAppleInstaller.Multiline = True
         Me.txtAppleInstaller.Name = "txtAppleInstaller"
         Me.txtAppleInstaller.Size = New System.Drawing.Size(390, 75)
@@ -210,7 +256,7 @@ Partial Class CleanDefs2
         '
         'txtAutoDesk
         '
-        Me.txtAutoDesk.Location = New System.Drawing.Point(3, 852)
+        Me.txtAutoDesk.Location = New System.Drawing.Point(3, 919)
         Me.txtAutoDesk.Multiline = True
         Me.txtAutoDesk.Name = "txtAutoDesk"
         Me.txtAutoDesk.Size = New System.Drawing.Size(390, 50)
@@ -220,7 +266,7 @@ Partial Class CleanDefs2
         '
         'txtAVG
         '
-        Me.txtAVG.Location = New System.Drawing.Point(3, 908)
+        Me.txtAVG.Location = New System.Drawing.Point(3, 975)
         Me.txtAVG.Multiline = True
         Me.txtAVG.Name = "txtAVG"
         Me.txtAVG.Size = New System.Drawing.Size(390, 112)
@@ -229,7 +275,7 @@ Partial Class CleanDefs2
         '
         'txtBigFishGames
         '
-        Me.txtBigFishGames.Location = New System.Drawing.Point(3, 1026)
+        Me.txtBigFishGames.Location = New System.Drawing.Point(3, 1093)
         Me.txtBigFishGames.Multiline = True
         Me.txtBigFishGames.Name = "txtBigFishGames"
         Me.txtBigFishGames.Size = New System.Drawing.Size(390, 49)
@@ -239,7 +285,7 @@ Partial Class CleanDefs2
         '
         'txtGIMP
         '
-        Me.txtGIMP.Location = New System.Drawing.Point(3, 1081)
+        Me.txtGIMP.Location = New System.Drawing.Point(3, 1148)
         Me.txtGIMP.Multiline = True
         Me.txtGIMP.Name = "txtGIMP"
         Me.txtGIMP.Size = New System.Drawing.Size(390, 47)
@@ -249,7 +295,7 @@ Partial Class CleanDefs2
         '
         'txtGoogleEarth
         '
-        Me.txtGoogleEarth.Location = New System.Drawing.Point(3, 1134)
+        Me.txtGoogleEarth.Location = New System.Drawing.Point(3, 1201)
         Me.txtGoogleEarth.Multiline = True
         Me.txtGoogleEarth.Name = "txtGoogleEarth"
         Me.txtGoogleEarth.Size = New System.Drawing.Size(390, 75)
@@ -258,7 +304,7 @@ Partial Class CleanDefs2
         '
         'txtGoogleUpdater
         '
-        Me.txtGoogleUpdater.Location = New System.Drawing.Point(3, 1215)
+        Me.txtGoogleUpdater.Location = New System.Drawing.Point(3, 1282)
         Me.txtGoogleUpdater.Multiline = True
         Me.txtGoogleUpdater.Name = "txtGoogleUpdater"
         Me.txtGoogleUpdater.Size = New System.Drawing.Size(390, 50)
@@ -268,7 +314,7 @@ Partial Class CleanDefs2
         '
         'txtHPDigitalImaging
         '
-        Me.txtHPDigitalImaging.Location = New System.Drawing.Point(3, 1271)
+        Me.txtHPDigitalImaging.Location = New System.Drawing.Point(3, 1338)
         Me.txtHPDigitalImaging.Multiline = True
         Me.txtHPDigitalImaging.Name = "txtHPDigitalImaging"
         Me.txtHPDigitalImaging.Size = New System.Drawing.Size(390, 50)
@@ -278,7 +324,7 @@ Partial Class CleanDefs2
         '
         'txtIMVU
         '
-        Me.txtIMVU.Location = New System.Drawing.Point(3, 1327)
+        Me.txtIMVU.Location = New System.Drawing.Point(3, 1394)
         Me.txtIMVU.Multiline = True
         Me.txtIMVU.Name = "txtIMVU"
         Me.txtIMVU.Size = New System.Drawing.Size(390, 75)
@@ -287,7 +333,7 @@ Partial Class CleanDefs2
         '
         'txtiTunes
         '
-        Me.txtiTunes.Location = New System.Drawing.Point(3, 1408)
+        Me.txtiTunes.Location = New System.Drawing.Point(3, 1475)
         Me.txtiTunes.Multiline = True
         Me.txtiTunes.Name = "txtiTunes"
         Me.txtiTunes.Size = New System.Drawing.Size(390, 50)
@@ -297,7 +343,7 @@ Partial Class CleanDefs2
         '
         'txtJagex
         '
-        Me.txtJagex.Location = New System.Drawing.Point(3, 1464)
+        Me.txtJagex.Location = New System.Drawing.Point(3, 1531)
         Me.txtJagex.Multiline = True
         Me.txtJagex.Name = "txtJagex"
         Me.txtJagex.Size = New System.Drawing.Size(390, 75)
@@ -306,7 +352,7 @@ Partial Class CleanDefs2
         '
         'txtKaspersky
         '
-        Me.txtKaspersky.Location = New System.Drawing.Point(3, 1545)
+        Me.txtKaspersky.Location = New System.Drawing.Point(3, 1612)
         Me.txtKaspersky.Multiline = True
         Me.txtKaspersky.Name = "txtKaspersky"
         Me.txtKaspersky.Size = New System.Drawing.Size(390, 112)
@@ -315,7 +361,7 @@ Partial Class CleanDefs2
         '
         'txtNokiaOvi
         '
-        Me.txtNokiaOvi.Location = New System.Drawing.Point(3, 1663)
+        Me.txtNokiaOvi.Location = New System.Drawing.Point(3, 1730)
         Me.txtNokiaOvi.Multiline = True
         Me.txtNokiaOvi.Name = "txtNokiaOvi"
         Me.txtNokiaOvi.Size = New System.Drawing.Size(390, 51)
@@ -325,7 +371,7 @@ Partial Class CleanDefs2
         '
         'txtQuicktime
         '
-        Me.txtQuicktime.Location = New System.Drawing.Point(3, 1720)
+        Me.txtQuicktime.Location = New System.Drawing.Point(3, 1787)
         Me.txtQuicktime.Multiline = True
         Me.txtQuicktime.Name = "txtQuicktime"
         Me.txtQuicktime.Size = New System.Drawing.Size(390, 72)
@@ -334,7 +380,7 @@ Partial Class CleanDefs2
         '
         'txtRealPlayer
         '
-        Me.txtRealPlayer.Location = New System.Drawing.Point(3, 1798)
+        Me.txtRealPlayer.Location = New System.Drawing.Point(3, 1865)
         Me.txtRealPlayer.Multiline = True
         Me.txtRealPlayer.Name = "txtRealPlayer"
         Me.txtRealPlayer.Size = New System.Drawing.Size(390, 72)
@@ -343,7 +389,7 @@ Partial Class CleanDefs2
         '
         'txtRDP
         '
-        Me.txtRDP.Location = New System.Drawing.Point(3, 1876)
+        Me.txtRDP.Location = New System.Drawing.Point(3, 1943)
         Me.txtRDP.Multiline = True
         Me.txtRDP.Name = "txtRDP"
         Me.txtRDP.Size = New System.Drawing.Size(390, 49)
@@ -354,7 +400,7 @@ Partial Class CleanDefs2
         '
         'txtSilverlight
         '
-        Me.txtSilverlight.Location = New System.Drawing.Point(3, 1931)
+        Me.txtSilverlight.Location = New System.Drawing.Point(3, 1998)
         Me.txtSilverlight.Multiline = True
         Me.txtSilverlight.Name = "txtSilverlight"
         Me.txtSilverlight.Size = New System.Drawing.Size(390, 72)
@@ -363,7 +409,7 @@ Partial Class CleanDefs2
         '
         'txtSpotify
         '
-        Me.txtSpotify.Location = New System.Drawing.Point(3, 2009)
+        Me.txtSpotify.Location = New System.Drawing.Point(3, 2076)
         Me.txtSpotify.Multiline = True
         Me.txtSpotify.Name = "txtSpotify"
         Me.txtSpotify.Size = New System.Drawing.Size(390, 46)
@@ -372,7 +418,7 @@ Partial Class CleanDefs2
         '
         'txtSymantec
         '
-        Me.txtSymantec.Location = New System.Drawing.Point(3, 2061)
+        Me.txtSymantec.Location = New System.Drawing.Point(3, 2128)
         Me.txtSymantec.Multiline = True
         Me.txtSymantec.Name = "txtSymantec"
         Me.txtSymantec.Size = New System.Drawing.Size(390, 46)
@@ -381,7 +427,7 @@ Partial Class CleanDefs2
         '
         'txtTrackmania
         '
-        Me.txtTrackmania.Location = New System.Drawing.Point(3, 2113)
+        Me.txtTrackmania.Location = New System.Drawing.Point(3, 2180)
         Me.txtTrackmania.Multiline = True
         Me.txtTrackmania.Name = "txtTrackmania"
         Me.txtTrackmania.Size = New System.Drawing.Size(390, 46)
@@ -390,7 +436,7 @@ Partial Class CleanDefs2
         '
         'txtUnity
         '
-        Me.txtUnity.Location = New System.Drawing.Point(3, 2165)
+        Me.txtUnity.Location = New System.Drawing.Point(3, 2232)
         Me.txtUnity.Multiline = True
         Me.txtUnity.Name = "txtUnity"
         Me.txtUnity.Size = New System.Drawing.Size(390, 71)
@@ -399,53 +445,32 @@ Partial Class CleanDefs2
         '
         'txtQ13
         '
-        Me.txtQ13.Location = New System.Drawing.Point(3, 2242)
+        Me.txtQ13.Location = New System.Drawing.Point(3, 2309)
         Me.txtQ13.Multiline = True
         Me.txtQ13.Name = "txtQ13"
         Me.txtQ13.Size = New System.Drawing.Size(390, 21)
         Me.txtQ13.TabIndex = 46
         Me.txtQ13.Text = "echo Q13 >""%appdata%\DriveTidy\cleanchk.txt"""
         '
-        'txtMSI
-        '
-        Me.txtMSI.Location = New System.Drawing.Point(3, 315)
-        Me.txtMSI.Multiline = True
-        Me.txtMSI.Name = "txtMSI"
-        Me.txtMSI.Size = New System.Drawing.Size(390, 49)
-        Me.txtMSI.TabIndex = 77
-        Me.txtMSI.Text = "echo [Windows Installer Cleanup...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%systemdrive%\Config.Msi\*.*""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "rd /s /q ""%systemdrive%\Config.Msi\""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%programfiles%\MSECache\*.*" & _
-            """" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "rd /s /q ""%programfiles%\MSECache\"""
-        '
-        'txtThumbnailsXP
-        '
-        Me.txtThumbnailsXP.Location = New System.Drawing.Point(3, 275)
-        Me.txtThumbnailsXP.Multiline = True
-        Me.txtThumbnailsXP.Name = "txtThumbnailsXP"
-        Me.txtThumbnailsXP.Size = New System.Drawing.Size(279, 34)
-        Me.txtThumbnailsXP.TabIndex = 78
-        Me.txtThumbnailsXP.Text = "echo [Thumbnail cache...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q %systemdrive%\Thumbs.db"
-        Me.txtThumbnailsXP.WordWrap = False
-        '
         'txtThumbnails
         '
         Me.txtThumbnails.Location = New System.Drawing.Point(3, 219)
         Me.txtThumbnails.Multiline = True
         Me.txtThumbnails.Name = "txtThumbnails"
-        Me.txtThumbnails.Size = New System.Drawing.Size(279, 50)
-        Me.txtThumbnails.TabIndex = 79
-        Me.txtThumbnails.Text = "echo [Thumbnail cache...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "attrib -r -s -h /s /d ""%localappdata%\Microsoft\Window" & _
-            "s\Explorer\*.db""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f q ""%localappdata%\Microsoft\Windows\Explorer\*.db"""
+        Me.txtThumbnails.Size = New System.Drawing.Size(279, 20)
+        Me.txtThumbnails.TabIndex = 81
+        Me.txtThumbnails.Text = "Thumbnail Cache"
         Me.txtThumbnails.WordWrap = False
         '
-        'txtAdobeMedia
+        'txtThumbnails7
         '
-        Me.txtAdobeMedia.Location = New System.Drawing.Point(3, 602)
-        Me.txtAdobeMedia.Multiline = True
-        Me.txtAdobeMedia.Name = "txtAdobeMedia"
-        Me.txtAdobeMedia.Size = New System.Drawing.Size(390, 52)
-        Me.txtAdobeMedia.TabIndex = 80
-        Me.txtAdobeMedia.Text = "echo [Adobe Media cache...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%appdata%\Adobe\Common\Media Cache\*.*" & _
-            "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "rd /s /q ""%appdata%\Adobe\Common\Media Cache\"""
+        Me.txtThumbnails7.Location = New System.Drawing.Point(3, 245)
+        Me.txtThumbnails7.Multiline = True
+        Me.txtThumbnails7.Name = "txtThumbnails7"
+        Me.txtThumbnails7.Size = New System.Drawing.Size(390, 35)
+        Me.txtThumbnails7.TabIndex = 82
+        Me.txtThumbnails7.Text = "echo [Thumbnail Cache...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /a /f /q ""%localappdata%\IconCache.db"""
+        Me.txtThumbnails7.WordWrap = False
         '
         'CleanDefs2
         '
@@ -493,6 +518,8 @@ Partial Class CleanDefs2
     Friend WithEvents txtAutoDesk As System.Windows.Forms.TextBox
     Friend WithEvents txtMSI As System.Windows.Forms.TextBox
     Friend WithEvents txtThumbnailsXP As System.Windows.Forms.TextBox
-    Friend WithEvents txtThumbnails As System.Windows.Forms.TextBox
+    Friend WithEvents txtThumbnailsVista As System.Windows.Forms.TextBox
     Friend WithEvents txtAdobeMedia As System.Windows.Forms.TextBox
+    Friend WithEvents txtThumbnails As System.Windows.Forms.TextBox
+    Friend WithEvents txtThumbnails7 As System.Windows.Forms.TextBox
 End Class

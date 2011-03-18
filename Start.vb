@@ -1,25 +1,30 @@
 ﻿Public Class Start
     Dim frmMain As New Main
-    Dim frmCW As New CleanerWindow
+    Dim frmCW
     Dim item As Object
 
     Private Sub Start_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         On Error GoTo ErrorHandler
         Load_Main()
+        frmCW = New CleanerWindow
         Exit Sub
 ErrorHandler:
-        'If Err.Number = (Permissions Error) Then
-        'MsgBox("You may be running the program from a network drive. Please copy the file to a local drive and try again.", MsgBoxStyle.Exclamation, "Permission Error")
-        'Else
-        MsgBox(Err.Description, MsgBoxStyle.Exclamation, "Error " & Err.Number)
-        'End If
+        If Err.Number = 5 Then
+            MsgBox("You may be running the program from a network drive. Please copy the file to a local drive and try again.", MsgBoxStyle.Exclamation, "Permission Error")
+        Else
+            MsgBox(Err.Description, MsgBoxStyle.Exclamation, "Error " & Err.Number)
+        End If
+        Me.BeginInvoke(New MethodInvoker(AddressOf ForceClose))
+    End Sub
+
+    Public Sub ForceClose()
         Me.Close()
     End Sub
 
-    Private Sub Start_FormClosing(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+    Private Sub Start_FormClosing(ByVal eventsender As System.Object, ByVal eventargs As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         If frmCW.cmdCancel.Visible = True Then
             frmCW.Close()
-            eventArgs.Cancel = True
+            eventargs.Cancel = True
         End If
     End Sub
 
@@ -88,6 +93,17 @@ ErrorHandler:
         If Not My.Computer.FileSystem.FileExists(Environ("systemdrive") & "\hiberfil.sys") Then
             frmMain.cbHibernate.Visible = False
         End If
+
+        If Main.OS_WindowsVista = True Then
+            If Not My.Computer.FileSystem.FileExists(Environ("localappdata") & "\Microsoft\Windows\Explorerthumbcache_idx.db") Then
+                frmMain.cbThumbnails.Visible = False
+            End If
+        ElseIf Main.OS_Windows7 Or Main.OS_Undetected = True Then
+            If Not My.Computer.FileSystem.FileExists(Environ("localappdata") & "\IconCache.db") Then
+                frmMain.cbThumbnails.Visible = False
+            End If
+        End If
+
         If Not My.Computer.FileSystem.DirectoryExists(Environ("systemdrive") & "\Config.Msi") Then
             If Not My.Computer.FileSystem.DirectoryExists(Environ("programfiles") & "\MSECache") Then
                 frmMain.cbMSI.Visible = False

@@ -1,9 +1,9 @@
 ﻿Public Class Main
     'OS Detection
-    Dim OS_WindowsXP As Boolean
-    Dim OS_WindowsVista As Boolean
-    Dim OS_Windows7 As Boolean
-    Dim OS_Undetected As Boolean
+    Public OS_WindowsXP As Boolean
+    Public OS_WindowsVista As Boolean
+    Public OS_Windows7 As Boolean
+    Public OS_Undetected As Boolean
 
     Dim flwAll(0 To 4)
 
@@ -27,7 +27,9 @@
         For i = 0 To 1
             For Each Me.item In flwAll(i)
                 If TypeOf item Is CheckBox Then
-                    item.Checked = True
+                    If item.Enabled = True Then
+                        item.Checked = True
+                    End If
                 End If
             Next
         Next
@@ -63,6 +65,7 @@
     End Sub
 
     Private Sub Main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        On Error GoTo ErrorHandler
         'Put cmdAbout in line with DriveTidy text
         Dim AboutLocation As New System.Drawing.Point(cmdAbout.Location.X, lblProductName.Location.Y)
         cmdAbout.Location = AboutLocation
@@ -210,6 +213,14 @@
         Start.Definitions()
         Checkbox_Count()
         tmSelectAll.Enabled = True
+        Exit Sub
+ErrorHandler:
+        If Err.Number = 5 Then
+            MsgBox("You may be running the program from a network drive. Please copy the file to a local drive and try again.", MsgBoxStyle.Exclamation, "Permission Error")
+        Else
+            MsgBox(Err.Description, MsgBoxStyle.Exclamation, "Error " & Err.Number)
+        End If
+        Me.BeginInvoke(New MethodInvoker(AddressOf Start.ForceClose))
     End Sub
 
     Private Sub Main_FormClosing(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
@@ -408,15 +419,6 @@
                 End If
             Next
 
-            'Disable Attribute changers from Command List
-            If cbRecycle.Checked = False Then
-                CleanDefs.txtAttribRecycle.Text = ""
-            End If
-
-            If cbMessenger.Checked = False Then
-                CleanDefs.txtAttribSQM.Text = ""
-            End If
-
             'Checks IE Version to see whether to use old defs, stops Inetcpl.cpl errors
             If cbTIF.Checked = True Then
                 If ieVersion.Major <= 6 Then
@@ -424,9 +426,14 @@
                 End If
             End If
 
+            'Checks OS to see which Thumbnail Commands to use
             If cbThumbnails.Checked = True Then
-                If OS_WindowsXP Or OS_Undetected = True Then
+                If OS_WindowsXP = True Then
                     CleanDefs2.txtThumbnails.Text = CleanDefs2.txtThumbnailsXP.Text
+                ElseIf OS_WindowsVista = True Then
+                    CleanDefs2.txtThumbnails.Text = CleanDefs2.txtThumbnailsVista.Text
+                ElseIf OS_Windows7 Or OS_Undetected = True Then
+                    CleanDefs2.txtThumbnails.Text = CleanDefs2.txtThumbnails7.Text
                 End If
             End If
 
@@ -460,34 +467,21 @@
 
             FileOpen(3, Environ("appdata") & "\DriveTidy\start.bat", OpenMode.Output)
             PrintLine(3, CleanDefs.txtStart1.Text)
-            If cbRecycle.Checked Then
-                PrintLine(3, CleanDefs.txtAttribRecycle.Text)
-            End If
-            If cbMessenger.Checked Then
-                PrintLine(3, CleanDefs.txtAttribSQM.Text)
-            End If
-            If cbThumbnails.Checked Then
-                If OS_WindowsXP Or OS_Undetected = True Then
-                    PrintLine(3, CleanDefs.txtAttribThumbnailsXP.Text)
-                Else
-                    PrintLine(3, CleanDefs.txtAttribThumbnailsVista.Text)
-                End If
-        End If
-        PrintLine(3, CleanDefs.txtStart2.Text)
-        FileClose(3)
-        ShellExecute(0, vbNullString, Environ("appdata") & "\DriveTidy\start.bat", vbNullString, vbNullString, AppWinStyle.NormalFocus)
+            PrintLine(3, CleanDefs.txtStart2.Text)
+            FileClose(3)
+            ShellExecute(0, vbNullString, Environ("appdata") & "\DriveTidy\start.bat", vbNullString, vbNullString, AppWinStyle.NormalFocus)
 
             'Show Cleaner Window
             Start.Load_CW()
             Me.Close()
             Exit Sub
 ErrorHandler:
-        CleanerErrors()
+            CleanerErrors()
 
-        'F numbers start the bar again.
-        'If a file extension is selected then it does the
-        'Advanced method with F numbers, no file extension = Q numbers
-            End If
+            'F numbers start the bar again.
+            'If a file extension is selected then it does the
+            'Advanced method with F numbers, no file extension = Q numbers
+        End If
     End Sub
 
     'Fix issue with FlowLayoutPanel not scrolling

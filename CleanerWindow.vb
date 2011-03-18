@@ -53,7 +53,6 @@
     End Sub
 
     Private Sub CleanerWindow_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
-
         Tot = My.Computer.FileSystem.GetDriveInfo(System.Environment.ExpandEnvironmentVariables("%SystemDrive%")).TotalSize
         Free = My.Computer.FileSystem.GetDriveInfo(System.Environment.ExpandEnvironmentVariables("%SystemDrive%")).TotalFreeSpace.ToString
 
@@ -225,7 +224,6 @@
         ElseIf Free >= 1099511627776 Then
             SpaceFreedUp.Text = Format(ValueSpaceFreed / 1099511627776, "###,##0.##") & " TB"
         End If
-
     End Sub
 
     Private Sub cmdClose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClose.Click
