@@ -1,5 +1,13 @@
 ﻿Public Class CleanerWindow
 
+    Public Function CheckProcess(ByVal ProcessName As String) As Integer
+        Try
+            Return Process.GetProcessesByName(ProcessName).GetUpperBound(0) + 1
+        Catch
+            Return 0
+        End Try
+    End Function
+
     Dim File As String
     Dim FileContent As String
     Dim Tot As Decimal
@@ -53,6 +61,9 @@
     End Sub
 
     Private Sub CleanerWindow_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
+        tmSpace.Enabled = True
+        tmStatus.Enabled = True
+
         Tot = My.Computer.FileSystem.GetDriveInfo(System.Environment.ExpandEnvironmentVariables("%SystemDrive%")).TotalSize
         Free = My.Computer.FileSystem.GetDriveInfo(System.Environment.ExpandEnvironmentVariables("%SystemDrive%")).TotalFreeSpace.ToString
 
@@ -187,6 +198,16 @@
 
         'Added process detection to ensure the SubStatus displays the correct info
         Dim Proc() As Process = Process.GetProcesses
+
+        'Will come into effect once the substatus changes
+        If Not CleanSubStatus.Text = Nothing Then
+            If CheckProcess("cmd") = 0 Then
+                End_Scan()
+                CleanStatus.Text = "Complete"
+                CleanSubStatus.Text = "See log for details."
+            End If
+        End If
+
         For i As Integer = 0 To Proc.GetUpperBound(0)
             If Proc(i).ProcessName = "vsp1cln" Then
                 CleanSubStatus.Text = "Vista SP1 Cleanup"

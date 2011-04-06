@@ -49,11 +49,9 @@ Partial Class CleanerWindow
         '
         'tmStatus
         '
-        Me.tmStatus.Enabled = True
         '
         'tmSpace
         '
-        Me.tmSpace.Enabled = True
         '
         'tblDesign
         '
