@@ -25,6 +25,14 @@ ErrorHandler:
         If frmCW.cmdCancel.Visible = True Then
             frmCW.Close()
             eventargs.Cancel = True
+        Else
+            'Deletes files made by the cleanup
+            On Error Resume Next
+            My.Computer.FileSystem.DeleteFile(Environ("appdata") & "\DriveTidy\cleaner.bat")
+            My.Computer.FileSystem.DeleteFile(Environ("appdata") & "\DriveTidy\start.bat")
+            My.Computer.FileSystem.DeleteFile(Environ("appdata") & "\DriveTidy\log.txt")
+            My.Computer.FileSystem.DeleteFile(Environ("appdata") & "\DriveTidy\cleanchk.txt")
+            My.Computer.FileSystem.DeleteDirectory(Environ("appdata") & "\DriveTidy\", FileIO.DeleteDirectoryOption.DeleteAllContents)
         End If
     End Sub
 
