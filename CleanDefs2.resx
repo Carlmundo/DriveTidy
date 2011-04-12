@@ -217,6 +217,17 @@ del /f /q "%localappdata%\Google\GoogleEarth\dbCache.dat.index"
 del /f /q "%locallowappdata%\Google\GoogleEarth\dbCache.dat"
 del /f /q "%locallowappdata%\Google\GoogleEarth\dbCache.dat.index"</value>
   </data>
+  <data name="txtEVEcache.Text" xml:space="preserve">
+    <value>echo [EVE cache...]
+IF NOT EXIST "%localappdata%\CCP\EVE\" GOTO End_EVEcache
+pushd "%localappdata%\CCP\EVE\" ||goto :eof
+for /d %%a in (*) do (
+del /f /s /q "%%a\cache\*.*"
+rd /s /q "%%a\cache\"
+)
+popd
+:End_EVEcache</value>
+  </data>
   <data name="txtIMVU.Text" xml:space="preserve">
     <value>echo [IMVU cache...]
 del /f /s /q "%appdata%\IMVU\cache\*.*"

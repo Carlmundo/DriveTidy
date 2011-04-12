@@ -112,6 +112,7 @@
         'Paths include "/" to ensure wanted files aren't deleted. 
         'Command List is also adjusted accordingly. 
         'E.g. %userprofile%temp.tmp and not %userprofile%\temp.tmp
+        Environment.SetEnvironmentVariable("documents", My.Computer.Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders").GetValue("Personal"))
         If OS_WindowsVista Or OS_Windows7 = True Then
             Environment.SetEnvironmentVariable("localappdata", Environ("userprofile") + "\AppData\Local\")
             Environment.SetEnvironmentVariable("locallowappdata", Environ("userprofile") + "\AppData\LocalLow\")
@@ -173,6 +174,8 @@
         d2.Add(cbAutoDesk, CleanDefs2.txtAutoDesk)
         d2.Add(cbAVG, CleanDefs2.txtAVG)
         d2.Add(cbBigFishGames, CleanDefs2.txtBigFishGames)
+        d2.Add(cbEVEcache, CleanDefs2.txtEVEcache)
+        d2.Add(cbEVElogs, CleanDefs2.txtEVElogs)
         d2.Add(cbGIMP, CleanDefs2.txtGIMP)
         d2.Add(cbGoogleEarth, CleanDefs2.txtGoogleEarth)
         d2.Add(cbGoogleUpdater, CleanDefs2.txtGoogleUpdater)

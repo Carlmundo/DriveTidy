@@ -159,6 +159,12 @@ ErrorHandler:
         If Not My.Computer.FileSystem.DirectoryExists(Environ("systemdrive") & "\BigFishGamesCache") Then
             frmMain.cbBigFishGames.Visible = False
         End If
+        If Not My.Computer.FileSystem.DirectoryExists(Environ("localappdata") & "\CCP\EVE") Then
+            frmMain.cbEVEcache.Visible = False
+        End If
+        If Not My.Computer.FileSystem.DirectoryExists(Environ("documents") & "\EVE\Logs") Then
+            frmMain.cbEVElogs.Visible = False
+        End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("userprofile") & "\.thumbnails\normal") Then
             frmMain.cbGIMP.Visible = False
         End If
