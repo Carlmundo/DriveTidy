@@ -472,7 +472,7 @@ ErrorHandler:
             PrintLine(3, CleanDefs.txtStart1.Text)
             PrintLine(3, CleanDefs.txtStart2.Text)
             FileClose(3)
-            ShellExecute(0, vbNullString, Environ("appdata") & "\DriveTidy\start.bat", vbNullString, vbNullString, AppWinStyle.NormalFocus)
+            ShellExecute(0, vbNullString, Environ("appdata") & "\DriveTidy\start.bat", vbNullString, vbNullString, AppWinStyle.MinimizedNoFocus)
 
             'Show Cleaner Window
             Start.Load_CW()
@@ -490,5 +490,9 @@ ErrorHandler:
     'Fix issue with FlowLayoutPanel not scrolling
     Private Sub Main_MouseWheel(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseWheel
         flwOptions.Focus()
+    End Sub
+
+    Private Sub tblDesign_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles tblDesign.Paint
+
     End Sub
 End Class
