@@ -10,7 +10,7 @@
         Exit Sub
 ErrorHandler:
         If Err.Number = 5 Then
-            MsgBox("You may be running the program from a network drive. Please copy the file to a local drive and try again.", MsgBoxStyle.Exclamation, "Permission Error")
+            MsgBox("You may be running the program from a network drive. Please copy the file to a local drive and try again.", MsgBoxStyle.Exclamation, "Error 5")
         Else
             MsgBox(Err.Description, MsgBoxStyle.Exclamation, "Error " & Err.Number)
         End If
