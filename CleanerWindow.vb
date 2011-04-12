@@ -202,20 +202,22 @@
         'Will come into effect once the substatus changes
         If Not CleanSubStatus.Text = Nothing Then
             If CheckProcess("cmd") = 0 Then
-                End_Scan()
-                CleanStatus.Text = "Complete"
-                CleanSubStatus.Text = "See log for details."
+                If Not FileContent = "FIN" Then
+                    End_Scan()
+                    CleanStatus.Text = "Complete"
+                    CleanSubStatus.Text = "Additional cleanup may be needed."
+                End If
             End If
-        End If
+            END IF
 
-        For i As Integer = 0 To Proc.GetUpperBound(0)
-            If Proc(i).ProcessName = "vsp1cln" Then
-                CleanSubStatus.Text = "Vista SP1 Cleanup"
-            ElseIf Proc(i).ProcessName = "compcln" Then
-                CleanSubStatus.Text = "Vista SP2 Cleanup"
-            End If
-        Next
-        FileClose(2)
+            For i As Integer = 0 To Proc.GetUpperBound(0)
+                If Proc(i).ProcessName = "vsp1cln" Then
+                    CleanSubStatus.Text = "Vista SP1 Cleanup"
+                ElseIf Proc(i).ProcessName = "compcln" Then
+                    CleanSubStatus.Text = "Vista SP2 Cleanup"
+                End If
+            Next
+            FileClose(2)
     End Sub
     Private Sub tmSpace_Tick(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles tmSpace.Tick
         'Timer to constantly check the amount of free space on the drive
