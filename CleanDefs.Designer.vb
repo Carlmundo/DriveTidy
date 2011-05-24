@@ -287,7 +287,7 @@ Partial Class CleanDefs
         Me.txtStart1.Name = "txtStart1"
         Me.txtStart1.Size = New System.Drawing.Size(254, 32)
         Me.txtStart1.TabIndex = 51
-        Me.txtStart1.Text = "%systemdrive%" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "cd %appdata%\DriveTidy\"
+        Me.txtStart1.Text = "%systemdrive%" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "cd ""%appdata%\DriveTidy\"""
         '
         'txtTMP
         '
