@@ -103,6 +103,8 @@ ErrorHandler:
             If Not Environment.OSVersion.ServicePack = "Service Pack 1" Then
                 frmMain.cbWin7SP1.Visible = False
             End If
+        Else
+            frmMain.cbWin7SP1.Visible = False
         End If
         If Not My.Computer.FileSystem.FileExists(Environ("systemdrive") & "\hiberfil.sys") Then
             frmMain.cbHibernate.Visible = False
