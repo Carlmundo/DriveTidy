@@ -62,6 +62,7 @@ ErrorHandler:
             frmMain.cbThumbnails.Enabled = False
             frmMain.cbVistaSP1.Enabled = False
             frmMain.cbVistaSP2.Enabled = False
+            frmMain.cbWin7SP1.Enabled = False
         End If
 
         If Not My.Computer.FileSystem.DirectoryExists(Environ("allusersappdata") & "\Microsoft\Windows\WER\ReportArchive") Then
@@ -97,6 +98,11 @@ ErrorHandler:
         End If
         If Not My.Computer.FileSystem.FileExists(Environ("windir") & "\system32\compcln.exe") Then
             frmMain.cbVistaSP2.Visible = False
+        End If
+        If frmMain.OS_Windows7 = True Then
+            If Not Environment.OSVersion.ServicePack = "Service Pack 1" Then
+                frmMain.cbWin7SP1.Visible = False
+            End If
         End If
         If Not My.Computer.FileSystem.FileExists(Environ("systemdrive") & "\hiberfil.sys") Then
             frmMain.cbHibernate.Visible = False

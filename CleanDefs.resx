@@ -163,7 +163,16 @@ del /f /s /q "%windir%\system32\config\systemprofile\AppData\Local\Temporary Int
 rd /s /q "%windir%\system32\config\systemprofile\AppData\Local\Temporary Internet Files\"
 start /wait %windir%\System32\RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 1
 start /wait %windir%\System32\RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 2
-start /wait %windir%\System32\RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8</value>
+start /wait %windir%\System32\RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 8
+del /f /s /q "%localappdata%\Microsoft\Feeds Cache\*.*"
+del /f /s /q "%localappdata%\Microsoft\Internet Explorer\Recovery\Active\*.*"
+del /f /s /q "%localappdata%\Microsoft\Internet Explorer\Recovery\Last Active\*.*"
+del /f /s /q "%localappdata%\Microsoft\Internet Explorer\DOMStore\*.*"
+del /f /s /q "%locallowappdata%\Microsoft\Internet Explorer\DOMStore\*.*"
+del /f /s /q "%appdata%\Microsoft\Internet Explorer\UserData\*.*"
+del /f /s /q "%appdata%\Microsoft\Windows\PrivacIE\*.*"
+del /f /s /q "%appdata%\Microsoft\Windows\IECompatCache\*.*"
+del /f /s /q "%appdata%\Microsoft\Windows\IETldCache\*.*"</value>
   </data>
   <data name="txtFirefox.Text" xml:space="preserve">
     <value>echo Q7 &gt;"%appdata%\DriveTidy\cleanchk.txt"
@@ -323,6 +332,9 @@ del /f /q "%localappdata%\Google\Chrome\User Data\Default\Last Session"
 del /f /q "%localappdata%\Google\Chrome\User Data\Default\Last Tabs"
 del /f /q "%localappdata%\Google\Chrome\User Data\Default\Thumbnails"
 del /f /q "%localappdata%\Google\Chrome\User Data\Default\Visited Links"
+del /f /s /q "%localappdata%\Google\Chrome\User Data\Default\JumpListIcons\*.*"
+del /f /s /q "%localappdata%\Google\Chrome\User Data\Default\JumpListIconsOld\*.*"
+del /f /s /q "%localappdata%\Google\Chrome\User Data\Default\databases\*.*"
 
 del /f /s /q "%localappdata%\Google\Chrome SxS\User Data\Default\Cache\*.*"
 rd /s /q "%localappdata%\Google\Chrome SxS\User Data\Default\Cache\"
@@ -342,6 +354,9 @@ del /f /q "%localappdata%\Google\Chrome SxS\User Data\Default\Last Session"
 del /f /q "%localappdata%\Google\Chrome SxS\User Data\Default\Last Tabs"
 del /f /q "%localappdata%\Google\Chrome SxS\User Data\Default\Thumbnails"
 del /f /q "%localappdata%\Google\Chrome SxS\User Data\Default\Visited Links"
+del /f /s /q "%localappdata%\Google\Chrome SxS\User Data\Default\JumpListIcons\*.*"
+del /f /s /q "%localappdata%\Google\Chrome SxS\User Data\Default\JumpListIconsOld\*.*"
+del /f /s /q "%localappdata%\Google\Chrome SxS\User Data\Default\databases\*.*"
 
 del /f /s /q "%localappdata%\Chromium\User Data\Default\Cache\*.*"
 rd /s /q "%localappdata%\Chromium\User Data\Default\Cache\"
@@ -360,7 +375,10 @@ del /f /q "%localappdata%\Chromium\User Data\Default\History*"
 del /f /q "%localappdata%\Chromium\User Data\Default\Last Session"
 del /f /q "%localappdata%\Chromium\User Data\Default\Last Tabs"
 del /f /q "%localappdata%\Chromium\User Data\Default\Thumbnails"
-del /f /q "%localappdata%\Chromium\User Data\Default\Visited Links"</value>
+del /f /q "%localappdata%\Chromium\User Data\Default\Visited Links"
+del /f /s /q "%localappdata%\Google\Chromium\User Data\Default\JumpListIcons\*.*"
+del /f /s /q "%localappdata%\Google\Chromium\User Data\Default\JumpListIconsOld\*.*"
+del /f /s /q "%localappdata%\Google\Chromium\User Data\Default\databases\*.*"</value>
   </data>
   <data name="txtSafari.Text" xml:space="preserve">
     <value>echo Q7 &gt;"%appdata%\DriveTidy\cleanchk.txt"
@@ -377,7 +395,8 @@ rd /s /q "%localappdata%\Apple Computer\Safari\History\"
 del /f /s /q "%localappdata%\Apple Computer\Safari\LocalStorage\*.*"
 rd /s /q "%localappdata%\Apple Computer\Safari\LocalStorage\"
 del /f /s /q "%localappdata%\Apple Computer\Safari\Webpage Previews\*.*"
-rd /s /q "%localappdata%\Apple Computer\Safari\Webpage Previews\"</value>
+rd /s /q "%localappdata%\Apple Computer\Safari\Webpage Previews\"
+del /f /s /q "%localappdata%\Apple Computer\Safari\Databases\*.*"</value>
   </data>
   <data name="txtErrorReports.Text" xml:space="preserve">
     <value>echo Q5 &gt;"%appdata%\DriveTidy\cleanchk.txt"

@@ -63,6 +63,8 @@ Partial Class Main
         Me.cbAutoDesk = New System.Windows.Forms.CheckBox
         Me.cbAVG = New System.Windows.Forms.CheckBox
         Me.cbBigFishGames = New System.Windows.Forms.CheckBox
+        Me.cbEVEcache = New System.Windows.Forms.CheckBox
+        Me.cbEVElogs = New System.Windows.Forms.CheckBox
         Me.cbGIMP = New System.Windows.Forms.CheckBox
         Me.cbGoogleEarth = New System.Windows.Forms.CheckBox
         Me.cbGoogleUpdater = New System.Windows.Forms.CheckBox
@@ -95,8 +97,7 @@ Partial Class Main
         Me.tblDesign = New System.Windows.Forms.TableLayoutPanel
         Me.flwPresets = New System.Windows.Forms.FlowLayoutPanel
         Me.cmdAbout = New System.Windows.Forms.Button
-        Me.cbEVEcache = New System.Windows.Forms.CheckBox
-        Me.cbEVElogs = New System.Windows.Forms.CheckBox
+        Me.cbWin7SP1 = New System.Windows.Forms.CheckBox
         Me.flwOptions.SuspendLayout()
         Me.flwSystem.SuspendLayout()
         Me.flwInternet.SuspendLayout()
@@ -380,6 +381,7 @@ Partial Class Main
         Me.flwMore.Controls.Add(Me.lblMore)
         Me.flwMore.Controls.Add(Me.cbVistaSP1)
         Me.flwMore.Controls.Add(Me.cbVistaSP2)
+        Me.flwMore.Controls.Add(Me.cbWin7SP1)
         Me.flwMore.Controls.Add(Me.cbHibernate)
         Me.flwMore.Controls.Add(Me.cbThumbnails)
         Me.flwMore.Controls.Add(Me.cbMSI)
@@ -391,7 +393,7 @@ Partial Class Main
         Me.flwMore.Location = New System.Drawing.Point(0, 287)
         Me.flwMore.Margin = New System.Windows.Forms.Padding(0)
         Me.flwMore.Name = "flwMore"
-        Me.flwMore.Size = New System.Drawing.Size(174, 172)
+        Me.flwMore.Size = New System.Drawing.Size(174, 191)
         Me.flwMore.TabIndex = 59
         Me.flwMore.WrapContents = False
         '
@@ -435,11 +437,11 @@ Partial Class Main
         '
         Me.cbHibernate.AutoSize = True
         Me.cbHibernate.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbHibernate.Location = New System.Drawing.Point(0, 58)
+        Me.cbHibernate.Location = New System.Drawing.Point(0, 77)
         Me.cbHibernate.Margin = New System.Windows.Forms.Padding(0)
         Me.cbHibernate.Name = "cbHibernate"
         Me.cbHibernate.Size = New System.Drawing.Size(126, 19)
-        Me.cbHibernate.TabIndex = 3
+        Me.cbHibernate.TabIndex = 4
         Me.cbHibernate.Text = "Disable Hibernate"
         Me.cbHibernate.UseVisualStyleBackColor = True
         '
@@ -447,11 +449,11 @@ Partial Class Main
         '
         Me.cbThumbnails.AutoSize = True
         Me.cbThumbnails.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbThumbnails.Location = New System.Drawing.Point(0, 77)
+        Me.cbThumbnails.Location = New System.Drawing.Point(0, 96)
         Me.cbThumbnails.Margin = New System.Windows.Forms.Padding(0)
         Me.cbThumbnails.Name = "cbThumbnails"
         Me.cbThumbnails.Size = New System.Drawing.Size(124, 19)
-        Me.cbThumbnails.TabIndex = 4
+        Me.cbThumbnails.TabIndex = 5
         Me.cbThumbnails.Text = "Thumbnail Cache"
         Me.cbThumbnails.UseVisualStyleBackColor = True
         '
@@ -459,11 +461,11 @@ Partial Class Main
         '
         Me.cbMSI.AutoSize = True
         Me.cbMSI.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbMSI.Location = New System.Drawing.Point(0, 96)
+        Me.cbMSI.Location = New System.Drawing.Point(0, 115)
         Me.cbMSI.Margin = New System.Windows.Forms.Padding(0)
         Me.cbMSI.Name = "cbMSI"
         Me.cbMSI.Size = New System.Drawing.Size(174, 19)
-        Me.cbMSI.TabIndex = 5
+        Me.cbMSI.TabIndex = 6
         Me.cbMSI.Text = "Windows Installer Cleanup"
         Me.cbMSI.UseVisualStyleBackColor = True
         '
@@ -471,11 +473,11 @@ Partial Class Main
         '
         Me.cbSampleMusic.AutoSize = True
         Me.cbSampleMusic.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbSampleMusic.Location = New System.Drawing.Point(0, 115)
+        Me.cbSampleMusic.Location = New System.Drawing.Point(0, 134)
         Me.cbSampleMusic.Margin = New System.Windows.Forms.Padding(0)
         Me.cbSampleMusic.Name = "cbSampleMusic"
         Me.cbSampleMusic.Size = New System.Drawing.Size(104, 19)
-        Me.cbSampleMusic.TabIndex = 6
+        Me.cbSampleMusic.TabIndex = 7
         Me.cbSampleMusic.Text = "Sample Music"
         Me.cbSampleMusic.UseVisualStyleBackColor = True
         '
@@ -483,11 +485,11 @@ Partial Class Main
         '
         Me.cbSamplePictures.AutoSize = True
         Me.cbSamplePictures.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbSamplePictures.Location = New System.Drawing.Point(0, 134)
+        Me.cbSamplePictures.Location = New System.Drawing.Point(0, 153)
         Me.cbSamplePictures.Margin = New System.Windows.Forms.Padding(0)
         Me.cbSamplePictures.Name = "cbSamplePictures"
         Me.cbSamplePictures.Size = New System.Drawing.Size(117, 19)
-        Me.cbSamplePictures.TabIndex = 7
+        Me.cbSamplePictures.TabIndex = 8
         Me.cbSamplePictures.Text = "Sample Pictures"
         Me.cbSamplePictures.UseVisualStyleBackColor = True
         '
@@ -495,11 +497,11 @@ Partial Class Main
         '
         Me.cbSampleVideos.AutoSize = True
         Me.cbSampleVideos.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbSampleVideos.Location = New System.Drawing.Point(0, 153)
+        Me.cbSampleVideos.Location = New System.Drawing.Point(0, 172)
         Me.cbSampleVideos.Margin = New System.Windows.Forms.Padding(0)
         Me.cbSampleVideos.Name = "cbSampleVideos"
         Me.cbSampleVideos.Size = New System.Drawing.Size(110, 19)
-        Me.cbSampleVideos.TabIndex = 8
+        Me.cbSampleVideos.TabIndex = 9
         Me.cbSampleVideos.Text = "Sample Videos"
         Me.cbSampleVideos.UseVisualStyleBackColor = True
         '
@@ -536,7 +538,7 @@ Partial Class Main
         Me.flwOtherApps.Controls.Add(Me.cbUnity)
         Me.flwOtherApps.Dock = System.Windows.Forms.DockStyle.Fill
         Me.flwOtherApps.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.flwOtherApps.Location = New System.Drawing.Point(0, 459)
+        Me.flwOtherApps.Location = New System.Drawing.Point(0, 478)
         Me.flwOtherApps.Margin = New System.Windows.Forms.Padding(0)
         Me.flwOtherApps.Name = "flwOtherApps"
         Me.flwOtherApps.Size = New System.Drawing.Size(174, 514)
@@ -638,6 +640,30 @@ Partial Class Main
         Me.cbBigFishGames.TabIndex = 7
         Me.cbBigFishGames.Text = "Big Fish Games"
         Me.cbBigFishGames.UseVisualStyleBackColor = True
+        '
+        'cbEVEcache
+        '
+        Me.cbEVEcache.AutoSize = True
+        Me.cbEVEcache.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbEVEcache.Location = New System.Drawing.Point(0, 153)
+        Me.cbEVEcache.Margin = New System.Windows.Forms.Padding(0)
+        Me.cbEVEcache.Name = "cbEVEcache"
+        Me.cbEVEcache.Size = New System.Drawing.Size(88, 19)
+        Me.cbEVEcache.TabIndex = 8
+        Me.cbEVEcache.Text = "EVE Cache"
+        Me.cbEVEcache.UseVisualStyleBackColor = True
+        '
+        'cbEVElogs
+        '
+        Me.cbEVElogs.AutoSize = True
+        Me.cbEVElogs.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbEVElogs.Location = New System.Drawing.Point(0, 172)
+        Me.cbEVElogs.Margin = New System.Windows.Forms.Padding(0)
+        Me.cbEVElogs.Name = "cbEVElogs"
+        Me.cbEVElogs.Size = New System.Drawing.Size(80, 19)
+        Me.cbEVElogs.TabIndex = 9
+        Me.cbEVElogs.Text = "EVE Logs"
+        Me.cbEVElogs.UseVisualStyleBackColor = True
         '
         'cbGIMP
         '
@@ -856,7 +882,7 @@ Partial Class Main
         Me.flwFileExt.Controls.Add(Me.cbERR)
         Me.flwFileExt.Dock = System.Windows.Forms.DockStyle.Fill
         Me.flwFileExt.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.flwFileExt.Location = New System.Drawing.Point(0, 973)
+        Me.flwFileExt.Location = New System.Drawing.Point(0, 992)
         Me.flwFileExt.Margin = New System.Windows.Forms.Padding(0)
         Me.flwFileExt.Name = "flwFileExt"
         Me.flwFileExt.Size = New System.Drawing.Size(174, 134)
@@ -1047,29 +1073,17 @@ Partial Class Main
         Me.cmdAbout.Text = "?"
         Me.cmdAbout.UseVisualStyleBackColor = True
         '
-        'cbEVEcache
+        'cbWin7SP1
         '
-        Me.cbEVEcache.AutoSize = True
-        Me.cbEVEcache.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbEVEcache.Location = New System.Drawing.Point(0, 153)
-        Me.cbEVEcache.Margin = New System.Windows.Forms.Padding(0)
-        Me.cbEVEcache.Name = "cbEVEcache"
-        Me.cbEVEcache.Size = New System.Drawing.Size(88, 19)
-        Me.cbEVEcache.TabIndex = 8
-        Me.cbEVEcache.Text = "EVE Cache"
-        Me.cbEVEcache.UseVisualStyleBackColor = True
-        '
-        'cbEVElogs
-        '
-        Me.cbEVElogs.AutoSize = True
-        Me.cbEVElogs.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbEVElogs.Location = New System.Drawing.Point(0, 172)
-        Me.cbEVElogs.Margin = New System.Windows.Forms.Padding(0)
-        Me.cbEVElogs.Name = "cbEVElogs"
-        Me.cbEVElogs.Size = New System.Drawing.Size(80, 19)
-        Me.cbEVElogs.TabIndex = 9
-        Me.cbEVElogs.Text = "EVE Logs"
-        Me.cbEVElogs.UseVisualStyleBackColor = True
+        Me.cbWin7SP1.AutoSize = True
+        Me.cbWin7SP1.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbWin7SP1.Location = New System.Drawing.Point(0, 58)
+        Me.cbWin7SP1.Margin = New System.Windows.Forms.Padding(0)
+        Me.cbWin7SP1.Name = "cbWin7SP1"
+        Me.cbWin7SP1.Size = New System.Drawing.Size(163, 19)
+        Me.cbWin7SP1.TabIndex = 3
+        Me.cbWin7SP1.Text = "Windows 7 SP1 Cleanup"
+        Me.cbWin7SP1.UseVisualStyleBackColor = True
         '
         'Main
         '
@@ -1179,4 +1193,5 @@ Partial Class Main
     Friend WithEvents cbAdobeMedia As System.Windows.Forms.CheckBox
     Friend WithEvents cbEVEcache As System.Windows.Forms.CheckBox
     Friend WithEvents cbEVElogs As System.Windows.Forms.CheckBox
+    Friend WithEvents cbWin7SP1 As System.Windows.Forms.CheckBox
 End Class

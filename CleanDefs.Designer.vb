@@ -148,7 +148,8 @@ Partial Class CleanDefs
         Me.txtRecent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtRecent.Size = New System.Drawing.Size(254, 55)
         Me.txtRecent.TabIndex = 29
-        Me.txtRecent.Text = "echo Q3 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo [Recent accessed file data...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%recent%""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%appdata%\Microsoft\Office\Recent\*.*"""
+        Me.txtRecent.Text = "echo Q3 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo [Recent accessed file data...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%recent%""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /a /f /s /q ""%appdata%\Microsoft\Office\Recent\*.*" & _
+            """"
         '
         'lblTIF
         '

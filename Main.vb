@@ -161,6 +161,7 @@
         'CleanDefs2
         d2.Add(cbVistaSP1, CleanDefs2.txtVistaSP1)
         d2.Add(cbVistaSP2, CleanDefs2.txtVistaSP2)
+        d2.Add(cbWin7SP1, CleanDefs2.txtWin7SP1)
         d2.Add(cbHibernate, CleanDefs2.txtHibernate)
         d2.Add(cbThumbnails, CleanDefs2.txtThumbnails)
         d2.Add(cbMSI, CleanDefs2.txtMSI)
@@ -492,7 +493,4 @@ ErrorHandler:
         flwOptions.Focus()
     End Sub
 
-    Private Sub tblDesign_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles tblDesign.Paint
-
-    End Sub
 End Class

@@ -173,6 +173,8 @@
             CleanSubStatus.Text = "Vista SP1 Cleanup"
         ElseIf FileContent = "VSP2" Then
             CleanSubStatus.Text = "Vista SP2 Cleanup"
+        ElseIf FileContent = "7SP1" Then
+            CleanSubStatus.Text = "Windows 7 SP1 Cleanup"
         ElseIf FileContent = "F1" Then
             CleanSubStatus.Text = ".tmp files"
             ProgressBar0.Value = 2
