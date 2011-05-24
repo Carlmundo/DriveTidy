@@ -117,6 +117,10 @@
         cmdLog.Visible = True
         cmdClose.Visible = True
         Me.CancelButton = cmdClose
+
+        If FreeSpaceAfter.Text = "..." Then
+            LiveSpace()
+        End If
     End Sub
 
     Private Sub tmStatus_Tick(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles tmStatus.Tick
@@ -220,6 +224,10 @@
             FileClose(2)
     End Sub
     Private Sub tmSpace_Tick(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles tmSpace.Tick
+        LiveSpace()
+    End Sub
+
+    Public Sub LiveSpace()
         'Timer to constantly check the amount of free space on the drive
         Free = My.Computer.FileSystem.GetDriveInfo(System.Environment.ExpandEnvironmentVariables("%SystemDrive%")).TotalFreeSpace
         ValueFreeSpaceAfter = Free
