@@ -170,9 +170,10 @@ del /f /s /q "%localappdata%\Microsoft\Internet Explorer\Recovery\Last Active\*.
 del /f /s /q "%localappdata%\Microsoft\Internet Explorer\DOMStore\*.*"
 del /f /s /q "%locallowappdata%\Microsoft\Internet Explorer\DOMStore\*.*"
 del /f /s /q "%appdata%\Microsoft\Internet Explorer\UserData\*.*"
-del /f /s /q "%appdata%\Microsoft\Windows\PrivacIE\*.*"
-del /f /s /q "%appdata%\Microsoft\Windows\IECompatCache\*.*"
-del /f /s /q "%appdata%\Microsoft\Windows\IETldCache\*.*"</value>
+del /a /f /s /q "%appdata%\Microsoft\Windows\PrivacIE\*.*"
+del /a /f /s /q "%appdata%\Microsoft\Windows\IECompatCache\*.*"
+del /a /f /s /q "%appdata%\Microsoft\Windows\IETldCache\*.*"
+del /a /f /s /q "%appdata%\Microsoft\Windows\IEDownloadHistory\*.*"</value>
   </data>
   <data name="txtFirefox.Text" xml:space="preserve">
     <value>echo Q7 &gt;"%appdata%\DriveTidy\cleanchk.txt"
