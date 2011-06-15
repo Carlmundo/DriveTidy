@@ -40,7 +40,7 @@
         'Used to open the link to download an updated version
         Dim objShell As Object = CreateObject("WScript.Shell")
         'The URL of the build.txt file that contains the most recent build number
-        Dim url As String = "http://www.aspromos.com/build.txt"
+        Dim url As String = "https://raw.github.com/Carlmundo/DriveTidy/master/build.txt"
         'Where the file is downloaded to
         Dim LocalFile As String = Environ("temp") & "\build.txt"
         'The process that downloads the file to the computer
