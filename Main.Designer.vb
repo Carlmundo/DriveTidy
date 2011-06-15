@@ -48,6 +48,7 @@ Partial Class Main
         Me.lblMore = New System.Windows.Forms.Label
         Me.cbVistaSP1 = New System.Windows.Forms.CheckBox
         Me.cbVistaSP2 = New System.Windows.Forms.CheckBox
+        Me.cbWin7SP1 = New System.Windows.Forms.CheckBox
         Me.cbHibernate = New System.Windows.Forms.CheckBox
         Me.cbThumbnails = New System.Windows.Forms.CheckBox
         Me.cbMSI = New System.Windows.Forms.CheckBox
@@ -97,7 +98,6 @@ Partial Class Main
         Me.tblDesign = New System.Windows.Forms.TableLayoutPanel
         Me.flwPresets = New System.Windows.Forms.FlowLayoutPanel
         Me.cmdAbout = New System.Windows.Forms.Button
-        Me.cbWin7SP1 = New System.Windows.Forms.CheckBox
         Me.flwOptions.SuspendLayout()
         Me.flwSystem.SuspendLayout()
         Me.flwInternet.SuspendLayout()
@@ -120,7 +120,7 @@ Partial Class Main
         Me.lblNote.Name = "lblNote"
         Me.lblNote.Size = New System.Drawing.Size(223, 15)
         Me.lblNote.TabIndex = 1
-        Me.lblNote.Text = "BETA"
+        Me.lblNote.Text = "Portable Disk Cleanup"
         Me.lblNote.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblProductName
@@ -432,6 +432,18 @@ Partial Class Main
         Me.cbVistaSP2.TabIndex = 2
         Me.cbVistaSP2.Text = "Vista SP2 Cleanup"
         Me.cbVistaSP2.UseVisualStyleBackColor = True
+        '
+        'cbWin7SP1
+        '
+        Me.cbWin7SP1.AutoSize = True
+        Me.cbWin7SP1.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbWin7SP1.Location = New System.Drawing.Point(0, 58)
+        Me.cbWin7SP1.Margin = New System.Windows.Forms.Padding(0)
+        Me.cbWin7SP1.Name = "cbWin7SP1"
+        Me.cbWin7SP1.Size = New System.Drawing.Size(163, 19)
+        Me.cbWin7SP1.TabIndex = 3
+        Me.cbWin7SP1.Text = "Windows 7 SP1 Cleanup"
+        Me.cbWin7SP1.UseVisualStyleBackColor = True
         '
         'cbHibernate
         '
@@ -1072,18 +1084,6 @@ Partial Class Main
         Me.cmdAbout.TabIndex = 0
         Me.cmdAbout.Text = "?"
         Me.cmdAbout.UseVisualStyleBackColor = True
-        '
-        'cbWin7SP1
-        '
-        Me.cbWin7SP1.AutoSize = True
-        Me.cbWin7SP1.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbWin7SP1.Location = New System.Drawing.Point(0, 58)
-        Me.cbWin7SP1.Margin = New System.Windows.Forms.Padding(0)
-        Me.cbWin7SP1.Name = "cbWin7SP1"
-        Me.cbWin7SP1.Size = New System.Drawing.Size(163, 19)
-        Me.cbWin7SP1.TabIndex = 3
-        Me.cbWin7SP1.Text = "Windows 7 SP1 Cleanup"
-        Me.cbWin7SP1.UseVisualStyleBackColor = True
         '
         'Main
         '

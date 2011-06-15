@@ -211,8 +211,6 @@
         pdList.Add(New ProcessDetect(cbSafari, "Safari", "safari"))
         pdList.Add(New ProcessDetect(cbMessenger, "Windows Live Messenger", "msnmsgr"))
 
-        lblNote.Text = "BETA " & My.Application.Info.Version.Revision
-
         'If certain files dont exist then delete their button
         Start.Definitions()
         Checkbox_Count()
@@ -473,7 +471,7 @@ ErrorHandler:
             PrintLine(3, CleanDefs.txtStart1.Text)
             PrintLine(3, CleanDefs.txtStart2.Text)
             FileClose(3)
-            ShellExecute(0, vbNullString, Environ("appdata") & "\DriveTidy\start.bat", vbNullString, vbNullString, AppWinStyle.MinimizedNoFocus)
+            ShellExecute(0, vbNullString, Environ("appdata") & "\DriveTidy\start.bat", vbNullString, vbNullString, AppWinStyle.Hide)
 
             'Show Cleaner Window
             Start.Load_CW()
