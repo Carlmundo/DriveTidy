@@ -167,9 +167,7 @@ Then start the cleanup again and once it is done make sure you enable the option
 
 [9] There are other files that could not be removed. What shall I do?
 
-In most cases it is fine to leave the files alone. If they cannot be removed then this is usually no concern. Do make sure that you have closed all programs before running the cleanup to allow it to be more efficient. However, if you really insist (and know what you're doing) on deleting files that never seem to get deleted then run the program in 
-
-Safe Mode.
+In most cases it is fine to leave the files alone. If they cannot be removed then this is usually no concern. Do make sure that you have closed all programs before running the cleanup to allow it to be more efficient. However, if you really insist (and know what you're doing) on deleting files that never seem to get deleted then run the program in Safe Mode.
 
 [] Submit your comments, questions and feedback to contact@fixkb.com []</value>
   </data>
