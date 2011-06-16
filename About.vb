@@ -59,8 +59,8 @@
         If FileContent > BuildValue Then
             MsgNewUpdate = MsgBox("A newer version of DriveTidy is available. Do you want to download it?", MsgBoxStyle.YesNo, "Update")
             If MsgNewUpdate = MsgBoxResult.Yes Then
-                MsgBox("Make sure to delete or overwrite your older DriveTidy after downloading the new version.")
-                objShell.Run("http://www.aspromos.com/DriveTidy.exe")
+                MsgBox("Make sure to delete or overwrite your older version of DriveTidy after downloading the new version.")
+                objShell.Run("https://github.com/downloads/Carlmundo/DriveTidy/DriveTidy.exe")
                 Main.Close()
                 Me.Close()
             End If
