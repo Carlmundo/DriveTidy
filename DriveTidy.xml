@@ -66,6 +66,21 @@
     <NewsFeed_Description_70></NewsFeed_Description_70>
     <NewsFeed_Description_250></NewsFeed_Description_250>
   </NewsFeed>
+  <Site>
+    <Site_FORM>Y</Site_FORM>
+    <Site_VERSION>1.0</Site_VERSION>
+    <Site_URL>http://Submit-Everywhere.com/extensions/Site.htm</Site_URL>
+    <Site_DESCRIPTION>This PAD extension allows you to add your site info into your PAD file. This info can be used by site submission software or by web directories themselves.</Site_DESCRIPTION>
+    <Site_Contact_Email>contact@fixkb.com</Site_Contact_Email>
+    <Site_Contact_First_Name>Carl</Site_Contact_First_Name>
+    <Site_Contact_Last_Name>Norton</Site_Contact_Last_Name>
+    <Site_Site_Title>[Fix-KB]</Site_Site_Title>
+    <Site_Site_URL>http://www.fixkb.com</Site_Site_URL>
+    <Site_Description_100>Computer Fix Knowledge Base for Windows, Mac OS X &amp; Assistive Technology.</Site_Description_100>
+    <Site_Description_250>Computer Fix Knowledge Base for Windows, Mac OS X &amp; Assistive Technology.</Site_Description_250>
+    <Site_Description_450>Computer Fix Knowledge Base for Windows, Mac OS X &amp; Assistive Technology.</Site_Description_450>
+    <Site_Keywords>fix, utility, windows, mac, system, tool, solution, downloads</Site_Keywords>
+  </Site>
   <Program_Info>
     <Program_Name>DriveTidy</Program_Name>
     <Program_Version>0.9.8.667</Program_Version>
@@ -118,7 +133,7 @@
     </Download_URLs>
     <Application_URLs>
       <Application_Info_URL>http://www.fixkb.com/p/downloads.html</Application_Info_URL>
-      <Application_XML_File_URL>https://raw.github.com/Carlmundo/DriveTidy/master/DriveTidy.xml</Application_XML_File_URL>
+      <Application_XML_File_URL>http://github.com/Carlmundo/DriveTidy/raw/master/DriveTidy.xml</Application_XML_File_URL>
       <Application_Order_URL></Application_Order_URL>
       <Application_Screenshot_URL></Application_Screenshot_URL>
       <Application_Icon_URL></Application_Icon_URL>
