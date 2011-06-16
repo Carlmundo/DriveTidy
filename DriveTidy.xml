@@ -118,7 +118,7 @@
     </Download_URLs>
     <Application_URLs>
       <Application_Info_URL>http://www.fixkb.com/p/downloads.html</Application_Info_URL>
-      <Application_XML_File_URL>http://github.com/downloads/Carlmundo/DriveTidy/DriveTidy.xml</Application_XML_File_URL>
+      <Application_XML_File_URL>https://raw.github.com/Carlmundo/DriveTidy/master/DriveTidy.xml</Application_XML_File_URL>
       <Application_Order_URL></Application_Order_URL>
       <Application_Screenshot_URL></Application_Screenshot_URL>
       <Application_Icon_URL></Application_Icon_URL>
