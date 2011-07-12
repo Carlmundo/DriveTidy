@@ -8,7 +8,7 @@
         End Try
     End Function
 
-    Dim File As String
+    Dim FileChk As String
     Dim FileContent As String
     Dim Tot As Decimal
     Dim Free As Decimal
@@ -129,8 +129,8 @@
         'Creates a blank file and constantly checks it's value. The batch script will write values to the file after certain lines.
         'Each value represents a certain amount of bars in the progress bar.
         FileContent = "0"
-        File = Environ("appdata") & "\DriveTidy\cleanchk.txt"
-        FileOpen(2, File, OpenMode.Input)
+        FileChk = Environ("appdata") & "\DriveTidy\cleanchk.txt"
+        FileOpen(2, FileChk, OpenMode.Input)
         Input(2, FileContent)
         If FileContent = "0" Then
             CleanStatus.Text = "Cleaning..."
@@ -208,22 +208,25 @@
         'Will come into effect once the substatus changes
         If Not CleanSubStatus.Text = Nothing Then
             If CheckProcess("cmd") = 0 Then
-                If Not FileContent = "FIN" Then
+                Dim FileLog As String = My.Computer.FileSystem.ReadAllText(Environ("appdata") & "\DriveTidy\log.txt")
+                MsgBox(FileLog)
+                If Not FileLog.Contains("[Cleanup Complete.]") Then
                     End_Scan()
                     CleanStatus.Text = "Complete"
                     CleanSubStatus.Text = "Additional cleanup may be needed."
                 End If
             End If
-            END IF
+        End If
 
-            For i As Integer = 0 To Proc.GetUpperBound(0)
-                If Proc(i).ProcessName = "vsp1cln" Then
-                    CleanSubStatus.Text = "Vista SP1 Cleanup"
-                ElseIf Proc(i).ProcessName = "compcln" Then
-                    CleanSubStatus.Text = "Vista SP2 Cleanup"
-                End If
-            Next
-            FileClose(2)
+
+        For i As Integer = 0 To Proc.GetUpperBound(0)
+            If Proc(i).ProcessName = "vsp1cln" Then
+                CleanSubStatus.Text = "Vista SP1 Cleanup"
+            ElseIf Proc(i).ProcessName = "compcln" Then
+                CleanSubStatus.Text = "Vista SP2 Cleanup"
+            End If
+        Next
+        FileClose(2)
     End Sub
     Private Sub tmSpace_Tick(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles tmSpace.Tick
         LiveSpace()
