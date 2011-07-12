@@ -17,7 +17,7 @@
     <OptionCompare>Binary</OptionCompare>
     <OptionStrict>Off</OptionStrict>
     <OptionInfer>On</OptionInfer>
-    <ApplicationIcon>32x32_HQ.ico</ApplicationIcon>
+    <ApplicationIcon>Icon - HQ.ico</ApplicationIcon>
     <TargetFrameworkSubset>
     </TargetFrameworkSubset>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -178,6 +178,7 @@
   <ItemGroup>
     <Content Include="32x32_HQ.ico" />
     <Content Include="32x32_LQ.ico" />
+    <Content Include="Icon - HQ.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
