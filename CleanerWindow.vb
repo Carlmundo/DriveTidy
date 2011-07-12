@@ -209,7 +209,6 @@
         If Not CleanSubStatus.Text = Nothing Then
             If CheckProcess("cmd") = 0 Then
                 Dim FileLog As String = My.Computer.FileSystem.ReadAllText(Environ("appdata") & "\DriveTidy\log.txt")
-                MsgBox(FileLog)
                 If Not FileLog.Contains("[Cleanup Complete.]") Then
                     End_Scan()
                     CleanStatus.Text = "Complete"
