@@ -185,6 +185,9 @@ ErrorHandler:
                 End If
             End If
         End If
+        If Not My.Computer.FileSystem.DirectoryExists(Environ("appdata") & "\Google\Local Search History") Then
+            frmMain.cbGoogleToolbar.Visible = False
+        End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("allusersappdata") & "\Google Updater\cache") Then
             frmMain.cbGoogleUpdater.Visible = False
         End If

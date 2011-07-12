@@ -179,6 +179,7 @@
         d2.Add(cbEVElogs, CleanDefs2.txtEVElogs)
         d2.Add(cbGIMP, CleanDefs2.txtGIMP)
         d2.Add(cbGoogleEarth, CleanDefs2.txtGoogleEarth)
+        d2.Add(cbGoogleToolbar, CleanDefs2.txtGoogleToolbar)
         d2.Add(cbGoogleUpdater, CleanDefs2.txtGoogleUpdater)
         d2.Add(cbHPDigitalImaging, CleanDefs2.txtHPDigitalImaging)
         d2.Add(cbIMVU, CleanDefs2.txtIMVU)
