@@ -176,8 +176,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="32x32_HQ.ico" />
-    <Content Include="32x32_LQ.ico" />
     <Content Include="Icon - HQ.ico" />
   </ItemGroup>
   <ItemGroup>
