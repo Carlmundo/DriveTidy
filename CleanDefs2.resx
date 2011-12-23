@@ -236,7 +236,12 @@ del /f /s /q "%appdata%\IMVU\AssetCache\*"
 rd /s /q "%appdata%\IMVU\AssetCache\"
 del /f /s /q "%appdata%\IMVU\PixmapCache\*"
 rd /s /q "%appdata%\IMVU\PixmapCache\"
-del /f /s /q "%appdata%\IMVU\*.log"</value>
+del /f /s /q "%appdata%\IMVU\*.log"
+del /f /s /q "%appdata%\IMVUClient\*.icns"
+del /f /s /q "%appdata%\IMVUClient\ui\profile\*.sqlite"
+del /f /s /q "%appdata%\IMVUClient\ui\profile\*.mfl"
+del /f /s /q "%appdata%\IMVUClient\ui\profile\*.dat"
+del /f /s /q "%appdata%\IMVUClient\ui\profile\*.js"</value>
   </data>
   <data name="txtJagex.Text" xml:space="preserve">
     <value>echo [Jagex cache...]
