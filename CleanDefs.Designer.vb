@@ -116,7 +116,7 @@ Partial Class CleanDefs
         Me.lblTemp.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTemp.Location = New System.Drawing.Point(3, 282)
         Me.lblTemp.Name = "lblTemp"
-        Me.lblTemp.Size = New System.Drawing.Size(162, 22)
+        Me.lblTemp.Size = New System.Drawing.Size(161, 22)
         Me.lblTemp.TabIndex = 28
         Me.lblTemp.Text = "Temporary Files"
         '
@@ -136,7 +136,7 @@ Partial Class CleanDefs
         Me.lblRecent.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRecent.Location = New System.Drawing.Point(3, 365)
         Me.lblRecent.Name = "lblRecent"
-        Me.lblRecent.Size = New System.Drawing.Size(255, 22)
+        Me.lblRecent.Size = New System.Drawing.Size(254, 22)
         Me.lblRecent.TabIndex = 30
         Me.lblRecent.Text = "Recent Accessed File Data"
         '
@@ -148,8 +148,7 @@ Partial Class CleanDefs
         Me.txtRecent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtRecent.Size = New System.Drawing.Size(254, 55)
         Me.txtRecent.TabIndex = 29
-        Me.txtRecent.Text = "echo Q3 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo [Recent accessed file data...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%recent%""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /a /f /s /q ""%appdata%\Microsoft\Office\Recent\*.*" & _
-            """"
+        Me.txtRecent.Text = "echo Q3 >""%appdata%\DriveTidy\cleanchk.txt""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "echo [Recent accessed file data...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%recent%""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /a /f /s /q ""%appdata%\Microsoft\Office\Recent\*"""
         '
         'lblTIF
         '
@@ -157,7 +156,7 @@ Partial Class CleanDefs
         Me.lblTIF.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTIF.Location = New System.Drawing.Point(3, 626)
         Me.lblTIF.Name = "lblTIF"
-        Me.lblTIF.Size = New System.Drawing.Size(238, 22)
+        Me.lblTIF.Size = New System.Drawing.Size(237, 22)
         Me.lblTIF.TabIndex = 32
         Me.lblTIF.Text = "Temporary Internet Files"
         '

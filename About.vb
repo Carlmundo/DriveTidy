@@ -74,7 +74,7 @@
 UpdateCheckFailed:
         Me.Cursor = Cursors.Default
         If Err.Number = 53 Then
-            MsgBox("Could not find server. Make sure you are connected to the internet.", MsgBoxStyle.Exclamation, "Update Failed")
+            MsgBox("Could not find server. Make sure you are connected to the Internet.", MsgBoxStyle.Exclamation, "Update Failed")
         Else
             MsgBox(Err.Description, MsgBoxStyle.Critical, "Error " & Err.Number)
         End If
