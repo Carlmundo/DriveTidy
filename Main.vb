@@ -48,7 +48,7 @@
                 item.Checked = False
             End If
         Next
-
+        cbAppleInstaller.Checked = False
     End Sub
 
     Private Sub CleanerErrors()
