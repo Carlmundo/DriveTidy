@@ -109,6 +109,12 @@
         Environment.SetEnvironmentVariable("version", My.Application.Info.Version.Major & "." & My.Application.Info.Version.Minor & "." & My.Application.Info.Version.Build & "." & My.Application.Info.Version.Revision)
         'Version as a value (1 decimal place)
         Environment.SetEnvironmentVariable("version_value", My.Application.Info.Version.Major & "." & My.Application.Info.Version.Minor & My.Application.Info.Version.Build & My.Application.Info.Version.Revision)
+
+        'Check for Updates
+        If Start.SessionStarted = False Then
+            bgUpdateCheck.RunWorkerAsync()
+        End If
+
         'Paths include "/" to ensure wanted files aren't deleted. 
         'Command List is also adjusted accordingly. 
         'E.g. %userprofile%temp.tmp and not %userprofile%\temp.tmp
@@ -499,4 +505,8 @@ ErrorHandler:
         flwOptions.Focus()
     End Sub
 
+    Private Sub bgUpdateCheck_DoWork(ByVal sender As System.Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles bgUpdateCheck.DoWork
+        About.AppUpdate()
+        Start.SessionStarted = True
+    End Sub
 End Class

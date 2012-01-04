@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("A disk cleanup tool that throroughly scans your computer for unnecessary and invalid files no longer being used by the system.")> 
 <Assembly: AssemblyCompany("[Fix-KB]")> 
 <Assembly: AssemblyProduct("DriveTidy")> 
-<Assembly: AssemblyCopyright("[Fix-KB] ©2009-2011")> 
+<Assembly: AssemblyCopyright("[Fix-KB] ©2009-2012")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)> 
@@ -31,4 +31,4 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("0.9.8.74")> 
+<Assembly: AssemblyVersion("0.9.8.75")> 

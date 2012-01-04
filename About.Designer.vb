@@ -28,7 +28,7 @@ Partial Class About
         Me.cmdReadme = New System.Windows.Forms.Button
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel
         Me.pbLogo = New System.Windows.Forms.PictureBox
-        Me.Label4 = New System.Windows.Forms.Label
+        Me.lblTitle = New System.Windows.Forms.Label
         Me.lblVersion = New System.Windows.Forms.Label
         Me.lblCopyright = New System.Windows.Forms.Label
         Me.tblDesign = New System.Windows.Forms.TableLayoutPanel
@@ -93,17 +93,17 @@ Partial Class About
         Me.pbLogo.TabIndex = 28
         Me.pbLogo.TabStop = False
         '
-        'Label4
+        'lblTitle
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label4.Font = New System.Drawing.Font("Arial", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(3, 38)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(144, 24)
-        Me.Label4.TabIndex = 27
-        Me.Label4.Text = "DriveTidy"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblTitle.AutoSize = True
+        Me.lblTitle.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lblTitle.Font = New System.Drawing.Font("Arial", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitle.Location = New System.Drawing.Point(3, 38)
+        Me.lblTitle.Name = "lblTitle"
+        Me.lblTitle.Size = New System.Drawing.Size(144, 24)
+        Me.lblTitle.TabIndex = 27
+        Me.lblTitle.Text = "DriveTidy"
+        Me.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblVersion
         '
@@ -136,7 +136,7 @@ Partial Class About
         Me.tblDesign.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.tblDesign.Controls.Add(Me.lblCopyright, 0, 3)
         Me.tblDesign.Controls.Add(Me.lblVersion, 0, 2)
-        Me.tblDesign.Controls.Add(Me.Label4, 0, 1)
+        Me.tblDesign.Controls.Add(Me.lblTitle, 0, 1)
         Me.tblDesign.Controls.Add(Me.pbLogo, 0, 0)
         Me.tblDesign.Controls.Add(Me.FlowLayoutPanel1, 0, 6)
         Me.tblDesign.Controls.Add(Me.flwButtons, 0, 4)
@@ -168,6 +168,7 @@ Partial Class About
         Me.MaximizeBox = False
         Me.Name = "About"
         Me.Padding = New System.Windows.Forms.Padding(10, 5, 10, 0)
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "About DriveTidy"
         Me.flwButtons.ResumeLayout(False)
@@ -181,7 +182,7 @@ Partial Class About
     Friend WithEvents flwButtons As System.Windows.Forms.FlowLayoutPanel
     Friend WithEvents FlowLayoutPanel1 As System.Windows.Forms.FlowLayoutPanel
     Friend WithEvents pbLogo As System.Windows.Forms.PictureBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents lblTitle As System.Windows.Forms.Label
     Friend WithEvents lblVersion As System.Windows.Forms.Label
     Friend WithEvents lblCopyright As System.Windows.Forms.Label
     Friend WithEvents tblDesign As System.Windows.Forms.TableLayoutPanel

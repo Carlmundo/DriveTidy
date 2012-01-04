@@ -35,6 +35,10 @@
     End Sub
 
     Private Sub cmdUpdate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdUpdate.Click
+        AppUpdate()
+    End Sub
+
+    Public Sub AppUpdate()
         Me.Cursor = Cursors.WaitCursor
 
         'Used to open the link to download an updated version
@@ -53,11 +57,14 @@
         On Error GoTo UpdateCheckFailed
         FileOpen(5, LocalFile, OpenMode.Input)
         Input(5, FileContent)
+        FileClose(5)
         Me.Cursor = Cursors.Default
 
         Dim MsgNewUpdate As Object
         If FileContent > BuildValue Then
-            MsgNewUpdate = MsgBox("A newer version of DriveTidy is available. Do you want to download it?", MsgBoxStyle.YesNo, "Update")
+            Dim LatestVersion As String = FileContent
+            LatestVersion = LatestVersion.Insert(3, ".").Insert(5, ".")
+            MsgNewUpdate = MsgBox("A new update for DriveTidy is available." & vbCrLf & vbCrLf & "Current Version:  " & Environ("version") & vbCrLf & "Latest Version:     " & LatestVersion & vbCrLf & vbCrLf & "Would you like to download it?", MsgBoxStyle.YesNo, "DriveTidy Update")
             If MsgNewUpdate = MsgBoxResult.Yes Then
                 MsgBox("Make sure to delete or overwrite your older version of DriveTidy after downloading the new version.")
                 objShell.Run("https://github.com/downloads/Carlmundo/DriveTidy/DriveTidy.exe")
@@ -65,19 +72,23 @@
                 Me.Close()
             End If
         ElseIf FileContent = 0 Then  'Some broken links display webcontent depending on hosting provider or DNS. This is read as 0.
-            MsgBox("The server appears to be down. Please try again later.", MsgBoxStyle.Exclamation, "Update Failed")
+            If Me.Visible = True Then
+                MsgBox("The server appears to be down. Please try again later.", MsgBoxStyle.Exclamation, "Update Failed")
+            End If
         ElseIf FileContent <= BuildValue Then
-            MsgBox("You have the latest version of DriveTidy.", MsgBoxStyle.Information, "Update")
+            If Me.Visible = True Then
+                MsgBox("You have the latest version of DriveTidy.", MsgBoxStyle.Information, "Update")
+            End If
         End If
-        FileClose(5)
-        Exit Sub
+            Exit Sub
 UpdateCheckFailed:
-        Me.Cursor = Cursors.Default
-        If Err.Number = 53 Then
-            MsgBox("Could not find server. Make sure you are connected to the Internet.", MsgBoxStyle.Exclamation, "Update Failed")
-        Else
-            MsgBox(Err.Description, MsgBoxStyle.Critical, "Error " & Err.Number)
-        End If
+            Me.Cursor = Cursors.Default
+            If Err.Number = 53 Then
+                MsgBox("Could not find server. Make sure you are connected to the Internet.", MsgBoxStyle.Exclamation, "Update Failed")
+            Else
+                MsgBox(Err.Description, MsgBoxStyle.Critical, "Error " & Err.Number)
+            End If
+        On Error Resume Next
         FileClose(5)
     End Sub
 

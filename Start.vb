@@ -2,6 +2,7 @@
     Dim frmMain As New Main
     Dim frmCW
     Dim item As Object
+    Public SessionStarted As Boolean = False
 
     Private Sub Start_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         On Error GoTo ErrorHandler

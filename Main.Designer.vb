@@ -56,6 +56,7 @@ Partial Class Main
         Me.cbSamplePictures = New System.Windows.Forms.CheckBox
         Me.cbSampleVideos = New System.Windows.Forms.CheckBox
         Me.flwOtherApps = New System.Windows.Forms.FlowLayoutPanel
+        Me.lblOtherApps = New System.Windows.Forms.Label
         Me.cbAbletonLive = New System.Windows.Forms.CheckBox
         Me.cbAdobeCameraRAW = New System.Windows.Forms.CheckBox
         Me.cbAdobeMedia = New System.Windows.Forms.CheckBox
@@ -82,6 +83,7 @@ Partial Class Main
         Me.cbRDP = New System.Windows.Forms.CheckBox
         Me.cbSilverlight = New System.Windows.Forms.CheckBox
         Me.cbSpotify = New System.Windows.Forms.CheckBox
+        Me.cbSteam = New System.Windows.Forms.CheckBox
         Me.cbSymantec = New System.Windows.Forms.CheckBox
         Me.cbTrackmania = New System.Windows.Forms.CheckBox
         Me.cbUnity = New System.Windows.Forms.CheckBox
@@ -100,8 +102,7 @@ Partial Class Main
         Me.tblDesign = New System.Windows.Forms.TableLayoutPanel
         Me.flwPresets = New System.Windows.Forms.FlowLayoutPanel
         Me.cmdAbout = New System.Windows.Forms.Button
-        Me.cbSteam = New System.Windows.Forms.CheckBox
-        Me.lblOtherApps = New System.Windows.Forms.Label
+        Me.bgUpdateCheck = New System.ComponentModel.BackgroundWorker
         Me.flwOptions.SuspendLayout()
         Me.flwSystem.SuspendLayout()
         Me.flwInternet.SuspendLayout()
@@ -565,6 +566,18 @@ Partial Class Main
         Me.flwOtherApps.TabIndex = 3
         Me.flwOtherApps.WrapContents = False
         '
+        'lblOtherApps
+        '
+        Me.lblOtherApps.AutoSize = True
+        Me.lblOtherApps.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblOtherApps.Location = New System.Drawing.Point(3, 0)
+        Me.lblOtherApps.Name = "lblOtherApps"
+        Me.lblOtherApps.Size = New System.Drawing.Size(125, 20)
+        Me.lblOtherApps.TabIndex = 1
+        Me.lblOtherApps.Text = "Other Applications"
+        Me.lblOtherApps.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.lblOtherApps.UseCompatibleTextRendering = True
+        '
         'cbAbletonLive
         '
         Me.cbAbletonLive.AutoSize = True
@@ -877,6 +890,18 @@ Partial Class Main
         Me.cbSpotify.Text = "Spotify"
         Me.cbSpotify.UseVisualStyleBackColor = True
         '
+        'cbSteam
+        '
+        Me.cbSteam.AutoSize = True
+        Me.cbSteam.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbSteam.Location = New System.Drawing.Point(0, 514)
+        Me.cbSteam.Margin = New System.Windows.Forms.Padding(0)
+        Me.cbSteam.Name = "cbSteam"
+        Me.cbSteam.Size = New System.Drawing.Size(62, 19)
+        Me.cbSteam.TabIndex = 28
+        Me.cbSteam.Text = "Steam"
+        Me.cbSteam.UseVisualStyleBackColor = True
+        '
         'cbSymantec
         '
         Me.cbSymantec.AutoSize = True
@@ -1117,29 +1142,9 @@ Partial Class Main
         Me.cmdAbout.Text = "?"
         Me.cmdAbout.UseVisualStyleBackColor = True
         '
-        'cbSteam
+        'bgUpdateCheck
         '
-        Me.cbSteam.AutoSize = True
-        Me.cbSteam.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbSteam.Location = New System.Drawing.Point(0, 514)
-        Me.cbSteam.Margin = New System.Windows.Forms.Padding(0)
-        Me.cbSteam.Name = "cbSteam"
-        Me.cbSteam.Size = New System.Drawing.Size(62, 19)
-        Me.cbSteam.TabIndex = 28
-        Me.cbSteam.Text = "Steam"
-        Me.cbSteam.UseVisualStyleBackColor = True
-        '
-        'lblOtherApps
-        '
-        Me.lblOtherApps.AutoSize = True
-        Me.lblOtherApps.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOtherApps.Location = New System.Drawing.Point(3, 0)
-        Me.lblOtherApps.Name = "lblOtherApps"
-        Me.lblOtherApps.Size = New System.Drawing.Size(125, 20)
-        Me.lblOtherApps.TabIndex = 1
-        Me.lblOtherApps.Text = "Other Applications"
-        Me.lblOtherApps.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.lblOtherApps.UseCompatibleTextRendering = True
+        Me.bgUpdateCheck.WorkerSupportsCancellation = True
         '
         'Main
         '
@@ -1254,4 +1259,5 @@ Partial Class Main
     Friend WithEvents cbBattleNet As System.Windows.Forms.CheckBox
     Friend WithEvents cbSteam As System.Windows.Forms.CheckBox
     Friend WithEvents lblOtherApps As System.Windows.Forms.Label
+    Friend WithEvents bgUpdateCheck As System.ComponentModel.BackgroundWorker
 End Class
