@@ -142,6 +142,9 @@ ErrorHandler:
             End If
         End If
 
+        If Not My.Computer.FileSystem.DirectoryExists(Environ("appdata") & "\Ableton\Cache") Then
+            frmMain.cbAbletonLive.Visible = False
+        End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("appdata") & "\Adobe\CameraRaw\Cache") Then
             frmMain.cbAdobeCameraRAW.Visible = False
         End If
@@ -162,6 +165,11 @@ ErrorHandler:
         If Not My.Computer.FileSystem.DirectoryExists(Environ("programfiles") & "\AVG") Then
             If Not My.Computer.FileSystem.DirectoryExists(Environ("programfiles(x86)") & "\AVG") Then
                 frmMain.cbAVG.Visible = False
+            End If
+        End If
+        If Not My.Computer.FileSystem.DirectoryExists(Environ("localappdata") & "\Blizzard Entertainment\Battle.Net\Cache") Then
+            If Not My.Computer.FileSystem.DirectoryExists(Environ("allusersprofile") & "\Blizzard Entertainment\Battle.Net\Cache") Then
+                frmMain.cbBattleNet.Visible = False
             End If
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("systemdrive") & "\BigFishGamesCache") Then
@@ -241,6 +249,9 @@ ErrorHandler:
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("localappdata") & "\Spotify\Storage") Then
             frmMain.cbSpotify.Visible = False
+        End If
+        If My.Computer.Registry.CurrentUser.GetValue("Software\Valve\Steam", "SteamPath", Nothing) Is Nothing Then
+            frmMain.cbSteam.Visible = False
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("allusersappdata") & "\Symantec Temporary Files") Then
             frmMain.cbSymantec.Visible = False

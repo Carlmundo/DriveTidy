@@ -113,6 +113,10 @@
         'Command List is also adjusted accordingly. 
         'E.g. %userprofile%temp.tmp and not %userprofile%\temp.tmp
         Environment.SetEnvironmentVariable("documents", My.Computer.Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders").GetValue("Personal"))
+        If Not My.Computer.Registry.CurrentUser.GetValue("Software\Valve\Steam", "SteamPath", Nothing) Is Nothing Then
+            Environment.SetEnvironmentVariable("steam", My.Computer.Registry.CurrentUser.OpenSubKey("Software\Valve\Steam").GetValue("SteamPath"))
+        End If
+
         If OS_WindowsVista Or OS_Windows7 = True Then
             Environment.SetEnvironmentVariable("localappdata", Environ("userprofile") + "\AppData\Local\")
             Environment.SetEnvironmentVariable("locallowappdata", Environ("userprofile") + "\AppData\LocalLow\")
@@ -168,12 +172,14 @@
         d2.Add(cbSampleMusic, CleanDefs2.txtSampleMusic)
         d2.Add(cbSamplePictures, CleanDefs2.txtSamplePictures)
         d2.Add(cbSampleVideos, CleanDefs2.txtSampleVideos)
+        d2.Add(cbAbletonLive, CleanDefs2.txtAbletonLive)
         d2.Add(cbAdobeCameraRAW, CleanDefs2.txtAdobeCameraRAW)
         d2.Add(cbAdobeMedia, CleanDefs2.txtAdobeMedia)
         d2.Add(cbAdobeReader, CleanDefs2.txtAdobeReader)
         d2.Add(cbAppleInstaller, CleanDefs2.txtAppleInstaller)
         d2.Add(cbAutoDesk, CleanDefs2.txtAutoDesk)
         d2.Add(cbAVG, CleanDefs2.txtAVG)
+        d2.Add(cbBattleNet, CleanDefs2.txtBattleNet)
         d2.Add(cbBigFishGames, CleanDefs2.txtBigFishGames)
         d2.Add(cbEVEcache, CleanDefs2.txtEVEcache)
         d2.Add(cbEVElogs, CleanDefs2.txtEVElogs)
@@ -192,6 +198,7 @@
         d2.Add(cbRDP, CleanDefs2.txtRDP)
         d2.Add(cbSilverlight, CleanDefs2.txtSilverlight)
         d2.Add(cbSpotify, CleanDefs2.txtSpotify)
+        d2.Add(cbSteam, CleanDefs2.txtSteam)
         d2.Add(cbSymantec, CleanDefs2.txtSymantec)
         d2.Add(cbTrackmania, CleanDefs2.txtTrackmania)
         d2.Add(cbUnity, CleanDefs2.txtUnity)

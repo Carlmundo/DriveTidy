@@ -208,6 +208,13 @@ del /f /s /q "%%a\update\backup\*"
 )
 popd</value>
   </data>
+  <data name="txtBattleNet.Text" xml:space="preserve">
+    <value>echo [Battle.Net cache...]
+del /f /s /q "%localappdata%\Blizzard Entertainment\Battle.Net\Cache\*"
+rd /s /q "%localappdata%\Blizzard Entertainment\Battle.Net\Cache\"
+del /f /s /q "%allusersappdata%\Blizzard Entertainment\Battle.Net\Cache\*"
+rd /s /q "%allusersappdata%\Blizzard Entertainment\Battle.Net\Cache\"</value>
+  </data>
   <data name="txtEVEcache.Text" xml:space="preserve">
     <value>echo [EVE cache...]
 IF NOT EXIST "%localappdata%\CCP\EVE\" GOTO End_EVEcache
@@ -306,6 +313,16 @@ del /f /s /q "%localappdata%\Microsoft\Silverlight\*"
 rd /s /q "%localappdata%\Microsoft\Silverlight\"
 del /f /s /q "%locallowappdata%\Microsoft\Silverlight\*"
 rd /s /q "%locallowappdata%\Microsoft\Silverlight\"</value>
+  </data>
+  <data name="txtSteam.Text" xml:space="preserve">
+    <value>echo [Steam caches...]
+del /f /s /q "%steam%\appcache\httpcache\*"
+del /f /s /q "%steam%\config\cookies\*"
+del /f /s /q "%steam%\config\htmlcache\*"
+del /f /s /q "%steam%\config\overlaycookies\*"
+del /f /s /q "%steam%\config\overlayhtmlcache\*"
+del /f /s /q "%steam%\dumps\*"
+del /f /q "%steam%\*.mdmp"</value>
   </data>
   <data name="txtSymantec.Text" xml:space="preserve">
     <value>echo [Symantec caches...]
