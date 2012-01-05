@@ -63,7 +63,19 @@
         Dim MsgNewUpdate As Object
         If FileContent > BuildValue Then
             Dim LatestVersion As String = FileContent
-            LatestVersion = LatestVersion.Insert(3, ".").Insert(5, ".")
+            If LatestVersion < 10 Then
+                If LatestVersion.Length = 4 Then
+                    LatestVersion = LatestVersion.Insert(3, ".")
+                ElseIf LatestVersion.Length >= 5 Then
+                    LatestVersion = LatestVersion.Insert(3, ".").Insert(5, ".")
+                End If
+            ElseIf LatestVersion >= 10 Then
+                If LatestVersion.Length = 5 Then
+                    LatestVersion = LatestVersion.Insert(4, ".")
+                ElseIf LatestVersion.Length >= 6 Then
+                    LatestVersion = LatestVersion.Insert(4, ".").Insert(6, ".")
+                End If
+            End If
             MsgNewUpdate = MsgBox("A new update for DriveTidy is available." & vbCrLf & vbCrLf & "Current Version:  " & Environ("version") & vbCrLf & "Latest Version:     " & LatestVersion & vbCrLf & vbCrLf & "Would you like to download it?", MsgBoxStyle.YesNo, "DriveTidy Update")
             If MsgNewUpdate = MsgBoxResult.Yes Then
                 MsgBox("Make sure to delete or overwrite your older version of DriveTidy after downloading the new version.")
@@ -80,14 +92,14 @@
                 MsgBox("You have the latest version of DriveTidy.", MsgBoxStyle.Information, "Update")
             End If
         End If
-            Exit Sub
+        Exit Sub
 UpdateCheckFailed:
-            Me.Cursor = Cursors.Default
-            If Err.Number = 53 Then
-                MsgBox("Could not find server. Make sure you are connected to the Internet.", MsgBoxStyle.Exclamation, "Update Failed")
-            Else
-                MsgBox(Err.Description, MsgBoxStyle.Critical, "Error " & Err.Number)
-            End If
+        Me.Cursor = Cursors.Default
+        If Err.Number = 53 Then
+            MsgBox("Could not find server. Make sure you are connected to the Internet.", MsgBoxStyle.Exclamation, "Update Failed")
+        Else
+            MsgBox(Err.Description, MsgBoxStyle.Critical, "Error " & Err.Number)
+        End If
         On Error Resume Next
         FileClose(5)
     End Sub
