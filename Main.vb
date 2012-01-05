@@ -119,8 +119,10 @@
         'Command List is also adjusted accordingly. 
         'E.g. %userprofile%temp.tmp and not %userprofile%\temp.tmp
         Environment.SetEnvironmentVariable("documents", My.Computer.Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders").GetValue("Personal"))
-        If Not My.Computer.Registry.CurrentUser.GetValue("Software\Valve\Steam", "SteamPath", Nothing) Is Nothing Then
-            Environment.SetEnvironmentVariable("steam", My.Computer.Registry.CurrentUser.OpenSubKey("Software\Valve\Steam").GetValue("SteamPath"))
+        If My.User.IsInRole(ApplicationServices.BuiltInRole.Administrator) Then
+            If Not My.Computer.Registry.CurrentUser.OpenSubKey("Software\Valve\Steam") Is Nothing Then
+                'Environment.SetEnvironmentVariable("steam", My.Computer.Registry.CurrentUser.OpenSubKey("Software\Valve\Steam").GetValue("SteamPath"))
+            End If
         End If
 
         If OS_WindowsVista Or OS_Windows7 = True Then
@@ -232,7 +234,7 @@
         Exit Sub
 ErrorHandler:
         If Err.Number = 5 Then
-            MsgBox("You may be running the program from a network drive. Please copy the file to a local drive and try again.", MsgBoxStyle.Exclamation, "Permission Error")
+            MsgBox("You may be running the program from a temporary location or network drive. Try opening the file from your Desktop.", MsgBoxStyle.Exclamation, "Permission Error")
         Else
             MsgBox(Err.Description, MsgBoxStyle.Exclamation, "Error " & Err.Number)
         End If
