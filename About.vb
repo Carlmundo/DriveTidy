@@ -110,4 +110,12 @@ UpdateCheckFailed:
         FileClose(6)
         ShellExecute(0, vbNullString, "notepad", Environ("temp") & "\DriveTidy_Readme.txt", vbNullString, AppWinStyle.NormalFocus)
     End Sub
+
+    Private Sub lnkWeb_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles lnkWeb.LinkClicked
+        Process.Start("http://www.fixkb.com")
+    End Sub
+
+    Private Sub lnkTwitter_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles lnkTwitter.LinkClicked
+        Process.Start("http://www.twitter.com/fixkb")
+    End Sub
 End Class
