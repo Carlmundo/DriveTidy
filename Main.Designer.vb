@@ -1107,7 +1107,7 @@ Partial Class Main
         Me.tblDesign.Location = New System.Drawing.Point(0, 0)
         Me.tblDesign.Margin = New System.Windows.Forms.Padding(5)
         Me.tblDesign.Name = "tblDesign"
-        Me.tblDesign.Padding = New System.Windows.Forms.Padding(10)
+        Me.tblDesign.Padding = New System.Windows.Forms.Padding(10, 10, 10, 5)
         Me.tblDesign.RowCount = 7
         Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle)
         Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle)
@@ -1116,7 +1116,7 @@ Partial Class Main
         Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle)
         Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle)
         Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle)
-        Me.tblDesign.Size = New System.Drawing.Size(249, 350)
+        Me.tblDesign.Size = New System.Drawing.Size(249, 340)
         Me.tblDesign.TabIndex = 1
         '
         'flwPresets
@@ -1152,7 +1152,7 @@ Partial Class Main
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(249, 350)
+        Me.ClientSize = New System.Drawing.Size(249, 340)
         Me.Controls.Add(Me.cmdAbout)
         Me.Controls.Add(Me.tblDesign)
         Me.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
