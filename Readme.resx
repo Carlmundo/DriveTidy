@@ -119,10 +119,13 @@
   </resheader>
   <data name="txtReadme.Text" xml:space="preserve">
     <value>DriveTidy : Readme
-================
-Last Updated 25 May 2011.
+Last Updated 6 January 2012
 
-[1] Minimum System Requirements
+[1] What is DriveTidy?
+
+DriveTidy is a disk cleanup utility that thoroughly scans your computer for unnecessary and invalid files no longer being used by the system freeing up disk space. It removes items that are missed by the built in Windows Disk Cleanup as well as other popular cleaning tools.
+
+[2] Minimum System Requirements
 
 Any of the following operating systems:
 
@@ -133,13 +136,9 @@ Windows 7 or later
 1 MB of Free Space
 Internet Connection (to check for updates)
 
-[2] What is DriveTidy?
-
-DriveTidy is a disk cleanup utility that thoroughly scans your computer for unnecessary and invalid files no longer being used by the system freeing up disk space. It removes items that are missed by the built in Windows Disk Cleanup as well as other popular cleaning tools.
-
 [3] How do I use the program?
 
-Once the program has started, check the items that you wish to remove. You can click the 'Quick' button to check options which are commonly used for the program. Then click the 'Start Cleanup' button. The cleanup will begin and a progress indicator will be shown. Once it is finished you can click the 'Close' button.
+Once the program has started, check the items that you wish to remove. You can click the 'Quick' button to check options which are commonly used for the program. Then click the 'Start Cleanup' button which will start the cleanup and show a progress indicator. Once it has finished you can click the 'Close' button.
 
 [4] Is it safe for these files to be deleted?
 
