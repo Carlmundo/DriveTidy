@@ -80,8 +80,7 @@
             If MsgNewUpdate = MsgBoxResult.Yes Then
                 MsgBox("Make sure to delete or overwrite your older version of DriveTidy after downloading the new version.")
                 objShell.Run("https://github.com/downloads/Carlmundo/DriveTidy/DriveTidy.exe")
-                Main.Close()
-                Me.Close()
+                Application.Exit()
             End If
         ElseIf FileContent = 0 Then  'Some broken links display webcontent depending on hosting provider or DNS. This is read as 0.
             If Me.Visible = True Then
