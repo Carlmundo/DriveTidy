@@ -121,7 +121,7 @@
         Environment.SetEnvironmentVariable("documents", My.Computer.Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders").GetValue("Personal"))
         If My.User.IsInRole(ApplicationServices.BuiltInRole.Administrator) Then
             If Not My.Computer.Registry.CurrentUser.OpenSubKey("Software\Valve\Steam") Is Nothing Then
-                'Environment.SetEnvironmentVariable("steam", My.Computer.Registry.CurrentUser.OpenSubKey("Software\Valve\Steam").GetValue("SteamPath"))
+                Environment.SetEnvironmentVariable("steam", My.Computer.Registry.CurrentUser.OpenSubKey("Software\Valve\Steam").GetValue("SteamPath"))
             End If
         End If
 

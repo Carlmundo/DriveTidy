@@ -252,7 +252,7 @@ ErrorHandler:
         If Not My.Computer.FileSystem.DirectoryExists(Environ("localappdata") & "\Spotify\Storage") Then
             frmMain.cbSpotify.Visible = False
         End If
-        If My.Computer.Registry.CurrentUser.GetValue("Software\Valve\Steam", "SteamPath", Nothing) Is Nothing Then
+        If My.Computer.Registry.CurrentUser.OpenSubKey("Software\Valve\Steam") Is Nothing Then
             frmMain.cbSteam.Visible = False
         End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("allusersappdata") & "\Symantec Temporary Files") Then
