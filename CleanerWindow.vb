@@ -47,16 +47,7 @@
             CloseForm()
             eventArgs.Cancel = True
         Else
-            'Kills any cmd and rundll32 processes left open
-            KillProcess("cmd")
-            KillProcess("rundll32")
-            'Deletes files made by the cleanup
-            On Error Resume Next
-            My.Computer.FileSystem.DeleteFile(Environ("appdata") & "\DriveTidy\cleaner.bat")
-            My.Computer.FileSystem.DeleteFile(Environ("appdata") & "\DriveTidy\start.bat")
-            My.Computer.FileSystem.DeleteFile(Environ("appdata") & "\DriveTidy\log.txt")
-            My.Computer.FileSystem.DeleteFile(Environ("appdata") & "\DriveTidy\cleanchk.txt")
-            My.Computer.FileSystem.DeleteDirectory(Environ("appdata") & "\DriveTidy\", FileIO.DeleteDirectoryOption.DeleteAllContents)
+            ClearAppData()
         End If
     End Sub
 
@@ -89,16 +80,7 @@
         If cmdCancel.Visible = True Then
             cmdCancel_Click(cmdCancel, New System.EventArgs())
         ElseIf cmdCancel.Visible = False Then
-            'Kills any cmd and rundll32 processes left open
-            killProcess("cmd")
-            killProcess("rundll32")
-            'Deletes files made by the cleanup
-            On Error Resume Next
-            My.Computer.FileSystem.DeleteFile(Environ("appdata") & "\DriveTidy\cleaner.bat")
-            My.Computer.FileSystem.DeleteFile(Environ("appdata") & "\DriveTidy\start.bat")
-            My.Computer.FileSystem.DeleteFile(Environ("appdata") & "\DriveTidy\log.txt")
-            My.Computer.FileSystem.DeleteFile(Environ("appdata") & "\DriveTidy\cleanchk.txt")
-            My.Computer.FileSystem.DeleteDirectory(Environ("appdata") & "\DriveTidy\", FileIO.DeleteDirectoryOption.DeleteAllContents)
+            ClearAppData()
             Start.Load_Main()
             Me.Close()
             CleanDefs.Close()
@@ -194,9 +176,9 @@
             CleanSubStatus.Text = ".err files"
             ProgressBar0.Value = 11
         ElseIf FileContent = "FIN" Then
-            End_Scan()
             CleanStatus.Text = "Complete"
             CleanSubStatus.Text = "See log for details."
+            End_Scan()
             On Error Resume Next
             My.Computer.FileSystem.DeleteFile(Environ("appdata") & "\DriveTidy\cleaner.bat")
             My.Computer.FileSystem.DeleteFile(Environ("appdata") & "\DriveTidy\start.bat")
@@ -210,21 +192,12 @@
             If CheckProcess("cmd") = 0 Then
                 Dim FileLog As String = My.Computer.FileSystem.ReadAllText(Environ("appdata") & "\DriveTidy\log.txt")
                 If Not FileLog.Contains("[Cleanup Complete.]") Then
-                    End_Scan()
                     CleanStatus.Text = "Complete"
                     CleanSubStatus.Text = "Additional cleanup may be needed."
+                    End_Scan()
                 End If
             End If
         End If
-
-
-        For i As Integer = 0 To Proc.GetUpperBound(0)
-            If Proc(i).ProcessName = "vsp1cln" Then
-                CleanSubStatus.Text = "Vista SP1 Cleanup"
-            ElseIf Proc(i).ProcessName = "compcln" Then
-                CleanSubStatus.Text = "Vista SP2 Cleanup"
-            End If
-        Next
         FileClose(2)
     End Sub
     Private Sub tmSpace_Tick(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles tmSpace.Tick
@@ -261,5 +234,18 @@
 
     Private Sub cmdClose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClose.Click
         CloseForm()
+    End Sub
+
+    Public Sub ClearAppData()
+        'Kills any cmd and rundll32 processes left open
+        KillProcess("cmd")
+        KillProcess("rundll32")
+        'Deletes files made by the cleanup
+        On Error Resume Next
+        My.Computer.FileSystem.DeleteFile(Environ("appdata") & "\DriveTidy\cleaner.bat")
+        My.Computer.FileSystem.DeleteFile(Environ("appdata") & "\DriveTidy\start.bat")
+        My.Computer.FileSystem.DeleteFile(Environ("appdata") & "\DriveTidy\log.txt")
+        My.Computer.FileSystem.DeleteFile(Environ("appdata") & "\DriveTidy\cleanchk.txt")
+        My.Computer.FileSystem.DeleteDirectory(Environ("appdata") & "\DriveTidy\", FileIO.DeleteDirectoryOption.DeleteAllContents)
     End Sub
 End Class
