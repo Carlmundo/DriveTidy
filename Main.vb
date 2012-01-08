@@ -112,6 +112,7 @@
 
         'Check for Updates
         If Start.SessionStarted = False Then
+            Start.SessionStarted = True
             bgUpdateCheck.RunWorkerAsync()
         End If
 
@@ -509,6 +510,5 @@ ErrorHandler:
 
     Private Sub bgUpdateCheck_DoWork(ByVal sender As System.Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles bgUpdateCheck.DoWork
         About.AppUpdate()
-        Start.SessionStarted = True
     End Sub
 End Class
