@@ -1,5 +1,8 @@
 bin/
 obj/
-Notes/
 DriveTidy.suo
 DriveTidy.vbproj.user
+Updater/bin/
+Updater/obj/
+Updater/Updater.suo
+Updater/Updater.vbproj.user

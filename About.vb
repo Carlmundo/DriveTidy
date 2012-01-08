@@ -3,7 +3,6 @@
     Private Declare Function ShellExecute Lib "shell32.dll" Alias "ShellExecuteA" (ByVal hwnd As Integer, ByVal lpOperation As String, ByVal lpFile As String, ByVal lpParameters As String, ByVal lpDirectory As String, ByVal nShowCmd As Integer) As Integer
     'Allows Downloading of file
     Private Declare Function URLDownloadToFile Lib "urlmon" Alias "URLDownloadToFileA" (ByVal pCaller As Integer, ByVal szURL As String, ByVal szFileName As String, ByVal dwReserved As Integer, ByVal lpfnCB As Integer) As Integer
-
     Private Sub About_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
         If e.KeyCode = Keys.Escape Then
             Me.Close()
@@ -43,19 +42,17 @@
 
         'Used to open the link to download an updated version
         Dim objShell As Object = CreateObject("WScript.Shell")
-        'The URL of the build.txt file that contains the most recent build number
-        Dim url As String = "https://raw.github.com/Carlmundo/DriveTidy/master/build.txt"
         'Where the file is downloaded to
-        Dim LocalFile As String = Environ("temp") & "\build.txt"
+        Dim BuildLocalFile As String = Environ("temp") & "\build.txt"
         'The process that downloads the file to the computer
-        Dim BuildCheck As Integer = URLDownloadToFile(0, url, LocalFile, 0, 0)
+        Dim BuildCheck As Integer = URLDownloadToFile(0, "https://raw.github.com/Carlmundo/DriveTidy/master/build.txt", BuildLocalFile, 0, 0)
         'Writes the version number as one number
         Dim BuildValue As Decimal = (Environ("version_value"))
         'The file to check for FileContent (same as the downloaded location)
         Dim FileContent As Object = ""
 
         On Error GoTo UpdateCheckFailed
-        FileOpen(5, LocalFile, OpenMode.Input)
+        FileOpen(5, BuildLocalFile, OpenMode.Input)
         Input(5, FileContent)
         FileClose(5)
         Me.Cursor = Cursors.Default
@@ -78,9 +75,15 @@
             End If
             MsgNewUpdate = MsgBox("A new update for DriveTidy is available." & vbCrLf & vbCrLf & "Current Version:  " & Environ("version") & vbCrLf & "Latest Version:     " & LatestVersion & vbCrLf & vbCrLf & "Would you like to download it?", MsgBoxStyle.YesNo, "DriveTidy Update")
             If MsgNewUpdate = MsgBoxResult.Yes Then
-                MsgBox("Make sure to delete or overwrite your older version of DriveTidy after downloading the new version.")
-                objShell.Run("https://github.com/downloads/Carlmundo/DriveTidy/DriveTidy.exe")
-                Application.Exit()
+                Dim DownloadUpdater As Integer = URLDownloadToFile(0, "https://github.com/downloads/Carlmundo/DriveTidy/updater.exe", Environ("temp") & "\updater.exe", 0, 0)
+                If IO.File.Exists(Environ("temp") & "\updater.exe") Then
+                    On Error Resume Next
+                    My.Computer.FileSystem.DeleteFile(Environ("temp") & "\build.txt")
+                    My.Computer.FileSystem.DeleteFile(Environ("temp") & "\DriveTidy_Readme.txt")
+                    Process.Start(Environ("temp") & "\updater.exe")
+                Else
+                    MsgBox("DriveTidy failed to update." & vbNewLine & "Please try again later or get the latest version from:" & vbNewLine & vbNewLine & "www.fixkb.com/drivetidy", MsgBoxStyle.Exclamation, "Update Failed")
+                End If
             End If
         ElseIf FileContent = 0 Then  'Some broken links display webcontent depending on hosting provider or DNS. This is read as 0.
             If Me.Visible = True Then

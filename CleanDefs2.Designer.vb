@@ -63,11 +63,11 @@ Partial Class CleanDefs2
         Me.txtRDP = New System.Windows.Forms.TextBox
         Me.txtSilverlight = New System.Windows.Forms.TextBox
         Me.txtSpotify = New System.Windows.Forms.TextBox
+        Me.txtSteam = New System.Windows.Forms.TextBox
         Me.txtSymantec = New System.Windows.Forms.TextBox
         Me.txtTrackmania = New System.Windows.Forms.TextBox
         Me.txtUnity = New System.Windows.Forms.TextBox
         Me.txtQ13 = New System.Windows.Forms.TextBox
-        Me.txtSteam = New System.Windows.Forms.TextBox
         Me.FlowLayout.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -511,6 +511,15 @@ Partial Class CleanDefs2
         Me.txtSpotify.Text = "echo [Spotify cache...]" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del /f /s /q ""%localappdata%\Spotify\Storage\*""" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "rd /s /" & _
             "q ""%localappdata%\Spotify\Storage\"""
         '
+        'txtSteam
+        '
+        Me.txtSteam.Location = New System.Drawing.Point(3, 2501)
+        Me.txtSteam.Multiline = True
+        Me.txtSteam.Name = "txtSteam"
+        Me.txtSteam.Size = New System.Drawing.Size(390, 46)
+        Me.txtSteam.TabIndex = 89
+        Me.txtSteam.Text = resources.GetString("txtSteam.Text")
+        '
         'txtSymantec
         '
         Me.txtSymantec.Location = New System.Drawing.Point(3, 2553)
@@ -546,15 +555,6 @@ Partial Class CleanDefs2
         Me.txtQ13.Size = New System.Drawing.Size(390, 21)
         Me.txtQ13.TabIndex = 46
         Me.txtQ13.Text = "echo Q13 >""%appdata%\DriveTidy\cleanchk.txt"""
-        '
-        'txtSteam
-        '
-        Me.txtSteam.Location = New System.Drawing.Point(3, 2501)
-        Me.txtSteam.Multiline = True
-        Me.txtSteam.Name = "txtSteam"
-        Me.txtSteam.Size = New System.Drawing.Size(390, 46)
-        Me.txtSteam.TabIndex = 89
-        Me.txtSteam.Text = resources.GetString("txtSteam.Text")
         '
         'CleanDefs2
         '
