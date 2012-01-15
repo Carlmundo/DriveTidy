@@ -227,6 +227,7 @@
         pdList.Add(New ProcessDetect(cbOpera, "Opera", "opera"))
         pdList.Add(New ProcessDetect(cbSafari, "Safari", "safari"))
         pdList.Add(New ProcessDetect(cbMessenger, "Windows Live Messenger", "msnmsgr"))
+        pdList.Add(New ProcessDetect(cbSteam, "Steam", "Steam"))
 
         'If certain files dont exist then delete their button
         Start.Definitions()
