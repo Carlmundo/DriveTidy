@@ -82,7 +82,9 @@
                     My.Computer.FileSystem.DeleteFile(Environ("temp") & "\DriveTidy_Readme.txt")
                     Process.Start(Environ("temp") & "\updater.exe")
                 Else
-                    MsgBox("DriveTidy failed to update." & vbNewLine & "Please try again later or get the latest version from:" & vbNewLine & vbNewLine & "www.fixkb.com/drivetidy", MsgBoxStyle.Exclamation, "Update Failed")
+                    If Me.Visible = True Then
+                        MsgBox("DriveTidy failed to update." & vbNewLine & "Please try again later or get the latest version from:" & vbNewLine & vbNewLine & "www.fixkb.com/drivetidy", MsgBoxStyle.Exclamation, "Update Failed")
+                    End If
                 End If
             End If
         ElseIf FileContent = 0 Then  'Some broken links display webcontent depending on hosting provider or DNS. This is read as 0.
