@@ -82,7 +82,7 @@
                     My.Computer.FileSystem.DeleteFile(Environ("temp") & "\DriveTidy_Readme.txt")
                     Process.Start(Environ("temp") & "\updater.exe")
                 Else
-                    If Me.Visible = True Then
+                    If Me.Visible = True Then 'Only if About form is open and not on Main_Load
                         MsgBox("DriveTidy failed to update." & vbNewLine & "Please try again later or get the latest version from:" & vbNewLine & vbNewLine & "www.fixkb.com/drivetidy", MsgBoxStyle.Exclamation, "Update Failed")
                     End If
                 End If
