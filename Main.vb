@@ -489,8 +489,8 @@ ErrorHandler:
             PrintLine(3, CleanDefs.txtStart1.Text)
             PrintLine(3, CleanDefs.txtStart2.Text)
             FileClose(3)
-            ShellExecute(0, vbNullString, Environ("appdata") & "\DriveTidy\start.bat", vbNullString, vbNullString, AppWinStyle.Hide)
-
+            ShellExecute(0, vbNullString, "cmd", "/c " & Environ("appdata") & "\DriveTidy\start.bat", vbNullString, AppWinStyle.Hide)
+    
             'Show Cleaner Window
             Start.Load_CW()
             Me.Close()
