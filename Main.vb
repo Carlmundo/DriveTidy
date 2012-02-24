@@ -489,8 +489,10 @@ ErrorHandler:
             PrintLine(3, CleanDefs.txtStart1.Text)
             PrintLine(3, CleanDefs.txtStart2.Text)
             FileClose(3)
-            ShellExecute(0, vbNullString, "cmd", "/c " & Environ("appdata") & "\DriveTidy\start.bat", vbNullString, AppWinStyle.Hide)
-    
+
+            'CleanupProcess("/c %appdata%\DriveTidy\start.bat")
+
+            Shell(Environ("windir") & "\system32\cmd.exe /c " & Chr(34) & Environ("appdata") & "\DriveTidy\start.bat" & Chr(34), AppWinStyle.Hide)
             'Show Cleaner Window
             Start.Load_CW()
             Me.Close()
@@ -502,6 +504,13 @@ ErrorHandler:
             'If a file extension is selected then it does the
             'Advanced method with F numbers, no file extension = Q numbers
         End If
+    End Sub
+
+    Private Sub CleanupProcess(ByVal c As String)
+        Dim StartInfo As New ProcessStartInfo
+        StartInfo.FileName = "cmd.exe"
+        StartInfo.Arguments = c
+        Process.Start(StartInfo)
     End Sub
 
     'Fix issue with FlowLayoutPanel not scrolling

@@ -1,6 +1,4 @@
 ﻿Public Class About
-
-    Private Declare Function ShellExecute Lib "shell32.dll" Alias "ShellExecuteA" (ByVal hwnd As Integer, ByVal lpOperation As String, ByVal lpFile As String, ByVal lpParameters As String, ByVal lpDirectory As String, ByVal nShowCmd As Integer) As Integer
     'Allows Downloading of file
     Private Declare Function URLDownloadToFile Lib "urlmon" Alias "URLDownloadToFileA" (ByVal pCaller As Integer, ByVal szURL As String, ByVal szFileName As String, ByVal dwReserved As Integer, ByVal lpfnCB As Integer) As Integer
     Private Sub About_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
@@ -112,7 +110,7 @@ UpdateCheckFailed:
         FileOpen(6, Environ("temp") & "\DriveTidy_Readme.txt", OpenMode.Output)
         PrintLine(6, Readme.txtReadme.Text)
         FileClose(6)
-        ShellExecute(0, vbNullString, "notepad", Environ("temp") & "\DriveTidy_Readme.txt", vbNullString, AppWinStyle.NormalFocus)
+        Shell(Environ("windir") & "\system32\notepad.exe " & Chr(34) & Environ("temp") & "\DriveTidy_Readme.txt" & Chr(34), AppWinStyle.NormalFocus)
     End Sub
 
     Private Sub lnkWeb_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles lnkWeb.LinkClicked
