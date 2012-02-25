@@ -34,6 +34,7 @@
 
     Public Sub Update_DriveTidy()
         On Error GoTo ErrorHandler
+        Environment.SetEnvironmentVariable("desktop", My.Computer.Registry.CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders").GetValue("Desktop"))
         If UpdateError = 0 Then
             If DownloadAttempts < 3 Then
                 Dim objShell As Object = CreateObject("WScript.Shell")
@@ -45,7 +46,7 @@
                     Update_DriveTidy()
                 Else
                     If GetFileSize(Environ("temp") & "\DriveTidy.exe") > 204800 Then
-                        IO.File.Copy(Environ("temp") & "\DriveTidy.exe", Environ("userprofile") & "\Desktop\DriveTidy.exe", True)
+                        IO.File.Copy(Environ("temp") & "\DriveTidy.exe", Environ("desktop") & "\DriveTidy.exe", True)
                         IO.File.Delete(Environ("temp") & "\DriveTidy.exe")
                         UpdateSuccess = 1
                     Else
