@@ -400,8 +400,16 @@ ErrorHandler:
         Else
             'Process Detection - checks to see if programs are running and need to be closed
             Ready = 1 'Value starts at 1 and will be changed to 2 if the No option is selected for any running processes
-            MsgString = " is running and needs to be closed." & vbCrLf & "To save what you are doing close the program manually." & vbCrLf & "Are you sure you want to continue?"
+            MsgString = " is running and needs to be closed." & vbCrLf & "To save what you are doing close the program manually." & vbCrLf & vbCrLf & "Are you sure you want to continue?"
 
+            'Added to make sure cmd is not running before DriveTidy.
+            If Ready = 1 Then
+                MsgApp = "Command Prompt"
+                MsgProcess = "cmd"
+                KillMsg()
+            End If
+
+            'Check for other processes which should not be running.
             For i = 0 To (pdList.Count - 1)
                 If pdList(i).CheckboxRef.Checked = True Then
                     If Ready = 1 Then
@@ -490,8 +498,6 @@ ErrorHandler:
             PrintLine(3, CleanDefs.txtStart2.Text)
             FileClose(3)
 
-            'CleanupProcess("/c %appdata%\DriveTidy\start.bat")
-
             Shell(Environ("windir") & "\system32\cmd.exe /c " & Chr(34) & Environ("appdata") & "\DriveTidy\start.bat" & Chr(34), AppWinStyle.Hide)
             'Show Cleaner Window
             Start.Load_CW()
@@ -504,13 +510,6 @@ ErrorHandler:
             'If a file extension is selected then it does the
             'Advanced method with F numbers, no file extension = Q numbers
         End If
-    End Sub
-
-    Private Sub CleanupProcess(ByVal c As String)
-        Dim StartInfo As New ProcessStartInfo
-        StartInfo.FileName = "cmd.exe"
-        StartInfo.Arguments = c
-        Process.Start(StartInfo)
     End Sub
 
     'Fix issue with FlowLayoutPanel not scrolling
