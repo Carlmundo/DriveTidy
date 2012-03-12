@@ -7,7 +7,6 @@
             Return 0
         End Try
     End Function
-
     Dim FileChk As String
     Dim FileContent As String
     Dim Tot As Decimal
@@ -15,8 +14,6 @@
     Dim ValueFreeSpaceBefore
     Dim ValueFreeSpaceAfter
     Dim ValueSpaceFreed
-    'Allows opening of log file
-    Private Declare Function ShellExecute Lib "shell32.dll" Alias "ShellExecuteA" (ByVal hwnd As Integer, ByVal lpOperation As String, ByVal lpFile As String, ByVal lpParameters As String, ByVal lpDirectory As String, ByVal nShowCmd As Integer) As Integer
 
     Public Sub KillProcess(ByRef strProcessToKill As String)
         Dim Proc() As Process = Process.GetProcesses
@@ -28,7 +25,7 @@
     End Sub
 
     Private Sub cmdLog_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdLog.Click  'Opens the log file
-        ShellExecute(0, vbNullString, "notepad", Environ("appdata") & "\DriveTidy\log.txt", vbNullString, AppWinStyle.NormalFocus)
+        Shell(Environ("windir") & "\system32\notepad.exe " & Chr(34) & Environ("appdata") & "\DriveTidy\log.txt" & Chr(34), AppWinStyle.NormalFocus)
     End Sub
 
     Private Sub cmdCancel_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdCancel.Click
