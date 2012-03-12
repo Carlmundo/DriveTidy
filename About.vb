@@ -38,8 +38,6 @@
     Public Sub AppUpdate()
         Me.Cursor = Cursors.WaitCursor
 
-        'Used to open the link to download an updated version
-        Dim objShell As Object = CreateObject("WScript.Shell")
         'Where the file is downloaded to
         Dim BuildLocalFile As String = Environ("temp") & "\build.txt"
         'The process that downloads the file to the computer
