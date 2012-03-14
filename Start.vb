@@ -269,32 +269,5 @@ ErrorHandler:
             End If
         End If
 
-        'Determines if should show "More..." label
-        Dim CountMore As Integer
-        For Each Me.item In frmMain.flwMore.Controls
-            If TypeOf item Is CheckBox Then
-                If item.Visible = True Then
-                    CountMore = CountMore + 1
-                End If
-            End If
-        Next
-
-        If CountMore = 0 Then
-            frmMain.lblMore.Visible = False
-        End If
-
-        'Determines if should show "Other Applications" label
-        Dim CountOtherApps As Integer
-        For Each Me.item In frmMain.flwOtherApps.Controls
-            If TypeOf item Is CheckBox Then
-                If item.Visible = True Then
-                    CountOtherApps = CountOtherApps + 1
-                End If
-            End If
-        Next
-
-        If CountOtherApps = 0 Then
-            frmMain.lblOtherApps.Visible = False
-        End If
     End Sub
 End Class

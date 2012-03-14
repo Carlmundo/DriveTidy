@@ -22,48 +22,6 @@
     Dim MsgConfirmKill As Object
     Dim MsgApp, MsgProcess, MsgString
 
-    Public Sub QuickSelect()
-        'Check specific Checkboxes
-        For i = 0 To 1
-            For Each Me.item In flwAll(i)
-                If TypeOf item Is CheckBox Then
-                    If item.Enabled = True Then
-                        item.Checked = True
-                    End If
-                End If
-            Next
-        Next
-        For Each Me.item In flwAll(3)
-            If TypeOf item Is CheckBox Then
-                item.Checked = True
-            End If
-        Next
-        For Each Me.item In flwAll(2)
-            If TypeOf item Is CheckBox Then
-                item.Checked = False
-            End If
-        Next
-        For Each Me.item In flwAll(4)
-            If TypeOf item Is CheckBox Then
-                item.Checked = False
-            End If
-        Next
-        cbAppleInstaller.Checked = False
-    End Sub
-
-    Private Sub CleanerErrors()
-        CleanerWindow.cmdCancel.Visible = False
-        'Error 75 can happen if the Start Cleanup button is clicked too soon
-        If Err.Number = 75 Then
-            Me.Show()
-            CleanerWindow.Close()
-        Else
-            MsgBox(Err.Description, MsgBoxStyle.Critical, "Error " & Err.Number)
-            Me.Show()
-            CleanerWindow.Close()
-        End If
-    End Sub
-
     Private Sub Main_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         On Error GoTo ErrorHandler
         'Put cmdAbout in line with DriveTidy text
@@ -75,8 +33,8 @@
         gfx = Graphics.FromHwnd(Me.Handle)
 
         If gfx.DpiX > 96 Then
-            cmdQuick.AutoSize = True
-            cmdAdvanced.AutoSize = True
+            cmdPresetQuick.AutoSize = True
+            cmdPresetAdvanced.AutoSize = True
             'Adjust Height & Width of flwOptions
             flwOptions.Height = cbTIF.Location.Y + (cbTIF.Height * 10)
             flwOptions.Width = (flwOptions.Location.X * 2) + cbTIF.Width
@@ -243,12 +201,161 @@ ErrorHandler:
         Me.BeginInvoke(New MethodInvoker(AddressOf Start.ForceClose))
     End Sub
 
-    Private Sub Main_FormClosing(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
-        'Ensure all forms are closed
-        CleanDefs.Close()
-        CleanDefs2.Close()
-        'CleanerWindow is not closed as Main closes and CleanerWindow opens when "Start Cleanup" is clicked
-        About.Close()
+    Private Sub bgUpdateCheck_DoWork(ByVal sender As System.Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles bgUpdateCheck.DoWork
+        About.AppUpdate()
+    End Sub
+
+    'Fix issue with FlowLayoutPanel not scrolling
+    Private Sub Main_MouseWheel(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseWheel
+        flwOptions.Focus()
+    End Sub
+
+    Private Sub cmdAbout_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdAbout.Click
+        About.Show()
+        Start.Enabled = False
+    End Sub
+
+    Private Sub cmdQuickCleanup_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdQuickCleanup.Click
+        FullView()
+        QuickSelect()
+        Uncheck_Invisible()
+        Start_Cleanup()
+    End Sub
+
+    Private Sub cmdShowAllOptions_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles cmdShowAllOptions.LinkClicked
+        FullView()
+    End Sub
+
+    Private Sub cmdBack_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles cmdBack.LinkClicked
+        cmdQuickCleanup.Visible = True
+        cmdShowAllOptions.Visible = True
+        flwPresets.Visible = False
+        flwOptions.Visible = False
+        cmdBack.Visible = False
+        cmdSelectAll.Visible = False
+        cmdClean.Visible = False
+    End Sub
+
+    Public Sub FullView()
+        cmdQuickCleanup.Visible = False
+        cmdShowAllOptions.Visible = False
+        flwPresets.Visible = True
+        flwOptions.Visible = True
+        cmdBack.Visible = True
+        cmdSelectAll.Visible = True
+
+        'Determines if should show "More..." label
+        Dim CountMore As Integer
+        For Each Me.item In flwMore.Controls
+            If TypeOf item Is CheckBox Then
+                If item.Visible = True Then
+                    CountMore = CountMore + 1
+                End If
+            End If
+        Next
+
+        If CountMore = 0 Then
+            lblMore.Visible = False
+        End If
+
+        'Determines if should show "Other Applications" label
+        Dim CountOtherApps As Integer
+        For Each Me.item In flwOtherApps.Controls
+            If TypeOf item Is CheckBox Then
+                If item.Visible = True Then
+                    CountOtherApps = CountOtherApps + 1
+                End If
+            End If
+        Next
+
+        If CountOtherApps = 0 Then
+            lblOtherApps.Visible = False
+        End If
+
+        cmdClean.Visible = True
+    End Sub
+
+    Private Sub cmdPresetQuick_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdPresetQuick.Click
+        QuickSelect()
+        Uncheck_Invisible()
+    End Sub
+
+    Private Sub cmdPresetAdvanced_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdPresetAdvanced.Click
+        QuickSelect()
+        cbTMP.Checked = True
+        cbLOG.Checked = True
+        cbCHK.Checked = True
+        cbDMP.Checked = True
+        Uncheck_Invisible()
+        'Scroll to bottom of FlowOptions to demonstrate the extra options selected by Advanced
+        flwOptions.VerticalScroll.Value = flwOptions.VerticalScroll.Maximum
+        flwOptions.ScrollControlIntoView(flwOptions)
+    End Sub
+
+    Public Sub QuickSelect()
+        'Check specific Checkboxes
+        For i = 0 To 1
+            For Each Me.item In flwAll(i)
+                If TypeOf item Is CheckBox Then
+                    If item.Enabled = True Then
+                        item.Checked = True
+                    End If
+                End If
+            Next
+        Next
+        For Each Me.item In flwAll(3)
+            If TypeOf item Is CheckBox Then
+                item.Checked = True
+            End If
+        Next
+        For Each Me.item In flwAll(2)
+            If TypeOf item Is CheckBox Then
+                item.Checked = False
+            End If
+        Next
+        For Each Me.item In flwAll(4)
+            If TypeOf item Is CheckBox Then
+                item.Checked = False
+            End If
+        Next
+        cbAppleInstaller.Checked = False
+    End Sub
+
+    Private Sub cmdSelectAll_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles cmdSelectAll.LinkClicked
+        'If all of the checkboxes are checked they will all be unchecked, otherwise they will all be checked. 
+        Checkbox_Count()
+        If cbCheckedCount < cbCount Then
+            For i = 0 To 4
+                For Each Me.item In flwAll(i)
+                    If TypeOf item Is CheckBox Then
+                        If item.Enabled = True Then
+                            item.Checked = True
+                            Checkbox_Count()
+                        End If
+                    End If
+                Next
+            Next
+        ElseIf cbCheckedCount = cbCount Then
+            For i = 0 To 4
+                For Each Me.item In flwAll(i)
+                    If TypeOf item Is CheckBox Then
+                        item.Checked = False
+                        Checkbox_Count()
+                    End If
+                Next
+            Next
+        End If
+        Uncheck_Invisible()
+    End Sub
+
+    Private Sub tmSelectAll_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmSelectAll.Tick
+        'Text will display Select None if all are checked.
+        Checkbox_Count()
+        If cbCheckedCount < cbCount Then
+            cmdSelectAll.Text = "Select All"
+        ElseIf cbCheckedCount = cbCount Then
+            cmdSelectAll.Text = "Select None"
+        End If
     End Sub
 
     Public Sub Checkbox_Count()
@@ -285,6 +392,20 @@ ErrorHandler:
         Next
     End Sub
 
+    Public Class ProcessDetect
+        'Class to store 3 elements required into one collection
+        Public CheckboxRef As CheckBox
+        Public AppName As String
+        Public ProcessName As String
+
+        Public Sub New(ByVal CBName As CheckBox, ByVal aName As String, ByVal pName As String)
+            CheckboxRef = CBName
+            AppName = aName
+            ProcessName = pName
+        End Sub
+    End Class
+    Private pdList As New List(Of ProcessDetect)
+
     Public Sub KillMsg()
         Dim Proc() As Process = Process.GetProcesses
         For i As Integer = 0 To Proc.GetUpperBound(0)
@@ -310,80 +431,11 @@ ErrorHandler:
         Next
     End Sub
 
-    Private Sub tmSelectAll_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmSelectAll.Tick
-        'Text will display Select None if all are checked.
-        Checkbox_Count()
-        If cbCheckedCount < cbCount Then
-            cmdSelectAll.Text = "Select All"
-        ElseIf cbCheckedCount = cbCount Then
-            cmdSelectAll.Text = "Select None"
-        End If
-    End Sub
-
-    Private Sub cmdAbout_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdAbout.Click
-        About.Show()
-        Start.Enabled = False
-    End Sub
-
-    Private Sub cmdQuick_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdQuick.Click
-        QuickSelect()
-        Uncheck_Invisible()
-    End Sub
-
-    Private Sub cmdAdvanced_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdAdvanced.Click
-        QuickSelect()
-        cbTMP.Checked = True
-        cbLOG.Checked = True
-        cbCHK.Checked = True
-        cbDMP.Checked = True
-        Uncheck_Invisible()
-        'Scroll to bottom of FlowOptions to demonstrate the extra options selected by Advanced
-        flwOptions.VerticalScroll.Value = flwOptions.VerticalScroll.Maximum
-        flwOptions.ScrollControlIntoView(flwOptions)
-    End Sub
-
-    Private Sub cmdSelectAll_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles cmdSelectAll.LinkClicked
-        'If all of the checkboxes are checked they will all be unchecked, otherwise they will all be checked. 
-        Checkbox_Count()
-        If cbCheckedCount < cbCount Then
-            For i = 0 To 4
-                For Each Me.item In flwAll(i)
-                    If TypeOf item Is CheckBox Then
-                        If item.Enabled = True Then
-                            item.Checked = True
-                            Checkbox_Count()
-                        End If
-                    End If
-                Next
-            Next
-        ElseIf cbCheckedCount = cbCount Then
-            For i = 0 To 4
-                For Each Me.item In flwAll(i)
-                    If TypeOf item Is CheckBox Then
-                        item.Checked = False
-                        Checkbox_Count()
-                    End If
-                Next
-            Next
-        End If
-        Uncheck_Invisible()
-    End Sub
-
-    Public Class ProcessDetect
-        'Class to store 3 elements required into one collection
-        Public CheckboxRef As CheckBox
-        Public AppName As String
-        Public ProcessName As String
-
-        Public Sub New(ByVal CBName As CheckBox, ByVal aName As String, ByVal pName As String)
-            CheckboxRef = CBName
-            AppName = aName
-            ProcessName = pName
-        End Sub
-    End Class
-    Private pdList As New List(Of ProcessDetect)
-
     Private Sub cmdClean_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdClean.Click
+        Start_Cleanup()
+    End Sub
+
+    Public Sub Start_Cleanup()
         Dim ieVersion As New Version(My.Computer.Registry.LocalMachine.OpenSubKey("SOFTWARE\Microsoft\Internet Explorer").GetValue("Version"))
         'If the program fails to write a file then an error will generate and restart the program
         'On Error GoTo ErrorHandler
@@ -512,12 +564,25 @@ ErrorHandler:
         End If
     End Sub
 
-    'Fix issue with FlowLayoutPanel not scrolling
-    Private Sub Main_MouseWheel(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseWheel
-        flwOptions.Focus()
+    Private Sub CleanerErrors()
+        CleanerWindow.cmdCancel.Visible = False
+        'Error 75 can happen if the Start Cleanup button is clicked too soon
+        If Err.Number = 75 Then
+            Me.Show()
+            CleanerWindow.Close()
+        Else
+            MsgBox(Err.Description, MsgBoxStyle.Critical, "Error " & Err.Number)
+            Me.Show()
+            CleanerWindow.Close()
+        End If
     End Sub
 
-    Private Sub bgUpdateCheck_DoWork(ByVal sender As System.Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles bgUpdateCheck.DoWork
-        About.AppUpdate()
+    Private Sub Main_FormClosing(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+        'Ensure all forms are closed
+        CleanDefs.Close()
+        CleanDefs2.Close()
+        'CleanerWindow is not closed as Main closes and CleanerWindow opens when "Start Cleanup" is clicked
+        About.Close()
     End Sub
+
 End Class

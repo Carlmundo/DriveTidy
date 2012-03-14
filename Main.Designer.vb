@@ -97,12 +97,16 @@ Partial Class Main
         Me.cbERR = New System.Windows.Forms.CheckBox
         Me.cmdClean = New System.Windows.Forms.Button
         Me.cmdSelectAll = New System.Windows.Forms.LinkLabel
-        Me.cmdAdvanced = New System.Windows.Forms.Button
-        Me.cmdQuick = New System.Windows.Forms.Button
+        Me.cmdPresetAdvanced = New System.Windows.Forms.Button
+        Me.cmdPresetQuick = New System.Windows.Forms.Button
         Me.tblDesign = New System.Windows.Forms.TableLayoutPanel
         Me.flwPresets = New System.Windows.Forms.FlowLayoutPanel
         Me.cmdAbout = New System.Windows.Forms.Button
         Me.bgUpdateCheck = New System.ComponentModel.BackgroundWorker
+        Me.flwExpressOptions = New System.Windows.Forms.FlowLayoutPanel
+        Me.cmdQuickCleanup = New System.Windows.Forms.Button
+        Me.cmdShowAllOptions = New System.Windows.Forms.LinkLabel
+        Me.cmdBack = New System.Windows.Forms.LinkLabel
         Me.flwOptions.SuspendLayout()
         Me.flwSystem.SuspendLayout()
         Me.flwInternet.SuspendLayout()
@@ -111,6 +115,7 @@ Partial Class Main
         Me.flwFileExt.SuspendLayout()
         Me.tblDesign.SuspendLayout()
         Me.flwPresets.SuspendLayout()
+        Me.flwExpressOptions.SuspendLayout()
         Me.SuspendLayout()
         '
         'tmSelectAll
@@ -151,11 +156,12 @@ Partial Class Main
         Me.flwOptions.Controls.Add(Me.flwFileExt)
         Me.flwOptions.Dock = System.Windows.Forms.DockStyle.Fill
         Me.flwOptions.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.flwOptions.Location = New System.Drawing.Point(13, 94)
+        Me.flwOptions.Location = New System.Drawing.Point(13, 156)
         Me.flwOptions.Margin = New System.Windows.Forms.Padding(3, 0, 3, 3)
         Me.flwOptions.Name = "flwOptions"
         Me.flwOptions.Size = New System.Drawing.Size(223, 209)
         Me.flwOptions.TabIndex = 4
+        Me.flwOptions.Visible = False
         Me.flwOptions.WrapContents = False
         '
         'flwSystem
@@ -1049,7 +1055,7 @@ Partial Class Main
         Me.cmdClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.cmdClean.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdClean.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmdClean.Location = New System.Drawing.Point(67, 309)
+        Me.cmdClean.Location = New System.Drawing.Point(67, 371)
         Me.cmdClean.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
         Me.cmdClean.Name = "cmdClean"
         Me.cmdClean.Size = New System.Drawing.Size(115, 34)
@@ -1057,40 +1063,42 @@ Partial Class Main
         Me.cmdClean.Text = "Start Cleanup"
         Me.cmdClean.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.cmdClean.UseVisualStyleBackColor = True
+        Me.cmdClean.Visible = False
         '
         'cmdSelectAll
         '
         Me.cmdSelectAll.AutoSize = True
         Me.cmdSelectAll.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdSelectAll.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
-        Me.cmdSelectAll.Location = New System.Drawing.Point(13, 80)
+        Me.cmdSelectAll.Location = New System.Drawing.Point(13, 142)
         Me.cmdSelectAll.Name = "cmdSelectAll"
         Me.cmdSelectAll.Size = New System.Drawing.Size(51, 14)
         Me.cmdSelectAll.TabIndex = 3
         Me.cmdSelectAll.TabStop = True
         Me.cmdSelectAll.Text = "Select All"
+        Me.cmdSelectAll.Visible = False
         '
-        'cmdAdvanced
+        'cmdPresetAdvanced
         '
-        Me.cmdAdvanced.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdAdvanced.Location = New System.Drawing.Point(94, 0)
-        Me.cmdAdvanced.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
-        Me.cmdAdvanced.Name = "cmdAdvanced"
-        Me.cmdAdvanced.Size = New System.Drawing.Size(85, 21)
-        Me.cmdAdvanced.TabIndex = 1
-        Me.cmdAdvanced.Text = "Advanced"
-        Me.cmdAdvanced.UseVisualStyleBackColor = True
+        Me.cmdPresetAdvanced.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdPresetAdvanced.Location = New System.Drawing.Point(94, 0)
+        Me.cmdPresetAdvanced.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
+        Me.cmdPresetAdvanced.Name = "cmdPresetAdvanced"
+        Me.cmdPresetAdvanced.Size = New System.Drawing.Size(85, 21)
+        Me.cmdPresetAdvanced.TabIndex = 1
+        Me.cmdPresetAdvanced.Text = "Advanced"
+        Me.cmdPresetAdvanced.UseVisualStyleBackColor = True
         '
-        'cmdQuick
+        'cmdPresetQuick
         '
-        Me.cmdQuick.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdQuick.Location = New System.Drawing.Point(3, 0)
-        Me.cmdQuick.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
-        Me.cmdQuick.Name = "cmdQuick"
-        Me.cmdQuick.Size = New System.Drawing.Size(85, 21)
-        Me.cmdQuick.TabIndex = 0
-        Me.cmdQuick.Text = "Quick"
-        Me.cmdQuick.UseVisualStyleBackColor = True
+        Me.cmdPresetQuick.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdPresetQuick.Location = New System.Drawing.Point(3, 0)
+        Me.cmdPresetQuick.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
+        Me.cmdPresetQuick.Name = "cmdPresetQuick"
+        Me.cmdPresetQuick.Size = New System.Drawing.Size(85, 21)
+        Me.cmdPresetQuick.TabIndex = 0
+        Me.cmdPresetQuick.Text = "Quick"
+        Me.cmdPresetQuick.UseVisualStyleBackColor = True
         '
         'tblDesign
         '
@@ -1098,17 +1106,18 @@ Partial Class Main
         Me.tblDesign.ColumnCount = 1
         Me.tblDesign.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.tblDesign.Controls.Add(Me.lblProductName, 0, 0)
-        Me.tblDesign.Controls.Add(Me.cmdClean, 0, 5)
-        Me.tblDesign.Controls.Add(Me.flwOptions, 0, 4)
+        Me.tblDesign.Controls.Add(Me.cmdClean, 0, 6)
+        Me.tblDesign.Controls.Add(Me.flwOptions, 0, 5)
         Me.tblDesign.Controls.Add(Me.lblNote, 0, 1)
-        Me.tblDesign.Controls.Add(Me.flwPresets, 0, 2)
-        Me.tblDesign.Controls.Add(Me.cmdSelectAll, 0, 3)
+        Me.tblDesign.Controls.Add(Me.flwPresets, 0, 3)
+        Me.tblDesign.Controls.Add(Me.cmdSelectAll, 0, 4)
+        Me.tblDesign.Controls.Add(Me.flwExpressOptions, 0, 2)
         Me.tblDesign.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tblDesign.Location = New System.Drawing.Point(0, 0)
         Me.tblDesign.Margin = New System.Windows.Forms.Padding(5)
         Me.tblDesign.Name = "tblDesign"
         Me.tblDesign.Padding = New System.Windows.Forms.Padding(10, 10, 10, 5)
-        Me.tblDesign.RowCount = 7
+        Me.tblDesign.RowCount = 8
         Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle)
         Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle)
         Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle)
@@ -1116,19 +1125,23 @@ Partial Class Main
         Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle)
         Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle)
         Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle)
-        Me.tblDesign.Size = New System.Drawing.Size(249, 340)
+        Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle)
+        Me.tblDesign.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.tblDesign.Size = New System.Drawing.Size(249, 410)
         Me.tblDesign.TabIndex = 1
         '
         'flwPresets
         '
         Me.flwPresets.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.flwPresets.AutoSize = True
-        Me.flwPresets.Controls.Add(Me.cmdQuick)
-        Me.flwPresets.Controls.Add(Me.cmdAdvanced)
-        Me.flwPresets.Location = New System.Drawing.Point(33, 56)
+        Me.flwPresets.Controls.Add(Me.cmdPresetQuick)
+        Me.flwPresets.Controls.Add(Me.cmdPresetAdvanced)
+        Me.flwPresets.Location = New System.Drawing.Point(33, 118)
+        Me.flwPresets.Margin = New System.Windows.Forms.Padding(0, 0, 0, 3)
         Me.flwPresets.Name = "flwPresets"
         Me.flwPresets.Size = New System.Drawing.Size(182, 21)
         Me.flwPresets.TabIndex = 2
+        Me.flwPresets.Visible = False
         '
         'cmdAbout
         '
@@ -1146,13 +1159,65 @@ Partial Class Main
         '
         Me.bgUpdateCheck.WorkerSupportsCancellation = True
         '
+        'flwExpressOptions
+        '
+        Me.flwExpressOptions.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.flwExpressOptions.AutoSize = True
+        Me.flwExpressOptions.Controls.Add(Me.cmdQuickCleanup)
+        Me.flwExpressOptions.Controls.Add(Me.cmdShowAllOptions)
+        Me.flwExpressOptions.Controls.Add(Me.cmdBack)
+        Me.flwExpressOptions.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.flwExpressOptions.Location = New System.Drawing.Point(41, 56)
+        Me.flwExpressOptions.Name = "flwExpressOptions"
+        Me.flwExpressOptions.Size = New System.Drawing.Size(167, 59)
+        Me.flwExpressOptions.TabIndex = 6
+        '
+        'cmdQuickCleanup
+        '
+        Me.cmdQuickCleanup.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.cmdQuickCleanup.AutoSize = True
+        Me.cmdQuickCleanup.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdQuickCleanup.Location = New System.Drawing.Point(3, 0)
+        Me.cmdQuickCleanup.Margin = New System.Windows.Forms.Padding(3, 0, 3, 0)
+        Me.cmdQuickCleanup.Name = "cmdQuickCleanup"
+        Me.cmdQuickCleanup.Size = New System.Drawing.Size(161, 27)
+        Me.cmdQuickCleanup.TabIndex = 1
+        Me.cmdQuickCleanup.Text = "Quick Cleanup"
+        Me.cmdQuickCleanup.UseVisualStyleBackColor = True
+        '
+        'cmdShowAllOptions
+        '
+        Me.cmdShowAllOptions.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.cmdShowAllOptions.AutoSize = True
+        Me.cmdShowAllOptions.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.cmdShowAllOptions.Location = New System.Drawing.Point(15, 27)
+        Me.cmdShowAllOptions.Name = "cmdShowAllOptions"
+        Me.cmdShowAllOptions.Padding = New System.Windows.Forms.Padding(0, 2, 0, 0)
+        Me.cmdShowAllOptions.Size = New System.Drawing.Size(137, 17)
+        Me.cmdShowAllOptions.TabIndex = 2
+        Me.cmdShowAllOptions.TabStop = True
+        Me.cmdShowAllOptions.Text = "or Show All Options >>>"
+        '
+        'cmdBack
+        '
+        Me.cmdBack.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.cmdBack.AutoSize = True
+        Me.cmdBack.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
+        Me.cmdBack.Location = New System.Drawing.Point(45, 44)
+        Me.cmdBack.Name = "cmdBack"
+        Me.cmdBack.Size = New System.Drawing.Size(77, 15)
+        Me.cmdBack.TabIndex = 3
+        Me.cmdBack.TabStop = True
+        Me.cmdBack.Text = "<<< Go Back"
+        Me.cmdBack.Visible = False
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(249, 340)
+        Me.ClientSize = New System.Drawing.Size(249, 410)
         Me.Controls.Add(Me.cmdAbout)
         Me.Controls.Add(Me.tblDesign)
         Me.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1176,6 +1241,8 @@ Partial Class Main
         Me.tblDesign.ResumeLayout(False)
         Me.tblDesign.PerformLayout()
         Me.flwPresets.ResumeLayout(False)
+        Me.flwExpressOptions.ResumeLayout(False)
+        Me.flwExpressOptions.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1192,8 +1259,8 @@ Partial Class Main
     Friend WithEvents cbErrorReports As System.Windows.Forms.CheckBox
     Friend WithEvents cmdClean As System.Windows.Forms.Button
     Friend WithEvents cmdSelectAll As System.Windows.Forms.LinkLabel
-    Friend WithEvents cmdAdvanced As System.Windows.Forms.Button
-    Friend WithEvents cmdQuick As System.Windows.Forms.Button
+    Friend WithEvents cmdPresetAdvanced As System.Windows.Forms.Button
+    Friend WithEvents cmdPresetQuick As System.Windows.Forms.Button
     Friend WithEvents tblDesign As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents flwPresets As System.Windows.Forms.FlowLayoutPanel
     Friend WithEvents cmdAbout As System.Windows.Forms.Button
@@ -1260,4 +1327,8 @@ Partial Class Main
     Friend WithEvents cbSteam As System.Windows.Forms.CheckBox
     Friend WithEvents lblOtherApps As System.Windows.Forms.Label
     Friend WithEvents bgUpdateCheck As System.ComponentModel.BackgroundWorker
+    Friend WithEvents flwExpressOptions As System.Windows.Forms.FlowLayoutPanel
+    Friend WithEvents cmdQuickCleanup As System.Windows.Forms.Button
+    Friend WithEvents cmdShowAllOptions As System.Windows.Forms.LinkLabel
+    Friend WithEvents cmdBack As System.Windows.Forms.LinkLabel
 End Class
