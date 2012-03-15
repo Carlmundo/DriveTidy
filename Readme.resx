@@ -118,56 +118,77 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="txtReadme.Text" xml:space="preserve">
-    <value>DriveTidy : Readme
-Last Updated 6 January 2012
+    <value>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+&lt;title&gt;DriveTidy : Readme&lt;/title&gt;
+&lt;meta name="generator" content="HTML::TextToHTML v2.50"/&gt;
+&lt;style&gt;
+body {background:white;font-family: Arial;}
+ol li {padding: 3px 0;}
+.desc {list-style: none;}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+DriveTidy : Readme&lt;br /&gt;
+&lt;small&gt;Last Updated: 15th March 2012&lt;/small&gt;
+&lt;ol&gt;
+	&lt;li&gt;&lt;strong&gt;What is DriveTidy?&lt;/strong&gt;&lt;/li&gt;
+&lt;ul class="desc"&gt;
+	&lt;li&gt;DriveTidy is a disk cleanup utility that thoroughly scans your computer for unnecessary and invalid files no longer being used by the system freeing up disk space. It removes items that are missed by the built in Windows Disk Cleanup as well as other popular cleaning tools.&lt;/li&gt;
+&lt;/ul&gt;
+	&lt;li&gt;&lt;strong&gt;Minimum System Requirements&lt;/strong&gt;&lt;/li&gt;
+&lt;ul&gt;
+	&lt;li&gt; Any of the following operating systems:&lt;/li&gt;
+&lt;ul&gt;
+	&lt;li&gt;Windows XP (with Service Pack 2)&lt;/li&gt;
+	&lt;li&gt;Windows Vista&lt;/li&gt;
+	&lt;li&gt;Windows 7 or later&lt;/li&gt;
+&lt;/ul&gt;
+	&lt;li&gt;1 MB of Free Space&lt;/li&gt;
+	&lt;li&gt;Internet connection (recommended to check for updates)&lt;/li&gt;
+&lt;/ul&gt;
+	&lt;li&gt;&lt;strong&gt;How do I use the program?&lt;/strong&gt;&lt;/li&gt;
+&lt;ol&gt;
+	&lt;li&gt;It is recommended that you close down other applications first.&lt;/li&gt;
+	&lt;li&gt;Once the program has started, you can either click "Quick Cleanup" to use the default options and start the cleanup or you can click "or Show All Options &amp;gt;&amp;gt;&amp;gt;" to choose your own options.&lt;/li&gt;
+	&lt;li&gt;If you choose the latter, you can check the items that you wish to remove. You can also use the "Quick" and "Advanced" preset buttons to check options for you. Once you are happy with your selected options, click the 'Start Cleanup' button.&lt;/li&gt;
+	&lt;li&gt;You should now see a progress indicator. Once it has finished you can click the 'Close' button or the red X in the top right hand corner.&lt;/li&gt;
+&lt;/ol&gt;
+	&lt;li&gt;&lt;strong&gt;Is it safe for these files to be deleted?&lt;/strong&gt;&lt;/li&gt;
+&lt;ul class="desc"&gt;
+	&lt;li&gt;DriveTidy only removes temporary and unneeded files created by Windows and other applications. Deleting these files should cause no ill effects to your operating system or applications.&lt;/li&gt;
+&lt;/ul&gt;
+	&lt;li&gt;&lt;strong&gt;Why are some items greyed out in the list of selectable options?&lt;/strong&gt;&lt;/li&gt;
+&lt;ul class="desc"&gt;
+	&lt;li&gt;This is because you are not running the program as an administrator. You need to do this in order to have access to all options.&lt;/li&gt;
+&lt;/ul&gt;
+	&lt;li&gt;&lt;strong&gt;What files did the scan remove?&lt;/strong&gt;&lt;/li&gt;
+&lt;ul class="desc"&gt;
+	&lt;li&gt;When a scan is finished and displays "Cleanup Complete" you can click the "View Log" button to bring up a text file that contains a list of all the files it tried to delete. You will notice that on some items it says "Deleted file" and for some it doesn't. If a file wasn't deleted then that is most likely because it was in use by another program.&lt;/li&gt;
+&lt;/ul&gt;
+	&lt;li&gt;&lt;strong&gt;Where does the program save the log files?&lt;/strong&gt;&lt;/li&gt;
+&lt;ul class="desc"&gt;
+	&lt;li&gt;Log files are not permanently kept on the system. You will have to save them yourself.&lt;br /&gt;
+Once you have the log open. If you wish to keep it. Click File -&amp;gt; Save As and save it somewhere.&lt;br /&gt;
+Otherwise, after closing the cleaner window, the log is deleted.&lt;/li&gt;
+&lt;/ul&gt;
+	&lt;li&gt;&lt;strong&gt;I can see files in the log related to my Kaspersky product but they weren't deleted. How can I get rid of them?&lt;/strong&gt;&lt;/li&gt;
+&lt;ol&gt;
+	&lt;li&gt;Right click on the Kaspersky icon in the system tray (usually at the bottom right of your computer), and click Settings.&lt;/li&gt;
+	&lt;li&gt;Look for the 'Enable Self-Defense' option, uncheck it and click OK.&lt;/li&gt;
+	&lt;li&gt;Then start the cleanup again and once it is done make sure you enable the option again.&lt;/li&gt;
+&lt;/ol&gt;
+	&lt;li&gt;&lt;strong&gt;There are other files that could not be removed. What shall I do?&lt;/strong&gt;&lt;/li&gt;
+&lt;ul class="desc"&gt;
+	&lt;li&gt;In most cases it is fine to leave the files alone. If they cannot be removed then this is usually no concern. Make sure that you have closed all programs before running the cleanup to allow it to be more efficient.&lt;/li&gt;
+	&lt;li&gt;However, if you really insist (and know what you're doing) on deleting files that never seem to get deleted then run the program in Safe Mode.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/ol&gt;
+° Submit your comments, questions and feedback to &lt;a href="mailto:contact@fixkb.com"&gt;contact@fixkb.com&lt;/a&gt; °
 
-[1] What is DriveTidy?
-
-DriveTidy is a disk cleanup utility that thoroughly scans your computer for unnecessary and invalid files no longer being used by the system freeing up disk space. It removes items that are missed by the built in Windows Disk Cleanup as well as other popular cleaning tools.
-
-[2] Minimum System Requirements
-
-Any of the following operating systems:
-
-Windows XP (with Service Pack 2)
-Windows Vista
-Windows 7 or later
-
-1 MB of Free Space
-Internet Connection (to check for updates)
-
-[3] How do I use the program?
-
-Once the program has started, check the items that you wish to remove. You can click the 'Quick' button to check options which are commonly used for the program. Then click the 'Start Cleanup' button which will start the cleanup and show a progress indicator. Once it has finished you can click the 'Close' button.
-
-[4] Is it safe for these files to be deleted?
-
-DriveTidy only removes temporary and unneeded files created by Windows and other applications. Deleting these files should cause no ill effects to your operating system or applications.
-
-[5] Why are some objects greyed out in the list?
-
-This is because you are not running the program as an administrator. You need to do this in order to have access to all options.
-
-[6] What files did the scan remove?
-
-When a scan is finished and displays "Cleanup Complete" you can click the "View Log" button to bring up a text file that contains a list of all the files it tried to delete. You will notice that on some items it says "Deleted file" and for some it doesn't. If a file wasn't deleted then that is most likely because it was in use by another program.
-
-[7] Where does the program save the log files?
-
-Log files are not permanently kept on the system. You will have to save them yourself.
-Once you have the log open. If you wish to keep it. Click File -&gt; Save As and save it somewhere. 
-Otherwise, after closing the cleaner window, the log is deleted.
-
-[8] I can see files in the log related to my Kaspersky product but they weren't deleted. How can I get rid of them?
-
-Right click on the Kaspersky icon in the system tray (usually at the bottom right of your computer), and click Settings.
-Look for the 'Enable Self-Defense' option, untick it and click OK. 
-Then start the cleanup again and once it is done make sure you enable the option again.
-
-[9] There are other files that could not be removed. What shall I do?
-
-In most cases it is fine to leave the files alone. If they cannot be removed then this is usually no concern. Do make sure that you have closed all programs before running the cleanup to allow it to be more efficient. However, if you really insist (and know what you're doing) on deleting files that never seem to get deleted then run the program in Safe Mode.
-
-[] Submit your comments, questions and feedback to contact@fixkb.com []</value>
+&lt;/body&gt;
+&lt;/html&gt;</value>
   </data>
 </root>

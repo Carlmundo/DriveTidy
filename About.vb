@@ -105,10 +105,10 @@ UpdateCheckFailed:
     End Sub
 
     Private Sub cmdReadme_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdReadme.Click
-        FileOpen(6, Environ("temp") & "\DriveTidy_Readme.txt", OpenMode.Output)
+        FileOpen(6, Environ("temp") & "\DriveTidy_Readme.html", OpenMode.Output)
         PrintLine(6, Readme.txtReadme.Text)
         FileClose(6)
-        Shell(Environ("windir") & "\system32\notepad.exe " & Chr(34) & Environ("temp") & "\DriveTidy_Readme.txt" & Chr(34), AppWinStyle.NormalFocus)
+        Process.Start(Environ("temp") & "\DriveTidy_Readme.html")
     End Sub
 
     Private Sub lnkWeb_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles lnkWeb.LinkClicked
