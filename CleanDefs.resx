@@ -190,9 +190,7 @@ rd /s /q "%appdata%\Mozilla\Firefox\Crash Reports\"
 
 IF NOT EXIST "%appdata%\Mozilla\Firefox\Profiles" GOTO EndFirefox
 pushd "%appdata%\Mozilla\Firefox\Profiles" ||goto :eof
-for /d %%a in (*) do (
-del /f /s /q "%%a\*sqlite"
-)
+for %%a in (*.sqlite) do if not "%%a"=="signons.sqlite" del /f /s /q "%%a"
 popd
 :EndFirefox</value>
   </data>
