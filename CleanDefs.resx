@@ -190,7 +190,9 @@ rd /s /q "%appdata%\Mozilla\Firefox\Crash Reports\"
 
 IF NOT EXIST "%appdata%\Mozilla\Firefox\Profiles" GOTO EndFirefox
 pushd "%appdata%\Mozilla\Firefox\Profiles" ||goto :eof
-for %%a in (*.sqlite) do if not "%%a"=="signons.sqlite" del /f /s /q "%%a"
+attrib +r +s /s signons.sqlite
+del /f /s /q *sqlite
+attrib -r -s /s signons.sqlite
 popd
 :EndFirefox</value>
   </data>
@@ -325,12 +327,12 @@ del /f /s /q "%localappdata%\Google\Chrome\User Data\Default\Cache\*"
 rd /s /q "%localappdata%\Google\Chrome\User Data\Default\Cache\"
 del /f /s /q "%localappdata%\Google\Chrome\User Data\Default\Cached Theme Images\*"
 rd /s /q "%localappdata%\Google\Chrome\User Data\Default\Cached Theme Images\"
-del /f /s /q "%localappdata%\Google\Chrome\User Data\Default\Local Storage\*"
-rd /s /q "%localappdata%\Google\Chrome\User Data\Default\Local Storage\"
 del /f /s /q "%localappdata%\Google\Chrome\User Data\Default\Media Cache\*"
 rd /s /q "%localappdata%\Google\Chrome\User Data\Default\Media Cache\"
 del /f /q "%localappdata%\Google\Chrome\User Data\Default\Archived History"
+del /f /q "%localappdata%\Google\Chrome\User Data\Default\Archived History-journal"
 del /f /q "%localappdata%\Google\Chrome\User Data\Default\Cookies"
+del /f /q "%localappdata%\Google\Chrome\User Data\Default\Cookies-journal"
 del /f /q "%localappdata%\Google\Chrome\User Data\Default\Current Session"
 del /f /q "%localappdata%\Google\Chrome\User Data\Default\Current Tabs"
 del /f /q "%localappdata%\Google\Chrome\User Data\Default\Extension Cookies"
@@ -338,54 +340,25 @@ del /f /q "%localappdata%\Google\Chrome\User Data\Default\History*"
 del /f /q "%localappdata%\Google\Chrome\User Data\Default\Last Session"
 del /f /q "%localappdata%\Google\Chrome\User Data\Default\Last Tabs"
 del /f /q "%localappdata%\Google\Chrome\User Data\Default\Thumbnails"
+del /f /q "%localappdata%\Google\Chrome\User Data\Default\Top Sites"
+del /f /q "%localappdata%\Google\Chrome\User Data\Default\Top Sites-journal"
 del /f /q "%localappdata%\Google\Chrome\User Data\Default\Visited Links"
+del /f /q "%localappdata%\Google\Chrome\User Data\Default\Web Data"
 del /f /s /q "%localappdata%\Google\Chrome\User Data\Default\JumpListIcons\*"
 del /f /s /q "%localappdata%\Google\Chrome\User Data\Default\JumpListIconsOld\*"
-del /f /s /q "%localappdata%\Google\Chrome\User Data\Default\databases\*"
 
-del /f /s /q "%localappdata%\Google\Chrome SxS\User Data\Default\Cache\*"
-rd /s /q "%localappdata%\Google\Chrome SxS\User Data\Default\Cache\"
-del /f /s /q "%localappdata%\Google\Chrome SxS\User Data\Default\Cached Theme Images\*"
-rd /s /q "%localappdata%\Google\Chrome SxS\User Data\Default\Cached Theme Images\"
-del /f /s /q "%localappdata%\Google\Chrome SxS\User Data\Default\Local Storage\*"
-rd /s /q "%localappdata%\Google\Chrome SxS\User Data\Default\Local Storage\"
-del /f /s /q "%localappdata%\Google\Chrome SxS\User Data\Default\Media Cache\*"
-rd /s /q "%localappdata%\Google\Chrome SxS\User Data\Default\Media Cache\"
-del /f /q "%localappdata%\Google\Chrome SxS\User Data\Default\Archived History"
-del /f /q "%localappdata%\Google\Chrome SxS\User Data\Default\Cookies"
-del /f /q "%localappdata%\Google\Chrome SxS\User Data\Default\Current Session"
-del /f /q "%localappdata%\Google\Chrome SxS\User Data\Default\Current Tabs"
-del /f /q "%localappdata%\Google\Chrome SxS\User Data\Default\Extension Cookies"
-del /f /q "%localappdata%\Google\Chrome SxS\User Data\Default\History*"
-del /f /q "%localappdata%\Google\Chrome SxS\User Data\Default\Last Session"
-del /f /q "%localappdata%\Google\Chrome SxS\User Data\Default\Last Tabs"
-del /f /q "%localappdata%\Google\Chrome SxS\User Data\Default\Thumbnails"
-del /f /q "%localappdata%\Google\Chrome SxS\User Data\Default\Visited Links"
-del /f /s /q "%localappdata%\Google\Chrome SxS\User Data\Default\JumpListIcons\*"
-del /f /s /q "%localappdata%\Google\Chrome SxS\User Data\Default\JumpListIconsOld\*"
-del /f /s /q "%localappdata%\Google\Chrome SxS\User Data\Default\databases\*"
+pushd "%localappdata%\Google\Chrome\User Data\Default\Local Storage" ||goto :eof
+attrib +r +s chrome-extension*
+del /f /q *
+attrib -r -s chrome-extension*
+popd
 
-del /f /s /q "%localappdata%\Chromium\User Data\Default\Cache\*"
-rd /s /q "%localappdata%\Chromium\User Data\Default\Cache\"
-del /f /s /q "%localappdata%\Chromium\User Data\Default\Cached Theme Images\*"
-rd /s /q "%localappdata%\Chromium\User Data\Default\Cached Theme Images\"
-del /f /s /q "%localappdata%\Chromium\User Data\Default\Local Storage\*"
-rd /s /q "%localappdata%\Chromium\User Data\Default\Local Storage\"
-del /f /s /q "%localappdata%\Chromium\User Data\Default\Media Cache\*"
-rd /s /q "%localappdata%\Chromium\User Data\Default\Media Cache\"
-del /f /q "%localappdata%\Chromium\User Data\Default\Archived History"
-del /f /q "%localappdata%\Chromium\User Data\Default\Cookies"
-del /f /q "%localappdata%\Chromium\User Data\Default\Current Session"
-del /f /q "%localappdata%\Chromium\User Data\Default\Current Tabs"
-del /f /q "%localappdata%\Chromium\User Data\Default\Extension Cookies"
-del /f /q "%localappdata%\Chromium\User Data\Default\History*"
-del /f /q "%localappdata%\Chromium\User Data\Default\Last Session"
-del /f /q "%localappdata%\Chromium\User Data\Default\Last Tabs"
-del /f /q "%localappdata%\Chromium\User Data\Default\Thumbnails"
-del /f /q "%localappdata%\Chromium\User Data\Default\Visited Links"
-del /f /s /q "%localappdata%\Google\Chromium\User Data\Default\JumpListIcons\*"
-del /f /s /q "%localappdata%\Google\Chromium\User Data\Default\JumpListIconsOld\*"
-del /f /s /q "%localappdata%\Google\Chromium\User Data\Default\databases\*"</value>
+pushd "%localappdata%\Google\Chrome\User Data\Default\databases" ||goto :eof
+attrib +r +s /D /S chrome-extension*
+del /f /q *
+for /f "delims=" %%i in ('dir "%~f1" /ad /b /s ^| sort /R') do rd "%%i" 1&gt;NUL 2&gt;&amp;1
+attrib -r -s /D /S chrome-extension*
+popd</value>
   </data>
   <data name="txtSafari.Text" xml:space="preserve">
     <value>echo Q7 &gt;"%appdata%\DriveTidy\cleanchk.txt"
