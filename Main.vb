@@ -3,6 +3,7 @@
     Public OS_WindowsXP As Boolean
     Public OS_WindowsVista As Boolean
     Public OS_Windows7 As Boolean
+    Public OS_Windows8 As Boolean
     Public OS_Undetected As Boolean
 
     Dim flwAll(0 To 4)
@@ -57,10 +58,15 @@
         Environment.OSVersion.Version.Minor = 1 Then
             OS_Windows7 = True
             Environment.SetEnvironmentVariable("osd", "Windows 7")
+        ElseIf Environment.OSVersion.Platform = PlatformID.Win32NT And _
+       Environment.OSVersion.Version.Major = 6 And _
+       Environment.OSVersion.Version.Minor = 2 Then
+            OS_Windows8 = True
+            Environment.SetEnvironmentVariable("osd", "Windows 8")
         Else
             Environment.SetEnvironmentVariable("osd", "Unsupported OS.")
             OS_Undetected = True
-            MsgBox("Warning! Your version of Windows may be unsupported.")
+            MsgBox("Warning - Your version of Windows may be unsupported.")
         End If
         'Environment Variables for Windows Vista / 7
         'Version
@@ -84,7 +90,7 @@
             End If
         End If
 
-        If OS_WindowsVista Or OS_Windows7 = True Then
+        If OS_WindowsVista Or OS_Windows7 Or OS_Windows8 = True Then
             Environment.SetEnvironmentVariable("localappdata", Environ("userprofile") + "\AppData\Local\")
             Environment.SetEnvironmentVariable("locallowappdata", Environ("userprofile") + "\AppData\LocalLow\")
             Environment.SetEnvironmentVariable("recycle", Environ("systemdrive") + "\$Recycle.Bin")
@@ -512,7 +518,7 @@ ErrorHandler:
                     CleanDefs2.txtThumbnails.Text = CleanDefs2.txtThumbnailsXP.Text
                 ElseIf OS_WindowsVista = True Then
                     CleanDefs2.txtThumbnails.Text = CleanDefs2.txtThumbnailsVista.Text
-                ElseIf OS_Windows7 Or OS_Undetected = True Then
+                ElseIf OS_Windows7 Or OS_Windows8 Or OS_Undetected = True Then
                     CleanDefs2.txtThumbnails.Text = CleanDefs2.txtThumbnails7.Text
                 End If
             End If

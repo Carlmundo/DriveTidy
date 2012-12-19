@@ -116,7 +116,7 @@ ErrorHandler:
             If Not My.Computer.FileSystem.FileExists(Environ("localappdata") & "\Microsoft\Windows\Explorerthumbcache_idx.db") Then
                 frmMain.cbThumbnails.Visible = False
             End If
-        ElseIf Main.OS_Windows7 Or Main.OS_Undetected = True Then
+        ElseIf Main.OS_Windows7 Or Main.OS_Windows8 Or Main.OS_Undetected = True Then
             If Not My.Computer.FileSystem.FileExists(Environ("localappdata") & "\IconCache.db") Then
                 frmMain.cbThumbnails.Visible = False
             End If
