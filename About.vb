@@ -26,7 +26,7 @@
 
     Private Sub About_FormClosing(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         On Error Resume Next
-        My.Computer.FileSystem.DeleteFile(Environ("temp") & "\build.txt")
+        My.Computer.FileSystem.DeleteFile(Environ("temp") & "\DriveTidy_Build.txt")
         My.Computer.FileSystem.DeleteFile(Environ("temp") & "\DriveTidy_Readme.txt")
         Start.Enabled = True
     End Sub
@@ -39,9 +39,9 @@
         Me.Cursor = Cursors.WaitCursor
 
         'Where the file is downloaded to
-        Dim BuildLocalFile As String = Environ("temp") & "\build.txt"
+        Dim BuildLocalFile As String = Environ("temp") & "\DriveTidy_Build.txt"
         'The process that downloads the file to the computer
-        Dim BuildCheck As Integer = URLDownloadToFile(0, "https://raw.github.com/Carlmundo/DriveTidy/master/build.txt", BuildLocalFile, 0, 0)
+        Dim BuildCheck As Integer = URLDownloadToFile(0, "http://www.fixkb.com/download/DriveTidy_Build.txt", BuildLocalFile, 0, 0)
         'Writes the version number as one number
         Dim BuildValue As Decimal = (Environ("version_value"))
         'The file to check for FileContent (same as the downloaded location)
@@ -71,12 +71,12 @@
             End If
             MsgNewUpdate = MsgBox("A new update for DriveTidy is available." & vbCrLf & vbCrLf & "Current Version:  " & Environ("version") & vbCrLf & "Latest Version:     " & LatestVersion & vbCrLf & vbCrLf & "Would you like to download it?", MsgBoxStyle.YesNo, "DriveTidy Update")
             If MsgNewUpdate = MsgBoxResult.Yes Then
-                Dim DownloadUpdater As Integer = URLDownloadToFile(0, "https://github.com/downloads/Carlmundo/DriveTidy/updater.exe", Environ("temp") & "\updater.exe", 0, 0)
-                If IO.File.Exists(Environ("temp") & "\updater.exe") Then
+                Dim DownloadUpdater As Integer = URLDownloadToFile(0, "http://www.fixkb.com/download/DriveTidy Update.exe", Environ("temp") & "\DriveTidy Update.exe", 0, 0)
+                If IO.File.Exists(Environ("temp") & "\DriveTidy Update.exe") Then
                     On Error Resume Next
-                    My.Computer.FileSystem.DeleteFile(Environ("temp") & "\build.txt")
+                    My.Computer.FileSystem.DeleteFile(Environ("temp") & "\DriveTidy_Build.txt")
                     My.Computer.FileSystem.DeleteFile(Environ("temp") & "\DriveTidy_Readme.txt")
-                    Process.Start(Environ("temp") & "\updater.exe")
+                    Process.Start(Environ("temp") & "\DriveTidy Update.exe")
                 Else
                     If Me.Visible = True Then 'Only if About form is open and not on Main_Load
                         MsgBox("DriveTidy failed to update." & vbNewLine & "Please try again later or get the latest version from:" & vbNewLine & vbNewLine & "www.fixkb.com/drivetidy", MsgBoxStyle.Exclamation, "Update Failed")
@@ -94,11 +94,13 @@
         End If
         Exit Sub
 UpdateCheckFailed:
-        Me.Cursor = Cursors.Default
-        If Err.Number = 53 Then
-            MsgBox("Could not find server. Make sure you are connected to the Internet.", MsgBoxStyle.Exclamation, "Update Failed")
-        Else
-            MsgBox(Err.Description, MsgBoxStyle.Critical, "Error " & Err.Number)
+        If Me.Visible = True Then
+            Me.Cursor = Cursors.Default
+            If Err.Number = 53 Then
+                MsgBox("Could not find server. Make sure you are connected to the Internet.", MsgBoxStyle.Exclamation, "Update Failed")
+            Else
+                MsgBox(Err.Description, MsgBoxStyle.Critical, "Error " & Err.Number)
+            End If
         End If
         On Error Resume Next
         FileClose(5)
