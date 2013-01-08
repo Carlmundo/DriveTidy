@@ -38,7 +38,7 @@
         If UpdateError = 0 Then
             If DownloadAttempts < 3 Then
                 Dim objShell As Object = CreateObject("WScript.Shell")
-                Dim DownloadURL As String = "http://www.fixkb.com/download/DriveTidy.exe"
+                Dim DownloadURL As String = "http://drivetidy.fixkb.com/DriveTidy.exe"
                 Dim SaveLocation As String = Environ("temp") & "\DriveTidy.exe"
                 Dim UpdateProcess As Integer = URLDownloadToFile(0, DownloadURL, SaveLocation, 0, 0)
                 DownloadAttempts += 1
