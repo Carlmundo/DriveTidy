@@ -141,7 +141,12 @@ rd /s /q "%allusersappdata%\Microsoft\Search\Data\Temp\"
 del /f /s /q "%windir%\system32\config\systemprofile\Local Settings\Temp\*"
 rd /s /q "%windir%\system32\config\systemprofile\Local Settings\Temp\"
 del /f /s /q "%windir%\system32\config\systemprofile\AppData\Local\Temp\*"
-rd /s /q "%windir%\system32\config\systemprofile\AppData\Local\Temp\"</value>
+rd /s /q "%windir%\system32\config\systemprofile\AppData\Local\Temp\"
+del /f /s /q "%windir%\ServiceProfiles\LocalService\AppData\Local\Temp\*"
+del /f /s /q "%windir%\ServiceProfiles\NetworkService\AppData\Local\Temp\*"
+del /f /s /q "%systemdrive%\Documents and Settings\LocalService\Local Settings\Temp\*"
+del /f /s /q "%systemdrive%\Documents and Settings\NetworkService\Local Settings\Temp\*"
+del /f /s /q "%localappdata%\Microsoft\Windows\INetCache\IE\*"</value>
   </data>
   <data name="txtTIF.Text" xml:space="preserve">
     <value>echo Q6 &gt;"%appdata%\DriveTidy\cleanchk.txt"
@@ -178,7 +183,8 @@ del /a /f /s /q "%appdata%\Microsoft\Windows\IECompatCache\*"
 del /a /f /s /q "%appdata%\Microsoft\Windows\IETldCache\*"
 del /a /f /s /q "%appdata%\Microsoft\Windows\IEDownloadHistory\*"
 del /f /s /q "%locallowappdata%\Microsoft\CryptnetUrlCache\Content\*.*"
-del /f /s /q "%locallowappdata%\Microsoft\CryptnetUrlCache\MetaData\*.*"</value>
+del /f /s /q "%locallowappdata%\Microsoft\CryptnetUrlCache\MetaData\*.*"
+del /f /s /q "%localappdata\Microsoft\Terminal Server Client\Cache\*"</value>
   </data>
   <data name="txtFirefox.Text" xml:space="preserve">
     <value>echo Q7 &gt;"%appdata%\DriveTidy\cleanchk.txt"
@@ -325,6 +331,8 @@ popd
 echo [Google Chrome caches...]
 del /f /s /q "%localappdata%\Google\Chrome\User Data\Default\Cache\*"
 rd /s /q "%localappdata%\Google\Chrome\User Data\Default\Cache\"
+del /f /s /q "%localappdata%\Google\Chrome\User Data\Default\Application Cache\*"
+rd /s /q "%localappdata%\Google\Chrome\User Data\Default\Application Cache\"
 del /f /s /q "%localappdata%\Google\Chrome\User Data\Default\Cached Theme Images\*"
 rd /s /q "%localappdata%\Google\Chrome\User Data\Default\Cached Theme Images\"
 del /f /s /q "%localappdata%\Google\Chrome\User Data\Default\Media Cache\*"
@@ -389,7 +397,9 @@ del /f /s /q "%allusersappdata%\Microsoft\Windows\WER\ReportQueue\*"
 rd /s /q "%localappdata%\Microsoft\Windows\WER\ReportArchive\"
 rd /s /q "%localappdata%\Microsoft\Windows\WER\ReportQueue\"
 rd /s /q "%allusersappdata%\Microsoft\Windows\WER\ReportArchive\"
-rd /s /q "%allusersappdata%\Microsoft\Windows\WER\ReportQueue\"</value>
+rd /s /q "%allusersappdata%\Microsoft\Windows\WER\ReportQueue\"
+del /f /s /q  "%localappdata%\CrashDumps\*"
+rd /s /q  "%localappdata%\CrashDumps\"</value>
   </data>
   <data name="txtTIF_IE6.Text" xml:space="preserve">
     <value>echo Q6 &gt;"%appdata%\DriveTidy\cleanchk.txt"

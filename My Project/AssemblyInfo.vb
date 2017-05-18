@@ -9,16 +9,16 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("DriveTidy")> 
-<Assembly: AssemblyDescription("A disk cleanup tool that throroughly scans your computer for unnecessary and invalid files no longer being used by the system.")> 
-<Assembly: AssemblyCompany("[Fix-KB]")> 
-<Assembly: AssemblyProduct("DriveTidy")> 
-<Assembly: AssemblyCopyright("[Fix-KB] ©2009-2013")> 
+<Assembly: AssemblyDescription("A disk cleanup tool that throroughly scans your computer for unnecessary and invalid files no longer being used by the system.")>
+<Assembly: AssemblyCompany("Fix-KB")>
+<Assembly: AssemblyProduct("DriveTidy")>
+<Assembly: AssemblyCopyright("Fix-KB ©2009-2016")>
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)> 
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("953f01a6-99dd-4884-9e91-c88f04401022")> 
+<Assembly: Guid("953f01a6-99dd-4884-9e91-c88f04401022")>
 
 ' Version information for an assembly consists of the following four values:
 '
@@ -31,4 +31,4 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("0.9.9.41")> 
+<Assembly: AssemblyVersion("1.0.*")>

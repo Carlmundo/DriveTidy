@@ -21,7 +21,6 @@
         gfx.Dispose()
 
         lblVersion.Text = "v" & My.Application.Info.Version.Major & "." & My.Application.Info.Version.Minor & "." & My.Application.Info.Version.Build & "." & My.Application.Info.Version.Revision
-        lblCopyright.Text = My.Application.Info.Copyright
     End Sub
 
     Private Sub About_FormClosing(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
@@ -43,7 +42,8 @@
         'The process that downloads the file to the computer
         Dim BuildCheck As Integer = URLDownloadToFile(0, "http://drivetidy.fixkb.com/build.txt", BuildLocalFile, 0, 0)
         'Writes the version number as one number
-        Dim BuildValue As Decimal = (Environ("version_value"))
+        Dim BuildValue As Decimal = Environ("version_value")
+
         'The file to check for FileContent (same as the downloaded location)
         Dim FileContent As Object = ""
 
@@ -52,10 +52,10 @@
         Input(5, FileContent)
         FileClose(5)
         Me.Cursor = Cursors.Default
-
         Dim MsgNewUpdate As Object
         If FileContent > BuildValue Then
             Dim LatestVersion As String = FileContent
+
             If LatestVersion < 10 Then
                 If LatestVersion.Length = 4 Then
                     LatestVersion = LatestVersion.Insert(3, ".")
@@ -117,7 +117,7 @@ UpdateCheckFailed:
         Process.Start("http://www.fixkb.com")
     End Sub
 
-    Private Sub lnkTwitter_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles lnkTwitter.LinkClicked
+    Private Sub lnkTwitter_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs)
         Process.Start("http://www.twitter.com/fixkb")
     End Sub
 End Class

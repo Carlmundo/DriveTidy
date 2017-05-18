@@ -1,10 +1,4 @@
 ﻿Public Class Main
-    'OS Detection
-    Public OS_WindowsXP As Boolean
-    Public OS_WindowsVista As Boolean
-    Public OS_Windows7 As Boolean
-    Public OS_Windows8 As Boolean
-    Public OS_Undetected As Boolean
 
     Dim flwAll(0 To 4)
 
@@ -42,34 +36,9 @@
         End If
         gfx.Dispose()
 
-        'Detect OSVersion and assign True to correct Boolean
-        If Environment.OSVersion.Platform = PlatformID.Win32NT And _
-        Environment.OSVersion.Version.Major = 5 And _
-        Environment.OSVersion.Version.Minor = 1 Then
-            OS_WindowsXP = True
-            Environment.SetEnvironmentVariable("osd", "Windows XP")
-        ElseIf Environment.OSVersion.Platform = PlatformID.Win32NT And _
-            Environment.OSVersion.Version.Major = 6 And _
-            Environment.OSVersion.Version.Minor = 0 Then
-            OS_WindowsVista = True
-            Environment.SetEnvironmentVariable("osd", "Windows Vista")
-        ElseIf Environment.OSVersion.Platform = PlatformID.Win32NT And _
-        Environment.OSVersion.Version.Major = 6 And _
-        Environment.OSVersion.Version.Minor = 1 Then
-            OS_Windows7 = True
-            Environment.SetEnvironmentVariable("osd", "Windows 7")
-        ElseIf Environment.OSVersion.Platform = PlatformID.Win32NT And _
-       Environment.OSVersion.Version.Major = 6 And _
-       Environment.OSVersion.Version.Minor = 2 Then
-            OS_Windows8 = True
-            Environment.SetEnvironmentVariable("osd", "Windows 8")
-        Else
-            Environment.SetEnvironmentVariable("osd", "Unsupported OS.")
-            OS_Undetected = True
-            MsgBox("Warning - Your version of Windows may be unsupported.")
-        End If
-        'Environment Variables for Windows Vista / 7
-        'Version
+
+
+        'Environment Variables for Version
         Environment.SetEnvironmentVariable("version", My.Application.Info.Version.Major & "." & My.Application.Info.Version.Minor & "." & My.Application.Info.Version.Build & "." & My.Application.Info.Version.Revision)
         'Version as a value (1 decimal place)
         Environment.SetEnvironmentVariable("version_value", My.Application.Info.Version.Major & "." & My.Application.Info.Version.Minor & My.Application.Info.Version.Build & My.Application.Info.Version.Revision)
@@ -90,7 +59,8 @@
             End If
         End If
 
-        If OS_WindowsVista Or OS_Windows7 Or OS_Windows8 = True Then
+        'Vista & Above
+        If Start.OS_Number >= 6 Then
             Environment.SetEnvironmentVariable("localappdata", Environ("userprofile") + "\AppData\Local\")
             Environment.SetEnvironmentVariable("locallowappdata", Environ("userprofile") + "\AppData\LocalLow\")
             Environment.SetEnvironmentVariable("recycle", Environ("systemdrive") + "\$Recycle.Bin")
@@ -99,7 +69,7 @@
             Environment.SetEnvironmentVariable("history", Environ("localappdata") + "\Microsoft\Windows\History\")
             Environment.SetEnvironmentVariable("tif", Environ("localappdata") + "\Microsoft\Windows\Temporary Internet Files\")
             Environment.SetEnvironmentVariable("allusersappdata", Environ("allusersprofile"))
-        Else 'Use the Environment Variables for Windows XP, An unsupported OS will use these settings
+        Else 'Use the Environment Variables for Windows XP
             Environment.SetEnvironmentVariable("localappdata", Environ("userprofile") + "\Local Settings\Application Data\")
             Environment.SetEnvironmentVariable("locallowappdata", "")
             Environment.SetEnvironmentVariable("recycle", Environ("systemdrive") + "\recycler\")
@@ -142,6 +112,9 @@
         d2.Add(cbHibernate, CleanDefs2.txtHibernate)
         d2.Add(cbThumbnails, CleanDefs2.txtThumbnails)
         d2.Add(cbMSI, CleanDefs2.txtMSI)
+        d2.Add(cbWinSxS, CleanDefs2.txtWinSxS)
+        d2.Add(cbWinSPClean, CleanDefs2.txtWinSPClean)
+        d2.Add(cbWinWebSetup, CleanDefs2.txtWinWebSetup)
         d2.Add(cbSampleMusic, CleanDefs2.txtSampleMusic)
         d2.Add(cbSamplePictures, CleanDefs2.txtSamplePictures)
         d2.Add(cbSampleVideos, CleanDefs2.txtSampleVideos)
@@ -514,11 +487,11 @@ ErrorHandler:
 
             'Checks OS to see which Thumbnail Commands to use
             If cbThumbnails.Checked = True Then
-                If OS_WindowsXP = True Then
+                If Start.OS_Number = 5 Then
                     CleanDefs2.txtThumbnails.Text = CleanDefs2.txtThumbnailsXP.Text
-                ElseIf OS_WindowsVista = True Then
+                ElseIf Start.OS_Number = 6 Then
                     CleanDefs2.txtThumbnails.Text = CleanDefs2.txtThumbnailsVista.Text
-                ElseIf OS_Windows7 Or OS_Windows8 Or OS_Undetected = True Then
+                ElseIf Start.OS_Number > 6 Then
                     CleanDefs2.txtThumbnails.Text = CleanDefs2.txtThumbnails7.Text
                 End If
             End If

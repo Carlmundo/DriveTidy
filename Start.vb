@@ -3,6 +3,8 @@
     Dim frmCW
     Dim item As Object
     Public SessionStarted As Boolean = False
+    'OS Detection
+    Public OS_Number As String = Environment.OSVersion.Version.Major
 
     Private Sub Start_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         On Error GoTo ErrorHandler
@@ -88,6 +90,13 @@ ErrorHandler:
                 frmMain.cbOpera.Visible = False
             End If
         End If
+        If Not My.Computer.FileSystem.DirectoryExists(Environ("appdata") & "\Sun\Java\Deployment\cache") Then
+            If Not My.Computer.FileSystem.DirectoryExists(Environ("localappdata") & "\Sun\Java\Deployment\cache") Then
+                If Not My.Computer.FileSystem.DirectoryExists(Environ("locallowappdata") & "\Sun\Java\Deployment\cache") Then
+                    frmMain.cbJava.Visible = False
+                End If
+            End If
+        End If
         If Not My.Computer.FileSystem.DirectoryExists(Environ("localappdata") & "\Apple Computer\Safari") Then
             If Not My.Computer.FileSystem.DirectoryExists(Environ("appdata") & "\Apple Computer\Safari") Then
                 frmMain.cbSafari.Visible = False
@@ -101,7 +110,7 @@ ErrorHandler:
         If Not My.Computer.FileSystem.FileExists(Environ("windir") & "\system32\compcln.exe") Then
             frmMain.cbVistaSP2.Visible = False
         End If
-        If frmMain.OS_Windows7 = True Then
+        If OS_Number = 7 Then
             If Not Environment.OSVersion.ServicePack = "Service Pack 1" Then
                 frmMain.cbWin7SP1.Visible = False
             End If
@@ -112,14 +121,21 @@ ErrorHandler:
             frmMain.cbHibernate.Visible = False
         End If
 
-        If Main.OS_WindowsVista = True Then
+        If OS_Number = 6 Then
             If Not My.Computer.FileSystem.FileExists(Environ("localappdata") & "\Microsoft\Windows\Explorerthumbcache_idx.db") Then
                 frmMain.cbThumbnails.Visible = False
             End If
-        ElseIf Main.OS_Windows7 Or Main.OS_Windows8 Or Main.OS_Undetected = True Then
+        ElseIf OS_Number > 6 Then
             If Not My.Computer.FileSystem.FileExists(Environ("localappdata") & "\IconCache.db") Then
                 frmMain.cbThumbnails.Visible = False
             End If
+        End If
+        If OS_Number < 8 Then
+            frmMain.cbWinSxS.Visible = False
+            frmMain.cbWinSPClean.Visible = False
+        End If
+        If Not My.Computer.FileSystem.DirectoryExists(Environ("localappdata") & "\Microsoft\WebSetup") Then
+            frmMain.cbWinWebSetup.Visible = False
         End If
 
         If Not My.Computer.FileSystem.DirectoryExists(Environ("systemdrive") & "\Config.Msi") Then
